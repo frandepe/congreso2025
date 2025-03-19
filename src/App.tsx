@@ -6,6 +6,10 @@ import { Home } from "./pages/Home";
 import { Contact } from "./pages/Contact";
 import { MainLayout } from "./components/Layout/MainLayout";
 import { Programa } from "./pages/Programa";
+import { UbicacionYAlojamiento } from "./pages/UbicacionYAlojamiento";
+import { Patrocinadores } from "./pages/Patrocinadores";
+import { Inscripcion } from "./pages/Inscripcion";
+import { Expositores } from "./pages/Expositores";
 
 function PageWrapper({ children }: any) {
   return (
@@ -23,7 +27,6 @@ function PageWrapper({ children }: any) {
 function App() {
   return (
     <BrowserRouter>
-      {/* <NavbarPrincipal /> */}
       <MainLayout>
         <AnimatePresence mode="sync">
           <Routes>
@@ -44,7 +47,39 @@ function App() {
               }
             />
             <Route
-              path="/contact"
+              path="/ubicacion-y-alojamiento"
+              element={
+                <PageWrapper>
+                  <UbicacionYAlojamiento />
+                </PageWrapper>
+              }
+            />
+            <Route
+              path="/inscripcion"
+              element={
+                <PageWrapper>
+                  <Inscripcion />
+                </PageWrapper>
+              }
+            />
+            <Route
+              path="/patrocinadores"
+              element={
+                <PageWrapper>
+                  <Patrocinadores />
+                </PageWrapper>
+              }
+            />
+            <Route
+              path="/expositores"
+              element={
+                <PageWrapper>
+                  <Expositores />
+                </PageWrapper>
+              }
+            />
+            <Route
+              path="/contacto"
               element={
                 <PageWrapper>
                   <Contact />

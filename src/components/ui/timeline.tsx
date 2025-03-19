@@ -6,6 +6,8 @@ import {
   motion,
 } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
+import { Button } from "./button";
+import { Download, HeartPulse, Plus } from "lucide-react";
 
 interface TimelineEntry {
   title: string;
@@ -33,18 +35,18 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   const opacityTransform = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
 
   return (
-    <div
-      className="w-full bg-white dark:bg-neutral-950 font-sans md:px-10"
-      ref={containerRef}
-    >
+    <div className="w-full font-sans md:px-10" ref={containerRef}>
       <div className="max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-10">
-        <h2 className="text-lg md:text-4xl mb-4 text-black dark:text-white max-w-4xl">
-          Changelog from my journey
+        <h2 className="text-lg md:text-4xl mb-4 text-black dark:text-white max-w-4xl flex gap-2 items-center">
+          <HeartPulse className="text-primary" /> Primer congreso nacional de
+          instructores de RCP
         </h2>
         <p className="text-neutral-700 dark:text-neutral-300 text-sm md:text-base max-w-sm">
-          I&apos;ve been working on Aceternity for the past 2 years. Here&apos;s
-          a timeline of my journey.
+          15, 16 y 17 de octubre de 2025
         </p>
+        <Button className="mt-4">
+          <Download size={16} className="mr-2" /> Descargar programa
+        </Button>
       </div>
 
       <div ref={ref} className="relative max-w-7xl mx-auto pb-20">
@@ -81,7 +83,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
               height: heightTransform,
               opacity: opacityTransform,
             }}
-            className="absolute inset-x-0 top-0  w-[2px] bg-gradient-to-t from-purple-500 via-blue-500 to-transparent from-[0%] via-[10%] rounded-full"
+            className="absolute inset-x-0 top-0  w-[2px] bg-gradient-to-t from-secondary via-primary to-transparent from-[0%] via-[20%] rounded-full"
           />
         </div>
       </div>

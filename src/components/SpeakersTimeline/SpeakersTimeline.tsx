@@ -4,153 +4,324 @@ import { Timeline } from "@/components/ui/timeline";
 export function SpeakersTimeline() {
   const data = [
     {
-      title: "2024",
+      title: "Miércoles 15 de octubre",
       content: (
         <div>
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
-            Built and launched Aceternity UI and Aceternity UI Pro from scratch
+            <strong>9:00 – 9:30 | Apertura y Bienvenida</strong>
+            <br />
+            Lugar: Centro Cívico (140) Polo (100) Teatro (290) Cine (700)
+            <br />• Breve introducción al congreso y objetivos del evento.
+            <br />• Bienvenida a cargo del Comité Organizador.
+            <br />• Apertura oficial a cargo del Intendente Municipal de Trenque
+            Lauquen.
           </p>
-          <div className="grid grid-cols-2 gap-4">
-            <img
-              src="https://assets.aceternity.com/templates/startup-1.webp"
-              alt="startup template"
-              width={500}
-              height={500}
-              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-            />
-            <img
-              src="https://assets.aceternity.com/templates/startup-2.webp"
-              alt="startup template"
-              width={500}
-              height={500}
-              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-            />
-            <img
-              src="https://assets.aceternity.com/templates/startup-3.webp"
-              alt="startup template"
-              width={500}
-              height={500}
-              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-            />
-            <img
-              src="https://assets.aceternity.com/templates/startup-4.webp"
-              alt="startup template"
-              width={500}
-              height={500}
-              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-            />
-          </div>
+          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
+            <strong>
+              9:30 – 10:45 | Charla 1: Actualizaciones internacionales en RCP y
+              primeros auxilios
+            </strong>
+            <br />• Invitado Especial: Experto internacional en RCP (INVITADO DE
+            LA ERC).
+            <br />• Enfoque: Avances y nuevos estándares internacionales en RCP
+            y primeros auxilios.
+          </p>
+          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
+            <strong>10:45 – 11:00 | Break (15 minutos)</strong>
+          </p>
+          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
+            <strong>
+              11:00 – 12:15 | Charla 2: Cómo atraer más personas a las
+              capacitaciones
+            </strong>
+            <br />
+            Expositora: Patricia Soto.
+            <br />• Enfoque: Estrategias y métodos para aumentar la
+            participación en las capacitaciones, generar interés y alcanzar más
+            personas para cumplir el objetivo de que más vidas sean salvadas.
+            <br />• Objetivo: Atraer a más participantes para asegurar una mayor
+            difusión de la formación en RCP y primeros auxilios.
+          </p>
+          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
+            <strong>
+              12:15 – 13:15 | Receso de media jornada (Espacio libre)
+            </strong>
+          </p>
+          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
+            <strong>
+              13:15 – 14:30 | Charla 3: Consejos prácticos para establecer
+              tarifas, gestionar un negocio de capacitación y atraer clientes
+            </strong>
+            <br />
+            Expositor: Rodrigo Balik.
+            <br />• Enfoque: Cómo establecer tarifas adecuadas, gestionar un
+            negocio de capacitación eficazmente y estrategias para atraer más
+            clientes.
+            <br />• Objetivo: Ayudar a los instructores a profesionalizar sus
+            servicios, incrementar su visibilidad y alcanzar una mayor
+            clientela.
+          </p>
+          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
+            <strong>14:30 – 14:45 | Break (15 minutos)</strong>
+          </p>
+          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
+            <strong>
+              14:45 – 16:00 | Charla 4: Debate: Ley 27.159 – ¿Cómo hacer para
+              que se cumpla?
+            </strong>
+            <br />
+            Expositores: Julio Godoy, Sergio Felice y equipo de “Argentina
+            Reanima”.
+            <br />• Enfoque: Debate sobre la Ley 27.159, que establece la
+            obligatoriedad de enseñar RCP en los colegios, la instalación de DEA
+            en lugares públicos, etc.
+            <br />• Objetivo: Analizar cómo los profesionales y las
+            instituciones pueden colaborar para asegurar que esta ley se cumpla,
+            y cómo mejorar la concientización y la implementación de programas
+            educativos sobre RCP.
+          </p>
+          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
+            <strong>16:00 – 16:15 | Break (15 minutos)</strong>
+          </p>
+          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
+            <strong>
+              16:15 – 17:30 | Charla 5: Resumen y preguntas abiertas
+            </strong>
+            <br />• Espacio para preguntas, resumen de las charlas del día y
+            comentarios finales.
+            <br />• Oportunidad para que los asistentes planteen dudas y
+            reflexiones.
+          </p>
+          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
+            <strong>17:30 – 18:00 | Cierre del Día</strong>
+            <br />• Reflexión sobre los aprendizajes del día.
+            <br />• Agradecimientos finales y detalles de lo que viene el día
+            siguiente.
+          </p>
+          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
+            <strong>18:00 | Apertura de actividades a todo público</strong>
+            <br />• Charlas abiertas de RCP en las plazas de la ciudad
+            (merienda).
+            <br />
+            Invitamos a instructores de RCP a compartir la merienda con gente de
+            la ciudad en las diferentes plazas y de esta manera mostrar las
+            técnicas de la maniobra y concientizar sobre la importancia del
+            conocimiento de la misma.
+            <br />• Acompañamiento a muralistas en su obra.
+          </p>
         </div>
       ),
     },
     {
-      title: "Early 2023",
+      title: "Jueves 16 de octubre",
       content: (
         <div>
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
-            I usually run out of copy, but when I see content this big, I try to
-            integrate lorem ipsum.
+            <strong>9:00 – 9:30 | Apertura y Bienvenida</strong>
+            <br />• Breve introducción al día y objetivos del evento.
+            <br />• Acto conmemorativo Día Mundial de la RCP.
+            <br />• Homenaje en memoria del Instructor Jorge Adrián Prieto.
+            <br />• Homenaje a impulsores de la Ley del grupo Argentina Reanima
+            en memoria de Beltrán y Tomas, hijos de Jorge Bombau y Mariano Casoi
+            (Estarán presentes).
           </p>
+
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
-            Lorem ipsum is for people who are too lazy to write copy. But we are
-            not. Here are some more example of beautiful designs I built.
+            <strong>
+              9:30 – 10:45 | Charla 1: Sin barreras para transmitir y capacitar
+            </strong>
+            <br />
+            Expositor: Guillermo Carranza (Instructor NO VIDENTE).
+            <br />• Enfoque: Inclusión de personas discapacitadas en
+            capacitaciones de RCP y cómo adaptar los métodos para todos los
+            públicos.
           </p>
-          <div className="grid grid-cols-2 gap-4">
-            <img
-              src="https://assets.aceternity.com/pro/hero-sections.png"
-              alt="hero template"
-              width={500}
-              height={500}
-              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-            />
-            <img
-              src="https://assets.aceternity.com/features-section.png"
-              alt="feature template"
-              width={500}
-              height={500}
-              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-            />
-            <img
-              src="https://assets.aceternity.com/pro/bento-grids.png"
-              alt="bento template"
-              width={500}
-              height={500}
-              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-            />
-            <img
-              src="https://assets.aceternity.com/cards.png"
-              alt="cards template"
-              width={500}
-              height={500}
-              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-            />
-          </div>
+
+          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
+            <strong>10:45 – 11:00 | Break (15 minutos)</strong>
+          </p>
+
+          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
+            <strong>
+              11:00 – 12:15 | Charla 2: Mi experiencia arriba de móvil de apoyo
+              de alta complejidad M.A.A.C.
+            </strong>
+            <br />
+            Expositor: Dr. Alejandro Laselli (Médico emergentólogo e Instructor
+            de emergencias SAME).
+            <br />• Enfoque: Experiencia clínica en emergencias y cómo los
+            instructores pueden aplicar este conocimiento.
+          </p>
+
+          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
+            <strong>
+              12:15 – 13:15 | Receso de media jornada (Espacio libre)
+            </strong>
+          </p>
+
+          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
+            <strong>
+              13:15 – 14:30 | Charla 3: “A pesar de mi RCP, la víctima falleció,
+              ¿y ahora?”
+            </strong>
+            <br />
+            Expositor: Equipo de PAE de Alicia Galfaso y Nicolás De Paulo.
+            <br />• Enfoque: Abordaje emocional y profesional frente a
+            situaciones difíciles y cómo superar la culpa en el ejercicio del
+            RCP.
+          </p>
+
+          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
+            <strong>14:30 – 14:45 | Break (15 minutos)</strong>
+          </p>
+
+          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
+            <strong>
+              14:45 – 16:00 | Charla 4: RCP por Teléfono: Primera respuesta en
+              zonas rurales
+            </strong>
+            <br />
+            Expositores: Profesionales del 107, SAME y 911 especializados en la
+            atención telefónica.
+            <br />• Enfoque: Técnicas para guiar a personas sin conocimientos,
+            cuando llaman a emergencias para que realicen las técnicas de RCP
+            guiados por el operador del teléfono.
+            <br />• Objetivo: Capacitación para incluir en las capacitaciones de
+            RCP a distancia.
+          </p>
+
+          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
+            <strong>16:00 – 16:15 | Break (15 minutos)</strong>
+          </p>
+
+          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
+            <strong>
+              16:15 – 17:30 | Charla 5: Resumen y preguntas abiertas
+            </strong>
+            <br />• Espacio para preguntas, resumen de las charlas del día y
+            comentarios finales.
+            <br />• Oportunidad para que los asistentes planteen dudas y
+            reflexiones.
+          </p>
+
+          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
+            <strong>17:30 – 18:00 | Cierre del Día</strong>
+            <br />• Reflexión sobre los aprendizajes del día.
+            <br />• Agradecimientos finales y despedida.
+          </p>
+
+          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
+            <strong>18:00 | Apertura de actividades a todo público</strong>
+            <br />• Charlas abiertas de RCP en las plazas de la ciudad
+            (merienda).
+            <br />
+            Invitamos a instructores de RCP a compartir la merienda con gente de
+            la ciudad en las diferentes plazas y de esta manera mostrar las
+            técnicas de la maniobra y concientizar sobre la importancia del
+            conocimiento de la misma.
+            <br />• Acompañamiento a muralistas en su obra.
+          </p>
         </div>
       ),
     },
     {
-      title: "Changelog",
+      title: "Viernes 17 de octubre",
       content: (
         <div>
-          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-4">
-            Deployed 5 new components on Aceternity today
+          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
+            <strong>9:00 – 9:30 | Apertura y Bienvenida</strong>
+            <br />
+            • Breve introducción al día y objetivos del evento.
+            <br />• Repaso rápido de lo que se verá durante el día.
           </p>
-          <div className="mb-8">
-            <div className="flex gap-2 items-center text-neutral-700 dark:text-neutral-300 text-xs md:text-sm">
-              ✅ Card grid component
-            </div>
-            <div className="flex gap-2 items-center text-neutral-700 dark:text-neutral-300 text-xs md:text-sm">
-              ✅ Startup template Aceternity
-            </div>
-            <div className="flex gap-2 items-center text-neutral-700 dark:text-neutral-300 text-xs md:text-sm">
-              ✅ Random file upload lol
-            </div>
-            <div className="flex gap-2 items-center text-neutral-700 dark:text-neutral-300 text-xs md:text-sm">
-              ✅ Himesh Reshammiya Music CD
-            </div>
-            <div className="flex gap-2 items-center text-neutral-700 dark:text-neutral-300 text-xs md:text-sm">
-              ✅ Salman Bhai Fan Club registrations open
-            </div>
-          </div>
-          <div className="grid grid-cols-2 gap-4">
-            <img
-              src="https://assets.aceternity.com/pro/hero-sections.png"
-              alt="hero template"
-              width={500}
-              height={500}
-              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-            />
-            <img
-              src="https://assets.aceternity.com/features-section.png"
-              alt="feature template"
-              width={500}
-              height={500}
-              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-            />
-            <img
-              src="https://assets.aceternity.com/pro/bento-grids.png"
-              alt="bento template"
-              width={500}
-              height={500}
-              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-            />
-            <img
-              src="https://assets.aceternity.com/cards.png"
-              alt="cards template"
-              width={500}
-              height={500}
-              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-            />
-          </div>
+          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
+            <strong>
+              9:30 – 10:45 | Charla 1: Herramientas Tecnológicas para mejorar la
+              enseñanza de RCP
+            </strong>
+            <br />• Expositor: JUAN SEBASTIAN FABI
+            <br />• Enfoque: Herramientas tecnológicas, pro y contra,
+            simuladores avanzados, realidad aumentada y aplicaciones
+            interactivas.
+            <br />• Estrategias para hacer capacitaciones más atractivas y
+            efectivas.
+            <br />• Objetivo: Modernizar las capacitaciones y optimizar la
+            formación de instructores.
+          </p>
+          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
+            <strong>10:45 – 11:00 | Break (15 minutos)</strong>
+          </p>
+          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
+            <strong>
+              11:00 – 12:15 | Charla 2: Impacto de la RCP en Argentina – Datos y
+              realidad actual
+            </strong>
+            <br />• Expositor: Cardiólogo/a de la Asociación Argentina de
+            Cardiología.
+            <br />• Enfoque: Estadísticas sobre paros cardiacos en Argentina,
+            qué hacer cuando tienen la advertencia de “NO REANIMAR”, casos de
+            éxito donde la RCP salvó vidas, y la importancia de aumentar la
+            capacitación en la comunidad.
+            <br />• Objetivo: Crear conciencia sobre la necesidad de formar a
+            más personas en técnicas de RCP.
+          </p>
+          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
+            <strong>
+              12:15 – 13:15 | Receso de media jornada (Espacio libre)
+            </strong>
+          </p>
+          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
+            <strong>
+              13:15 – 14:30 | Charla 3: “Volví a la vida gracias a la RCP”
+            </strong>
+            <br />• Expositor: Invitada especial, una persona que ante un paro
+            cardiaco, fue reanimada con RCP en primera instancia e
+            inmediatamente atendida.
+            <br />• Enfoque: Relato en primera persona de haber sido reanimado
+            con RCP, testimonio del Dr. Juan Bambosi, médico que atendió pos
+            RCP.
+            <br />• Objetivo: Motivar e inspirar a los asistentes sobre la
+            importancia del trabajo del Instructor enseñando RCP a la mayor
+            cantidad de gente.
+          </p>
+          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
+            <strong>14:30 – 14:45 | Break (15 minutos)</strong>
+          </p>
+          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
+            <strong>
+              14:45 – 16:00 | Charla 4: Capacitación masiva: RCP para toda la
+              comunidad
+            </strong>
+            <br />• Ubicación: Plaza principal de Trenque Lauquen.
+            <br />• Descripción: Sesión abierta a todo el público para enseñar
+            RCP en masa, con la participación activa de los asistentes.
+          </p>
+          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
+            <strong>16:00 – 16:15 | Break (15 minutos)</strong>
+          </p>
+          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
+            <strong>
+              16:15 – 17:30 | Cierre del Congreso y Entrega de Certificados
+            </strong>
+            <br />• Palabras finales de agradecimiento.
+            <br />• Entrega de certificados de participación para todos los
+            asistentes al congreso.
+            <br />• Reflexión sobre los aprendizajes y la importancia de
+            continuar la capacitación.
+          </p>
+          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
+            <strong>17:30 – 18:00 | Fin del Congreso</strong>
+            <br />• Despedida y agradecimientos finales a los asistentes,
+            expositores y patrocinadores.
+            <br />• Inauguración de Mural alegórico.
+          </p>
         </div>
       ),
     },
   ];
   return (
     <div className="min-h-screen w-full">
-      <div className="absolute top-0 left-0 w-full">
-        <Timeline data={data} />
-      </div>
+      <Timeline data={data} />
     </div>
   );
 }

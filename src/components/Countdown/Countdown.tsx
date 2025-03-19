@@ -35,11 +35,11 @@ const Countdown = () => {
   }, []);
 
   return (
-    <div className="flex items-center justify-center h-screen bg-gray-100">
-      <div className="container bg-primary text-white p-10 rounded-xl shadow-lg text-center max-w-3xl w-full">
-        <h1 className="text-4xl font-bold mb-6">
-          Cuenta cada segundo antes que empiece
-        </h1>
+    <div className="flex items-center justify-center w-[98vw]">
+      <div className="container bg-primary text-white py-6 rounded-xl shadow-lg text-center">
+        <h2 className="text-4xl font-bold mb-6">
+          Contá cada segundo antes que empiece
+        </h2>
         <div className="flex justify-center gap-8 text-3xl font-extrabold">
           <div className="flex flex-col items-center bg-white text-primary p-4 rounded-lg shadow">
             <p className="text-5xl">{timeLeft.days}</p>

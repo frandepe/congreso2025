@@ -1,4 +1,14 @@
-import { Book, Menu, Sunset, Trees, Zap } from "lucide-react";
+import {
+  Book,
+  Handshake,
+  MapPin,
+  Menu,
+  MicIcon,
+  MicVocal,
+  Sunset,
+  Trees,
+  Zap,
+} from "lucide-react";
 
 import {
   Accordion,
@@ -37,102 +47,94 @@ interface Navbar1Props {
     url: string;
     src: string;
     alt: string;
-    title: string;
   };
   menu?: MenuItem[];
   mobileExtraLinks?: {
     name: string;
     url: string;
   }[];
-  auth?: {
-    login: {
-      text: string;
-      url: string;
-    };
-    signup: {
-      text: string;
-      url: string;
-    };
-  };
 }
 
 const NavbarPrincipal = ({
   logo = {
-    url: "https://www.shadcnblocks.com",
-    src: "https://www.shadcnblocks.com/images/block/block-1.svg",
-    alt: "logo",
-    title: "Shadcnblocks.com",
+    url: "/",
+    src: "/assets/logo-congreso2025.png",
+    alt: "logo congreso nacional de rcp 2025",
   },
   menu = [
-    { title: "Home", url: "#" },
+    { title: "Inicio", url: "/" },
     {
-      title: "Products",
+      title: "Programa",
+      url: "/programa",
+    },
+    {
+      title: "Inscripción",
+      url: "/inscripcion",
+    },
+    // {
+    //   title: "Products",
+    //   url: "#",
+    //   items: [
+    //     {
+    //       title: "Blog",
+    //       description: "The latest industry news, updates, and info",
+    //       icon: <Book className="size-5 shrink-0" />,
+    //       url: "#",
+    //     },
+    //     {
+    //       title: "Company",
+    //       description: "Our mission is to innovate and empower the world",
+    //       icon: <Trees className="size-5 shrink-0" />,
+    //       url: "#",
+    //     },
+    //     {
+    //       title: "Careers",
+    //       description: "Browse job listing and discover our workspace",
+    //       icon: <Sunset className="size-5 shrink-0" />,
+    //       url: "#",
+    //     },
+    //     {
+    //       title: "Support",
+    //       description:
+    //         "Get in touch with our support team or visit our community forums",
+    //       icon: <Zap className="size-5 shrink-0" />,
+    //       url: "#",
+    //     },
+    //   ],
+    // },
+    {
+      title: "Más",
       url: "#",
       items: [
         {
-          title: "Blog",
-          description: "The latest industry news, updates, and info",
-          icon: <Book className="size-5 shrink-0" />,
-          url: "#",
+          title: "Expositores",
+          description: "Conoce a los expositores",
+          icon: <MicVocal className="size-5 shrink-0" />,
+          url: "/expositores",
         },
         {
-          title: "Company",
-          description: "Our mission is to innovate and empower the world",
-          icon: <Trees className="size-5 shrink-0" />,
-          url: "#",
+          title: "Patrocinadores",
+          description: "Empresas e instituciones",
+          icon: <Handshake className="size-5 shrink-0" />,
+          url: "/patrocinadores",
         },
         {
-          title: "Careers",
-          description: "Browse job listing and discover our workspace",
-          icon: <Sunset className="size-5 shrink-0" />,
-          url: "#",
+          title: "Ubicación y alojamiento",
+          description: "Opciones de transporte y hoteles recomendados",
+          icon: <MapPin className="size-5 shrink-0" />,
+          url: "/ubicacion-y-alojamiento",
         },
-        {
-          title: "Support",
-          description:
-            "Get in touch with our support team or visit our community forums",
-          icon: <Zap className="size-5 shrink-0" />,
-          url: "#",
-        },
+        // {
+        //   title: "Terms of Service",
+        //   description: "Our terms and conditions for using our services",
+        //   icon: <Book className="size-5 shrink-0" />,
+        //   url: "#",
+        // },
       ],
     },
     {
-      title: "Resources",
-      url: "#",
-      items: [
-        {
-          title: "Help Center",
-          description: "Get all the answers you need right here",
-          icon: <Zap className="size-5 shrink-0" />,
-          url: "#",
-        },
-        {
-          title: "Contact Us",
-          description: "We are here to help you with any questions you have",
-          icon: <Sunset className="size-5 shrink-0" />,
-          url: "#",
-        },
-        {
-          title: "Status",
-          description: "Check the current status of our services and APIs",
-          icon: <Trees className="size-5 shrink-0" />,
-          url: "#",
-        },
-        {
-          title: "Terms of Service",
-          description: "Our terms and conditions for using our services",
-          icon: <Book className="size-5 shrink-0" />,
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "Pricing",
-      url: "#",
-    },
-    {
-      title: "Blog",
-      url: "#",
+      title: "Contacto",
+      url: "/contacto",
     },
   ],
   mobileExtraLinks = [
@@ -141,10 +143,6 @@ const NavbarPrincipal = ({
     { name: "Imprint", url: "#" },
     { name: "Sitemap", url: "#" },
   ],
-  auth = {
-    login: { text: "Log in", url: "#" },
-    signup: { text: "Sign up", url: "#" },
-  },
 }: Navbar1Props) => {
   return (
     <section className="py-4 flex justify-center">
@@ -152,31 +150,22 @@ const NavbarPrincipal = ({
         <nav className="hidden justify-between lg:flex">
           <div className="flex items-center gap-6">
             <a href={logo.url} className="flex items-center gap-2">
-              <img src={logo.src} className="w-8" alt={logo.alt} />
-              <span className="text-lg font-semibold">{logo.title}</span>
+              <img src={logo.src} className="w-32" alt={logo.alt} />
             </a>
-            <div className="flex items-center">
-              <NavigationMenu>
-                <NavigationMenuList>
-                  {menu.map((item) => renderMenuItem(item))}
-                </NavigationMenuList>
-              </NavigationMenu>
-            </div>
           </div>
-          <div className="flex gap-2">
-            <Button asChild variant="outline" size="sm">
-              <a href={auth.login.url}>{auth.login.text}</a>
-            </Button>
-            <Button asChild size="sm">
-              <a href={auth.signup.url}>{auth.signup.text}</a>
-            </Button>
+
+          <div className="flex items-center">
+            <NavigationMenu>
+              <NavigationMenuList>
+                {menu.map((item) => renderMenuItem(item))}
+              </NavigationMenuList>
+            </NavigationMenu>
           </div>
         </nav>
         <div className="block lg:hidden">
           <div className="flex items-center justify-between">
             <a href={logo.url} className="flex items-center gap-2">
-              <img src={logo.src} className="w-8" alt={logo.alt} />
-              <span className="text-lg font-semibold">{logo.title}</span>
+              <img src={logo.src} className="w-32" alt={logo.alt} />
             </a>
             <Sheet>
               <SheetTrigger asChild>
@@ -188,10 +177,7 @@ const NavbarPrincipal = ({
                 <SheetHeader>
                   <SheetTitle>
                     <a href={logo.url} className="flex items-center gap-2">
-                      <img src={logo.src} className="w-8" alt={logo.alt} />
-                      <span className="text-lg font-semibold">
-                        {logo.title}
-                      </span>
+                      <img src={logo.src} className="w-32" alt={logo.alt} />
                     </a>
                   </SheetTitle>
                 </SheetHeader>
@@ -215,14 +201,6 @@ const NavbarPrincipal = ({
                         </a>
                       ))}
                     </div>
-                  </div>
-                  <div className="flex flex-col gap-3">
-                    <Button asChild variant="outline">
-                      <a href={auth.login.url}>{auth.login.text}</a>
-                    </Button>
-                    <Button asChild>
-                      <a href={auth.signup.url}>{auth.signup.text}</a>
-                    </Button>
                   </div>
                 </div>
               </SheetContent>
