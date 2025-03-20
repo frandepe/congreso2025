@@ -20,7 +20,7 @@ export default {
           foreground: "hsl(var(--popover-foreground))",
         },
         primary: {
-          DEFAULT: "#1D3B1F", // Verde oscuro
+          DEFAULT: "#1D3B1F", // Verde claro
           foreground: "white", // Color del texto en primary, por ejemplo blanco
         },
         secondary: {

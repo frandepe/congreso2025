@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { PoliticasDePrivacidad } from "../Politicas/PoliticasDePrivacidad";
 
 interface FooterProps {
   logo: React.ReactNode;
@@ -12,10 +13,7 @@ interface FooterProps {
     href: string;
     label: string;
   }>;
-  legalLinks: Array<{
-    href: string;
-    label: string;
-  }>;
+
   copyright: {
     text: string;
     license?: string;
@@ -27,7 +25,7 @@ export function Footer({
   brandName,
   socialLinks,
   mainLinks,
-  legalLinks,
+
   copyright,
 }: FooterProps) {
   return (
@@ -76,16 +74,7 @@ export function Footer({
           </nav>
           <div className="mt-6 lg:mt-0 lg:col-[4/11]">
             <ul className="list-none flex flex-wrap -my-1 -mx-3 lg:justify-end">
-              {legalLinks.map((link, i) => (
-                <li key={i} className="my-1 mx-3 shrink-0">
-                  <a
-                    href={link.href}
-                    className="text-sm text-muted-foreground underline-offset-4 hover:underline"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
+              <PoliticasDePrivacidad />
             </ul>
           </div>
           <div className="mt-6 text-sm leading-6 text-muted-foreground whitespace-nowrap lg:mt-0 lg:row-[1/3] lg:col-[1/4]">

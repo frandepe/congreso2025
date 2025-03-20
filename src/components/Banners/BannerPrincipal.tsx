@@ -18,7 +18,13 @@ export default function BannerPrincipal() {
         <h1 className="text-3xl md:text-5xl font-bold mt-4">
           Primer congreso nacional de instructores de RCP
         </h1>
-        <Button className="mt-6">Inscribirme</Button>
+        <a
+          href="https://forms.gle/72nQn2VmMnE58EVq5"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Button className="mt-6">Inscribirme</Button>
+        </a>
       </div>
     </div>
   );

@@ -1,10 +1,9 @@
 import {
-  Hexagon,
-  Github,
   Twitter,
   Facebook,
   Instagram,
   Heart,
+  MessageCircle,
 } from "lucide-react";
 import { Footer } from "./Footer";
 
@@ -30,6 +29,11 @@ function MainFooter() {
             href: "https://www.instagram.com/congresonacionalrcp/",
             label: "Instagram",
           },
+          {
+            icon: <MessageCircle className="h-5 w-5" />,
+            href: "https://wa.me/111111111111",
+            label: "WhatsApp",
+          },
         ]}
         mainLinks={[
           { href: "/programa", label: "Programa" },
@@ -40,10 +44,6 @@ function MainFooter() {
           },
           { href: "/patrocinadores", label: "Patrocinadores" },
           { href: "/contacto", label: "Contacto" },
-        ]}
-        legalLinks={[
-          { href: "/privacy", label: "Privacy" },
-          { href: "/terms", label: "Terms" },
         ]}
         copyright={{
           text: "© 2025 Todos los derechos reservados.",

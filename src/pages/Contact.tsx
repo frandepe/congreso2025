@@ -8,7 +8,7 @@ export const Contact = () => {
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center space-y-8 md:space-y-0">
         {/* Información de contacto con íconos */}
         <div className="flex flex-col space-y-8 w-full md:w-1/3">
-          <h2 className="text-3xl font-semibold">Contáctanos</h2>
+          <h2 className="text-3xl font-semibold">Contáctenos</h2>
 
           <div className="space-y-6">
             {/* Teléfono */}

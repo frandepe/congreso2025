@@ -9,7 +9,7 @@ const Countdown = () => {
   });
 
   useEffect(() => {
-    const targetDate = new Date("2025-10-15T00:00:00").getTime();
+    const targetDate = new Date("2025-10-15T09:00:00").getTime();
 
     const updateCountdown = () => {
       const now = new Date().getTime();
@@ -36,26 +36,26 @@ const Countdown = () => {
 
   return (
     <div className="flex items-center justify-center w-[98vw]">
-      <div className="container bg-primary text-white py-6 rounded-xl shadow-lg text-center">
-        <h2 className="text-4xl font-bold mb-6">
+      <div className="container bg-primary text-white py-6 rounded-md shadow-lg text-center">
+        {/* <h2 className="text-4xl font-bold mb-6">
           Contá cada segundo antes que empiece
-        </h2>
-        <div className="flex justify-center gap-8 text-3xl font-extrabold">
-          <div className="flex flex-col items-center bg-white text-primary p-4 rounded-lg shadow">
+        </h2> */}
+        <div className="flex justify-center gap-14 text-3xl font-bold">
+          <div className="flex flex-col items-center">
             <p className="text-5xl">{timeLeft.days}</p>
-            <p className="text-lg font-medium">Días</p>
+            <p className="text-lg font-normal">Días</p>
           </div>
-          <div className="flex flex-col items-center bg-white text-primary p-4 rounded-lg shadow">
+          <div className="flex flex-col items-center">
             <p className="text-5xl">{timeLeft.hours}</p>
-            <p className="text-lg font-medium">Horas</p>
+            <p className="text-lg font-normal">Horas</p>
           </div>
-          <div className="flex flex-col items-center bg-white text-primary p-4 rounded-lg shadow">
+          <div className="flex flex-col items-center">
             <p className="text-5xl">{timeLeft.minutes}</p>
-            <p className="text-lg font-medium">Minutos</p>
+            <p className="text-lg font-normal">Minutos</p>
           </div>
-          <div className="flex flex-col items-center bg-white text-primary p-4 rounded-lg shadow">
+          <div className="flex flex-col items-center">
             <p className="text-5xl">{timeLeft.seconds}</p>
-            <p className="text-lg font-medium">Segundos</p>
+            <p className="text-lg font-normal">Segundos</p>
           </div>
         </div>
       </div>
