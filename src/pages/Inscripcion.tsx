@@ -12,6 +12,7 @@ import {
   AlertTriangle,
   ShieldCheck,
 } from "lucide-react";
+import { PricingCardDemo } from "@/components/PricingCard/PricingCard";
 
 export const Inscripcion = () => {
   return (
@@ -23,7 +24,7 @@ export const Inscripcion = () => {
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="relative z-10 text-center text-white max-w-3xl"
+          className="relative text-center text-white max-w-3xl"
         >
           <h1 className="text-5xl font-extrabold leading-tight">
             Congreso Nacional de RCP 2025
@@ -49,7 +50,7 @@ export const Inscripcion = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
           <div className="flex flex-col items-center">
             <Calendar className="w-12 h-12 text-blue-600" />
-            <h3 className="text-lg font-semibold mt-2">16 - 18 de Octubre</h3>
+            <h3 className="text-lg font-semibold mt-2">15 - 17 de Octubre</h3>
             <p className="text-gray-600">
               Tres días de formación intensiva con expertos en la materia.
             </p>
@@ -72,7 +73,10 @@ export const Inscripcion = () => {
           </div>
         </div>
       </section>
-
+      {/* Pricing Cards */}
+      <div className="flex justify-center">
+        <PricingCardDemo />
+      </div>
       {/* Beneficios */}
       <section className="bg-gray-100 py-16 px-6 text-center">
         <h2 className="text-4xl font-bold">¿Por qué asistir?</h2>

@@ -25,7 +25,6 @@ export function Footer({
   brandName,
   socialLinks,
   mainLinks,
-
   copyright,
 }: FooterProps) {
   return (

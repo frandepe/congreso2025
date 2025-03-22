@@ -39,16 +39,26 @@ export const StickyScroll = ({
   });
 
   const backgroundColors = [
-    "#E7551E", // redOrange: Rojo anaranjado
-    "#5A9E3E", // lightGreen: Verde claro
-    // "#1D3B1F", // darkGreen: Verde oscuro
-    "#F7941D", // orange: Naranja
+    "#5A9E3E", // Principal
+    "#1D3B1F", // Principal
+    "#F7941D", // Principal
+    "#2F5A30", // Transición oscura
+    "#3C5E2D", // Transición oscura
+    "#F0831D", // Transición suave y oscura
+    "#3D4D30", // Transición oscura
+    "#3A5A3D", // Transición oscura
+    "#5A7A42", // Transición suave
+    "#3C5D3A", // Transición oscura
   ];
 
   const linearGradients = [
-    "linear-gradient(to bottom right, rgb(6 182 212), rgb(16 185 129))", // cyan-500 to emerald-500
-    "linear-gradient(to bottom right, rgb(236 72 153), rgb(99 102 241))", // pink-500 to indigo-500
-    "linear-gradient(to bottom right, rgb(249 115 22), rgb(234 179 8))", // orange-500 to yellow-500
+    "linear-gradient(to bottom right, #292929, #5A9E3E)", // Oscuro a principal
+    "linear-gradient(to bottom right, #1D3B1F, #5A9E3E)", // Oscuro a principal
+    "linear-gradient(to bottom right, #F7941D, #2F5A30)", // Principal a oscuro
+    "linear-gradient(to bottom right, #3C5E2D, #3A5A3D)", // Oscuro a suave
+    "linear-gradient(to bottom right, #F1A145, #F0831D)", // Transición suave y oscura
+    "linear-gradient(to bottom right, #3D4D30, #3C5D3A)", // Oscuro a suave
+    "linear-gradient(to bottom right, #3A5A3D, #3D4D30)", // Oscuro a suave
   ];
 
   const [backgroundGradient, setBackgroundGradient] = useState(
@@ -64,10 +74,10 @@ export const StickyScroll = ({
       animate={{
         backgroundColor: backgroundColors[activeCard % backgroundColors.length],
       }}
-      className="h-[30rem] overflow-y-auto flex justify-center relative space-x-10 p10"
+      className="h-[30rem] overflow-y-auto flex justify-center relative space-x-10 p-10"
       ref={ref}
     >
-      <div className="div relative flex items-start px-4">
+      <div className="relative flex items-start px-4">
         <div className="max-w-2xl">
           {content.map((item, index) => (
             <div key={item.title + index} className="my-20">
@@ -101,11 +111,15 @@ export const StickyScroll = ({
       <div
         style={{ background: backgroundGradient }}
         className={cn(
-          "hidden lg:block h-60 w-80 rounded-md bg-white sticky top-10 overflow-hidden",
+          "h-60 w-80 rounded-md bg-white sticky top-20 overflow-hidden flex justify-center items-center",
           contentClassName
         )}
       >
-        {content[activeCard].content ?? null}
+        <img
+          src={content[activeCard]?.content ?? null}
+          alt={content[activeCard]?.title ?? "Image"}
+          className="max-w-[70%] max-h-[70%] object-contain"
+        />
       </div>
     </motion.div>
   );

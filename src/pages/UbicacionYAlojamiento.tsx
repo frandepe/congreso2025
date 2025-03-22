@@ -1,16 +1,21 @@
 import Map from "@/components/Map/Map";
-import { OpcionesDeTransporte } from "@/components/OpcionesDeTransporte/opciones-de-transporte";
+import { Hoteles } from "@/components/Hoteles/hoteles";
 import { Feature } from "@/components/ui/feature-with-image-carousel";
 import React from "react";
+import { HotelPagination } from "@/components/HotelPagination/HotelPagination";
+import { Badge } from "lucide-react";
+import { Transporte } from "@/components/Transporte/Transporte";
 
 export const UbicacionYAlojamiento = () => {
   return (
     <div>
-      <div className="w-full">
-        <OpcionesDeTransporte />
-      </div>
-      <div className="w-full">
+      <Hoteles />
+
+      {/* <div className="w-full">
         <Feature />
+      </div> */}
+      <div className="mb-48">
+        <Transporte />
       </div>
       <Map />
     </div>

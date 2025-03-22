@@ -1,4 +1,4 @@
-import { Mic, MicVocal, MoveRight, PhoneCall, Speaker } from "lucide-react";
+import { MicVocal, MoveRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "./badge";
 import { useNavigate } from "react-router-dom";

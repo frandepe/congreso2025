@@ -15,11 +15,6 @@ function MainFooter() {
         brandName="Congreso Nacional RCP"
         socialLinks={[
           {
-            icon: <Twitter className="h-5 w-5" />,
-            href: "https://twitter.com",
-            label: "Twitter",
-          },
-          {
             icon: <Facebook className="h-5 w-5" />,
             href: "https://www.facebook.com/profile.php?id=61574079247674",
             label: "Facebook",

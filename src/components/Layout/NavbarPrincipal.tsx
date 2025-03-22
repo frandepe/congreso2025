@@ -1,15 +1,5 @@
-import {
-  Book,
-  Handshake,
-  MapPin,
-  Menu,
-  MicIcon,
-  MicVocal,
-  Sunset,
-  Trees,
-  Zap,
-} from "lucide-react";
-
+import { useState, useEffect } from "react";
+import { MapPin, Menu, MicVocal } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
@@ -54,163 +44,6 @@ interface Navbar1Props {
     url: string;
   }[];
 }
-
-const NavbarPrincipal = ({
-  logo = {
-    url: "/",
-    src: "/assets/logo-congreso2025.png",
-    alt: "logo congreso nacional de rcp 2025",
-  },
-  menu = [
-    { title: "Inicio", url: "/" },
-    {
-      title: "Programa",
-      url: "/programa",
-    },
-    {
-      title: "Inscripción",
-      url: "/inscripcion",
-    },
-    // {
-    //   title: "Products",
-    //   url: "#",
-    //   items: [
-    //     {
-    //       title: "Blog",
-    //       description: "The latest industry news, updates, and info",
-    //       icon: <Book className="size-5 shrink-0" />,
-    //       url: "#",
-    //     },
-    //     {
-    //       title: "Company",
-    //       description: "Our mission is to innovate and empower the world",
-    //       icon: <Trees className="size-5 shrink-0" />,
-    //       url: "#",
-    //     },
-    //     {
-    //       title: "Careers",
-    //       description: "Browse job listing and discover our workspace",
-    //       icon: <Sunset className="size-5 shrink-0" />,
-    //       url: "#",
-    //     },
-    //     {
-    //       title: "Support",
-    //       description:
-    //         "Get in touch with our support team or visit our community forums",
-    //       icon: <Zap className="size-5 shrink-0" />,
-    //       url: "#",
-    //     },
-    //   ],
-    // },
-    {
-      title: "Más",
-      url: "#",
-      items: [
-        {
-          title: "Expositores",
-          description: "Conoce a los expositores",
-          icon: <MicVocal className="size-5 shrink-0" />,
-          url: "/expositores",
-        },
-        {
-          title: "Patrocinadores",
-          description: "Empresas e instituciones",
-          icon: <Handshake className="size-5 shrink-0" />,
-          url: "/patrocinadores",
-        },
-        {
-          title: "Ubicación y alojamiento",
-          description: "Opciones de transporte y hoteles recomendados",
-          icon: <MapPin className="size-5 shrink-0" />,
-          url: "/ubicacion-y-alojamiento",
-        },
-        // {
-        //   title: "Terms of Service",
-        //   description: "Our terms and conditions for using our services",
-        //   icon: <Book className="size-5 shrink-0" />,
-        //   url: "#",
-        // },
-      ],
-    },
-    {
-      title: "Contacto",
-      url: "/contacto",
-    },
-  ],
-  mobileExtraLinks = [
-    { name: "Press", url: "#" },
-    { name: "Contact", url: "#" },
-    { name: "Imprint", url: "#" },
-    { name: "Sitemap", url: "#" },
-  ],
-}: Navbar1Props) => {
-  return (
-    <section className="py-4 flex justify-center">
-      <div className="container">
-        <nav className="hidden justify-between lg:flex">
-          <div className="flex items-center gap-6">
-            <a href={logo.url} className="flex items-center gap-2">
-              <img src={logo.src} className="w-32" alt={logo.alt} />
-            </a>
-          </div>
-
-          <div className="flex items-center">
-            <NavigationMenu>
-              <NavigationMenuList>
-                {menu.map((item) => renderMenuItem(item))}
-              </NavigationMenuList>
-            </NavigationMenu>
-          </div>
-        </nav>
-        <div className="block lg:hidden">
-          <div className="flex items-center justify-between">
-            <a href={logo.url} className="flex items-center gap-2">
-              <img src={logo.src} className="w-32" alt={logo.alt} />
-            </a>
-            <Sheet>
-              <SheetTrigger asChild>
-                <Button variant="outline" size="icon">
-                  <Menu className="size-4" />
-                </Button>
-              </SheetTrigger>
-              <SheetContent className="overflow-y-auto">
-                <SheetHeader>
-                  <SheetTitle>
-                    <a href={logo.url} className="flex items-center gap-2">
-                      <img src={logo.src} className="w-32" alt={logo.alt} />
-                    </a>
-                  </SheetTitle>
-                </SheetHeader>
-                <div className="my-6 flex flex-col gap-6">
-                  <Accordion
-                    type="single"
-                    collapsible
-                    className="flex w-full flex-col gap-4"
-                  >
-                    {menu.map((item) => renderMobileMenuItem(item))}
-                  </Accordion>
-                  <div className="border-t py-4">
-                    <div className="grid grid-cols-2 justify-start">
-                      {mobileExtraLinks.map((link, idx) => (
-                        <a
-                          key={idx}
-                          className="inline-flex h-10 items-center gap-2 whitespace-nowrap rounded-md px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-accent-foreground"
-                          href={link.url}
-                        >
-                          {link.name}
-                        </a>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </SheetContent>
-            </Sheet>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-};
 
 const renderMenuItem = (item: MenuItem) => {
   if (item.items) {
@@ -292,6 +125,149 @@ const renderMobileMenuItem = (item: MenuItem) => {
     <a key={item.title} href={item.url} className="font-semibold">
       {item.title}
     </a>
+  );
+};
+
+const NavbarPrincipal = ({
+  logo = {
+    url: "/",
+    src: "/assets/logo-congreso2025.png",
+    alt: "logo congreso nacional de rcp 2025",
+  },
+  menu = [
+    { title: "Inicio", url: "/" },
+    {
+      title: "Programa",
+      url: "/programa",
+    },
+    {
+      title: "Inscripción",
+      url: "/inscripcion",
+    },
+    {
+      title: "Patrocinadores",
+      url: "/patrocinadores",
+    },
+    {
+      title: "Más",
+      url: "#",
+      items: [
+        {
+          title: "Expositores",
+          description: "Conoce a los expositores",
+          icon: <MicVocal className="size-5 shrink-0" />,
+          url: "/expositores",
+        },
+
+        {
+          title: "Ubicación y alojamiento",
+          description: "Opciones de transporte y hoteles recomendados",
+          icon: <MapPin className="size-5 shrink-0" />,
+          url: "/ubicacion-y-alojamiento",
+        },
+      ],
+    },
+    {
+      title: "Contacto",
+      url: "/contacto",
+    },
+  ],
+  mobileExtraLinks = [
+    { name: "Press", url: "#" },
+    { name: "Contact", url: "#" },
+    { name: "Imprint", url: "#" },
+    { name: "Sitemap", url: "#" },
+  ],
+}: Navbar1Props) => {
+  const [isNavVisible, setIsNavVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > lastScrollY) {
+        setIsNavVisible(false); // Scrolling down
+      } else {
+        setIsNavVisible(true); // Scrolling up
+      }
+      setLastScrollY(window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [lastScrollY]);
+
+  return (
+    <section
+      className={`py-2 flex justify-center fixed top-0 left-0 z-50 w-full bg-background shadow-md transition-all duration-300 ${
+        isNavVisible ? "opacity-100" : "opacity-0 -translate-y-full"
+      }`}
+    >
+      <div className="container">
+        <nav className="hidden justify-between lg:flex">
+          <div className="flex items-center gap-6">
+            <a href={logo.url} className="flex items-center gap-2">
+              <img src={logo.src} className="w-32" alt={logo.alt} />
+            </a>
+          </div>
+
+          <div className="flex items-center">
+            <NavigationMenu>
+              <NavigationMenuList>
+                {menu.map((item) => renderMenuItem(item))}
+              </NavigationMenuList>
+            </NavigationMenu>
+          </div>
+        </nav>
+        <div className="block lg:hidden">
+          <div className="flex items-center justify-between">
+            <a href={logo.url} className="flex items-center gap-2">
+              <img src={logo.src} className="w-32" alt={logo.alt} />
+            </a>
+            <Sheet>
+              <SheetTrigger asChild>
+                <Button variant="outline" size="icon">
+                  <Menu className="size-4" />
+                </Button>
+              </SheetTrigger>
+              <SheetContent className="overflow-y-auto">
+                <SheetHeader>
+                  <SheetTitle>
+                    <a href={logo.url} className="flex items-center gap-2">
+                      <img src={logo.src} className="w-32" alt={logo.alt} />
+                    </a>
+                  </SheetTitle>
+                </SheetHeader>
+                <div className="my-6 flex flex-col gap-6">
+                  <Accordion
+                    type="single"
+                    collapsible
+                    className="flex w-full flex-col gap-4"
+                  >
+                    {menu.map((item) => renderMobileMenuItem(item))}
+                  </Accordion>
+                  <div className="border-t py-4">
+                    <div className="grid grid-cols-2 justify-start">
+                      {mobileExtraLinks.map((link, idx) => (
+                        <a
+                          key={idx}
+                          className="inline-flex h-10 items-center gap-2 whitespace-nowrap rounded-md px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-accent-foreground"
+                          href={link.url}
+                        >
+                          {link.name}
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </SheetContent>
+            </Sheet>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 };
 
