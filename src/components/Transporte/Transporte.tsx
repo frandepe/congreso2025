@@ -3,7 +3,7 @@ import React from "react";
 
 export const Transporte = () => {
   return (
-    <section className="max-w-6xl mx-auto px-6 py-12">
+    <section className="max-w-6xl mx-auto py-12">
       <h2 className="text-3xl md:text-5xl text-center mb-8 tracking-tighter font-regular">
         Cómo llegar y opciones de transporte
       </h2>

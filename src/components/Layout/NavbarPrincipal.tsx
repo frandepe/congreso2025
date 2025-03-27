@@ -131,7 +131,7 @@ const renderMobileMenuItem = (item: MenuItem) => {
 const NavbarPrincipal = ({
   logo = {
     url: "/",
-    src: "/assets/logo-congreso2025.png",
+    src: "/assets/logo-navbar.png",
     alt: "logo congreso nacional de rcp 2025",
   },
   menu = [
@@ -201,7 +201,7 @@ const NavbarPrincipal = ({
 
   return (
     <section
-      className={`py-2 flex justify-center fixed top-0 left-0 z-50 w-full bg-background shadow-md transition-all duration-300 ${
+      className={`py-2 flex justify-center fixed top-0 left-0 z-50 w-full bg-background shadow-md transition-all px-6 duration-300 ${
         isNavVisible ? "opacity-100" : "opacity-0 -translate-y-full"
       }`}
     >

@@ -10,11 +10,7 @@ export const UbicacionYAlojamiento = () => {
   return (
     <div>
       <Hoteles />
-
-      {/* <div className="w-full">
-        <Feature />
-      </div> */}
-      <div className="mb-48">
+      <div className="mb-48 px-6">
         <Transporte />
       </div>
       <Map />

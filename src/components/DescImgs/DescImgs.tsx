@@ -2,7 +2,7 @@ import { HeroWithGroupImages } from "@/components/ui/hero-with-group-of-images-t
 
 function DescImgs() {
   return (
-    <div className="block mt-36">
+    <div className="block mt-36 px-6">
       <HeroWithGroupImages />
     </div>
   );

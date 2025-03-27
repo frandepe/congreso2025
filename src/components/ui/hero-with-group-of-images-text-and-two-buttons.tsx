@@ -1,4 +1,4 @@
-import { MicVocal, MoveRight } from "lucide-react";
+import { Calendar, MicVocal, MoveRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "./badge";
 import { useNavigate } from "react-router-dom";
@@ -11,16 +11,24 @@ function HeroWithGroupImages() {
         <div className="grid grid-cols-1 gap-8 items-center md:grid-cols-2">
           <div className="flex gap-4 flex-col">
             <div>
-              <Badge variant="outline">¡Estamos Listos!</Badge>
+              <Badge variant="outline" className="text-sm px-4 py-2">
+                ¡Estamos Listos!
+              </Badge>
             </div>
             <div className="flex gap-4 flex-col">
               <h1 className="text-5xl md:text-7xl max-w-lg tracking-tighter text-left font-regular">
-                Esto es el comienzo de algo!
+                Una oportunidad única para mejorar tu impacto como instructor de
+                RCP
               </h1>
               <p className="text-xl leading-relaxed tracking-tight text-muted-foreground max-w-md text-left">
-                Aca iria un texto de introduccion o lo que se les ocurra. Avoid
-                further complications by ditching outdated, tedious trade
-                methods. Our goal is to streamline SMB trade, making it easier .
+                El Primer Congreso Nacional de RCP es mucho más que un evento;
+                es una oportunidad para transformar tu enfoque como instructor.
+                Con charlas, talleres y simulaciones, este congreso te brindará
+                nuevas herramientas para perfeccionar tus enseñanzas y crear un
+                mayor impacto en las personas que forman. Si quieres estar a la
+                vanguardia de la formación en emergencias, no puedes faltar. ¡Te
+                esperamos para aprender, compartir y seguir salvando vidas
+                juntos!
               </p>
             </div>
             <div className="flex flex-row gap-4">
@@ -28,14 +36,20 @@ function HeroWithGroupImages() {
                 size="lg"
                 className="gap-4"
                 variant="outline"
-                onClick={() => navigate("/expositores")}
+                onClick={() => {
+                  navigate("/programa");
+                  window.scrollTo(0, 0);
+                }}
               >
-                Ver expositores <MicVocal className="w-4 h-4" />
+                Ver programa <Calendar className="w-4 h-4" />
               </Button>
               <Button
                 size="lg"
                 className="gap-4"
-                onClick={() => navigate("/inscripcion")}
+                onClick={() => {
+                  navigate("/inscripcion");
+                  window.scrollTo(0, 0);
+                }}
               >
                 Inscribirme <MoveRight className="w-4 h-4" />
               </Button>

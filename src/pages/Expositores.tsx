@@ -3,7 +3,7 @@ import React from "react";
 
 export const Expositores = () => {
   return (
-    <div>
+    <div className="px-6">
       <SpeakersCards />
     </div>
   );

@@ -9,21 +9,21 @@ export default function ContactForm() {
   const [resultado, setResultado] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const sendEmail = async (e: any) => {
+  const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
-
+    const form = e.target as HTMLFormElement;
     const res = emailjs
       .sendForm(
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
         import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-        e.target,
+        form,
         import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       )
       .then(
         (result) => {
           setResultado("Mensaje enviado con éxito");
-          e.target.reset();
+          form.reset();
         },
         (error) => {
           setResultado("Error al enviar el mensaje");
@@ -33,7 +33,6 @@ export default function ContactForm() {
       .finally(() => {
         setLoading(false);
       });
-    console.log(res);
   };
 
   return (
@@ -76,7 +75,9 @@ export default function ContactForm() {
           />
         </div>
         <div className="space-y-2">
-          <Label htmlFor="user_tel">Teléfono</Label>
+          <Label htmlFor="user_tel">
+            Teléfono<span className="text-gray-400"> (Opcional)</span>
+          </Label>
           <Input
             id="user_tel"
             name="user_tel"
@@ -92,7 +93,7 @@ export default function ContactForm() {
             id="message"
             name="message"
             placeholder="Comparte tus comentarios o preguntas"
-            className="min-h-[100px]"
+            className="min-h-[100px] bg-white"
             required
           />
         </div>
@@ -101,7 +102,7 @@ export default function ContactForm() {
         </Button>
       </form>
       {resultado && (
-        <div className="text-center text-lg font-semibold bg-secondary rounded-md p-2 shadow-md">
+        <div className="text-center text-lg bg-secondary rounded-md p-2 shadow-md">
           {resultado === "Mensaje enviado con éxito" ? (
             <p>
               ¡Gracias por contactarnos! Nos pondremos en contacto con usted lo

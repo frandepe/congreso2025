@@ -1,61 +1,101 @@
 import { PatrocinadoresComponent } from "@/components/SliderPatrocinadores/Patrocinadores";
 import SliderPatrocinadores from "@/components/SliderPatrocinadores/SliderPatrocinadores";
-import { StickyScroll } from "@/components/ui/sticky-scroll-reveal";
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
 import React from "react";
 
 export const Patrocinadores = () => {
-  // const content = [
-  //   {
-  //     title: "LuxeStay",
-  //     description:
-  //       "Explore the ultimate comfort with LuxeStay, where every detail is crafted for relaxation. Experience the perfect balance of elegance and convenience, offering you a getaway like no other.",
-  //     content: "/assets/hoteles/betanzos.jpg",
-  //   },
-  //   {
-  //     title: "Skyline Suites",
-  //     description:
-  //       "Skyline Suites offers unmatched luxury with a breathtaking view of the city. Whether you're here for business or leisure, our suites provide the perfect base for your adventures.",
-  //     content: "/assets/hoteles/boxer.jpg",
-  //   },
-  //   {
-  //     title: "Forest Haven",
-  //     description:
-  //       "Nestled in the heart of nature, Forest Haven provides a peaceful retreat away from the hustle and bustle. Perfect for nature lovers, our rooms offer a cozy atmosphere and scenic views.",
-  //     content: "/assets/hoteles/descanso.jpg",
-  //   },
-  //   {
-  //     title: "Mountain Crest",
-  //     description:
-  //       "Mountain Crest is the ideal destination for those seeking serenity and adventure. With modern amenities and picturesque landscapes, your stay will be one to remember.",
-  //     content: "/assets/hoteles/el-forestal.jpg",
-  //   },
-  //   {
-  //     title: "Sunset Lodge",
-  //     description:
-  //       "Enjoy a relaxing stay at Sunset Lodge, where stunning sunsets meet unrivaled comfort. Our spacious rooms and top-notch facilities promise a memorable experience for all guests.",
-  //     content: "/assets/hoteles/la-quinta.jpg",
-  //   },
-  //   {
-  //     title: "Riverside Retreat",
-  //     description:
-  //       "Riverside Retreat offers the perfect blend of tranquility and adventure. Whether you're fishing by the river or exploring nearby trails, your stay will be unforgettable.",
-  //     content: "/assets/hoteles/Indiada.jpg",
-  //   },
-  //   {
-  //     title: "Ocean Breeze Inn",
-  //     description:
-  //       "Ocean Breeze Inn is your beachfront oasis, providing luxurious rooms with ocean views. Enjoy the sound of the waves and the refreshing sea breeze as you unwind in style.",
-  //     content: "/assets/hoteles/paye.jpg",
-  //   },
-  // ];
-
   return (
-    <div>
-      <PatrocinadoresComponent />
-      <SliderPatrocinadores />
-      {/* <div className="mt-20">
-        <StickyScroll content={content} />
-      </div> */}
+    <div className="min-h-screen bg-gray-50 text-gray-900">
+      {/* Hero Section with Intro */}
+      <section className="relative w-full h-[300px] flex items-center justify-center">
+        {/* Capa con imagen de fondo y desenfoque filter blur-xs*/}
+        <div
+          className="absolute inset-0 bg-[url('/assets/banner-patrocinio1.jpg')] bg-cover"
+          style={{ backgroundPosition: "center top 10%" }}
+        ></div>
+
+        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+        <motion.div
+          initial={{ opacity: 0, y: -30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          className="relative text-center text-white max-w-4xl px-6"
+        >
+          <h1 className="text-4xl font-extrabold leading-tight">
+            Patrocinadores y Auspiciantes del Congreso Nacional de RCP
+          </h1>
+          <p className="mt-4 text-lg">
+            El Congreso Nacional de RCP es posible gracias al apoyo de empresas
+            e instituciones comprometidas con la capacitación en primeros
+            auxilios y emergencias.
+          </p>
+        </motion.div>
+      </section>
+
+      {/* Introduction to Sponsorships */}
+      <section className="py-16 text-center bg-gray-100">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.2 }}
+          className="max-w-4xl mx-auto"
+        >
+          <p className="text-lg text-gray-600 mb-8">
+            Si deseas que tu marca forme parte de este evento, te invitamos a
+            sumarte como Patrocinador o Auspiciante.
+          </p>
+          <h2 className="text-3xl font-bold mb-6">
+            ¿Quieres ser Patrocinador o Auspiciante del Congreso Nacional de
+            RCP?
+          </h2>
+          <p className="text-lg text-gray-600 mb-6">
+            Tu marca puede formar parte de este gran evento apoyando la
+            capacitación en RCP y primeros auxilios.
+          </p>
+
+          {/* Buttons to the Forms */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto">
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.3 }}
+            >
+              <a
+                href="https://forms.gle/f7u9EUCD97wnHXm18"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button className="w-full">¿Quieres ser Patrocinador?</Button>
+              </a>
+            </motion.div>
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.3 }}
+            >
+              <a
+                href="https://forms.gle/SK28CXsPT2DkhyLb6"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button variant="secondary" className="w-full">
+                  ¿Quieres ser Auspiciante?
+                </Button>
+              </a>
+            </motion.div>
+          </div>
+
+          {/* Closing Statement */}
+          <p className="mt-8 text-lg text-gray-600">
+            Juntos, podemos hacer la diferencia y salvar más vidas.
+          </p>
+        </motion.div>
+      </section>
+
+      {/* Patrocinadores and Slider */}
+      <div className="bg-white py-16">
+        <PatrocinadoresComponent />
+        <SliderPatrocinadores />
+      </div>
     </div>
   );
 };
