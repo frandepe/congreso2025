@@ -12,19 +12,20 @@ export function SpeakersTimeline() {
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
             <strong>9:00 – 9:30 | Apertura y Bienvenida</strong>
             <br />
-            Lugar: Centro Cívico (140) Polo (100) Teatro (290) Cine (700)
+            Lugar: Casa de la Historia y la Cultura (Parque Municipal Conrado
+            Villegas)
             <br />• Breve introducción al congreso y objetivos del evento.
+            (Locutor)
             <br />• Bienvenida a cargo del Comité Organizador.
             <br />• Apertura oficial a cargo del Intendente Municipal de Trenque
-            Lauquen.
+            Lauquen. Lauquen.
           </p>
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
             <strong>
               9:30 – 10:45 | Charla 1: Actualizaciones internacionales en RCP y
               primeros auxilios
             </strong>
-            <br />• Invitado Especial: Experto internacional en RCP (INVITADO DE
-            LA ERC).
+            <br />• Invitado Especial: Miguel Ángel Grima Salinas
             <br />• Enfoque: Avances y nuevos estándares internacionales en RCP
             y primeros auxilios.
           </p>
@@ -33,16 +34,16 @@ export function SpeakersTimeline() {
           </p>
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
             <strong>
-              11:00 – 12:15 | Charla 2: Cómo atraer más personas a las
-              capacitaciones
+              11:00 – 12:15 | Charla 2: Como hacer de las Capacitaciones en RCP
+              un emprendimiento exitoso
             </strong>
             <br />
-            Expositora: Patricia Soto.
-            <br />• Enfoque: Estrategias y métodos para aumentar la
-            participación en las capacitaciones, generar interés y alcanzar más
-            personas para cumplir el objetivo de que más vidas sean salvadas.
-            <br />• Objetivo: Atraer a más participantes para asegurar una mayor
-            difusión de la formación en RCP y primeros auxilios.
+            • Expositora: Marta Iriarte
+            <br />
+            Enfoque: enseñará cómo transformar las capacitaciones en RCP en un
+            negocio rentable, proporcionando estrategias claras para generar
+            ingresos constantes y asegurar el éxito a largo plazo en el
+            emprendimiento de formación en primeros auxilios
           </p>
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
             <strong>
@@ -52,10 +53,10 @@ export function SpeakersTimeline() {
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
             <strong>
               13:15 – 14:30 | Charla 3: Consejos prácticos para establecer
-              tarifas, gestionar un negocio de capacitación y atraer clientes
+              tarifas, gestionar un negocio de capacitación y atraer clientes.
             </strong>
             <br />
-            Expositor: Rodrigo Balik.
+            • Expositor: Rodrigo Balik.
             <br />• Enfoque: Cómo establecer tarifas adecuadas, gestionar un
             negocio de capacitación eficazmente y estrategias para atraer más
             clientes.
@@ -68,19 +69,13 @@ export function SpeakersTimeline() {
           </p>
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
             <strong>
-              14:45 – 16:00 | Charla 4: Debate: Ley 27.159 – ¿Cómo hacer para
-              que se cumpla?
+              14:45 – 16:00 | Charla 4: Cómo Atraer y Conquistar con un
+              Marketing Auténtico para Instructores de RCP
             </strong>
             <br />
-            Expositores: Julio Godoy, Sergio Felice y equipo de “Argentina
-            Reanima”.
-            <br />• Enfoque: Debate sobre la Ley 27.159, que establece la
-            obligatoriedad de enseñar RCP en los colegios, la instalación de DEA
-            en lugares públicos, etc.
-            <br />• Objetivo: Analizar cómo los profesionales y las
-            instituciones pueden colaborar para asegurar que esta ley se cumpla,
-            y cómo mejorar la concientización y la implementación de programas
-            educativos sobre RCP.
+            • Expositora: Patricia Soto
+            <br />• Enfoque: Estrategias para aumentar la participación en
+            capacitaciones, generar interés y ampliar el alcance.
           </p>
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
             <strong>16:00 – 16:15 | Break (15 minutos)</strong>
@@ -103,12 +98,10 @@ export function SpeakersTimeline() {
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
             <strong>18:00 | Apertura de actividades a todo público</strong>
             <br />• Charlas abiertas de RCP en las plazas de la ciudad
-            (merienda).
-            <br />
-            Invitamos a instructores de RCP a compartir la merienda con gente de
-            la ciudad en las diferentes plazas y de esta manera mostrar las
-            técnicas de la maniobra y concientizar sobre la importancia del
-            conocimiento de la misma.
+            (merienda).- Invitamos a Instructores de RCP a compartir la merienda
+            con gente de la ciudad en las diferentes plazas y de esta manera
+            mostrar las técnicas de la maniobra y concientizar sobre la
+            importancia del conocimiento de la misma.
             <br />• Acompañamiento a muralistas en su obra.
           </p>
         </div>
@@ -125,7 +118,7 @@ export function SpeakersTimeline() {
             <br />• Homenaje en memoria del Instructor Jorge Adrián Prieto.
             <br />• Homenaje a impulsores de la Ley del grupo Argentina Reanima
             en memoria de Beltrán y Tomas, hijos de Jorge Bombau y Mariano Casoi
-            (Estarán presentes).
+            (Estarán presentes)
           </p>
 
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
@@ -133,7 +126,7 @@ export function SpeakersTimeline() {
               9:30 – 10:45 | Charla 1: Sin barreras para transmitir y capacitar
             </strong>
             <br />
-            Expositor: Guillermo Carranza (Instructor NO VIDENTE).
+            • Expositor: Guillermo Carranza (Instructor NO VIDENTE).
             <br />• Enfoque: Inclusión de personas discapacitadas en
             capacitaciones de RCP y cómo adaptar los métodos para todos los
             públicos.
@@ -145,14 +138,13 @@ export function SpeakersTimeline() {
 
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
             <strong>
-              11:00 – 12:15 | Charla 2: Mi experiencia arriba de móvil de apoyo
-              de alta complejidad M.A.A.C.
+              11:00 – 12:15 | Charla 2: Experiencia en España, como está en el
+              primer mundo
             </strong>
             <br />
-            Expositor: Dr. Alejandro Laselli (Médico emergentólogo e Instructor
-            de emergencias SAME).
-            <br />• Enfoque: Experiencia clínica en emergencias y cómo los
-            instructores pueden aplicar este conocimiento.
+            • Expositor: Borja
+            <br />• Enfoque: Experiencia clínica en emergencias y su aplicación
+            en capacitaciones.
           </p>
 
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
@@ -167,10 +159,10 @@ export function SpeakersTimeline() {
               ¿y ahora?”
             </strong>
             <br />
-            Expositor: Equipo de PAE de Alicia Galfaso y Nicolás De Paulo.
+            • Expositor: Equipo de PAE de Alicia Galfaso y Nicolás De Paulo.
             <br />• Enfoque: Abordaje emocional y profesional frente a
             situaciones difíciles y cómo superar la culpa en el ejercicio del
-            RCP.
+            RCP
           </p>
 
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
@@ -179,17 +171,19 @@ export function SpeakersTimeline() {
 
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
             <strong>
-              14:45 – 16:00 | Charla 4: RCP por Teléfono: Primera respuesta en
-              zonas rurales
+              14:45 – 16:00 | Charla 4: Debate: Ley 27.159 – ¿Cómo hacer para
+              que se cumpla?
             </strong>
             <br />
-            Expositores: Profesionales del 107, SAME y 911 especializados en la
-            atención telefónica.
-            <br />• Enfoque: Técnicas para guiar a personas sin conocimientos,
-            cuando llaman a emergencias para que realicen las técnicas de RCP
-            guiados por el operador del teléfono.
-            <br />• Objetivo: Capacitación para incluir en las capacitaciones de
-            RCP a distancia.
+            • Expositores: Julio Godoy, Sergio Felice y Equipo de “Argentina
+            Reanima”
+            <br />• Enfoque: Análisis de la ley y estrategias para su
+            cumplimiento en el sistema educativo nacional y la formación de
+            zonas cardio protegidas en lugares públicos.
+            <br />• Objetivo: Analizar como los profesionales y las
+            instituciones pueden colaborar para asegurar que la ley se cumpla y
+            como mejorar la concientización y la implementación de programas
+            educativos sobre RCP.
           </p>
 
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
@@ -241,31 +235,29 @@ export function SpeakersTimeline() {
               9:30 – 10:45 | Charla 1: Herramientas Tecnológicas para mejorar la
               enseñanza de RCP
             </strong>
-            <br />• Expositor: JUAN SEBASTIAN FABI
-            <br />• Enfoque: Herramientas tecnológicas, pro y contra,
-            simuladores avanzados, realidad aumentada y aplicaciones
-            interactivas.
-            <br />• Estrategias para hacer capacitaciones más atractivas y
-            efectivas.
+            <br />• Expositor: Juan Sebastian Fabi
+            <br />• Expertos en innovación y educación en RCP
+            <br />• Enfoque: Herramientas tecnológicas, pro y contra Simuladores
+            avanzados, realidad aumentada y aplicaciones interactivas
+            Estrategias para hacer capacitaciones más atractivas y efectivas.
             <br />• Objetivo: Modernizar las capacitaciones y optimizar la
-            formación de instructores.
+            formación de instructores
           </p>
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
             <strong>10:45 – 11:00 | Break (15 minutos)</strong>
           </p>
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
             <strong>
-              11:00 – 12:15 | Charla 2: Impacto de la RCP en Argentina – Datos y
-              realidad actual
+              11:00 – 12:15 | Charla 2: RCP por Teléfono: Primera respuesta en
+              zonas rurales
             </strong>
-            <br />• Expositor: Cardiólogo/a de la Asociación Argentina de
-            Cardiología.
-            <br />• Enfoque: Estadísticas sobre paros cardiacos en Argentina,
-            qué hacer cuando tienen la advertencia de “NO REANIMAR”, casos de
-            éxito donde la RCP salvó vidas, y la importancia de aumentar la
-            capacitación en la comunidad.
-            <br />• Objetivo: Crear conciencia sobre la necesidad de formar a
-            más personas en técnicas de RCP.
+            <br />• Expositores: Profesionales del 107, SAME y 911
+            especializados en la atención telefónica.
+            <br />• Enfoque: Métodos para guiar a personas sin conocimientos,
+            cuando llaman a emergencias para que realicen las técnicas de RCP
+            guiados por el operador del teléfono.
+            <br />• Objetivo: Capacitación para incluir en las capacitaciones de
+            RCP a distancia.
           </p>
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
             <strong>

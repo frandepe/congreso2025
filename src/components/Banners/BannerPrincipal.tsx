@@ -8,7 +8,7 @@ export default function BannerPrincipal() {
     <div
       className="relative h-screen w-full bg-cover bg-center flex items-center justify-center text-white text-center"
       style={{
-        backgroundImage: "url('/assets/bannerhero2.jpg')",
+        backgroundImage: "url('/assets/conference-banner-principal.webp')",
       }}
     >
       <div className="absolute inset-0 bg-black bg-opacity-50"></div>

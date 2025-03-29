@@ -8,9 +8,6 @@ import {
   CheckCircle,
   Activity,
   Mic,
-  CalendarCheck,
-  CalendarRange,
-  BedDouble,
 } from "lucide-react";
 import { PricingCardDemo } from "@/components/PricingCard/PricingCard";
 
@@ -18,7 +15,7 @@ export const Inscripcion = () => {
   return (
     <div className="min-h-screen bg-gray-50 text-gray-900">
       {/* Hero Section */}
-      <section className="relative w-full h-[300px] flex items-center justify-center bg-[url('/assets/bannerInscripcion.jpeg')] bg-cover bg-[center_top_60%]">
+      <section className="relative w-full md:h-[300px] h-[350px] flex items-center justify-center bg-[url('/assets/bannerInscripcion.jpeg')] bg-cover bg-[center_top_60%]">
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
         <motion.div
           initial={{ opacity: 0, y: -30 }}
@@ -33,7 +30,7 @@ export const Inscripcion = () => {
         </motion.div>
       </section>
 
-      <motion.section
+      {/* <motion.section
         className="bg-gray-100 py-16 px-6 text-center"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -42,7 +39,7 @@ export const Inscripcion = () => {
       >
         <h2 className="text-4xl font-bold">Opciones de inscripción</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10 max-w-6xl mx-auto">
-          {/* Un solo día */}
+     
           <motion.div
             className="flex flex-col items-center bg-white p-6 rounded-lg shadow-lg"
             whileHover={{ scale: 1.05 }}
@@ -65,7 +62,7 @@ export const Inscripcion = () => {
             </Button>
           </motion.div>
 
-          {/* Tres días sin alojamiento */}
+     
           <motion.div
             className="flex flex-col items-center bg-primary text-white p-6 rounded-lg shadow-lg"
             whileHover={{ scale: 1.05 }}
@@ -90,7 +87,7 @@ export const Inscripcion = () => {
             </Button>
           </motion.div>
 
-          {/* Tres días con alojamiento */}
+    
           <motion.div
             className="flex flex-col items-center bg-white p-6 rounded-lg shadow-lg"
             whileHover={{ scale: 1.05 }}
@@ -120,7 +117,7 @@ export const Inscripcion = () => {
             </Button>
           </motion.div>
         </div>
-      </motion.section>
+      </motion.section> */}
 
       {/* Información Clave */}
       <motion.section
@@ -171,17 +168,18 @@ export const Inscripcion = () => {
 
       {/* Pricing Cards */}
       <motion.div
-        className="flex justify-center"
+        className="flex justify-center bg-gray-100 py-4 my-10"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
+        id="inscribirse"
       >
         <PricingCardDemo />
       </motion.div>
 
       {/* Beneficios */}
       <motion.section
-        className="bg-gray-100 py-16 px-6 text-center"
+        className=" py-16 px-6 text-center"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
@@ -228,7 +226,7 @@ export const Inscripcion = () => {
 
       {/* Inscripción */}
       <motion.section
-        className="py-16 text-center px-6"
+        className="py-24 text-center px-6"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}

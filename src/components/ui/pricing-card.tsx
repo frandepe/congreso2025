@@ -15,6 +15,7 @@ export interface PricingTier {
   cta: string;
   highlighted?: boolean;
   popular?: boolean;
+  redirect: string;
 }
 
 interface PricingCardProps {
@@ -50,14 +51,10 @@ export function PricingCard({ tier, paymentFrequency }: PricingCardProps) {
       </h2>
 
       <div className="relative h-12">
-        {typeof price === "number" ? (
-          <>
-            <p className="text-4xl mb-2">${price}</p>
-            <p className="-mt-2 text-xs text-muted-foreground">Precio único</p>
-          </>
-        ) : (
-          <h1 className="text-4xl font-medium">{price}</h1>
-        )}
+        <>
+          <p className="text-4xl mb-2">${price}</p>
+          <p className="-mt-2 text-xs text-muted-foreground">Precio único</p>
+        </>
       </div>
 
       <div className="flex-1 space-y-2">
@@ -78,15 +75,12 @@ export function PricingCard({ tier, paymentFrequency }: PricingCardProps) {
         </ul>
       </div>
       <a
-        href="https://forms.gle/72nQn2VmMnE58EVq5"
+        href={tier.redirect}
         target="_blank"
         rel="noopener noreferrer"
         className="pointer-events-auto"
       >
-        <Button
-          variant={isHighlighted ? "secondary" : "default"}
-          className="w-full"
-        >
+        <Button variant={isHighlighted ? "secondary" : "default"}>
           {tier.cta}
           <ArrowRight className="ml-2 h-4 w-4" />
         </Button>

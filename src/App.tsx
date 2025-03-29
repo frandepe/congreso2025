@@ -10,6 +10,7 @@ import { UbicacionYAlojamiento } from "./pages/UbicacionYAlojamiento";
 import { Patrocinadores } from "./pages/Patrocinadores";
 import { Inscripcion } from "./pages/Inscripcion";
 import { Expositores } from "./pages/Expositores";
+import { FAQ } from "./pages/Faq";
 
 function PageWrapper({ children }: any) {
   return (
@@ -67,6 +68,14 @@ function App() {
               element={
                 <PageWrapper>
                   <Patrocinadores />
+                </PageWrapper>
+              }
+            />
+            <Route
+              path="/preguntas-frecuentes"
+              element={
+                <PageWrapper>
+                  <FAQ />
                 </PageWrapper>
               }
             />

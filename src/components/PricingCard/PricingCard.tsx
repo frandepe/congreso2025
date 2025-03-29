@@ -2,30 +2,48 @@ import { PricingCard } from "@/components/ui/pricing-card";
 
 const DEMO_TIERS = [
   {
-    name: "Gratis",
+    name: "Un solo día",
     price: {
-      unic: 0,
+      unic: "5.000",
     },
     description: "Únase al Congreso de Primeros Auxilios",
     features: [
-      "3 o 4 caracteristicas de la inscripción gratuita",
-      "Se puede sumar todos los checks que quieras",
-      "24/7 support",
+      "Acceso completo al congreso por un día",
+      "Incluye programa y credencial",
+      "Desayuno y refrigerios",
+      "Uso de instalaciones",
     ],
+    redirect: "https://forms.gle/bGpzXueC3CvU8uVZ7",
     cta: "Inscribirse",
   },
   {
-    name: "Vip",
+    name: "Tres días sin alojamiento",
     price: {
-      unic: 15000,
+      unic: "15.000",
+    },
+    description: "Únase al Congreso de Primeros Auxilios",
+    features: [
+      "Acceso completo durante los 3 días",
+      "Incluye programa y credencial",
+      "Desayuno diario y refrigerios",
+      "Uso de instalaciones",
+    ],
+    redirect: "https://forms.gle/SUugngtLudHCXD7M8",
+    cta: "Inscribirse",
+  },
+  {
+    name: "Tres días con alojamiento (dormitorios compartidos)",
+    price: {
+      unic: "30.000",
     },
     description: "Accede a la Experiencia Completa del Congreso",
     features: [
-      "3 o 4 caracteristicas de la inscripcion paga",
-      "Advanced analytics",
-      "Priority support",
-      "Custom integrations",
+      "Todo lo incluido en el plan anterior",
+      "Alojamiento limpio y cómodo en dormitorios compartidos",
+      "Disponible desde el día anterior al congreso (4 noches)",
+      "🎟️ Cupos limitados a 70 personas",
     ],
+    redirect: "https://forms.gle/YcAAUcLJNr165PQS6",
     cta: "Inscribirse",
     highlighted: true,
     popular: true,
@@ -34,10 +52,15 @@ const DEMO_TIERS = [
 
 export function PricingCardDemo() {
   return (
-    <div className="grid gap-6 p-6 md:grid-cols-2 container">
-      {DEMO_TIERS.map((tier) => (
-        <PricingCard key={tier.name} tier={tier} paymentFrequency="unic" />
-      ))}
+    <div>
+      <h2 className="text-4xl text-center font-bold">
+        Opciones de inscripción
+      </h2>
+      <div className="grid gap-6 p-6 md:grid-cols-3 container">
+        {DEMO_TIERS.map((tier) => (
+          <PricingCard key={tier.name} tier={tier} paymentFrequency="unic" />
+        ))}
+      </div>
     </div>
   );
 }

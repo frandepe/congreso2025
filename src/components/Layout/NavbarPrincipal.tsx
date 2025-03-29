@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { MapPin, Menu, MicVocal } from "lucide-react";
+import { HelpCircle, MapPin, Menu, MicVocal } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
@@ -164,6 +164,12 @@ const NavbarPrincipal = ({
           description: "Opciones de transporte y hoteles recomendados",
           icon: <MapPin className="size-5 shrink-0" />,
           url: "/ubicacion-y-alojamiento",
+        },
+        {
+          title: "Preguntas Frecuentes",
+          description: "Encuentra respuestas a las preguntas más comunes aquí.",
+          icon: <HelpCircle className="size-5 shrink-0" />,
+          url: "/preguntas-frecuentes",
         },
       ],
     },
