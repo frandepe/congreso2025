@@ -3,12 +3,12 @@ import { FocusCards } from "@/components/ui/focus-cards";
 export function SpeakersCards() {
   const cards = [
     {
-      title: "Persona 1",
-      src: "https://plus.unsplash.com/premium_photo-1689551671541-31a345ce6ae0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YXZhdGFyc3xlbnwwfHwwfHx8MA%3D%3D",
+      title: "Nicolás De Paulo - Instructor de RCP",
+      src: "/assets/speakers/nicolas-de-paulo.jpeg",
     },
     {
-      title: "Persona 2",
-      src: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8YXZhdGFyc3xlbnwwfHwwfHx8MA%3D%3D",
+      title: "Nicolás De Paulo - Instructor de RCP",
+      src: "/assets/speakers/nicolas-de-paulo2.png",
     },
     {
       title: "Persona 3",

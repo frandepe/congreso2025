@@ -18,7 +18,7 @@ export function SpeakersTimeline() {
             (Locutor)
             <br />• Bienvenida a cargo del Comité Organizador.
             <br />• Apertura oficial a cargo del Intendente Municipal de Trenque
-            Lauquen. Lauquen.
+            Lauquen.
           </p>
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
             <strong>
@@ -40,7 +40,7 @@ export function SpeakersTimeline() {
             <br />
             • Expositora: Marta Iriarte
             <br />
-            Enfoque: enseñará cómo transformar las capacitaciones en RCP en un
+            Enfoque: enseñará cómo transformar las capacitaciones de RCP en un
             negocio rentable, proporcionando estrategias claras para generar
             ingresos constantes y asegurar el éxito a largo plazo en el
             emprendimiento de formación en primeros auxilios

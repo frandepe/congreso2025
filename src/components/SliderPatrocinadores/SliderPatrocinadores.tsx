@@ -5,17 +5,29 @@ import {
   MarqueeContent,
 } from "@/components/ui/marquee";
 
+const patrocinadores = [
+  { id: 1, img: "/assets/patrocinadores/patro-dc.png", title: "Patro" },
+  { id: 4, img: "/assets/logo-congreso2025.png", title: "Patro" },
+  { id: 2, img: "/assets/patrocinadores/patro-tl.png", title: "Patro" },
+  { id: 3, img: "/assets/logo-navbar.png", title: "Patro" },
+  { id: 5, img: "/assets/patrocinadores/patro-dc.png", title: "Patro" },
+  { id: 6, img: "/assets/patrocinadores/patro-tl.png", title: "Patro" },
+];
+
 const SliderPatrocinadores = () => {
   return (
     <Marquee>
       <MarqueeFade side="left" />
       <MarqueeFade side="right" />
       <MarqueeContent>
-        {new Array(10).fill(null).map((_, index) => (
-          <MarqueeItem key={index} className="w-32 h-32">
+        {patrocinadores.map((p, index) => (
+          <MarqueeItem
+            key={p.id}
+            className="w-32 h-32 flex items-center justify-center"
+          >
             <img
-              src={`https://placehold.co/128x128?random=${index}`}
-              alt={`Image ${index}`}
+              src={p.img}
+              alt={p.title}
               className="rounded-full overflow-hidden"
             />
           </MarqueeItem>

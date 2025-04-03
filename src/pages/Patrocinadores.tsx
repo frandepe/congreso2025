@@ -3,6 +3,7 @@ import SliderPatrocinadores from "@/components/SliderPatrocinadores/SliderPatroc
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import React from "react";
+import { CardsPatrocinadoresPagination } from "@/components/CardsPatrocinadoresPagination/CardsPatrocinadoresPagination";
 
 export const Patrocinadores = () => {
   return (
@@ -95,6 +96,9 @@ export const Patrocinadores = () => {
       <div className="bg-white py-16">
         <PatrocinadoresComponent />
         <SliderPatrocinadores />
+      </div>
+      <div className="w-full flex justify-center">
+        <CardsPatrocinadoresPagination />
       </div>
     </div>
   );
