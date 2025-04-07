@@ -10,6 +10,7 @@ import {
   Mic,
 } from "lucide-react";
 import { PricingCardDemo } from "@/components/PricingCard/PricingCard";
+import { AnimatedModalDemo } from "@/components/AnimatedModal/AnimatedModal";
 
 export const Inscripcion = () => {
   return (
@@ -29,7 +30,7 @@ export const Inscripcion = () => {
           <p className="text-lg mt-4">Incluye certificado de participación</p>
         </motion.div>
       </section>
-
+      <AnimatedModalDemo />
       {/* <motion.section
         className="bg-gray-100 py-16 px-6 text-center"
         initial={{ opacity: 0 }}

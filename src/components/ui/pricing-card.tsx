@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { AnimatedModalDemo } from "../AnimatedModal/AnimatedModal";
 
 export interface PricingTier {
   name: string;
@@ -44,9 +45,10 @@ export function PricingCard({ tier, paymentFrequency }: PricingCardProps) {
       <h2 className="flex items-center gap-3 text-xl font-medium capitalize">
         {tier.name}
         {isPopular && (
-          <Badge variant="secondary" className="mt-1 z-10">
-            🔥 Más popular
-          </Badge>
+          // <Badge variant="secondary" className="mt-1 z-10">
+          //   🔥 Más popular
+          // </Badge>
+          <AnimatedModalDemo />
         )}
       </h2>
 
