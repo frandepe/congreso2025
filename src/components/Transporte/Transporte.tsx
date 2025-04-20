@@ -12,7 +12,7 @@ export const Transporte = () => {
         {/* Oficina de Informes */}
         <div className="flex flex-col items-start">
           <div className="flex items-center mb-4">
-            <Calendar className="w-10 h-10 text-blue-600" />
+            <Calendar className="w-10 h-10 text-orange" />
             <h3 className="text-xl font-semibold text-gray-800 ml-4">
               Oficina de Informes
             </h3>
@@ -73,7 +73,7 @@ export const Transporte = () => {
         {/* Teléfonos de Empresas de Transporte */}
         <div className="flex flex-col items-start">
           <div className="flex items-center mb-4">
-            <Truck className="w-10 h-10 text-red-600" />
+            <Truck className="w-10 h-10 text-redOrange" />
             <h3 className="text-xl font-semibold text-gray-800 ml-4">
               Teléfonos de Empresas de Transporte
             </h3>

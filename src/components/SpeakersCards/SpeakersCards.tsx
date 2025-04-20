@@ -3,11 +3,11 @@ import { FocusCards } from "@/components/ui/focus-cards";
 export function SpeakersCards() {
   const cards = [
     {
-      title: "Nicolás De Paulo - Instructor de RCP",
-      src: "/assets/speakers/nicolas-de-paulo.jpeg",
+      title: "Marta Iriarte",
+      src: "/assets/speakers/marta-iriarte2.jpg",
     },
     {
-      title: "Nicolás De Paulo - Instructor de RCP",
+      title: "Nicolás De Paulo",
       src: "/assets/speakers/nicolas-de-paulo2.png",
     },
     {

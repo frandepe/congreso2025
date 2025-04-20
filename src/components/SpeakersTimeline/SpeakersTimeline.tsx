@@ -12,8 +12,8 @@ export function SpeakersTimeline() {
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
             <strong>9:00 – 9:30 | Apertura y Bienvenida</strong>
             <br />
-            Lugar: Casa de la Historia y la Cultura (Parque Municipal Conrado
-            Villegas)
+            Lugar: Sede del Club Deportivo Barrio Alegre calle Almirante Brown
+            78 de Trenque Lauquen
             <br />• Breve introducción al congreso y objetivos del evento.
             (Locutor)
             <br />• Bienvenida a cargo del Comité Organizador.
@@ -116,9 +116,10 @@ export function SpeakersTimeline() {
             <br />• Breve introducción al día y objetivos del evento.
             <br />• Acto conmemorativo Día Mundial de la RCP.
             <br />• Homenaje en memoria del Instructor Jorge Adrián Prieto.
-            <br />• Homenaje a impulsores de la Ley del grupo Argentina Reanima
-            en memoria de Beltrán y Tomas, hijos de Jorge Bombau y Mariano Casoi
-            (Estarán presentes)
+            <br />• Homenaje a Tomás y Beltrán. A los 14 años, ambos perdieron
+            la vida por muerte súbita. Desde entonces, sus padres, Mariano Casoy
+            y Jorge Bombau, transformaron el dolor en lucha, impulsando la Ley
+            27.159 y su reglamentación.
           </p>
 
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">

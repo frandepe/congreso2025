@@ -23,14 +23,14 @@ const hotelData = [
     title: "Hotel Sol y Luna",
     tel: "(02392) 460355",
     location: "Ruta 5 – Km 448,5",
-    url: "www.facebook.com/Solylunatl",
+    url: "https://www.facebook.com/Solylunatl",
   },
   {
     image: "/assets/hoteles/hotel-simon.jpg",
     title: "Hotel Simon",
     location: "Villegas 587",
     tel: "2392 – 625779",
-    url: "www.hotelsimon.com.ar",
+    url: "https://www.hotelsimon.com.ar",
   },
   {
     image: "/assets/hoteles/hotel-winak.jpg",
@@ -69,7 +69,7 @@ const hotelData = [
     title: "Cabaña Las Boxer",
     tel: "(02392) 484301",
     location: "Regimiento 3 de Caballeria 3150 (y Ruta 5)",
-    url: "www.cabañaslasboxer.com.ar",
+    url: "https://www.cabañaslasboxer.com.ar",
   },
   {
     image: "/assets/hoteles/moras.jpg",
@@ -82,7 +82,7 @@ const hotelData = [
     title: "Cabaña El Payé",
     tel: "(02392) 15631206",
     location: "Ruta Nacional Nº5 Km 445",
-    url: "www.cabañaselpaye.com.ar",
+    url: "https://www.cabañaselpaye.com.ar",
   },
   {
     image: "/assets/hoteles/descanso.jpg",

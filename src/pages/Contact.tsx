@@ -17,7 +17,7 @@ export const Contact = () => {
             {/* Teléfono */}
             <div className="flex items-center space-x-4 text-gray-700 hover:text-secondary transition-all duration-300 cursor-pointer">
               <Phone size={28} className="text-primary" />
-              <a href="tel:+123456789">+123 456 789</a>
+              <a href="tel:+542392460227">2392-460227</a>
             </div>
             {/* Email */}
             <div className="flex items-center space-x-4 text-gray-700 hover:text-secondary transition-all duration-300 cursor-pointer">

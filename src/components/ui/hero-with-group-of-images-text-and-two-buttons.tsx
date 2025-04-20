@@ -64,7 +64,7 @@ function HeroWithGroupImages() {
             />
             <img
               className="bg-muted rounded-md aspect-square object-cover brightness-75"
-              src="/assets/DescImg-3.jpg"
+              src="/assets/lugar.jpg"
             />
           </div>
         </div>
