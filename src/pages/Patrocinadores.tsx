@@ -9,12 +9,15 @@ export const Patrocinadores = () => {
   return (
     <div className="min-h-screen bg-gray-50 text-gray-900">
       {/* Hero Section with Intro */}
-      <section className="relative w-full h-[300px] flex items-center justify-center">
+      <section className="relative w-full h-[350px] flex items-center justify-center">
         {/* Capa con imagen de fondo y desenfoque filter blur-xs*/}
-        <div
-          className="absolute inset-0 bg-[url('/assets/banner-patrocinio1.jpg')] bg-cover"
-          style={{ backgroundPosition: "center top 10%" }}
-        ></div>
+        <div className="absolute inset-0">
+          <div
+            className="absolute inset-0 bg-[url('/assets/banner2.jpg')] bg-cover"
+            style={{ backgroundPosition: "center top 30%" }}
+          ></div>
+          <div className="absolute inset-0 bg-green-500 opacity-30 mix-blend-multiply"></div>
+        </div>
 
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
         <motion.div

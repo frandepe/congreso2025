@@ -56,15 +56,16 @@ function HeroWithGroupImages() {
           <div className="grid grid-cols-2 gap-8">
             <img
               className="bg-muted rounded-md aspect-square object-cover brightness-75"
-              src="/assets/DescImg-1.jpeg"
+              src="/assets/img-verde.png"
             />
             <img
               className="bg-muted rounded-md row-span-2 object-cover h-full brightness-75"
-              src="/assets/DescImg-2.jpeg"
+              src="/assets/micro-vertical.png"
+              // src="/assets/DescImg-2.jpeg"
             />
             <img
               className="bg-muted rounded-md aspect-square object-cover brightness-75"
-              src="/assets/lugar.jpg"
+              src="/assets/lugar-verde.png"
             />
           </div>
         </div>

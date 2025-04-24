@@ -7,7 +7,7 @@ const people = [
   {
     id: 1,
     name: "Marta Iriarte",
-    designation: "area de especializacion",
+    designation: "Speaker",
     image: "/assets/speakers/cara/marta-iriarte.jpg",
   },
   {
@@ -18,45 +18,33 @@ const people = [
   },
   {
     id: 3,
-    name: "Julio Godoy",
-    designation: "Argentina reanima",
-    image:
-      "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YXZhdGFyfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
+    name: "Juan Sebastian Fabi",
+    designation: "Socio cofundador de Nexo Tecnológico",
+    image: "/assets/speakers/cara/juan-sebastian-fabi-cara.jpg",
   },
   {
     id: 4,
-    name: "Sergio Felice",
-    designation: "Argentina reanima",
-    image:
-      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGF2YXRhcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
+    name: "Patricia Soto",
+    designation: "Fundadora y CEO de Nexo Tecnológico",
+    image: "/assets/speakers/cara/patricia-soto-cara.jpg",
   },
   {
     id: 5,
-    name: "Guillermo Carranza",
-    designation: "Instructor no vidente",
-    image:
-      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3540&q=80",
+    name: "Miguel Angel Grima",
+    designation: "Grupo PAS",
+    image: "/assets/speakers/cara/miguel-angel-grima-cara.jpg",
   },
   {
     id: 6,
-    name: "Alejandro Laselli",
-    designation: "Médico emergentólogo",
-    image:
-      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGF2YXRhcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
+    name: "Guillermo Carranza",
+    designation: "Fundador de CEEByPS",
+    image: "/assets/speakers/cara/.jpg",
   },
   {
     id: 7,
-    name: "Alicia Galfaso",
-    designation: "area de especializacion",
-    image:
-      "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YXZhdGFyfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
-  },
-  {
-    id: 8,
-    name: "Nicolás De Paulo",
-    designation: "Instrucor de primeros auxilios",
-    image:
-      "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXZhdGFyfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
+    name: "Rodrigo Baluk",
+    designation: "Licenciado en Administración",
+    image: "/assets/speakers/cara/rodrigo-baluk-cara.jpg",
   },
 ];
 

@@ -17,12 +17,12 @@ export function FocusCards({ cards }: { cards: Card[] }) {
   return (
     <>
       {/* Grid de Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-5xl mx-auto md:px-8 w-full mt-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 max-w-5xl mx-auto md:px-8 w-full mt-6">
         {cards.map((card, index) => (
           <motion.div
             layoutId={`card-${card.title}`}
             key={index}
-            className="rounded-lg relative bg-gray-100 dark:bg-neutral-900 overflow-hidden h-60 md:h-96 w-full cursor-pointer group"
+            className="rounded-lg relative bg-gray-100 dark:bg-neutral-900 overflow-hidden h-96 w-full cursor-pointer group"
             onClick={() => setActiveCard(card)}
           >
             <motion.img
@@ -75,7 +75,7 @@ export function FocusCards({ cards }: { cards: Card[] }) {
                 <motion.img
                   src={activeCard.src}
                   alt={activeCard.title}
-                  className="w-full md:w-1/2 object-cover h-60 md:h-auto"
+                  className="w-full md:w-1/2 object-cover h-[50vh] md:h-auto"
                   layoutId={`image-${activeCard.title}`}
                 />
 
