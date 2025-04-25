@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import React from "react";
 import { CardsPatrocinadoresPagination } from "@/components/CardsPatrocinadoresPagination/CardsPatrocinadoresPagination";
+import { PropuestaPatrocinio } from "@/components/PropuestaPatrocinio/PropuestaPatrocinio";
 
 export const Patrocinadores = () => {
   return (
@@ -64,13 +65,7 @@ export const Patrocinadores = () => {
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}
             >
-              <a
-                href="https://forms.gle/f7u9EUCD97wnHXm18"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button className="w-full">¿Quieres ser Patrocinador?</Button>
-              </a>
+              <PropuestaPatrocinio />
             </motion.div>
             <motion.div
               whileHover={{ scale: 1.05 }}

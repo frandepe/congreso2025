@@ -9,26 +9,26 @@ const patrocinadoresData = [
     title: "Trenque Lauquen",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis reprehenderit, cupiditate dolorum impedit soluta quae expedita iusto nulla ea consequuntur facilis provident, aliquam et modi iste mollitia laudantium eligendi.",
-    url: "",
+    url: "https://www.trenquelauquen.gov.ar/",
   },
   {
     image: "/assets/patrocinadores/patro-dc.png",
     title: "Defensa Civil",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis reprehenderit, cupiditate dolorum impedit soluta quae expedita iusto nulla ea consequuntur facilis provident, aliquam et modi iste mollitia laudantium eligendi.",
-    url: "",
+    url: "https://www.trenquelauquen.gov.ar/tramites-y-servicios/defensa-civil/",
   },
   {
     image: "/assets/patrocinadores/nd-capacitaciones.png",
     title: "ND Capacitaciones",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    url: "https://www.autodrive.com",
+    url: "https://ndcapacitaciones.xyz",
   },
   {
     image: "/assets/patrocinadores/nexo-tecnologico.png",
     title: "Nexo Tecnológico",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    url: "https://www.foodies.com",
+    url: "https://nexotecnologico.com",
   },
 ];
 

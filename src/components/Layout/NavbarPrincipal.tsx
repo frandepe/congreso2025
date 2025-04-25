@@ -215,7 +215,11 @@ const NavbarPrincipal = ({
         <nav className="hidden justify-between lg:flex">
           <div className="flex items-center gap-6">
             <a href={logo.url} className="flex items-center gap-2">
-              <img src={logo.src} className="w-32" alt={logo.alt} />
+              <img
+                src={logo.src}
+                className="w-32"
+                alt="logo de la web Congreso nacional RCP"
+              />
             </a>
           </div>
 
@@ -230,11 +234,19 @@ const NavbarPrincipal = ({
         <div className="block lg:hidden">
           <div className="flex items-center justify-between">
             <a href={logo.url} className="flex items-center gap-2">
-              <img src={logo.src} className="w-32" alt={logo.alt} />
+              <img
+                src={logo.src}
+                className="w-32"
+                alt="logo de la web Congreso nacional RCP"
+              />
             </a>
             <Sheet>
               <SheetTrigger asChild>
-                <Button variant="outline" size="icon">
+                <Button
+                  variant="outline"
+                  size="icon"
+                  aria-label="Cerrar o abrir menú"
+                >
                   <Menu className="size-4" />
                 </Button>
               </SheetTrigger>
@@ -242,7 +254,11 @@ const NavbarPrincipal = ({
                 <SheetHeader>
                   <SheetTitle>
                     <a href={logo.url} className="flex items-center gap-2">
-                      <img src={logo.src} className="w-32" alt={logo.alt} />
+                      <img
+                        src={logo.src}
+                        className="w-32"
+                        alt="logo de la web Congreso nacional RCP"
+                      />
                     </a>
                   </SheetTitle>
                 </SheetHeader>

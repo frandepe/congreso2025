@@ -14,7 +14,11 @@ export const Programa = () => {
         <div className="flex flex-col items-center max-w-max">
           <h2 className="mb-4 text-lg font-bold">Conoce a los expositores</h2>
           <AnimatedTooltipPreview />
-          <Button className="gap-4" onClick={() => navigate("/expositores")}>
+          <Button
+            className="gap-4"
+            onClick={() => navigate("/expositores")}
+            aria-label="Ver todos los expositores"
+          >
             Ver todos <MoveRight className="w-4 h-4" />
           </Button>
         </div>
