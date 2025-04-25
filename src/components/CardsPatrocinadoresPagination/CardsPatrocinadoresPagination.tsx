@@ -19,52 +19,16 @@ const patrocinadoresData = [
     url: "",
   },
   {
-    image: "/assets/patrocinadores/logo3.jpg",
-    title: "Patrocinador 1",
+    image: "/assets/patrocinadores/nd-capacitaciones.png",
+    title: "ND Capacitaciones",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
     url: "https://www.autodrive.com",
   },
   {
-    image: "/assets/patrocinadores/logo4.jpg",
-    title: "Patrocinador 2",
+    image: "/assets/patrocinadores/nexo-tecnologico.png",
+    title: "Nexo Tecnológico",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
     url: "https://www.foodies.com",
-  },
-  {
-    image: "/assets/patrocinadores/logo5.jpg",
-    title: "Patrocinador 3",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    url: "https://www.smarthome.com",
-  },
-  {
-    image: "/assets/patrocinadores/logo6.jpg",
-    title: "Patrocinador 4",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    url: "https://www.fashionx.com",
-  },
-  {
-    image: "/assets/patrocinadores/logo5.jpg",
-    title: "Patrocinador 5",
-    description: "Domótica avanzada para un hogar inteligente.",
-    url: "https://www.smarthome.com",
-  },
-  {
-    image: "/assets/patrocinadores/logo6.jpg",
-    title: "Patrocinador 6",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    url: "https://www.fashionx.com",
-  },
-  {
-    image: "/assets/patrocinadores/logo5.jpg",
-    title: "Patrocinador 7",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    url: "https://www.smarthome.com",
-  },
-  {
-    image: "/assets/patrocinadores/logo6.jpg",
-    title: "Patrocinador 8",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    url: "https://www.fashionx.com",
   },
 ];
 
