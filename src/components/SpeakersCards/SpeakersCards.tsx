@@ -112,6 +112,13 @@ export function SpeakersCards() {
       description:
         "Formada por profesionales de diversas disciplinas, como médicos, enfermeros, bomberos y agentes de protección civil de todo el país. Nacimos en enero de 2021 con un propósito urgente: impulsar la reglamentación de la Ley 27.159 de Muerte Súbita, estancada desde 2015.\n\n A través de acciones públicas y gratuitas en plazas, escuelas y comunidades, logramos visibilizar esta necesidad y, en 2022, consiguieron que la ley fuera finalmente reglamentada. Hoy, con más de 9.000 personas capacitadas y filiales en múltiples provincias, siguen activos para que la ley se cumpla.\n\n Premio INADEA “Por la Vida” - 2023.\n Su lema: Solo bajamos los brazos para hacer RCP.\n\n En el próximo Congreso Nacional de RCP, el equipo de Argentina Reanima brindará una charla clave sobre cómo lograr que la Ley 27.159 se cumpla efectivamente. Compartirán su análisis de la normativa y estrategias para implementarla en escuelas y municipios. Con una mirada práctica basada en la experiencia territorial, propondrán herramientas concretas para transformar la concientización en políticas activas de prevención de la muerte súbita en todo el país. En este congreso Sergio Felice y Julio Godoy integrantes de esta asociación, disertaran sobre los fundamentos y la importancia de la ley de muerte súbita 27.159",
     },
+    {
+      title: "911",
+      src: "/assets/speakers/911.jpg",
+      subtitle: "Superintendencia de comunicaciones",
+      description:
+        "La Superintendencia de comunicaciones, regula el funcionamiento de las centrales de emergencias denominadas “911”. Las llamadas que ingresan a la Central 911, son atendidas por los Operadores y derivadas a los Centros de Despacho correspondientes, que son los encargados de asignar los recursos materiales para prestar el auxilio o ayuda solicitada. Estos operadores también se capacitan para teledirigir acciones en lo referente a maniobras de Primeros auxilios para ciudadanos que no tienen conocimientos de las mismas. En este congreso, un operador del servicio 911 de la ciudad de Trenque Lauquen brindara sus conocimientos de como dirigir a un ciudadano en la atención de maniobras de RCP.",
+    },
     // {
     //   title: "Germán Gómez",
     //   src: "/assets/speakers/.jpeg",

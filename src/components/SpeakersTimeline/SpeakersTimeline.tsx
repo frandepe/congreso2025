@@ -22,12 +22,15 @@ export function SpeakersTimeline() {
           </p>
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
             <strong>
-              9:30 – 10:45 | Charla 1: Actualizaciones internacionales en RCP y
-              primeros auxilios
+              9:30 – 10:45 | Charla 1: Formaciones Oficiales ERC (European
+              Resuscitation Council) en Catalunya. Duración, Temario y Perfil de
+              los Alumnos
             </strong>
-            <br />• Invitado Especial: Miguel Ángel Grima Salinas
-            <br />• Enfoque: Avances y nuevos estándares internacionales en RCP
-            y primeros auxilios.
+            <br />• Ponente: Miguel Ángel Grima Salinas
+            <br />• Enfoque: Como se desarrollan las formaciones oficiales de
+            ERC en España, con un adelanto de las presentaciones que la ERC
+            realizara en su próximo congreso en España, donde se realizara el
+            lanzamiento oficial de las nuevas Guías de Reanimación del ERC.
           </p>
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
             <strong>10:45 – 11:00 | Break (15 minutos)</strong>
@@ -56,7 +59,7 @@ export function SpeakersTimeline() {
               tarifas, gestionar un negocio de capacitación y atraer clientes.
             </strong>
             <br />
-            • Expositor: Rodrigo Balik.
+            • Expositor: Rodrigo Baluk.
             <br />• Enfoque: Cómo establecer tarifas adecuadas, gestionar un
             negocio de capacitación eficazmente y estrategias para atraer más
             clientes.
@@ -143,7 +146,7 @@ export function SpeakersTimeline() {
               primer mundo
             </strong>
             <br />
-            • Expositor: Borja
+            • Expositor: Borja Diez Sainz
             <br />• Enfoque: Experiencia clínica en emergencias y su aplicación
             en capacitaciones.
           </p>
@@ -269,15 +272,18 @@ export function SpeakersTimeline() {
             <strong>
               13:15 – 14:30 | Charla 3: “Volví a la vida gracias a la RCP”
             </strong>
-            <br />• Expositor: Invitada especial, una persona que ante un paro
-            cardiaco, fue reanimada con RCP en primera instancia e
-            inmediatamente atendida.
-            <br />• Enfoque: Relato en primera persona de haber sido reanimado
-            con RCP, testimonio del Dr. Juan Bambosi, médico que atendió pos
-            RCP.
+            <br />• Expositor: Invitado especial, una persona que fue reanimada
+            con RCP y sobrevivió.
+            <br />• Enfoque:
+            <br />
+            - Relato en primera persona sobre la experiencia de haber sido
+            reanimado.
+            <br />
+            - Testimonio del rescatador (si es posible).
+            <br />
+            - Impacto en la vida después del evento.
             <br />• Objetivo: Motivar e inspirar a los asistentes sobre la
-            importancia del trabajo del Instructor enseñando RCP a la mayor
-            cantidad de gente.
+            importancia de aprender y enseñar RCP.
           </p>
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
             <strong>14:30 – 14:45 | Break (15 minutos)</strong>
@@ -299,16 +305,16 @@ export function SpeakersTimeline() {
               16:15 – 17:30 | Cierre del Congreso y Entrega de Certificados
             </strong>
             <br />• Palabras finales de agradecimiento.
-            <br />• Entrega de certificados de participación para todos los
-            asistentes al congreso.
-            <br />• Reflexión sobre los aprendizajes y la importancia de
-            continuar la capacitación.
+            <br />• Entrega de certificados de participación.
+            <br />• Reflexión sobre los aprendizajes y la importancia de seguir
+            capacitando.
+            <br />• Entrega de remeras a los asistentes.
           </p>
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
             <strong>17:30 – 18:00 | Fin del Congreso</strong>
-            <br />• Despedida y agradecimientos finales a los asistentes,
+            <br />• Despedida y agradecimientos finales a asistentes,
             expositores y patrocinadores.
-            <br />• Inauguración de Mural alegórico.
+            <br />• Destapar el mural conmemorativo.
           </p>
         </div>
       ),
