@@ -46,6 +46,12 @@ const people = [
     designation: "Licenciado en Administración",
     image: "/assets/speakers/cara/rodrigo-baluk-cara.jpg",
   },
+  {
+    id: 8,
+    name: "Borja Díez Sainz",
+    designation: "Médico especialista en Medicina Intensiva",
+    image: "/assets/speakers/cara/Borja-Diez-Sainz.jpg",
+  },
 ];
 
 function AnimatedTooltipPreview() {
