@@ -22,7 +22,9 @@ export const Contact = () => {
             {/* Email */}
             <div className="flex items-center space-x-4 text-gray-700 hover:text-secondary transition-all duration-300 cursor-pointer">
               <Mail size={28} className="text-primary" />
-              <a href="mailto:contacto@ejemplo.com">contacto@ejemplo.com</a>
+              <a href="mailto:congresonacionalrcp@gmail.com">
+                congresonacionalrcp@gmail.com
+              </a>
             </div>
             {/* Facebook */}
             <div className="flex items-center space-x-4 text-gray-700 hover:text-secondary transition-all duration-300 cursor-pointer">

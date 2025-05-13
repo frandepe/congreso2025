@@ -26,7 +26,7 @@ function MainFooter() {
           },
           {
             icon: <MessageCircle className="h-5 w-5" />,
-            href: "https://wa.me/111111111111",
+            href: "https://wa.me/5492392460227",
             label: "WhatsApp",
           },
         ]}

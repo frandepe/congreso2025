@@ -7,7 +7,7 @@ const people = [
   {
     id: 1,
     name: "Marta Iriarte",
-    designation: "Speaker",
+    designation: "CEO en Marta Iriarte Consultoría Laboral",
     image: "/assets/speakers/cara/marta-iriarte.jpg",
   },
   {
@@ -38,7 +38,7 @@ const people = [
     id: 6,
     name: "Guillermo Carranza",
     designation: "Fundador de CEEByPS",
-    image: "/assets/speakers/cara/.jpg",
+    image: "/assets/speakers/cara/guille-carranza.jpg",
   },
   {
     id: 7,

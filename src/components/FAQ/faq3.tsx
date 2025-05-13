@@ -113,7 +113,7 @@ const faqItems = [
     id: "faq-7",
     question: "¿A quién puedo contactar en caso de dudas?",
     answer:
-      "Puedes escribirnos a [correo de contacto] o comunicarte al 2392-460227.",
+      "Puedes escribirnos a congresonacionalrcp@gmail.com o comunicarte al 2392-460227.",
   },
   {
     id: "faq-8",

@@ -28,7 +28,7 @@ const patrocinadoresData = [
   {
     image: "/assets/patrocinadores/nexo-tecnologico.png",
     title: "Nexo Tecnológico",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    description: "Diseñamos y fabricamos equipamiento medico para RCP.",
     url: "https://nexotecnologico.com",
   },
 ];

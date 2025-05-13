@@ -14,6 +14,8 @@ export function SpeakersCards() {
     {
       title: "Marta Iriarte",
       src: "/assets/speakers/marta-iriarte2.jpg",
+      description:
+        "Con estudios realizados en la Universidad Nacional de Mar del Plata, es CEO en Marta Iriarte Consultoría Laboral, Terapista Ocupacional, desde el año 2014 consultora en Recursos Humanos, Profesora de Relaciones Publicas y atención al cliente, Marqueting de servicios, Profesora en cursos de emprendedorismo y gestión en redes, Comunity Manager, Desarrollo en Marketing Digital, Mentora de Emprendedores y Orientadora en Planes de Negocios. Lo que aportara en este Congreso, son sus nociones como Docente sobre Habilidades para Emprender. Ayudar a que, cada uno de los Participantes, pueda pensar como Emprendedor para mejorar sus empresas de capacitaciones en RCP.",
     },
     {
       title: "Juan Sebastian Fabi",
@@ -91,7 +93,7 @@ export function SpeakersCards() {
 
     {
       title: "Guillermo Carranza",
-      src: "/assets/speakers/.jpeg",
+      src: "/assets/speakers/guille-carranza.png",
       subtitle: "Emprendedor en el ámbito de las emergencias",
       description:
         "*Guillermo Carranza* es un joven de 30 años, nacido en *Las Higueras, Córdoba, Argentina, cuya historia es sinónimo de superación, pasión y compromiso. A pesar de vivir con ceguera, Guillermo ha demostrado que las verdaderas capacidades no dependen de la visión, sino de la **determinación, la inteligencia y el propósito*.\n\n Es *fundador del Centro de Entrenamiento de Especialidades Bomberiles y Primeros Socorros (CEEByPS)*, un proyecto que refleja su firme compromiso con la formación en emergencias, el trabajo colaborativo y el impacto social positivo.\n\n Con *más de 10 años de experiencia* en el campo, Guillermo es *diplomado en Gestión Integral del Riesgo, y se desempeña como **consultor en seguridad*, fusionando su formación técnica con una mirada estratégica, humana y accesible. \n\nAdemás, es *instructor en múltiples disciplinas vinculadas a la seguridad y las emergencias prehospitalarias, participando activamente en programas reconocidos como **ACES, AIDER y Stop The Bleed*, entre otros. A lo largo de los años, ha formado a numerosas personas en contextos diversos, combinando conocimientos técnicos con un enfoque claro, práctico y comprometido. Su experiencia lo respalda tanto en entornos formales como en capacitaciones de campo, donde la preparación puede marcar \n\n Su pasión por la *tecnología y la informática, sumada a una fuerte vocación por el servicio, lo ha llevado también a desarrollarse como **investigador privado*, aportando soluciones en contextos complejos que requieren ética, análisis riguroso y confidencialidad.\n\n Proyección:\n\n Actualmente continúa ampliando sus conocimientos y compartiéndolos con quienes buscan marcar la diferencia en el mundo de las emergencias y la seguridad.",

@@ -44,9 +44,16 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
         <p className="text-neutral-700 dark:text-neutral-300 text-sm md:text-base max-w-sm">
           15, 16 y 17 de octubre de 2025
         </p>
-        <Button className="mt-4">
-          <Download size={16} className="mr-2" /> Descargar programa
-        </Button>
+
+        {/* Enlace para descarga */}
+        <a
+          href="/assets/Primer-congreso-nacional-de-instructores-de-RCP.pdf"
+          download
+        >
+          <Button className="mt-4">
+            <Download size={16} className="mr-2" /> Descargar programa
+          </Button>
+        </a>
       </div>
 
       <div ref={ref} className="relative max-w-7xl mx-auto pb-20">
