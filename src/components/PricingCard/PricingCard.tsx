@@ -6,7 +6,7 @@ const DEMO_TIERS = [
     price: {
       unic: "5.000",
     },
-    description: "Únase al Congreso de Primeros Auxilios",
+    description: "Únase al congreso de Instructores de RCP",
     features: [
       "Acceso completo al congreso por un día",
       "Incluye programa y credencial",
@@ -21,7 +21,7 @@ const DEMO_TIERS = [
     price: {
       unic: "15.000",
     },
-    description: "Únase al Congreso de Primeros Auxilios",
+    description: "Únase al congreso de Instructores de RCP",
     features: [
       "Acceso completo durante los 3 días",
       "Incluye programa y credencial",
