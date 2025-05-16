@@ -19,7 +19,7 @@ import {
   CalendarClock,
 } from "lucide-react";
 import { ImageZoom } from "../ui/zoomable-image";
-// ok
+// ok x 2
 export function AnimatedModalDemo() {
   const images = [
     "/assets/dormis-municipio/dormis1.jpeg",
