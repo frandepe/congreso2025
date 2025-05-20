@@ -105,7 +105,6 @@ export function SpeakersTimeline() {
             con gente de la ciudad en las diferentes plazas y de esta manera
             mostrar las técnicas de la maniobra y concientizar sobre la
             importancia del conocimiento de la misma.
-            <br />• Acompañamiento a muralistas en su obra.
           </p>
         </div>
       ),
@@ -219,7 +218,6 @@ export function SpeakersTimeline() {
             la ciudad en las diferentes plazas y de esta manera mostrar las
             técnicas de la maniobra y concientizar sobre la importancia del
             conocimiento de la misma.
-            <br />• Acompañamiento a muralistas en su obra.
           </p>
         </div>
       ),
@@ -314,7 +312,6 @@ export function SpeakersTimeline() {
             <strong>17:30 – 18:00 | Fin del Congreso</strong>
             <br />• Despedida y agradecimientos finales a asistentes,
             expositores y patrocinadores.
-            <br />• Destapar el mural conmemorativo.
           </p>
         </div>
       ),

@@ -59,13 +59,13 @@ function PropuestaPatrocinio() {
               </h3>
               <ul className="list-disc list-inside space-y-1">
                 <li>
-                  ARS 100 000 hasta el <strong>10 de Junio 2025</strong>
+                  ARS 150.000 hasta el <strong>10 de Junio 2025</strong>
                 </li>
                 <li>
-                  ARS 200 000 hasta el <strong>10 de Julio 2025</strong>
+                  ARS 250.000 hasta el <strong>10 de Julio 2025</strong>
                 </li>
                 <li>
-                  ARS 300 000 hasta el <strong>10 de Septiembre 2025</strong>
+                  ARS 300.000 hasta el <strong>10 de Septiembre 2025</strong>
                 </li>
               </ul>
               <p className="mt-2 text-xs italic">
@@ -167,7 +167,7 @@ function PropuestaPatrocinio() {
                 5. Contacto para patrocinio
               </h3>
               <p>
-                <strong>Email:</strong> xxxxxxxxxxxxxxx
+                <strong>Email:</strong> congresonacionalrcp@gmail.com
               </p>
             </section>
 
