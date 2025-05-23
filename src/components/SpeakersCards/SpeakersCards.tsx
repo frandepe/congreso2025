@@ -4,7 +4,7 @@ import { Button } from "../ui/button";
 export function SpeakersCards() {
   const cards = [
     {
-      title: "Nicolás De Paulo",
+      title: "Nicolás De Paulo (moderador)",
       src: "/assets/speakers/nicolas-de-paulo2.png",
       subtitle:
         "Coordinador de Defensa Civil del Municipio de Trenque Lauquen.",

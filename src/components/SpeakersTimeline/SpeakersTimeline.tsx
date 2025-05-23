@@ -162,7 +162,8 @@ export function SpeakersTimeline() {
               ¿y ahora?”
             </strong>
             <br />
-            • Expositor: Equipo de PAE de Alicia Galfaso y Nicolás De Paulo.
+            • Expositor: Equipo de PAE de Alicia Galfaso y Nicolás De Paulo como
+            moderador.
             <br />• Enfoque: Abordaje emocional y profesional frente a
             situaciones difíciles y cómo superar la culpa en el ejercicio del
             RCP
