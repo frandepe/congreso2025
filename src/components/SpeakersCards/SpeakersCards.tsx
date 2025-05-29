@@ -135,7 +135,7 @@ export function SpeakersCards() {
       subtitle:
         "Red de ayuda humanitaria en emergencias y desastres, que asiste a víctimas y profesionales en cuidado emocional.",
       description:
-        "Creada por la Licenciada Alicia Galfaso, esta red de asistencia en gestión de crisis y cuidado emocional, esta presente en  Argentina y otros países. Cuenta con equipos de  PRIMEROS AUXILIOS EMOCIONALES (PAE). Desde hace un tiempo la Lic. Galfaso y su equipo, colaboran con la “Asociación Argentina Reanima” para sumar en los protocolos de emergencias ante muertes súbitas, herramientas y estrategias de gestión de la escena y autocuidado emocional teniendo en cuenta el antes, el durante y el después. Parte de uno de estos equipos, brindara en este congreso, compartirá estas experiencias.",
+        "Creada por la Licenciada Alicia Galfaso, se ha ramificado por Argentina y el Mundo, creando los equipos de  PRIMEROS AUXILIOS EMOCIONALES. Desde hace un tiempo la Lic. Galfaso y su equipo, colaboran con la Asociación Argentina Reanima para sumar en los protocolos de emergencias ante muertes súbitas las herramientas que brinda la Red y preparar a los socorristas actuantes en el antes, el durante y el después de una intervención. Parte de uno de estos equipos, brindara en este congreso una charla sobre esta temática La Licenciada Alicia Galfaso cuenta dentro de su cv, con la siguiente formación: Psicóloga egresada de la Universidad de Buenos Aires Especialista en Psicooncología Especialista en Psicología de la Emergencia y en Psicotraumatología Directora de Postgrado de “Curso Superior Primeros Auxilios Emocionales en Urgencias, Emergencias y Desastres”. Fac. de Medicina. UBA Docente de la Catedra de Medicina Legal de la Fac. de Medicina UBA Docente de la Universidad de Málaga. España Coordinadora Gral. de la RED PAE. Red de Ayuda Humanitaria en Cuidado Emocional en Urgencias, Emergencias y Desastres. Directora de la Revista digital española “Cuadernos de Crisis y Emergencias” Trainer Internacional de equipos de Primera Respuesta en Emergencias y Desastres. 1°Oficial (CAO) Bomberos Voluntarios de La Boca. Argentina",
     },
     {
       title: "Argentina Reanima",
@@ -152,18 +152,6 @@ export function SpeakersCards() {
       description:
         "La Superintendencia de comunicaciones, regula el funcionamiento de las centrales de emergencias denominadas “911”. Las llamadas que ingresan a la Central 911, son atendidas por los Operadores y derivadas a los Centros de Despacho correspondientes, que son los encargados de asignar los recursos materiales para prestar el auxilio o ayuda solicitada. Estos operadores también se capacitan para teledirigir acciones en lo referente a maniobras de Primeros auxilios para ciudadanos que no tienen conocimientos de las mismas. En este congreso, un operador del servicio 911 de la ciudad de Trenque Lauquen brindara sus conocimientos de como dirigir a un ciudadano en la atención de maniobras de RCP.",
     },
-    // {
-    //   title: "Germán Gómez",
-    //   src: "/assets/speakers/.jpeg",
-    //   subtitle: "",
-    //   description: "",
-    // },
-    // {
-    //   title: "Borja",
-    //   src: "/assets/speakers/.jpeg",
-    //   subtitle: "",
-    //   description: "",
-    // },
   ];
 
   return <FocusCards cards={cards} />;
