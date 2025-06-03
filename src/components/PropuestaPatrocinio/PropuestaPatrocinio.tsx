@@ -59,13 +59,13 @@ function PropuestaPatrocinio() {
               </h3>
               <ul className="list-disc list-inside space-y-1">
                 <li>
-                  ARS 150.000 hasta el <strong>10 de Junio 2025</strong>
+                  ARS 150.000 hasta el <strong>30 de Julio 2025</strong>
                 </li>
                 <li>
-                  ARS 250.000 hasta el <strong>10 de Julio 2025</strong>
+                  ARS 250.000 hasta el <strong>30 de Agosto 2025</strong>
                 </li>
                 <li>
-                  ARS 300.000 hasta el <strong>10 de Septiembre 2025</strong>
+                  ARS 300.000 hasta el <strong>30 de Septiembre 2025</strong>
                 </li>
               </ul>
               <p className="mt-2 text-xs italic">
