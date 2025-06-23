@@ -68,10 +68,11 @@ export const Inscripcion = () => {
             transition={{ duration: 0.3 }}
           >
             <Users className="w-12 h-12 text-red-600" />
-            <h3 className="text-lg font-semibold mt-2">Cupo Limitado</h3>
+            <h3 className="text-lg font-semibold mt-2">
+              Solo 70 lugares disponibles.
+            </h3>
             <p className="text-gray-600">
-              Solo 70 participantes para asegurar una capacitación
-              personalizada.
+              Asegurá tu lugar con alojamiento en nuestros "Dormis Municipales"!
             </p>
           </motion.div>
         </div>
