@@ -183,7 +183,22 @@ function PropuestaPatrocinio() {
                 ¡Esperamos contar con ustedes!
               </p>
             </section>
-
+              <ul className="list-disc list-inside space-y-2 text-gray-800 font-sans">
+                <li>
+                  <span className="font-semibold">Presidente:</span> Nicolas De Paulo
+                </li>
+                <li>
+                  <span className="font-semibold lowercase">secretaria general:</span> Patricia Soto, Guillermo Carranza, Sergio Felice
+                </li>
+                <li>
+                  <span className="font-semibold lowercase">secretaria técnica:</span> Franco De Paulo
+                </li>
+              </ul>
+            <p className="underline text-primary">Distribución del congreso 👇</p>
+            <img
+              src="/assets/mapa-patrocinadores.jpeg"
+              alt="mapa de patrocinadores"
+            />
             {/* CTA */}
             <div className="pt-4">
               <a
@@ -195,6 +210,7 @@ function PropuestaPatrocinio() {
               </a>
             </div>
           </div>
+          
         </DialogDescription>
         {/* <DialogFooter className="px-6 py-4 sm:justify-end"></DialogFooter> */}
       </DialogContent>

@@ -23,13 +23,19 @@ const patrocinadoresData = [
     title: "ND Capacitaciones",
     description:
       "Es una empresa dedicada a la Capacitación en emergencias, con una alta experiencia en el tema de mas de 30 años, brinda diferentes capacitaciones relacionadas al accionar del ciudadano común frente a emergencias. En la empresa podes encontrar las siguientes capacitaciones:  “Socorros urbanos con RCP y DEA”  “Formador de Brigadistas de Emergencias”  “Monitor de Zonas Cardio Seguras”  “Primeros Auxilios para Perros y Gatos”  “Primeros Socorros Psicológicos”",
-    url: "https://ndcapacitaciones.xyz",
+    url: "https://ndcapacitaciones.com.ar",
   },
   {
     image: "/assets/patrocinadores/nexo-tecnologico.png",
     title: "Nexo Tecnológico",
-    description: "Diseñamos y fabricamos equipamiento medico para RCP.",
+    description: "Diseñamos y fabricamos equipamiento médico para RCP.",
     url: "https://nexotecnologico.com",
+  },
+  {
+    image: "/assets/patrocinadores/argentinareanima.png",
+    title: "Argentina reanima",
+    description: "Capacitamos a personas en técnicas de reanimación cardiopulmonar (RCP), uso de desfibriladores externos automáticos (DEA) y Maniobra de Heimlich, promoviendo además el cumplimiento de la Ley 27.159. Fomentamos una comunidad comprometida, solidaria y preparada para actuar de manera rápida y eficaz ante situaciones críticas como la muerte súbita, fortaleciendo el rol de cada persona como primer respondiente en la cadena de respuesta",
+    url: "https://argentinareanima.org.ar",
   },
 ];
 
