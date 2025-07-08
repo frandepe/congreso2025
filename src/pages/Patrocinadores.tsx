@@ -89,6 +89,18 @@ export const Patrocinadores = () => {
           </p>
         </motion.div>
       </section>
+      <section className="flex justify-center flex-col">
+        <p className="underline text-primary text-center">
+          Distribución del congreso 👇
+        </p>
+        <div className="w-full max-w-screen-md mx-auto">
+          <img
+            src="/assets/mapa-patrocinadores.jpeg"
+            alt="mapa de patrocinadores"
+            className="w-full h-auto object-contain"
+          />
+        </div>
+      </section>
 
       {/* Patrocinadores and Slider */}
       <div className="bg-white py-16">
