@@ -28,7 +28,7 @@ const patrocinadoresData = [
   {
     image: "/assets/patrocinadores/nexo-tecnologico.png",
     title: "Nexo Tecnológico",
-    description: "Diseñamos y fabricamos equipamiento médico para RCP.",
+    description: "Somos una empresa argentina que diseña y fabrica simuladores para capacitaciones en RCP y primeros auxilios, con tecnología de vanguardia que permite a instructores y profesionales de la salud brindar entrenamientos con mayor realismo. Creemos que cuando una persona se siente segura, puede salvar una vida.",
     url: "https://nexotecnologico.com",
   },
   {

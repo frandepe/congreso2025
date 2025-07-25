@@ -60,11 +60,11 @@ export const Home = () => {
       quote: "Patricia Soto - Guillermo Carranza - Sergio Felice",
       role: "Secretaria general",
     },
-    // {
-    //   img: "https://randomuser.me/api/portraits/men/45.jpg",
-    //   quote: "With EldoraUI, creating responsive UIs is a breeze.",
-    //   role: "Secretaria técnica",
-    // },
+    {
+      img: "https://frandepe.vercel.app/imgs/foto2.png",
+      quote: "Franco De Paulo",
+      role: "Secretaria técnica",
+    },
   ];
   return (
     <div className="relative">
