@@ -3,7 +3,7 @@ import React from "react";
 
 export const FAQ = () => {
   return (
-    <div className="px-6">
+    <div className="px-6 dark:bg-background">
       <Faq3 />
     </div>
   );

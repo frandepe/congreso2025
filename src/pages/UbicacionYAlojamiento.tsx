@@ -3,13 +3,11 @@ import { Hoteles } from "@/components/Hoteles/hoteles";
 import React from "react";
 import { Transporte } from "@/components/Transporte/Transporte";
 import { Button } from "@/components/ui/button";
-import { useNavigate } from "react-router-dom";
 
 export const UbicacionYAlojamiento = () => {
-  const navigate = useNavigate();
 
   return (
-    <div>
+    <div className="dark:bg-background">
       <Hoteles />
       <div className="mb-48 px-6">
         <Transporte />

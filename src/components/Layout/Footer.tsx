@@ -28,7 +28,7 @@ export function Footer({
   copyright,
 }: FooterProps) {
   return (
-    <footer className="pb-6 pt-16 lg:pb-8 lg:pt-24 bg-gray-50 flex justify-center">
+    <footer className="pb-6 pt-16 lg:pb-8 lg:pt-24 bg-gray-50 flex justify-center dark:bg-background">
       <div className="px-4 lg:px-8 container">
         <div className="md:flex md:items-start md:justify-between">
           <a
@@ -56,7 +56,7 @@ export function Footer({
             ))}
           </ul>
         </div>
-        <div className="border-t mt-6 pt-6 md:mt-4 md:pt-8 lg:grid lg:grid-cols-10">
+        <div className="border-t mt-6 pt-6 md:mt-4 md:pt-8 lg:grid lg:grid-cols-10 dark:border-gray-700">
           <nav className="lg:mt-0 lg:col-[4/11]">
             <ul className="list-none flex flex-wrap -my-1 -mx-2 lg:justify-end">
               {mainLinks.map((link, i) => (

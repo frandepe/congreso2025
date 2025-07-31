@@ -37,6 +37,12 @@ const patrocinadoresData = [
     description: "Capacitamos a personas en técnicas de reanimación cardiopulmonar (RCP), uso de desfibriladores externos automáticos (DEA) y Maniobra de Heimlich, promoviendo además el cumplimiento de la Ley 27.159. Fomentamos una comunidad comprometida, solidaria y preparada para actuar de manera rápida y eficaz ante situaciones críticas como la muerte súbita, fortaleciendo el rol de cada persona como primer respondiente en la cadena de respuesta",
     url: "https://argentinareanima.org.ar",
   },
+  {
+    image: "/assets/patrocinadores/aces.png",
+    title: "Aces",
+    description: "La Asociación para la Capacitación en Emergencias y Socorros (ACES) es una organización académica sin fines de lucro fundada en el año 2000 con sus casas matrices en Argentina y Canadá. Se dedica a la enseñanza médica, entrenamiento en emergencias, seguridad y rescate. También se dedica a difundir programas de prevención para especialistas y personal de la salud. Desde su constitución la institución trabaja en forma continua para alcanzar los mayores estándares en excelencia educativa. ACES es miembro de la red internacional de entrenamiento AIDER, cuenta con más de cinco mil instructores certificados en América Latina, Brasil, Canadá, España, Estados Unidos, Portugal y Tailandia. La institución ofrece y enseña más de treinta cursos diferentes provenientes de instituciones científicas y médicas ampliamente reconocidas. Todas las formaciones son internacionalmente certificadas por la Asociación Internacional ACES, por la red AIDER Canadá y/o por American ECHO, todas ellas instituciones internacionales de primer nivel. Las capacitaciones brindadas, siguen las últimas recomendaciones de ILCOR, el consejo Europeo de Resucitación, la AAP (American Academy of Pediatrics) y la OPS (Organización Panamericana de la Salud), y están en constante actualización para estar siempre al día con los protocolos más recientes.",
+    url: "https://www.acesint.org/web/es/",
+  },
 ];
 
 function CardsPatrocinadoresPagination() {

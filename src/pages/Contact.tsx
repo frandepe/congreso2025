@@ -4,7 +4,7 @@ import { Phone, Mail, Facebook, Instagram } from "lucide-react"; // Importa los 
 
 export const Contact = () => {
   return (
-    <div className="mt-9 px-6 relative">
+    <div className="pt-9 px-6 relative dark:bg-background">
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center space-y-8 md:space-y-0 relative">
         {/* Logo en el fondo */}
         <div className="absolute left-48 top-1/2 -translate-y-1/2 w-3/5 h-3/5 bg-[url('/assets/logo-congreso2025.png')] bg-contain bg-no-repeat opacity-10 pointer-events-none"></div>

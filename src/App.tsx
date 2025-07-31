@@ -1,7 +1,5 @@
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
-
-import { NavbarPrincipal } from "./components/Layout/NavbarPrincipal";
 import { Home } from "./pages/Home";
 import { Contact } from "./pages/Contact";
 import { MainLayout } from "./components/Layout/MainLayout";

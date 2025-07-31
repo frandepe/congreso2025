@@ -38,21 +38,14 @@ export default {
           foreground: "hsl(var(--popover-foreground))",
         },
         primary: {
-          DEFAULT: "#1D3B1F", // Verde claro
+          DEFAULT: "hsl(var(--primary))", // Verde claro
+          hover: "hsl(var(--primary-hover))",
           foreground: "white", // Color del texto en primary, por ejemplo blanco
         },
         secondary: {
           DEFAULT: "#F7941D", // Naranja
           foreground: "white", // Color del texto en secondary, por ejemplo blanco
         },
-        // primary: {
-        //   DEFAULT: "hsl(var(--primary))",
-        //   foreground: "hsl(var(--primary-foreground))",
-        // },
-        // secondary: {
-        //   DEFAULT: "hsl(var(--secondary))",
-        //   foreground: "hsl(var(--secondary-foreground))",
-        // },
         muted: {
           DEFAULT: "hsl(var(--muted))",
           foreground: "hsl(var(--muted-foreground))",

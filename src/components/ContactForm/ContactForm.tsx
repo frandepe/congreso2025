@@ -93,7 +93,7 @@ export default function ContactForm() {
             id="message"
             name="message"
             placeholder="Comparte tus comentarios o preguntas"
-            className="min-h-[100px] bg-white"
+            className="min-h-[100px] bg-white dark:bg-background"
             required
           />
         </div>

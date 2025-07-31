@@ -13,7 +13,7 @@ export const Transporte = () => {
         <div className="flex flex-col items-start">
           <div className="flex items-center mb-4">
             <Calendar className="w-10 h-10 text-orange" />
-            <h3 className="text-xl font-semibold text-gray-800 ml-4">
+            <h3 className="text-xl font-semibold ml-4">
               Oficina de Informes
             </h3>
           </div>
@@ -38,7 +38,7 @@ export const Transporte = () => {
         <div className="flex flex-col items-start">
           <div className="flex items-center mb-4">
             <MapPin className="w-10 h-10 text-lightGreen" />
-            <h3 className="text-xl font-semibold text-gray-800 ml-4">
+            <h3 className="text-xl font-semibold ml-4">
               Distancias a Trenque Lauquen
             </h3>
           </div>
@@ -74,7 +74,7 @@ export const Transporte = () => {
         <div className="flex flex-col items-start">
           <div className="flex items-center mb-4">
             <Truck className="w-10 h-10 text-redOrange" />
-            <h3 className="text-xl font-semibold text-gray-800 ml-4">
+            <h3 className="text-xl font-semibold ml-4">
               Teléfonos de Empresas de Transporte
             </h3>
           </div>

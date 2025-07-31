@@ -1,10 +1,12 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import "./index.css";
 import App from "./App";
-// git config --local user.name frandepe
+import "./index.css";
+import ThemeToggle from "./lib/ThemeToggle";
+
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <App />
+    <ThemeToggle />
   </StrictMode>
 );

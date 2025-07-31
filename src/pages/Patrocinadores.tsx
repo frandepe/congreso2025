@@ -8,7 +8,7 @@ import { PropuestaPatrocinio } from "@/components/PropuestaPatrocinio/PropuestaP
 
 export const Patrocinadores = () => {
   return (
-    <div className="min-h-screen bg-gray-50 text-gray-900">
+    <div className="min-h-screen bg-gray-50 dark:bg-background">
       {/* Hero Section with Intro */}
       <section className="relative w-full h-[350px] flex items-center justify-center">
         {/* Capa con imagen de fondo y desenfoque filter blur-xs*/}
@@ -39,7 +39,7 @@ export const Patrocinadores = () => {
       </section>
 
       {/* Introduction to Sponsorships */}
-      <section className="py-16 text-center bg-gray-100">
+      <section className="py-16 text-center bg-gray-100 dark:bg-background">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -90,10 +90,10 @@ export const Patrocinadores = () => {
         </motion.div>
       </section>
       <section className="flex justify-center flex-col">
-        <p className="underline text-primary text-center">
+        <p className="underline text-primary text-center my-6">
           Distribución del congreso 👇
         </p>
-        <div className="w-full max-w-screen-md mx-auto">
+        <div className="w-full max-w-screen-md mx-auto mb-6">
           <img
             src="/assets/mapa-patrocinadores.jpeg"
             alt="mapa de patrocinadores"
@@ -103,7 +103,7 @@ export const Patrocinadores = () => {
       </section>
 
       {/* Patrocinadores and Slider */}
-      <div className="bg-white py-16">
+      <div className="bg-white py-16 dark:bg-gray-700">
         <PatrocinadoresComponent />
         <SliderPatrocinadores />
       </div>

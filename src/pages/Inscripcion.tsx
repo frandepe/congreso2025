@@ -13,7 +13,7 @@ import { PricingCardDemo } from "@/components/PricingCard/PricingCard";
 
 export const Inscripcion = () => {
   return (
-    <div className="min-h-screen bg-gray-50 text-gray-900">
+    <div className="min-h-screen bg-gray-50 dark:bg-background">
       {/* Hero Section */}
       <section className="relative w-full h-[350px] flex items-center justify-center bg-[url('/assets/banner1-edit.jpg')] bg-cover bg-[center_top_30%]">
         <div className="absolute inset-0 bg-green-500 opacity-30 mix-blend-multiply"></div>
@@ -80,7 +80,7 @@ export const Inscripcion = () => {
 
       {/* Pricing Cards */}
       <motion.div
-        className="flex justify-center bg-gray-100 py-4 my-10"
+        className="flex justify-center bg-gray-100 py-4 my-10 dark:bg-gray-700"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}

@@ -67,7 +67,7 @@ export const Home = () => {
     },
   ];
   return (
-    <div className="relative">
+    <div className="relative dark:bg-background">
       <div className="relative">
         <BannerPrincipal />
 
