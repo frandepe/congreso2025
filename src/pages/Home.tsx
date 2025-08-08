@@ -60,20 +60,21 @@ export const Home = () => {
         </div>
       </div>
       <DescImgs />
-      <div className="relative w-full overflow-hidden rounded-lg">
+
+      <div className="mt-10">
+        <Agradecimientos primaryColor="sky-500"
+        progressGradientLight="bg-gradient-to-r from-secondary/70 to-secondary"
+        progressGradientDark="bg-gradient-to-r from-secondary/70 to-secondary"
+        features={features}
+        />
+      </div>
+       <div className="relative w-full overflow-hidden rounded-lg">
         <h3 className="text-center font-bold text-primary">
           Comité organizador
         </h3>
         <div className="mt-4 flex justify-center px-12">
           <Comite testimonials={testimonials} />
         </div>
-      </div>
-      <div className="mt-20">
-        <Agradecimientos primaryColor="sky-500"
-        progressGradientLight="bg-gradient-to-r from-secondary/70 to-secondary"
-        progressGradientDark="bg-gradient-to-r from-secondary/70 to-secondary"
-        features={features}
-        />
       </div>
     </div>
   );
