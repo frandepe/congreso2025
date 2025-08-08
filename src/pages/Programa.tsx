@@ -16,7 +16,7 @@ export const Programa = () => {
           <AnimatedTooltipPreview />
           <Button
             className="gap-4"
-            onClick={() => navigate("/expositores")}
+            onClick={() => navigate("/expositores#top")}
             aria-label="Ver todos los expositores"
           >
             Ver todos <MoveRight className="w-4 h-4" />
