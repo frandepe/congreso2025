@@ -52,11 +52,12 @@ export const Comite = ({ testimonials }: { testimonials: Testimonial[] }) => {
                 beforeEnter={() => heightFix()}
               >
                 <img
-                  className="relative left-1/2 top-11 -translate-x-1/2 rounded-full"
+                  className="relative left-1/2 top-11 -translate-x-1/2 rounded-full w-14 h-14 object-contain"
                   src={testimonial.img}
                   width={56}
                   height={56}
                   alt={testimonial.quote}
+                  style={{ objectPosition: "center 1%" }}
                 />
               </Transition>
             ))}

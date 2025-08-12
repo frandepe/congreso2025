@@ -3,7 +3,9 @@ import BannerPrincipal from "@/components/Banners/BannerPrincipal";
 import { Comite } from "@/components/Comite/Comite";
 import Countdown from "@/components/Countdown/Countdown";
 import { DescImgs } from "@/components/DescImgs/DescImgs";
+import { AudioPlayer } from "@/components/ui/audio-player";
 import { Projector, Sandwich } from "lucide-react";
+import { motion } from "framer-motion";
 import React from "react";
 
 const features= [
@@ -23,14 +25,6 @@ const features= [
       "La mejor calidad y servicio en comida rápida la tenemos con nosotros",
     image: "/assets/foot-truck2.jpg",
   },
-  // {
-  //   id: 3,
-  //   icon: Brain,
-  //   title: "AI-Powered Learning",
-  //   description:
-  //     "Experience personalized, AI-driven learning tailored for BCA, BBA, and other students.",
-  //   image: "https://bcalabs.org/companions_group_2.jpg",
-  // },
 ];
 export const Home = () => {
   const testimonials = [
@@ -61,13 +55,36 @@ export const Home = () => {
       </div>
       <DescImgs />
 
-      <div className="mt-10">
+        <section className="relative md:h-[400px] h-[450px] flex items-center justify-center mb-10 md:mb-40">
+        {/* Capa con imagen de fondo y desenfoque filter blur-xs*/}
+        <div className="absolute inset-0">
+          <div
+            className="absolute inset-0 bg-[url('/assets/radio1.jpg')] bg-cover"
+            style={{ backgroundPosition: "center top 30%" }}
+          ></div>
+          <div className="absolute inset-0 bg-green-500 opacity-30 mix-blend-multiply"></div>
+        </div>
+
+        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+        <motion.div
+          initial={{ opacity: 0, y: -30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          className="relative text-center text-white max-w-4xl px-6 py-6"
+        >
+          <AudioPlayer />
+        </motion.div>
+      </section>
+
+      <div>
         <Agradecimientos primaryColor="sky-500"
         progressGradientLight="bg-gradient-to-r from-secondary/70 to-secondary"
         progressGradientDark="bg-gradient-to-r from-secondary/70 to-secondary"
         features={features}
         />
       </div>
+
+
        <div className="relative w-full overflow-hidden rounded-lg">
         <h3 className="text-center font-bold text-primary">
           Comité organizador
