@@ -34,12 +34,17 @@ const DC = (props: SVGProps<SVGSVGElement>) => (
   <img src={"/assets/patrocinadores/patro-dc.png"} width={100} height={100} />
 );
 
+// const ArgentinaReanima = (props: SVGProps<SVGSVGElement>) => (
+//   <img src={"/assets/patrocinadores/argentinareanima.png"} width={100} height={100} />
+// );
+
 // Массив с логотипами
 const allLogos = [
   { name: "DC", id: 1, img: DC },
   { name: "TL", id: 2, img: TL },
   { name: "NexoTecnologico", id: 3, img: NexoTecnologico },
   { name: "NDcapacitaciones", id: 4, img: NDcapacitaciones },
+  // { name: "ArgentinaReanima", id: 5, img: ArgentinaReanima },
 ];
 
 export function PatrocinadoresComponent() {

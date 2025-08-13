@@ -9,9 +9,11 @@ export const UbicacionYAlojamiento = () => {
   return (
     <div className="dark:bg-background">
       <Hoteles />
-      <div className="mb-48 px-6">
+      <div className="border-t border-gray-200 dark:border-gray-700 my-12"></div>
+      <div className="mb-20 px-6">
         <Transporte />
       </div>
+      <div className="border-t border-gray-200 dark:border-gray-700 my-12"></div>
       <div className="flex items-center justify-center gap-4 py-8 text-center mb-48">
         <div className="mx-auto flex max-w-4xl flex-col items-center rounded-lg bg-accent p-4 text-center md:rounded-xl md:p-6 lg:p-8">
           <h3 className="mb-2 max-w-3xl font-semibold lg:text-lg">

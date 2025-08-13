@@ -72,36 +72,23 @@ const LogoColumn: React.FC<LogoColumnProps> = React.memo(
         }}
       >
         <AnimatePresence mode="wait">
-          <motion.div
-            key={`${logos[currentIndex].id}-${currentIndex}`}
-            className="absolute inset-0 flex items-center justify-center"
-            initial={{ y: "10%", opacity: 0, filter: "blur(8px)" }}
-            animate={{
-              y: "0%",
-              opacity: 1,
-              filter: "blur(0px)",
-              transition: {
-                type: "spring",
-                stiffness: 300,
-                damping: 20,
-                mass: 1,
-                bounce: 0.2,
-                duration: 0.5,
-              },
-            }}
-            exit={{
-              y: "-20%",
-              opacity: 0,
-              filter: "blur(6px)",
-              transition: {
-                type: "tween",
-                ease: "easeIn",
-                duration: 0.3,
-              },
-            }}
-          >
-            <CurrentLogo className="h-20 w-20 max-h-[80%] max-w-[80%] object-contain md:h-32 md:w-32" />
-          </motion.div>
+         <motion.div
+          key={`${logos[currentIndex].id}-${currentIndex}`}
+          className="absolute inset-0 flex items-center justify-center"
+          initial={{ y: "10%", opacity: 0 }}
+          animate={{ y: "0%", opacity: 1 }}
+          exit={{ y: "-20%", opacity: 0 }}
+          transition={{
+            type: "spring",
+            stiffness: 300,
+            damping: 20,
+            mass: 1,
+            bounce: 0.2,
+            duration: 0.5,
+          }}
+        >
+          <CurrentLogo className="h-20 w-20 max-h-[80%] max-w-[80%] object-contain md:h-32 md:w-32" />
+        </motion.div>
         </AnimatePresence>
       </motion.div>
     );

@@ -8,14 +8,10 @@ import {
 const patrocinadores = [
   { id: 1, img: "/assets/patrocinadores/patro-dc.png", title: "Patro" },
   { id: 2, img: "/assets/patrocinadores/patro-tl.png", title: "Patro" },
-  {
-    id: 3,
-    img: "/assets/patrocinadores/nd-capacitaciones.png",
-    title: "Patro",
-  },
+  { id: 3, img: "/assets/patrocinadores/nd-capacitaciones.png", title: "Patro" },
   { id: 4, img: "/assets/patrocinadores/nexo-tecnologico.png", title: "Patro" },
-  // { id: 5, img: "/assets/patrocinadores/patro-dc.png", title: "Patro" },
-  // { id: 6, img: "/assets/patrocinadores/patro-tl.png", title: "Patro" },
+  { id: 5, img: "/assets/patrocinadores/lecsy.png", title: "Patro" },
+  { id: 6, img: "/assets/patrocinadores/argentinareanima.png", title: "Patro" },
 ];
 
 const SliderPatrocinadores = () => {
