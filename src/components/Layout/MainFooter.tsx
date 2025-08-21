@@ -4,6 +4,7 @@ import {
   Instagram,
   Heart,
   MessageCircle,
+  Youtube,
 } from "lucide-react";
 import { Footer } from "./Footer";
 
@@ -23,6 +24,11 @@ function MainFooter() {
             icon: <Instagram className="h-5 w-5" />,
             href: "https://www.instagram.com/congresonacionalrcp/",
             label: "Instagram",
+          },
+          {
+            icon: <Youtube className="h-5 w-5" />,
+            href: "https://www.youtube.com/@CongresoNacionalRCP",
+            label: "YouTube",
           },
           {
             icon: <MessageCircle className="h-5 w-5" />,

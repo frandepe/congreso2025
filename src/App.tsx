@@ -9,6 +9,7 @@ import { Patrocinadores } from "./pages/Patrocinadores";
 import { Inscripcion } from "./pages/Inscripcion";
 import { Expositores } from "./pages/Expositores";
 import { FAQ } from "./pages/Faq";
+import Videos from "./pages/Videos";
 
 function PageWrapper({ children }: any) {
   return (
@@ -74,6 +75,14 @@ function App() {
               element={
                 <PageWrapper>
                   <FAQ />
+                </PageWrapper>
+              }
+            />
+            <Route
+              path="/videos"
+              element={
+                <PageWrapper>
+                  <Videos />
                 </PageWrapper>
               }
             />

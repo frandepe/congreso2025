@@ -34,6 +34,22 @@ html {
   .image-rendering-high-quality {
     image-rendering: high-quality;
   }
+    .custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+    border-radius: 8px;
+    background-color: #F7941D;
+  }
+
+  /* Estilo de la parte de la barra que se arrastra */
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #E7551E;
+    border-radius: 8px;
+  }
+
+  /* Estilo de la esquina entre la barra y el track */
+  .custom-scrollbar::-webkit-scrollbar-corner {
+    background-color: transparent;
+  }
 }
 
 @layer components {
