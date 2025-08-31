@@ -19,6 +19,15 @@ const patrocinadoresData = [
     url: "https://ndcapacitaciones.com.ar",
   },
   {
+    image: "/assets/patrocinadores/driplan.png",
+    title: "Driplan",
+    description: `Driplan comenzó sus operaciones en 1989 prestando servicios de mantenimiento de vaporizadores y máquinas de anestesia en Argentina,
+    para pronto abarcar otros países de la región. Como representante exclusivo y centro de servicio técnico oficial de las más prestigiosas
+    marcas de equipamiento médico y lactancia, Driplan está enfocada en la actualidad, además de en su tradicional área de mantenimiento de vaporizadores y máquinas de anestesia, en brindar soluciones para áreas críticas de instituciones de salud públicas y privadas,
+    así como también en la implementación de programas de reanimación cardiopulmonar, primeros auxilios, desfibrilación temprana de acceso público y soluciones de Lactancia.`,
+    url: "https://www.driplan.com/",
+  },
+  {
     image: "/assets/patrocinadores/lecsy.png",
     title: "LECSY",
     description: `LECSY (Learning Certificate System) es una plataforma de capacitación a distancia que brinda a los equipos las herramientas que el mundo actual necesita. Ofrece un innovador sistema de enseñanza y certificación, integrando materiales de estudio, simuladores, aporte docente, experiencia del usuario y registros para retroalimentación y calificación. Misión: colaborar, facilitar, respaldar y potenciar a centros y personas usuarias para lograr un aprendizaje efectivo, duradero y aplicable, registrando y certificando cada paso del proceso. Visión: aumentar la seguridad, mejorar la sobrevida y reducir la morbilidad de las personas asistidas por personal entrenado con LECSY, potenciando el aprendizaje, las emociones, las competencias y el análisis reflexivo.`,
