@@ -21,10 +21,8 @@ const patrocinadoresData = [
   {
     image: "/assets/patrocinadores/driplan.png",
     title: "Driplan",
-    description: `Driplan comenzó sus operaciones en 1989 prestando servicios de mantenimiento de vaporizadores y máquinas de anestesia en Argentina,
-    para pronto abarcar otros países de la región. Como representante exclusivo y centro de servicio técnico oficial de las más prestigiosas
-    marcas de equipamiento médico y lactancia, Driplan está enfocada en la actualidad, además de en su tradicional área de mantenimiento de vaporizadores y máquinas de anestesia, en brindar soluciones para áreas críticas de instituciones de salud públicas y privadas,
-    así como también en la implementación de programas de reanimación cardiopulmonar, primeros auxilios, desfibrilación temprana de acceso público y soluciones de Lactancia.`,
+    description: `Se especializa en la provisión de equipamiento médico de alta complejidad, con un enfoque particular en soluciones cardiológicas de excelencia. Nuestra función como empresa es acompañar a instituciones públicas y privadas en la incorporación de tecnología confiable, eficiente y de última generación, que contribuya a elevar los estándares de seguridad y atención médica.
+    A través de nuestros desfibriladores de vanguardia, ofrecemos equipos diseñados para garantizar máxima precisión, autonomía y facilidad de uso en situaciones críticas, permitiendo una respuesta inmediata y efectiva frente a emergencias cardiovasculares. De este modo, contribuimos de manera directa a la prevención, el cuidado de la salud y la protección de la vida en cada entorno donde estamos presentes.`,
     url: "https://www.driplan.com/",
   },
   {
