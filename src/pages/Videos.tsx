@@ -5,29 +5,20 @@ import YouTube from "react-youtube";
 
 const videos = [
   {
+    id: "3i1a090V7PY",
+    title: "Miguel Angel Grimas Salinas - Presentación",
+    thumbnail: "https://img.youtube.com/vi/3i1a090V7PY/mqdefault.jpg",
+    avatar: "assets/speakers/cara/miguel-angel-grima-cara.jpg",
+    date: "02 Septiembre 2025",
+    duration: "11:02",
+  },
+  {
     id: "6fZ6LnpgJXU",
     title: "Radio 37",
     thumbnail: "https://img.youtube.com/vi/6fZ6LnpgJXU/mqdefault.jpg",
-  },
-  {
-    id: "QqPQu4mZiHI",
-    title: "Entrevista",
-    thumbnail: "https://img.youtube.com/vi/QqPQu4mZiHI/mqdefault.jpg",
-  },
-  {
-    id: "E8d06HYk2a4",
-    title: "TV Ley RCP",
-    thumbnail: "https://img.youtube.com/vi/E8d06HYk2a4/mqdefault.jpg",
-  },
-  {
-    id: "kO2GFMmLhX4",
-    title: "Cómo hacer maniobras de RCP",
-    thumbnail: "https://img.youtube.com/vi/kO2GFMmLhX4/mqdefault.jpg",
-  },
-  {
-    id: "O1AOt_s1NzM",
-    title: "Cruz Roja",
-    thumbnail: "https://img.youtube.com/vi/O1AOt_s1NzM/mqdefault.jpg",
+    avatar: "assets/speakers/cara/nicolas-de-paulo.jpg",
+    date: "18 Agosto 2025",
+    duration: "8:06",
   },
 ];
 
@@ -35,6 +26,7 @@ export default function StoriesParent() {
   const [selectedVideo, setSelectedVideo] = useState<string>(videos[0].id);
 
   return (
+
     <div className="pt-6 flex flex-col xl:flex-row items-center justify-center dark:bg-background">
       <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-10">
         <h2 className="flex items-center gap-3 text-xl md:text-4xl lg:text-5xl font-bold mb-6 text-black dark:text-white">
@@ -55,7 +47,7 @@ export default function StoriesParent() {
               width: "100%",
               height: "100%",
               playerVars: {
-                autoplay: 1,
+                autoplay: 0,
                 modestbranding: 1,
                 rel: 0,
                 showinfo: 0,
@@ -67,9 +59,16 @@ export default function StoriesParent() {
 
         {/* Carrusel de cards */}
         <div className="w-full max-w-4xl">
+          <div className="flex items-center gap-2 mt-4">
+            <h2>Videos en vivo</h2>
+            <div className="flex-1 border-t border-gray-400"></div>
+          </div>
           <StoriesCarousel videos={videos} onSelect={setSelectedVideo} />
         </div>
+
       </div>
     </div>
+
+
   );
 }

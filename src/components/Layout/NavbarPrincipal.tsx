@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { HelpCircle, MapPin, Menu, MicVocal } from "lucide-react";
+import { HelpCircle, MapPin, Menu, MicVocal, Radio } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
@@ -158,7 +158,12 @@ const NavbarPrincipal = ({
           icon: <MicVocal className="size-5 shrink-0" />,
           url: "/expositores",
         },
-
+        {
+          title: "Charlas y entrevistas",
+          description: "Con instructores y referentes del Congreso",
+          icon: <Radio className="size-5 shrink-0" />,
+          url: "/videos",
+        },
         {
           title: "Ubicación y alojamiento",
           description: "Opciones de transporte y hoteles recomendados",
@@ -167,10 +172,10 @@ const NavbarPrincipal = ({
         },
         {
           title: "Preguntas Frecuentes",
-          description: "Encuentra respuestas a las preguntas más comunes aquí.",
+          description: "Encuentra respuestas a las preguntas más comunes aquí",
           icon: <HelpCircle className="size-5 shrink-0" />,
           url: "/preguntas-frecuentes",
-        },
+        }
       ],
     },
     {
