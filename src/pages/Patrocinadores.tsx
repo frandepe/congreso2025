@@ -72,7 +72,7 @@ export const Patrocinadores = () => {
               transition={{ duration: 0.3 }}
             >
               <a
-                href="https://forms.gle/SK28CXsPT2DkhyLb6"
+                href="https://forms.gle/3mQqU8Y2nwj3PoR49"
                 target="_blank"
                 rel="noopener noreferrer"
               >

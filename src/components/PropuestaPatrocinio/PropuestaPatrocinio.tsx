@@ -23,7 +23,7 @@ function PropuestaPatrocinio() {
           </DialogTitle>
           <div className="pt-4">
             <a
-              href="https://forms.gle/f7u9EUCD97wnHXm18"
+              href="https://forms.gle/UHkmNLUy4VKVEsRv7"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -187,7 +187,7 @@ function PropuestaPatrocinio() {
             {/* CTA */}
             <div className="pt-4">
               <a
-                href="https://forms.gle/f7u9EUCD97wnHXm18"
+                href="https://forms.gle/UHkmNLUy4VKVEsRv7"
                 target="_blank"
                 rel="noopener noreferrer"
               >

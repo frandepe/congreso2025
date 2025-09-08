@@ -13,7 +13,7 @@ const DEMO_TIERS = [
       "Desayuno y refrigerios",
       "Uso de instalaciones",
     ],
-    redirect: "https://forms.gle/bGpzXueC3CvU8uVZ7",
+    redirect: "https://forms.gle/QvYcTU28Qs3YEcRQ6",
     cta: "Inscribirse",
   },
   {
@@ -43,7 +43,7 @@ const DEMO_TIERS = [
       "Disponible desde el día anterior al congreso (4 noches)",
       "🎟️ Cupos limitados a 70 personas",
     ],
-    redirect: "https://forms.gle/YcAAUcLJNr165PQS6",
+    redirect: "https://forms.gle/TJTWvP7sP33L4gK99",
     cta: "Inscribirse",
     highlighted: true,
     popular: true,

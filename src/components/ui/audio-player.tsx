@@ -15,7 +15,7 @@ interface AudioPlayerProps {
 
 export function AudioPlayer({
   audioSrc = "/assets/radio37.mp3",
-  speakerName = "Radio 37 Gral Pico . Una mañana de locos . Conducción Daniel De Paulo",
+  speakerName = "Radio 37 Gral Pico. Una mañana de locos. Conducción Daniel De Paulo",
   speakerAvatar = "/assets/speakers/cara/nicolas-de-paulo.jpg",
   barsCount = 48,
 }: AudioPlayerProps) {

@@ -116,7 +116,7 @@ export function AnimatedModalDemo() {
             </div>
           </ModalContent>
           <ModalFooter className="gap-4">
-            <a href="https://forms.gle/YcAAUcLJNr165PQS6" target="_blank">
+            <a href="https://forms.gle/TJTWvP7sP33L4gK99" target="_blank">
               <Button
                 variant="default"
                 className="w-28 bg-black text-white dark:bg-white dark:text-black border border-black"

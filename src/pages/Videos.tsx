@@ -14,7 +14,7 @@ const videos = [
   },
   {
     id: "6fZ6LnpgJXU",
-    title: "Radio 37",
+    title: "Radio 37. Gral Pico",
     thumbnail: "https://img.youtube.com/vi/6fZ6LnpgJXU/mqdefault.jpg",
     avatar: "assets/speakers/cara/nicolas-de-paulo.jpg",
     date: "18 Agosto 2025",
