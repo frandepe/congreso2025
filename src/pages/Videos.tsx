@@ -5,6 +5,14 @@ import YouTube from "react-youtube";
 
 const videos = [
   {
+    id: "DqyTBAxf6z4",
+    title: "Alicia Galfaso - Psicología de emergencia",
+    thumbnail: "https://img.youtube.com/vi/DqyTBAxf6z4/mqdefault.jpg",
+    avatar: "assets/speakers/cara/alicia-galfazo.jpg",
+    date: "10 Septiembre 2025",
+    duration: "10:30",
+  },
+  {
     id: "3i1a090V7PY",
     title: "Miguel Angel Grimas Salinas - Presentación",
     thumbnail: "https://img.youtube.com/vi/3i1a090V7PY/mqdefault.jpg",
@@ -26,7 +34,6 @@ export default function StoriesParent() {
   const [selectedVideo, setSelectedVideo] = useState<string>(videos[0].id);
 
   return (
-
     <div className="pt-6 flex flex-col xl:flex-row items-center justify-center dark:bg-background">
       <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-10">
         <h2 className="flex items-center gap-3 text-xl md:text-4xl lg:text-5xl font-bold mb-6 text-black dark:text-white">
@@ -34,7 +41,10 @@ export default function StoriesParent() {
           En Vivo: Charlas y Entrevistas
         </h2>
         <p className="text-neutral-700 dark:text-neutral-300 text-sm md:text-base max-w-md leading-relaxed">
-          Disfrutá de charlas y entrevistas en tiempo real con especialistas, instructores y referentes del primer Congreso Nacional de Reanimación Cardiopulmonar. Mantenete actualizado y aprendé de los expertos desde cualquier lugar.
+          Disfrutá de charlas y entrevistas en tiempo real con especialistas,
+          instructores y referentes del primer Congreso Nacional de Reanimación
+          Cardiopulmonar. Mantenete actualizado y aprendé de los expertos desde
+          cualquier lugar.
         </p>
       </div>
 
@@ -65,10 +75,7 @@ export default function StoriesParent() {
           </div>
           <StoriesCarousel videos={videos} onSelect={setSelectedVideo} />
         </div>
-
       </div>
     </div>
-
-
   );
 }
