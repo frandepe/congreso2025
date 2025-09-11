@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import { useState } from "react";
 
 interface StoriesCarouselProps {
@@ -12,7 +13,10 @@ interface StoriesCarouselProps {
   onSelect: (id: string) => void;
 }
 
-export default function StoriesCarousel({ videos, onSelect }: StoriesCarouselProps) {
+export default function StoriesCarousel({
+  videos,
+  onSelect,
+}: StoriesCarouselProps) {
   const [active, setActive] = useState<string | null>(null);
 
   const handleSelect = (id: string) => {
@@ -21,7 +25,12 @@ export default function StoriesCarousel({ videos, onSelect }: StoriesCarouselPro
   };
 
   return (
-    <div className="w-full overflow-x-auto py-2 flex gap-4 scroll-smooth custom-scrollbar">
+    <div
+      className={clsx(
+        "w-full overflow-x-auto py-2 flex gap-4 scroll-smooth custom-scrollbar",
+        active && "pl-2"
+      )}
+    >
       {videos.map((video) => (
         <div
           key={video.id}
@@ -53,22 +62,24 @@ export default function StoriesCarousel({ videos, onSelect }: StoriesCarouselPro
               className="w-8 h-8 rounded-full object-cover"
             />
 
-           {/* Título + Fecha */}
-          <div className="flex flex-col flex-1 min-w-0 ">
-            {/* Título con tooltip */}
-            <div className="relative group">
-              <p className="text-sm font-semibold truncate overflow-hidden whitespace-nowrap text-black dark:text-white">
-                {video.title}
-              </p>
-              <span className="absolute left-0 bottom-full mb-1 hidden group-hover:block
-                bg-black text-white text-xs px-2 py-1 rounded shadow-lg whitespace-nowrap z-10">
-                {video.title}
-              </span>
-            </div>
+            {/* Título + Fecha */}
+            <div className="flex flex-col flex-1 min-w-0 ">
+              {/* Título con tooltip */}
+              <div className="relative group">
+                <p className="text-sm font-semibold truncate overflow-hidden whitespace-nowrap text-black dark:text-white">
+                  {video.title}
+                </p>
+                <span
+                  className="absolute left-0 bottom-full mb-1 hidden group-hover:block
+                bg-black text-white text-xs px-2 py-1 rounded shadow-lg whitespace-nowrap z-10"
+                >
+                  {video.title}
+                </span>
+              </div>
 
-            {/* Fecha */}
-            <p className="text-xs text-gray-500">{video.date}</p>
-          </div>
+              {/* Fecha */}
+              <p className="text-xs text-gray-500">{video.date}</p>
+            </div>
           </div>
         </div>
       ))}
