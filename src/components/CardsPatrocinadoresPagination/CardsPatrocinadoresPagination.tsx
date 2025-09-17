@@ -53,6 +53,13 @@ const patrocinadoresData = [
     url: "https://www.acesint.org/web/es/",
   },
   {
+    image: "/assets/patrocinadores/cafe-bar.png",
+    title: "Bares & Fondas",
+    description:
+      "Resto-Bar Nuestro Lugar, tu lugar para comer rico, escuchar linda música y disfrutar de buenos momentos. Te esperamos en 9 de Julio 16, Trenque Lauquen.",
+    url: "https://www.facebook.com/baresyfondas",
+  },
+  {
     image: "/assets/patrocinadores/patro-tl.png",
     title: "Trenque Lauquen",
     description:
