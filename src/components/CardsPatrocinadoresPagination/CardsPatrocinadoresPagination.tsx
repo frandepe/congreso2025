@@ -53,6 +53,13 @@ const patrocinadoresData = [
     url: "https://www.acesint.org/web/es/",
   },
   {
+    image: "/assets/patrocinadores/logo-fmd.png",
+    title: "Desarrollo Web FD",
+    description:
+      "Ayudo a empresas y emprendedores a mejorar sus procesos mediante el desarrollo de soluciones web y móviles",
+    url: "https://frandepe.vercel.app/",
+  },
+  {
     image: "/assets/patrocinadores/cafe-bar.png",
     title: "Bares & Fondas",
     description:
