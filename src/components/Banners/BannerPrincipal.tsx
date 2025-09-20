@@ -1,6 +1,7 @@
 import { Calendar, MapPin } from "lucide-react";
 import { Button } from "../ui/button";
 import { useNavigate } from "react-router-dom";
+import { AnimatedModalVideo } from "../AnimatedModal/AnimatedModalVideo";
 
 export default function BannerPrincipal() {
   const navigate = useNavigate();
@@ -23,9 +24,10 @@ export default function BannerPrincipal() {
           Primer congreso nacional de instructores de RCP
         </h1>
 
-        <Button onClick={() => navigate("/inscripcion")} className="mt-6">
+        <Button onClick={() => navigate("/inscripcion")} className="mt-6 mr-6">
           Inscribirme
         </Button>
+        <AnimatedModalVideo />
       </div>
     </div>
   );

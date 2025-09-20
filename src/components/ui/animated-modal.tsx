@@ -1,4 +1,3 @@
-"use client";
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import React, {
@@ -84,7 +83,7 @@ export const ModalBody = ({
   return (
     <AnimatePresence>
       {open && (
-         <motion.div
+        <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -139,9 +138,7 @@ export const ModalContent = ({
   className?: string;
 }) => {
   return (
-    <div className={cn("flex flex-col flex-1 p-8 md:p-10", className)}>
-      {children}
-    </div>
+    <div className={cn("flex flex-col flex-1", className)}>{children}</div>
   );
 };
 
@@ -166,14 +163,13 @@ export const ModalFooter = ({
 
 const Overlay = ({ className }: { className?: string }) => {
   return (
-   <motion.div
+    <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.3 }}
       className={`fixed inset-0 h-full w-full bg-black bg-opacity-50 backdrop-blur-md z-50 ${className}`}
-    >
-    </motion.div>
+    ></motion.div>
   );
 };
 

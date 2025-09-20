@@ -175,7 +175,7 @@ const NavbarPrincipal = ({
           description: "Encuentra respuestas a las preguntas más comunes aquí",
           icon: <HelpCircle className="size-5 shrink-0" />,
           url: "/preguntas-frecuentes",
-        }
+        },
       ],
     },
     {
@@ -183,7 +183,6 @@ const NavbarPrincipal = ({
       url: "/contacto",
     },
   ],
-
 }: Navbar1Props) => {
   const [isNavVisible, setIsNavVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -207,7 +206,7 @@ const NavbarPrincipal = ({
 
   return (
     <section
-      className={`py-2 flex justify-center fixed top-0 left-0 z-50 w-full bg-background shadow-md transition-all px-6 duration-300 ${
+      className={`py-2 flex justify-center fixed top-0 left-0 z-40 w-full bg-background shadow-md transition-all px-6 duration-300 ${
         isNavVisible ? "opacity-100" : "opacity-0 -translate-y-full"
       }`}
     >
