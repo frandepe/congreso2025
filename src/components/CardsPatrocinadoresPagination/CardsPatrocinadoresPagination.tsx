@@ -53,6 +53,13 @@ const patrocinadoresData = [
     url: "https://www.acesint.org/web/es/",
   },
   {
+    image: "/assets/patrocinadores/lex.png",
+    title: "LEX",
+    description:
+      "Somos un equipo interdisciplinario de profesionales especializados en salud, seguridad y educación, con una sólida trayectoria en prevención y respuesta a emergencias:",
+    url: "https://www.lexserviciosintegrales.com.ar/",
+  },
+  {
     image: "/assets/patrocinadores/logo-fmd.png",
     title: "Desarrollo Web FD",
     description:
