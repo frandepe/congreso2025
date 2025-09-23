@@ -16,12 +16,12 @@ const people = [
     designation: "Instrucor de primeros auxilios",
     image: "/assets/speakers/cara/nicolas-de-paulo.jpg",
   },
-  {
-    id: 3,
-    name: "Juan Sebastian Fabi",
-    designation: "Socio cofundador de Nexo Tecnológico",
-    image: "/assets/speakers/cara/juan-sebastian-fabi-cara.jpg",
-  },
+  // {
+  //   id: 3,
+  //   name: "Juan Sebastian Fabi",
+  //   designation: "Socio cofundador de Nexo Tecnológico",
+  //   image: "/assets/speakers/cara/juan-sebastian-fabi-cara.jpg",
+  // },
   {
     id: 4,
     name: "Patricia Soto",

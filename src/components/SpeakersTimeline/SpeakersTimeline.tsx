@@ -234,7 +234,7 @@ export function SpeakersTimeline() {
             <br />• Repaso rápido de lo que se verá durante el día.
           </p>
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
-            <strong>
+            {/* <strong>
               9:30 – 10:45 | Charla 1: Herramientas Tecnológicas para mejorar la
               enseñanza de RCP
             </strong>
@@ -244,7 +244,14 @@ export function SpeakersTimeline() {
             avanzados, realidad aumentada y aplicaciones interactivas
             Estrategias para hacer capacitaciones más atractivas y efectivas.
             <br />• Objetivo: Modernizar las capacitaciones y optimizar la
-            formación de instructores
+            formación de instructores */}
+            <strong>
+              9:30 – 10:45 | Charla 1: ¿Es posible tener un distrito
+              cardioprotegido?
+            </strong>
+            <br />• Expositor: Nicolas De Paulo
+            <br />• Enfoque: El camino en el cual se une el estado y lo privado
+            para un bien en común
           </p>
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
             <strong>10:45 – 11:00 | Break (15 minutos)</strong>

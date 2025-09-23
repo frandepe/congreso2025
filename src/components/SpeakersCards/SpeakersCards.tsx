@@ -17,13 +17,13 @@ export function SpeakersCards() {
       description:
         "Con estudios realizados en la Universidad Nacional de Mar del Plata, es CEO en Marta Iriarte Consultoría Laboral, Terapista Ocupacional, desde el año 2014 consultora en Recursos Humanos, Profesora de Relaciones Publicas y atención al cliente, Marqueting de servicios, Profesora en cursos de emprendedorismo y gestión en redes, Comunity Manager, Desarrollo en Marketing Digital, Mentora de Emprendedores y Orientadora en Planes de Negocios. Lo que aportara en este Congreso, son sus nociones como Docente sobre Habilidades para Emprender. Ayudar a que, cada uno de los Participantes, pueda pensar como Emprendedor para mejorar sus empresas de capacitaciones en RCP.",
     },
-    {
-      title: "Juan Sebastian Fabi",
-      src: "/assets/speakers/juan-sebastian-fabi.jpeg",
-      subtitle: "Socio cofundador de Nexo Tecnológico",
-      description:
-        "Es Ingeniero Electrónico con más de 24 años de experiencia en la industria de la electromedicina. Ha ocupado roles en servicio técnico, fabricación, I+D y control de calidad. Fue responsable del desarrollo de un desfibrilador bifásico para E&M Electromedicina – STS SA, premiado con el Sello de Buen Diseño Argentino. Desde 2012, ha enfocado su carrera en el diseño de equipos para la enseñanza de RCP, creando simuladores que abordan las necesidades específicas de los instructores, incluyendo el desarrollo del primer prototipo de AED Trainer con retroalimentación en 2018.\n\nEn el próximo congreso, Juan Sebastián Fabi compartirá su visión sobre cómo la tecnología puede revolucionar la enseñanza en RCP, presentando herramientas como simuladores avanzados, realidad aumentada y aplicaciones interactivas que modernizan y optimizan la formación de instructores.",
-    },
+    // {
+    //   title: "Juan Sebastian Fabi",
+    //   src: "/assets/speakers/juan-sebastian-fabi.jpeg",
+    //   subtitle: "Socio cofundador de Nexo Tecnológico",
+    //   description:
+    //     "Es Ingeniero Electrónico con más de 24 años de experiencia en la industria de la electromedicina. Ha ocupado roles en servicio técnico, fabricación, I+D y control de calidad. Fue responsable del desarrollo de un desfibrilador bifásico para E&M Electromedicina – STS SA, premiado con el Sello de Buen Diseño Argentino. Desde 2012, ha enfocado su carrera en el diseño de equipos para la enseñanza de RCP, creando simuladores que abordan las necesidades específicas de los instructores, incluyendo el desarrollo del primer prototipo de AED Trainer con retroalimentación en 2018.\n\nEn el próximo congreso, Juan Sebastián Fabi compartirá su visión sobre cómo la tecnología puede revolucionar la enseñanza en RCP, presentando herramientas como simuladores avanzados, realidad aumentada y aplicaciones interactivas que modernizan y optimizan la formación de instructores.",
+    // },
     {
       title: "Patricia Soto",
       src: "/assets/speakers/patricia-soto.jpeg",
