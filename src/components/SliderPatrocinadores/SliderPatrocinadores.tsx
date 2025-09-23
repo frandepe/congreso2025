@@ -20,6 +20,7 @@ const patrocinadores = [
   { id: 8, img: "/assets/patrocinadores/aces.png", title: "Patro" },
   { id: 9, img: "/assets/patrocinadores/cafe-bar.png", title: "Patro" },
   { id: 10, img: "/assets/patrocinadores/lex.png", title: "Patro" },
+  { id: 11, img: "/assets/patrocinadores/la-pataca.png", title: "Patro" },
 ];
 
 const SliderPatrocinadores = () => {

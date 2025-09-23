@@ -74,6 +74,13 @@ const patrocinadoresData = [
     url: "https://www.facebook.com/baresyfondas",
   },
   {
+    image: "/assets/patrocinadores/la-pataca.png",
+    title: "La Pataca",
+    description:
+      "En La Pataca encontrás la dulzura de tu día con el mejor Dulce de Leche, Chocolates, Bombones, creados uno a uno, rellenos con dulce de leche y bañados con chocolate, Alfajores, Patacos todo de produccion propia y en temporada de Pascua, Huevos, conejitos, gallinitas...todos hechos a mano, con la calidad de siempre. Encontranos en Roca 856 de Trenque Lauquen o en nuestra pagina lapataca.com",
+    url: "https://www.lapataca.com",
+  },
+  {
     image: "/assets/patrocinadores/patro-tl.png",
     title: "Trenque Lauquen",
     description:
