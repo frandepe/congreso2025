@@ -1,5 +1,3 @@
-"use client";
-
 import { cn } from "@/lib/utils";
 import type { HTMLAttributes } from "react";
 import FastMarquee from "react-fast-marquee";

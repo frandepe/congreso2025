@@ -10,6 +10,7 @@ import { Inscripcion } from "./pages/Inscripcion";
 import { Expositores } from "./pages/Expositores";
 import { FAQ } from "./pages/Faq";
 import Videos from "./pages/Videos";
+import { NextConference } from "./pages/NextConference";
 
 function PageWrapper({ children }: any) {
   return (
@@ -99,6 +100,14 @@ function App() {
               element={
                 <PageWrapper>
                   <Contact />
+                </PageWrapper>
+              }
+            />
+            <Route
+              path="/congreso2026"
+              element={
+                <PageWrapper>
+                  <NextConference />
                 </PageWrapper>
               }
             />
