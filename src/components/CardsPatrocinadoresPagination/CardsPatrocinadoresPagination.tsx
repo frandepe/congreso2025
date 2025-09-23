@@ -57,7 +57,7 @@ const patrocinadoresData = [
     title: "LEX",
     description:
       "Somos un equipo interdisciplinario de profesionales especializados en salud, seguridad y educación, con una sólida trayectoria en prevención y respuesta a emergencias:",
-    url: "https://www.lexserviciosintegrales.com.ar/",
+    url: "/assets/lex.pdf",
   },
   {
     image: "/assets/patrocinadores/logo-fmd.png",
