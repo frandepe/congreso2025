@@ -31,13 +31,13 @@ export function SpeakersCards() {
       description:
         "Socia Fundadora y CEO de Nexo Tecnológico, empresa argentina especializada en el desarrollo de soluciones innovadoras para la capacitación en RCP y primeros auxilios. Con más de 20 años de experiencia en ventas, marketing y liderazgo empresarial, ha guiado la expansión internacional de la empresa y ha sido clave en la implementación de estrategias de marketing auténtico que acompañan a los instructores en el crecimiento de sus capacitaciones. Patricia también es una firme defensora de la concientización social sobre la importancia del conocimiento en primeros auxilios, combinando su experiencia en comunicación estratégica y herramientas digitales para generar impacto real. \n\nEn el próximo congreso, Patricia compartirá herramientas y estrategias de marketing auténtico para instructores, ayudándolos a aumentar la participación, generar interés y ampliar el alcance de sus formaciones.",
     },
-    {
-      title: "Rodrigo Baluk",
-      src: "/assets/speakers/rodrigo-baluk.jpeg",
-      subtitle: "Licenciado en Administración (UBA) y MBA (IAE)",
-      description:
-        "Es Licenciado en Administración (UBA) y MBA (IAE), con más de 15 años de experiencia liderando iniciativas de inclusión financiera en bancos y organizaciones sociales. Ha ocupado roles ejecutivos en empresas de consumo masivo y servicios financieros en Argentina y LATAM. Fue Presidente de RADIM y cofundador de la Red Sudamericana de Instituciones de Microfinanzas. Combina herramientas financieras y conocimiento del consumidor para impulsar estrategias sostenibles. Es socio fundador de NITRO+, empresa dedicada a a financiar a los pequeños comercios de proximidad para acelerar sus crecimientos (www.nitropay.ar) \n\nEn el próximo congreso, Rodrigo Baluk compartirá su visión sobre cómo potenciar negocios en entornos económicos complejos, destacando la importancia de la planificación financiera, la correcta gestión de costos y precios y la adaptación estratégica a entornos siempre cambiantes y cada vez mas desafiantes.",
-    },
+    // {
+    //   title: "Rodrigo Baluk",
+    //   src: "/assets/speakers/rodrigo-baluk.jpeg",
+    //   subtitle: "Licenciado en Administración (UBA) y MBA (IAE)",
+    //   description:
+    //     "Es Licenciado en Administración (UBA) y MBA (IAE), con más de 15 años de experiencia liderando iniciativas de inclusión financiera en bancos y organizaciones sociales. Ha ocupado roles ejecutivos en empresas de consumo masivo y servicios financieros en Argentina y LATAM. Fue Presidente de RADIM y cofundador de la Red Sudamericana de Instituciones de Microfinanzas. Combina herramientas financieras y conocimiento del consumidor para impulsar estrategias sostenibles. Es socio fundador de NITRO+, empresa dedicada a a financiar a los pequeños comercios de proximidad para acelerar sus crecimientos (www.nitropay.ar) \n\nEn el próximo congreso, Rodrigo Baluk compartirá su visión sobre cómo potenciar negocios en entornos económicos complejos, destacando la importancia de la planificación financiera, la correcta gestión de costos y precios y la adaptación estratégica a entornos siempre cambiantes y cada vez mas desafiantes.",
+    // },
     {
       title: "Miguel Ángel Grima",
       src: "/assets/speakers/miguel-angel-grima.jpeg",

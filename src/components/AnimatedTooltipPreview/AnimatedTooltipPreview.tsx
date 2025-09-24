@@ -40,12 +40,12 @@ const people = [
     designation: "Fundador de CEEByPS",
     image: "/assets/speakers/cara/guille-carranza.jpg",
   },
-  {
-    id: 7,
-    name: "Rodrigo Baluk",
-    designation: "Licenciado en Administración",
-    image: "/assets/speakers/cara/rodrigo-baluk-cara.jpg",
-  },
+  // {
+  //   id: 7,
+  //   name: "Rodrigo Baluk",
+  //   designation: "Licenciado en Administración",
+  //   image: "/assets/speakers/cara/rodrigo-baluk-cara.jpg",
+  // },
   {
     id: 8,
     name: "Borja Díez Sainz",

@@ -34,15 +34,15 @@ html {
   .image-rendering-high-quality {
     image-rendering: high-quality;
   }
-    .custom-scrollbar::-webkit-scrollbar {
+  .custom-scrollbar::-webkit-scrollbar {
     width: 8px;
     border-radius: 8px;
-    background-color: #F7941D;
+    background-color: #f7941d;
   }
 
   /* Estilo de la parte de la barra que se arrastra */
   .custom-scrollbar::-webkit-scrollbar-thumb {
-    background-color: #E7551E;
+    background-color: #e7551e;
     border-radius: 8px;
   }
 

@@ -59,13 +59,13 @@ export function SpeakersTimeline() {
               tarifas, gestionar un negocio de capacitación y atraer clientes.
             </strong>
             <br />
-            • Expositor: Rodrigo Baluk.
+            {/* • Expositor: Rodrigo Baluk.
             <br />• Enfoque: Cómo establecer tarifas adecuadas, gestionar un
             negocio de capacitación eficazmente y estrategias para atraer más
             clientes.
             <br />• Objetivo: Ayudar a los instructores a profesionalizar sus
             servicios, incrementar su visibilidad y alcanzar una mayor
-            clientela.
+            clientela. */}
           </p>
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
             <strong>14:30 – 14:45 | Break (15 minutos)</strong>

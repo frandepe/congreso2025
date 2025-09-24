@@ -7,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@headlessui/react";
 import SliderPatrocinadores from "@/components/SliderPatrocinadores/SliderPatrocinadores";
 import Countdown2026 from "@/components/Countdown/Countdown2026";
+import { Testimonials2026 } from "@/components/Testimonials/Testimonials2026";
 
 export function NextConference() {
   return (
@@ -33,8 +34,8 @@ export function NextConference() {
         </h3>
         <div className="flex flex-col gap-2">
           <Label htmlFor="user_name" className="text-lg text-white font-medium">
-            Tu Nombre / Institución{" "}
-            <span className="text-secondary text-sm">(opcional)</span>
+            Nombre / Institución{" "}
+            <span className="text-secondary text-sm">(o anónimo)</span>
           </Label>
           <Input
             id="user_name"
@@ -76,6 +77,9 @@ export function NextConference() {
         <Button className="mt-4 bg-secondary hover:bg-secondary/90 text-white rounded-xl py-3 font-semibold shadow-lg transition-all">
           Enviar Comentario
         </Button>
+      </div>
+      <div className="mt-28">
+        <Testimonials2026 />
       </div>
       <motion.h1
         initial={{ opacity: 0.5, y: 100 }}
