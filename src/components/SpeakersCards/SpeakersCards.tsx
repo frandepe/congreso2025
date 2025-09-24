@@ -98,36 +98,43 @@ export function SpeakersCards() {
       description:
         "*Guillermo Carranza* es un joven de 30 años, nacido en *Las Higueras, Córdoba, Argentina, cuya historia es sinónimo de superación, pasión y compromiso. A pesar de vivir con ceguera, Guillermo ha demostrado que las verdaderas capacidades no dependen de la visión, sino de la **determinación, la inteligencia y el propósito*.\n\n Es *fundador del Centro de Entrenamiento de Especialidades Bomberiles y Primeros Socorros (CEEByPS)*, un proyecto que refleja su firme compromiso con la formación en emergencias, el trabajo colaborativo y el impacto social positivo.\n\n Con *más de 10 años de experiencia* en el campo, Guillermo es *diplomado en Gestión Integral del Riesgo, y se desempeña como **consultor en seguridad*, fusionando su formación técnica con una mirada estratégica, humana y accesible. \n\nAdemás, es *instructor en múltiples disciplinas vinculadas a la seguridad y las emergencias prehospitalarias, participando activamente en programas reconocidos como **ACES, AIDER y Stop The Bleed*, entre otros. A lo largo de los años, ha formado a numerosas personas en contextos diversos, combinando conocimientos técnicos con un enfoque claro, práctico y comprometido. Su experiencia lo respalda tanto en entornos formales como en capacitaciones de campo, donde la preparación puede marcar \n\n Su pasión por la *tecnología y la informática, sumada a una fuerte vocación por el servicio, lo ha llevado también a desarrollarse como **investigador privado*, aportando soluciones en contextos complejos que requieren ética, análisis riguroso y confidencialidad.\n\n Proyección:\n\n Actualmente continúa ampliando sus conocimientos y compartiéndolos con quienes buscan marcar la diferencia en el mundo de las emergencias y la seguridad.",
     },
+    // {
+    //   title: "Borja Díez Sainz",
+    //   src: "/assets/speakers/Borja-Diez-Sainz.jpeg",
+    //   subtitle:
+    //     "Médico especialista en Medicina Intensiva (UCI) en el Hospital Universitario Quirónsalud Madrid.",
+    //   description: (
+    //     <>
+    //       Se licenció en Medicina y Cirugía por la Universidad de Salamanca y
+    //       completó su especialización en el Hospital Universitario 12 de Octubre
+    //       de Madrid. Además, es fundador y director médico de Proyecto
+    //       Reanimación, una iniciativa dedicada a formar a la sociedad en
+    //       técnicas de Reanimación Cardiopulmonar (RCP) con el objetivo de
+    //       reducir las muertes súbitas por paro cardíaco. <br />
+    //       <br />
+    //       <Button className="mb-4">
+    //         <a
+    //           href="https://www.proyectoreanimacion.com"
+    //           target="_blank"
+    //           rel="noopener noreferrer"
+    //         >
+    //           www.proyectoreanimacion.com
+    //         </a>
+    //       </Button>
+    //       <br />
+    //       Ha colaborado también en la formación de voluntarios de la Soberana
+    //       Orden de Malta en técnicas de RCP y primeros auxilios, demostrando su
+    //       compromiso con la educación y la mejora de la respuesta ante
+    //       emergencias médicas en la comunidad.
+    //     </>
+    //   ),
+    // },
     {
-      title: "Borja Díez Sainz",
-      src: "/assets/speakers/Borja-Diez-Sainz.jpeg",
-      subtitle:
-        "Médico especialista en Medicina Intensiva (UCI) en el Hospital Universitario Quirónsalud Madrid.",
-      description: (
-        <>
-          Se licenció en Medicina y Cirugía por la Universidad de Salamanca y
-          completó su especialización en el Hospital Universitario 12 de Octubre
-          de Madrid. Además, es fundador y director médico de Proyecto
-          Reanimación, una iniciativa dedicada a formar a la sociedad en
-          técnicas de Reanimación Cardiopulmonar (RCP) con el objetivo de
-          reducir las muertes súbitas por paro cardíaco. <br />
-          <br />
-          <Button className="mb-4">
-            <a
-              href="https://www.proyectoreanimacion.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              www.proyectoreanimacion.com
-            </a>
-          </Button>
-          <br />
-          Ha colaborado también en la formación de voluntarios de la Soberana
-          Orden de Malta en técnicas de RCP y primeros auxilios, demostrando su
-          compromiso con la educación y la mejora de la respuesta ante
-          emergencias médicas en la comunidad.
-        </>
-      ),
+      title: "Francesc Carmona Jimenez",
+      src: "/assets/speakers/francesc.jpg",
+      subtitle: "Médico en el Sistema d'Emergències Mèdiques",
+      description:
+        "Máster en Ciencias. Profesor Asociado en la Universidad de Vic - Universidad Central de Cataluña. Médico. Coordinador clínico y operativo en el Sistema de Emergencias Médicas de Barcelona (España).",
     },
     {
       title: "Red PAE",

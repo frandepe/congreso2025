@@ -144,10 +144,10 @@ export function SpeakersTimeline() {
               11:00 – 12:15 | Charla 2: Experiencia en España, como está en el
               primer mundo
             </strong>
-            <br />
+            {/* <br />
             • Expositor: Borja Diez Sainz
             <br />• Enfoque: Experiencia clínica en emergencias y su aplicación
-            en capacitaciones.
+            en capacitaciones. */}
           </p>
 
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">

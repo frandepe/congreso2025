@@ -48,10 +48,16 @@ const people = [
   // },
   {
     id: 8,
-    name: "Borja Díez Sainz",
-    designation: "Médico especialista en Medicina Intensiva",
-    image: "/assets/speakers/cara/Borja-Diez-Sainz.jpg",
+    name: "Francesc Carmona Jimenez",
+    designation: "Médico en el Sistema d'Emergències Mèdiques",
+    image: "/assets/speakers/cara/francesc-cara.jpg",
   },
+  // {
+  //   id: 8,
+  //   name: "Borja Díez Sainz",
+  //   designation: "Médico especialista en Medicina Intensiva",
+  //   image: "/assets/speakers/cara/Borja-Diez-Sainz.jpg",
+  // },
 ];
 
 function AnimatedTooltipPreview() {
