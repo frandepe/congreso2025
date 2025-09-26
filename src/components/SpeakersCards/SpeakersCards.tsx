@@ -134,7 +134,7 @@ export function SpeakersCards() {
       src: "/assets/speakers/francesc.jpg",
       subtitle: "Médico en el Sistema d'Emergències Mèdiques",
       description:
-        "Máster en Ciencias. Profesor Asociado en la Universidad de Vic - Universidad Central de Cataluña. Médico. Coordinador clínico y operativo en el Sistema de Emergencias Médicas de Barcelona (España).",
+        "Máster en Ciencias. Profesor Asociado en la Universidad de Vic - Universidad Central de Cataluña. Médico. Coordinador clínico y operativo en el Sistema de Emergencias Médicas de Barcelona (España). Chair de Educación para el soporte vital avanzado del ERC y miembro del Extended Board",
     },
     {
       title: "Red PAE",

@@ -55,8 +55,8 @@ export function SpeakersTimeline() {
           </p>
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
             <strong>
-              13:15 – 14:30 | Charla 3: Consejos prácticos para establecer
-              tarifas, gestionar un negocio de capacitación y atraer clientes.
+              13:15 – 14:30 | Charla 3: Mentalidad o enfoque del Instructor de
+              RCP para elevar el valor percibido por su trabajo.
             </strong>
             <br />
             {/* • Expositor: Rodrigo Baluk.
@@ -66,6 +66,9 @@ export function SpeakersTimeline() {
             <br />• Objetivo: Ayudar a los instructores a profesionalizar sus
             servicios, incrementar su visibilidad y alcanzar una mayor
             clientela. */}
+            • Expositores: Patricia Soto y Marta Iriarte.
+            <br />• Enfoque: Mentalidad o enfoque del Instructor de RCP para
+            elevar el valor percibido por su trabajo.
           </p>
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
             <strong>14:30 – 14:45 | Break (15 minutos)</strong>
@@ -141,13 +144,17 @@ export function SpeakersTimeline() {
 
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
             <strong>
-              11:00 – 12:15 | Charla 2: Experiencia en España, como está en el
-              primer mundo
+              11:00 – 12:15 | Charla 2: Experiencias de actividades educativas
+              de RCP en España. Funcionamiento de la ERC
             </strong>
             {/* <br />
             • Expositor: Borja Diez Sainz
             <br />• Enfoque: Experiencia clínica en emergencias y su aplicación
             en capacitaciones. */}
+            <br />
+            • Expositor: Francesc Carmona Jimenez
+            <br />• Enfoque: Acercar tecnicas y experiencias de actividades de
+            la ERC adaptables a nuestros sistemas educativos
           </p>
 
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
