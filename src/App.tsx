@@ -11,6 +11,7 @@ import { Expositores } from "./pages/Expositores";
 import { FAQ } from "./pages/Faq";
 import Videos from "./pages/Videos";
 import { NextConference } from "./pages/NextConference";
+import { Muestra } from "./pages/Muestra";
 
 function PageWrapper({ children }: any) {
   return (
@@ -28,98 +29,110 @@ function PageWrapper({ children }: any) {
 function App() {
   return (
     <BrowserRouter>
-      <MainLayout>
-        <AnimatePresence mode="sync">
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <PageWrapper>
-                  <Home />
-                </PageWrapper>
-              }
-            />
-            <Route
-              path="/programa"
-              element={
-                <PageWrapper>
-                  <Programa />
-                </PageWrapper>
-              }
-            />
-            <Route
-              path="/ubicacion-y-alojamiento"
-              element={
-                <PageWrapper>
-                  <UbicacionYAlojamiento />
-                </PageWrapper>
-              }
-            />
-            <Route
-              path="/inscripcion"
-              element={
-                <PageWrapper>
-                  <Inscripcion />
-                </PageWrapper>
-              }
-            />
-            <Route
-              path="/patrocinadores"
-              element={
-                <PageWrapper>
-                  <Patrocinadores />
-                </PageWrapper>
-              }
-            />
-            <Route
-              path="/preguntas-frecuentes"
-              element={
-                <PageWrapper>
-                  <FAQ />
-                </PageWrapper>
-              }
-            />
-            <Route
-              path="/videos"
-              element={
-                <PageWrapper>
-                  <Videos />
-                </PageWrapper>
-              }
-            />
-            <Route
-              path="/expositores"
-              element={
-                <PageWrapper>
-                  <Expositores />
-                </PageWrapper>
-              }
-            />
-            <Route
-              path="/contacto"
-              element={
-                <PageWrapper>
-                  <Contact />
-                </PageWrapper>
-              }
-            />
-            <Route
-              path="/congreso2026"
-              element={
-                <PageWrapper>
-                  <NextConference />
-                </PageWrapper>
-              }
-            />
-            {/* <Route path="/jobs/guia-pellegrini" element={<GuiaPellegrini />} />
-          <Route path="/jobs/guruia" element={<GuruiaProject />} />
-          <Route path="/jobs/natura" element={<NaturaJob />} />
-          <Route path="/jobs/ndcapacitaciones" element={<NDCapacitaciones />} />
-          <Route path="/jobs/pilsen-digital" element={<PilsenDigital />} />
-          <Route path="/practices/mil-opciones" element={<MilOpciones />} /> */}
-          </Routes>
-        </AnimatePresence>
-      </MainLayout>
+      <AnimatePresence mode="sync">
+        <Routes>
+          {/* Ruta SIN layout */}
+          <Route
+            path="/vivo-patrocinadores"
+            element={
+              <PageWrapper>
+                <Muestra />
+              </PageWrapper>
+            }
+          />
+
+          {/* Rutas CON layout */}
+          <Route
+            path="/*"
+            element={
+              <MainLayout>
+                <Routes>
+                  <Route
+                    path="/"
+                    element={
+                      <PageWrapper>
+                        <Home />
+                      </PageWrapper>
+                    }
+                  />
+                  <Route
+                    path="/programa"
+                    element={
+                      <PageWrapper>
+                        <Programa />
+                      </PageWrapper>
+                    }
+                  />
+                  <Route
+                    path="/ubicacion-y-alojamiento"
+                    element={
+                      <PageWrapper>
+                        <UbicacionYAlojamiento />
+                      </PageWrapper>
+                    }
+                  />
+                  <Route
+                    path="/inscripcion"
+                    element={
+                      <PageWrapper>
+                        <Inscripcion />
+                      </PageWrapper>
+                    }
+                  />
+                  <Route
+                    path="/patrocinadores"
+                    element={
+                      <PageWrapper>
+                        <Patrocinadores />
+                      </PageWrapper>
+                    }
+                  />
+                  <Route
+                    path="/preguntas-frecuentes"
+                    element={
+                      <PageWrapper>
+                        <FAQ />
+                      </PageWrapper>
+                    }
+                  />
+                  <Route
+                    path="/videos"
+                    element={
+                      <PageWrapper>
+                        <Videos />
+                      </PageWrapper>
+                    }
+                  />
+                  <Route
+                    path="/expositores"
+                    element={
+                      <PageWrapper>
+                        <Expositores />
+                      </PageWrapper>
+                    }
+                  />
+                  <Route
+                    path="/contacto"
+                    element={
+                      <PageWrapper>
+                        <Contact />
+                      </PageWrapper>
+                    }
+                  />
+                  <Route
+                    path="/congreso2026"
+                    element={
+                      <PageWrapper>
+                        <NextConference />
+                      </PageWrapper>
+                    }
+                  />
+                </Routes>
+              </MainLayout>
+            }
+          />
+        </Routes>
+      </AnimatePresence>
     </BrowserRouter>
   );
 }
