@@ -321,7 +321,6 @@ export function SpeakersTimeline() {
             <br />• Entrega de certificados de participación.
             <br />• Reflexión sobre los aprendizajes y la importancia de seguir
             capacitando.
-            <br />• Entrega de remeras a los asistentes.
           </p>
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
             <strong>17:30 – 18:00 | Fin del Congreso</strong>
