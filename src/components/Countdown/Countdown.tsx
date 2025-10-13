@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { SparklesText } from "../TextStars/TextStars";
 
 const Countdown = () => {
   const [timeLeft, setTimeLeft] = useState({
@@ -7,6 +8,7 @@ const Countdown = () => {
     minutes: 0,
     seconds: 0,
   });
+  const [isOver, setIsOver] = useState(false);
 
   useEffect(() => {
     // 15 de octubre de 2025 a las 09:00 (hora de Argentina = UTC-3)
@@ -17,6 +19,7 @@ const Countdown = () => {
       const distance = targetDate - now;
 
       if (distance <= 0) {
+        setIsOver(true);
         setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
         return;
       }
@@ -32,30 +35,35 @@ const Countdown = () => {
     };
 
     const interval = setInterval(updateCountdown, 1000);
+    updateCountdown(); // ejecuta una vez al montar
     return () => clearInterval(interval);
   }, []);
 
   return (
     <div className="flex items-center justify-center w-[98vw]">
       <div className="container bg-primary text-white py-6 rounded-md shadow-lg text-center">
-        <div className="flex justify-center gap-10 md:gap-14 text-3xl font-bold flex-wrap">
-          <div className="flex flex-col items-center">
-            <p className="text-5xl">{timeLeft.days}</p>
-            <p className="text-lg font-normal">Días</p>
+        {isOver ? (
+          <SparklesText text="¡Ya comenzó!" />
+        ) : (
+          <div className="flex justify-center gap-10 md:gap-14 text-3xl font-bold flex-wrap">
+            <div className="flex flex-col items-center">
+              <p className="text-5xl">{timeLeft.days}</p>
+              <p className="text-lg font-normal">Días</p>
+            </div>
+            <div className="flex flex-col items-center">
+              <p className="text-5xl">{timeLeft.hours}</p>
+              <p className="text-lg font-normal">Horas</p>
+            </div>
+            <div className="flex flex-col items-center">
+              <p className="text-5xl">{timeLeft.minutes}</p>
+              <p className="text-lg font-normal">Minutos</p>
+            </div>
+            <div className="flex flex-col items-center">
+              <p className="text-5xl">{timeLeft.seconds}</p>
+              <p className="text-lg font-normal">Segundos</p>
+            </div>
           </div>
-          <div className="flex flex-col items-center">
-            <p className="text-5xl">{timeLeft.hours}</p>
-            <p className="text-lg font-normal">Horas</p>
-          </div>
-          <div className="flex flex-col items-center">
-            <p className="text-5xl">{timeLeft.minutes}</p>
-            <p className="text-lg font-normal">Minutos</p>
-          </div>
-          <div className="flex flex-col items-center">
-            <p className="text-5xl">{timeLeft.seconds}</p>
-            <p className="text-lg font-normal">Segundos</p>
-          </div>
-        </div>
+        )}
       </div>
     </div>
   );

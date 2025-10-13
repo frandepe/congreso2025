@@ -2,7 +2,7 @@ import { Calendar, MapPin } from "lucide-react";
 import { Button } from "../ui/button";
 import { useNavigate } from "react-router-dom";
 import { AnimatedModalVideo } from "../AnimatedModal/AnimatedModalVideo";
-
+// https://forms.gle/JS16Ez9W5EaRyiBx5
 export default function BannerPrincipal() {
   const navigate = useNavigate();
   return (
