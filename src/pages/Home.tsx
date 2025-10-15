@@ -4,12 +4,13 @@ import { Comite } from "@/components/Comite/Comite";
 import Countdown from "@/components/Countdown/Countdown";
 import { DescImgs } from "@/components/DescImgs/DescImgs";
 import { AudioPlayer } from "@/components/ui/audio-player";
-import { Projector, Sandwich, X } from "lucide-react";
+import { Activity, Eye, Projector, Sandwich, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import React, { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import LiveVideo from "@/components/Videos/Vivo";
+import { AnimatedFeatureSpotlight } from "@/components/Banners/PromoCardio";
 
 const features = [
   {
@@ -124,8 +125,29 @@ export const Home = () => {
           <Countdown />
         </div>
       </div>
-      <div className="mt-20">
+      <div className="my-20">
         <LiveVideo />
+      </div>
+      <div className="flex items-center justify-center w-full bg-muted py-20">
+        <AnimatedFeatureSpotlight
+          preheaderIcon={<Activity className="h-4 w-4" />}
+          preheaderText="Tecnología cardiovascular de vanguardia desde 1981"
+          heading={
+            <>
+              <span className="text-primary">
+                Equipamiento Médico Hospitalario | Bioingeniería
+              </span>
+            </>
+          }
+          description="Cardiosistemas tiene como propósito proveer productos y servicios de óptima calidad destinados a satisfacer las necesidades de los profesionales médicos en el diagnóstico, tratamiento y rehabilitación cardiovascular para mejorar la práctica médica, la atención de los pacientes y la salud de la población en su conjunto."
+          buttonText="Visitar web"
+          buttonProps={{
+            onClick: () =>
+              window.open("https://cardiosistemas.com.ar/", "_blank"),
+          }}
+          imageUrl="/assets/patrocinadores/cardiosistemas.png"
+          imageAlt="Cardiosistemas tiene como propósito proveer productos"
+        />
       </div>
       <DescImgs />
 
