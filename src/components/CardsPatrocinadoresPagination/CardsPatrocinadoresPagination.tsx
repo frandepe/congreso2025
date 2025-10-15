@@ -12,6 +12,13 @@ interface Patrocinador {
 
 const patrocinadoresData = [
   {
+    image: "/assets/patrocinadores/cardiosistemas.png",
+    title: "Cardio Sistemas",
+    description:
+      "Cardiosistemas fue establecida en 1981 con el compromiso de brindar soluciones tecnológicas para la prevención, diagnóstico, tratamiento y rehabilitación de las enfermedades cardiovasculares y accidentes cerebrovasculares mediante la permanente búsqueda de herramientas confiables, seguras y flexibles que mejoren la práctica médica, la atención de los pacientes y la salud de la población en su conjunto.",
+    url: "https://cardiosistemas.com.ar/",
+  },
+  {
     image: "/assets/patrocinadores/nd-capacitaciones.png",
     title: "ND Capacitaciones",
     description:

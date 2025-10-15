@@ -23,6 +23,15 @@ function NexoTecnologico(props: SVGProps<SVGSVGElement>) {
     />
   );
 }
+function Cardiosistemas(props: SVGProps<SVGSVGElement>) {
+  return (
+    <img
+      src={"/assets/patrocinadores/cardiosistemas.png"}
+      width={100}
+      height={100}
+    />
+  );
+}
 
 function TL(props: SVGProps<SVGSVGElement>) {
   return (
@@ -44,7 +53,7 @@ const allLogos = [
   { name: "TL", id: 2, img: TL },
   { name: "NexoTecnologico", id: 3, img: NexoTecnologico },
   { name: "NDcapacitaciones", id: 4, img: NDcapacitaciones },
-  // { name: "ArgentinaReanima", id: 5, img: ArgentinaReanima },
+  { name: "Cardiosistemas", id: 5, img: Cardiosistemas },
 ];
 
 export function PatrocinadoresComponent() {
