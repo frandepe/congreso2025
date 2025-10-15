@@ -43,7 +43,7 @@ const Countdown = () => {
     <div className="flex items-center justify-center w-[98vw]">
       <div className="container bg-primary text-white py-6 rounded-md shadow-lg text-center">
         {isOver ? (
-          <SparklesText text="¡Ya comenzó!" />
+          <h2 className="text-4xl md:text-6xl">¡Ya comenzó!</h2>
         ) : (
           <div className="flex justify-center gap-10 md:gap-14 text-3xl font-bold flex-wrap">
             <div className="flex flex-col items-center">
