@@ -1,20 +1,35 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { X } from "lucide-react";
+import { Radio, X } from "lucide-react";
 
 export function AnimatedModalVideo() {
   const [open, setOpen] = useState(false);
+  const handleScroll = () => {
+    const liveSection = document.getElementById("live");
+    if (liveSection) {
+      liveSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <>
       {/* Trigger */}
-      <Button
+      {/* <Button
         onClick={() => setOpen(true)}
         variant="outline"
         className="text-primary"
       >
         Ver presentación
+      </Button> */}
+
+      <Button
+        onClick={handleScroll}
+        variant="outline"
+        className="border-red-500 text-red-600 hover:bg-red-50 hover:text-red-600"
+      >
+        <Radio className=" text-red-500 animate-pulse mr-1" size={14} />
+        <span className="font-semibold">Ver en vivo</span>
       </Button>
 
       <AnimatePresence>

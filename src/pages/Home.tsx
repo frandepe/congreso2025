@@ -9,6 +9,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import React, { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
+import LiveVideo from "@/components/Videos/Vivo";
 
 const features = [
   {
@@ -123,7 +124,9 @@ export const Home = () => {
           <Countdown />
         </div>
       </div>
-
+      <div className="mt-20">
+        <LiveVideo />
+      </div>
       <DescImgs />
 
       <section className="relative md:h-[400px] h-[450px] flex items-center justify-center mb-10 md:mb-40">
