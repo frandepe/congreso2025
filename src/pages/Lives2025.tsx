@@ -127,11 +127,11 @@ const videos = [
   },
   {
     id: "yA3hRvZEW2Y",
-    title: "Homenajes",
+    title: "Homenajes / Habla Francesc Carmona",
     thumbnail: "https://img.youtube.com/vi/yA3hRvZEW2Y/mqdefault.jpg",
     avatar: "assets/logo-congreso2025.png",
     date: "16 Octubre 2025",
-    duration: "1:40:16",
+    duration: "2:40:16",
   },
 ];
 
@@ -147,7 +147,7 @@ export default function Lives2025() {
             En Vivo: Congreso 2025
           </h2>
           <p className="text-neutral-700 dark:text-neutral-300 text-sm md:text-base max-w-md leading-relaxed">
-            Sigue las charlas y entrevistas en tiempo real con instructores y
+            Seguí las charlas y entrevistas en tiempo real con instructores y
             referentes del Congreso Nacional de RCP 2025. ¡No te pierdas ningún
             detalle de este evento único!
           </p>

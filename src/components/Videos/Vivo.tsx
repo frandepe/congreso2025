@@ -7,7 +7,7 @@ import { HeartHandshake } from "lucide-react";
 const LiveVideo = () => {
   const navigate = useNavigate();
   const videoId = "yA3hRvZEW2Y";
-  //   const videoId = "I02-AQLPm7I";
+  // const videoId = "I02-AQLPm7I";
 
   const opts = {
     width: "100%",
@@ -16,6 +16,14 @@ const LiveVideo = () => {
       autoplay: 1,
       playsinline: 1,
     },
+  };
+
+  const handleNavigate = () => {
+    navigate("/vivo-2025");
+    // espera a que la navegación ocurra y luego scrollea
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }, 100);
   };
 
   return (
@@ -28,7 +36,7 @@ const LiveVideo = () => {
         <YouTube videoId={videoId} opts={opts} />
       </div>
 
-      <Button onClick={() => navigate("/vivo-2025")} className="mt-6">
+      <Button onClick={handleNavigate} className="mt-6">
         <HeartHandshake className="mr-2 h-5 w-5" />
         Reviví los mejores momentos
       </Button>
