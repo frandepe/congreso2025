@@ -159,6 +159,12 @@ const NavbarPrincipal = ({
           url: "/expositores",
         },
         {
+          title: "Congreso 2025 en vivo",
+          description: "Sigue las charlas y entrevistas en tiempo real",
+          icon: <Radio className="size-5 shrink-0 text-red-500" />,
+          url: "/vivo-2025",
+        },
+        {
           title: "Charlas y entrevistas",
           description: "Con instructores y referentes del Congreso",
           icon: <Radio className="size-5 shrink-0" />,

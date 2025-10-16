@@ -12,6 +12,7 @@ import { FAQ } from "./pages/Faq";
 import Videos from "./pages/Videos";
 import { NextConference } from "./pages/NextConference";
 import { Muestra } from "./pages/Muestra";
+import Lives2025 from "./pages/Lives2025";
 
 function PageWrapper({ children }: any) {
   return (
@@ -100,6 +101,14 @@ function App() {
                     element={
                       <PageWrapper>
                         <Videos />
+                      </PageWrapper>
+                    }
+                  />
+                  <Route
+                    path="/vivo-2025"
+                    element={
+                      <PageWrapper>
+                        <Lives2025 />
                       </PageWrapper>
                     }
                   />
