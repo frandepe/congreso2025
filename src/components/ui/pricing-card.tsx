@@ -77,12 +77,12 @@ export function PricingCard({ tier, paymentFrequency }: PricingCardProps) {
         </ul>
       </div>
       <a
-        href={tier.redirect}
+        // href={tier.redirect}
         target="_blank"
         rel="noopener noreferrer"
         className="pointer-events-auto"
       >
-        <Button variant={isHighlighted ? "secondary" : "default"}>
+        <Button variant={isHighlighted ? "secondary" : "default"} disabled>
           {tier.cta}
           <ArrowRight className="ml-2 h-4 w-4" />
         </Button>

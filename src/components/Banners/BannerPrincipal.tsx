@@ -21,15 +21,25 @@ export default function BannerPrincipal() {
         <h1 className="text-3xl md:text-5xl font-bold mt-4">
           Primer congreso nacional de instructores de RCP
         </h1>
+        {/* <h3>¡Un gran comienzo! Nos vemos en la edición 2026</h3> */}
 
         <Button
+          // onClick={() =>
+          //   window.open("https://forms.gle/JS16Ez9W5EaRyiBx5", "_blank")
+          // }
+          className="mt-6 mr-6"
+          disabled
+        >
+          Inscribirme
+        </Button>
+        {/* <Button
           onClick={() =>
             window.open("https://forms.gle/JS16Ez9W5EaRyiBx5", "_blank")
           }
           className="mt-6 mr-6"
         >
           Contanos tu experiencia
-        </Button>
+        </Button> */}
         <AnimatedModalVideo />
       </div>
     </div>
