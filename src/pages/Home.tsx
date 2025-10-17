@@ -4,54 +4,79 @@ import { Comite } from "@/components/Comite/Comite";
 import Countdown from "@/components/Countdown/Countdown";
 import { DescImgs } from "@/components/DescImgs/DescImgs";
 import { AudioPlayer } from "@/components/ui/audio-player";
-import {
-  Activity,
-  ArrowRight,
-  Eye,
-  Projector,
-  Sandwich,
-  X,
-} from "lucide-react";
+import { Activity, Projector, Sandwich, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import React, { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
-import LiveVideo from "@/components/Videos/Vivo";
+// import LiveVideo from "@/components/Videos/Vivo";
 import { AnimatedFeatureSpotlight } from "@/components/Banners/PromoCardio";
-import {
-  ProgressSlider,
-  SliderBtn,
-  SliderBtnGroup,
-  SliderContent,
-  SliderWrapper,
-} from "@/components/TextImage2025/TextImage2025";
+import { TextImage2025 } from "@/components/TextImage2025/TextImage2025";
+import Countdown2026 from "@/components/Countdown/Countdown2026";
 
-const items = [
-  {
-    img: "/assets/2025/carousel4.jpg",
-    title: "Internacional",
-    desc: "Expertos de España sumaron su mirada",
-    sliderName: "Presencia internacional",
-  },
-  {
-    img: "/assets/2025/carousel6.jpg",
-    title: "Público",
-    desc: "Instructores de todo el país reunidos y atentos.",
-    sliderName: "Público",
-  },
-  {
-    img: "/assets/2025/carousel7.jpg",
-    title: "Intercambios",
-    desc: "Exp. y conocimiento enriquecedor",
-    sliderName: "Intercambios",
-  },
-  {
-    img: "/assets/2025/carousel1.jpg",
-    title: "Simulaciones",
-    sliderName: "Simulaciones",
-    desc: "Refuerzo y demostración de habilidades.",
-  },
-];
+const demoData: any = {
+  title: "Congreso nacional de RCP 2025",
+  description:
+    "Si te lo perdiste o querés volver a disfrutarlo, acá podés revivir cada momento del Congreso Nacional de Instructores de RCP 2025. Las charlas, los debates, las experiencias… todo está disponible para vos",
+  items: [
+    {
+      id: "1",
+      title: "",
+      description: "",
+      href: "",
+      image: "/assets/2025/carousel4.jpg",
+    },
+    {
+      id: "2",
+      title: "",
+      description: "",
+      href: "",
+      image: "/assets/2025/carousel3.jpg",
+    },
+    {
+      id: "3",
+      title: "",
+      description: "",
+      href: "",
+      image: "/assets/2025/carousel1.jpg",
+    },
+    {
+      id: "4",
+      title: "",
+      description: "",
+      href: "",
+      image: "/assets/2025/carousel7.jpg",
+    },
+    {
+      id: "5",
+      title: "",
+      description: "",
+      href: "",
+      image: "/assets/2025/carousel6.jpg",
+    },
+    {
+      id: "6",
+      title: "",
+      description: "",
+      href: "",
+      image: "/assets/2025/carousel2.jpg",
+    },
+    {
+      id: "7",
+      title: "",
+      description: "",
+      href: "",
+      image: "/assets/2025/carousel11.jpg",
+    },
+    {
+      id: "8",
+      title: "",
+      description: "",
+      href: "",
+      image: "/assets/2025/carousel12.jpg",
+    },
+  ],
+};
 
 const features = [
   {
@@ -75,15 +100,15 @@ const features = [
 export const Home = () => {
   const [openModal, setOpenModal] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
-  const handleNavigate = () => {
-    navigate("/vivo-2025");
-    // espera a que la navegación ocurra y luego scrollea
-    setTimeout(() => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }, 100);
-  };
+  // const handleNavigate = () => {
+  //   navigate("/vivo-2025");
+  //   // espera a que la navegación ocurra y luego scrollea
+  //   setTimeout(() => {
+  //     window.scrollTo({ top: 0, behavior: "smooth" });
+  //   }, 100);
+  // };
 
   // Detectar si es mobile
   useEffect(() => {
@@ -175,55 +200,15 @@ export const Home = () => {
       <div className="relative">
         <BannerPrincipal />
         <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2">
-          <Countdown />
+          <Countdown2026 />
         </div>
       </div>
-      <div className="my-20">
+      {/* <div className="my-20">
         <LiveVideo />
-      </div>
-      {/* <section className="max-w-4xl px-10 mx-auto mt-32">
-        <div className="flex justify-center">
-          <Button
-            variant="link"
-            className="text-2xl mb-2"
-            onClick={handleNavigate}
-          >
-            Reviví la energía del Congreso 2025 <ArrowRight className="ml-2" />
-          </Button>
-        </div>
-        <ProgressSlider vertical={false} activeSlider="bridge">
-          <SliderContent>
-            {items.map((item, index) => (
-              <SliderWrapper key={index} value={item?.sliderName}>
-                <img
-                  className="rounded-xl 2xl:h-[500px] h-[450px] object-cover cursor-pointer"
-                  src={item.img}
-                  width={1900}
-                  height={1080}
-                  alt={item.desc}
-                  onClick={handleNavigate}
-                />
-              </SliderWrapper>
-            ))}
-          </SliderContent>
-
-          <SliderBtnGroup className="absolute bottom-0 h-fit dark:text-white text-black dark:bg-black/40 bg-white/40  backdrop-blur-md overflow-hidden grid grid-cols-2 md:grid-cols-4  rounded-md">
-            {items.map((item, index) => (
-              <SliderBtn
-                key={index}
-                value={item?.sliderName}
-                className="text-left cursor-pointer p-3 border-r"
-                progressBarClass="dark:bg-black bg-white h-full"
-              >
-                <h2 className="relative px-4 rounded-full w-fit dark:bg-white dark:text-black text-white bg-gray-900 mb-2">
-                  {item.title}
-                </h2>
-                <p className="text-sm font-medium  line-clamp-2">{item.desc}</p>
-              </SliderBtn>
-            ))}
-          </SliderBtnGroup>
-        </ProgressSlider>
-      </section> */}
+      </div> */}
+      <section className="max-w-4xl px-10 mx-auto mt-32">
+        <TextImage2025 {...demoData} />
+      </section>
       <div className="flex items-center justify-center w-full bg-muted py-20">
         <AnimatedFeatureSpotlight
           preheaderIcon={<Activity className="h-4 w-4" />}

@@ -1,233 +1,169 @@
-import React, {
-  createContext,
-  useContext,
-  useState,
-  useEffect,
-  useRef,
-  ReactNode,
-  FC,
-} from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { cn } from "@/lib/utils";
+import { ArrowLeft, ArrowRight } from "lucide-react";
+import { useEffect, useState } from "react";
 
-// Define the type for the context value
-interface ProgressSliderContextType {
-  active: string;
-  progress: number;
-  handleButtonClick: (value: string) => void;
-  vertical: boolean;
+import { Button } from "@/components/ui/button";
+import {
+  Carousel,
+  CarouselApi,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel";
+import { useNavigate } from "react-router-dom";
+
+export interface Gallery4Item {
+  id: string;
+  title: string;
+  description: string;
+  href: string;
+  image: string;
 }
 
-// Define the type for the component props
-interface ProgressSliderProps {
-  children: ReactNode;
-  duration?: number;
-  fastDuration?: number;
-  vertical?: boolean;
-  activeSlider: string;
-  className?: string;
+export interface Gallery4Props {
+  title?: string;
+  description?: string;
+  items: Gallery4Item[];
 }
 
-interface SliderContentProps {
-  children: ReactNode;
-  className?: string;
-}
-
-interface SliderWrapperProps {
-  children: ReactNode;
-  value: string;
-  className?: string;
-}
-
-interface ProgressBarProps {
-  children: ReactNode;
-  className?: string;
-}
-
-interface SliderBtnProps {
-  children: ReactNode;
-  value: string;
-  className?: string;
-  progressBarClass?: string;
-}
-
-// Create the context with an undefined initial value
-const ProgressSliderContext = createContext<
-  ProgressSliderContextType | undefined
->(undefined);
-
-export const useProgressSliderContext = (): ProgressSliderContextType => {
-  const context = useContext(ProgressSliderContext);
-  if (!context) {
-    throw new Error(
-      "useProgressSliderContext must be used within a ProgressSlider"
-    );
-  }
-  return context;
-};
-
-export const ProgressSlider: FC<ProgressSliderProps> = ({
-  children,
-  duration = 5000,
-  fastDuration = 400,
-  vertical = false,
-  activeSlider,
-  className,
-}) => {
-  const [active, setActive] = useState<string>(activeSlider);
-  const [progress, setProgress] = useState<number>(0);
-  const [isFastForward, setIsFastForward] = useState<boolean>(false);
-  const frame = useRef<number>(0);
-  const firstFrameTime = useRef<number>(performance.now());
-  const targetValue = useRef<string | null>(null);
-  const [sliderValues, setSliderValues] = useState<string[]>([]);
+const TextImage2025 = ({ title, description, items }: Gallery4Props) => {
+  const [carouselApi, setCarouselApi] = useState<CarouselApi>();
+  const [canScrollPrev, setCanScrollPrev] = useState(false);
+  const [canScrollNext, setCanScrollNext] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
-    const getChildren = React.Children.toArray(children).find(
-      (child): child is React.ReactElement<any> =>
-        React.isValidElement(child) && child.type === SliderContent
-    );
-
-    if (getChildren) {
-      const values = React.Children.toArray(getChildren.props.children)
-        .filter((child): child is React.ReactElement<any> =>
-          React.isValidElement(child)
-        )
-        .map((child) => String(child.props.value));
-
-      setSliderValues(values);
+    if (!carouselApi) {
+      return;
     }
-  }, [children]);
-
-  useEffect(() => {
-    if (sliderValues.length > 0) {
-      firstFrameTime.current = performance.now();
-      frame.current = requestAnimationFrame(animate);
-    }
-    return () => {
-      cancelAnimationFrame(frame.current);
+    const updateSelection = () => {
+      setCanScrollPrev(carouselApi.canScrollPrev());
+      setCanScrollNext(carouselApi.canScrollNext());
+      setCurrentSlide(carouselApi.selectedScrollSnap());
     };
-  }, [sliderValues, active, isFastForward]);
-
-  const animate = (now: number) => {
-    const currentDuration = isFastForward ? fastDuration : duration;
-    const elapsedTime = now - firstFrameTime.current;
-    const timeFraction = elapsedTime / currentDuration;
-
-    if (timeFraction <= 1) {
-      setProgress(
-        isFastForward
-          ? progress + (100 - progress) * timeFraction
-          : timeFraction * 100
-      );
-      frame.current = requestAnimationFrame(animate);
-    } else {
-      if (isFastForward) {
-        setIsFastForward(false);
-        if (targetValue.current !== null) {
-          setActive(targetValue.current);
-          targetValue.current = null;
-        }
-      } else {
-        // Move to the next slide
-        const currentIndex = sliderValues.indexOf(active);
-        const nextIndex = (currentIndex + 1) % sliderValues.length;
-        setActive(sliderValues[nextIndex]);
-      }
-      setProgress(0);
-      firstFrameTime.current = performance.now();
-    }
-  };
-
-  const handleButtonClick = (value: string) => {
-    if (value !== active) {
-      const elapsedTime = performance.now() - firstFrameTime.current;
-      const currentProgress = (elapsedTime / duration) * 100;
-      setProgress(currentProgress);
-      targetValue.current = value;
-      setIsFastForward(true);
-      firstFrameTime.current = performance.now();
-    }
+    updateSelection();
+    carouselApi.on("select", updateSelection);
+    return () => {
+      carouselApi.off("select", updateSelection);
+    };
+  }, [carouselApi]);
+  const navigate = useNavigate();
+  const handleNavigate = () => {
+    navigate("/vivo-2025");
+    // espera a que la navegación ocurra y luego scrollea
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }, 100);
   };
 
   return (
-    <ProgressSliderContext.Provider
-      value={{ active, progress, handleButtonClick, vertical }}
-    >
-      <div className={cn("relative", className)}>{children}</div>
-    </ProgressSliderContext.Provider>
-  );
-};
-
-export const SliderContent: FC<SliderContentProps> = ({
-  children,
-  className,
-}) => {
-  return <div className={cn("", className)}>{children}</div>;
-};
-
-export const SliderWrapper: FC<SliderWrapperProps> = ({
-  children,
-  value,
-  className,
-}) => {
-  const { active } = useProgressSliderContext();
-
-  return (
-    <AnimatePresence mode="popLayout">
-      {active === value && (
-        <motion.div
-          key={value}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          className={cn("", className)}
-        >
-          {children}
-        </motion.div>
-      )}
-    </AnimatePresence>
-  );
-};
-
-export const SliderBtnGroup: FC<ProgressBarProps> = ({
-  children,
-  className,
-}) => {
-  return <div className={cn("", className)}>{children}</div>;
-};
-
-export const SliderBtn: FC<SliderBtnProps> = ({
-  children,
-  value,
-  className,
-  progressBarClass,
-}) => {
-  const { active, progress, handleButtonClick, vertical } =
-    useProgressSliderContext();
-
-  return (
-    <button
-      className={cn(
-        `relative ${active === value ? "opacity-100" : "opacity-50"}`,
-        className
-      )}
-      onClick={() => handleButtonClick(value)}
-    >
-      {children}
-      <div
-        className="absolute inset-0 overflow-hidden -z-10 max-h-full max-w-full "
-        role="progressbar"
-        aria-valuenow={active === value ? progress : 0}
-      >
-        <span
-          className={cn("absolute left-0 ", progressBarClass)}
-          style={{
-            [vertical ? "height" : "width"]:
-              active === value ? `${progress}%` : "0%",
-          }}
-        />
+    <section className="py-32">
+      <div className="container mx-auto">
+        <div className="mb-8 flex items-end justify-between md:mb-14 lg:mb-16">
+          <div className="flex flex-col gap-4">
+            <h2 className="text-3xl font-medium md:text-4xl lg:text-5xl">
+              {title}
+            </h2>
+            <p className="max-w-lg text-muted-foreground">{description}</p>
+            <div className="flex gap-2">
+              <Button className="max-w-max" onClick={handleNavigate}>
+                Ver vivos
+              </Button>
+              <Button
+                variant="outline"
+                onClick={() =>
+                  window.open("https://forms.gle/JS16Ez9W5EaRyiBx5", "_blank")
+                }
+              >
+                Contanos tu experiencia
+              </Button>
+            </div>
+          </div>
+          <div className="hidden shrink-0 gap-2 md:flex">
+            <Button
+              size="icon"
+              variant="ghost"
+              onClick={() => {
+                carouselApi?.scrollPrev();
+              }}
+              disabled={!canScrollPrev}
+              className="disabled:pointer-events-auto"
+            >
+              <ArrowLeft className="size-5" />
+            </Button>
+            <Button
+              size="icon"
+              variant="ghost"
+              onClick={() => {
+                carouselApi?.scrollNext();
+              }}
+              disabled={!canScrollNext}
+              className="disabled:pointer-events-auto"
+            >
+              <ArrowRight className="size-5" />
+            </Button>
+          </div>
+        </div>
       </div>
-    </button>
+      <div className="w-full">
+        <Carousel
+          setApi={setCarouselApi}
+          opts={{
+            breakpoints: {
+              "(max-width: 768px)": {
+                dragFree: true,
+              },
+            },
+          }}
+        >
+          <CarouselContent className="ml-0 2xl:ml-[max(8rem,calc(50vw-700px))] 2xl:mr-[max(0rem,calc(50vw-700px))]">
+            {items.map((item) => (
+              <CarouselItem
+                key={item.id}
+                className="max-w-[320px] pl-[20px] lg:max-w-[360px]"
+              >
+                <div
+                  className="group rounded-xl cursor-pointer"
+                  onClick={handleNavigate}
+                >
+                  <div className="group relative h-full min-h-[27rem] max-w-full overflow-hidden rounded-xl md:aspect-[5/4] lg:aspect-[16/9]">
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="absolute h-full w-full object-cover object-center transition-transform duration-300 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 h-full bg-[linear-gradient(hsl(var(--primary)/0),hsl(var(--primary)/0.4),hsl(var(--primary)/0.8)_100%)] mix-blend-multiply" />
+                    <div className="absolute inset-x-0 bottom-0 flex flex-col items-start p-6 text-primary-foreground md:p-8">
+                      <div className="mb-2 pt-4 text-xl font-semibold md:mb-3 md:pt-4 lg:pt-4">
+                        {item.title}
+                      </div>
+                      <div className="mb-8 line-clamp-2 md:mb-12 lg:mb-9">
+                        {item.description}
+                      </div>
+                      <div className="flex items-center text-sm">
+                        Ver más{" "}
+                        <ArrowRight className="ml-2 size-5 transition-transform group-hover:translate-x-1" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+        </Carousel>
+        <div className="mt-8 flex justify-center gap-2">
+          {items.map((_, index) => (
+            <button
+              key={index}
+              className={`h-2 w-2 rounded-full transition-colors ${
+                currentSlide === index ? "bg-primary" : "bg-primary/20"
+              }`}
+              onClick={() => carouselApi?.scrollTo(index)}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
   );
 };
+
+export { TextImage2025 };

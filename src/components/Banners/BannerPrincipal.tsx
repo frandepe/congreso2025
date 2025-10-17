@@ -7,10 +7,12 @@ export default function BannerPrincipal() {
     <div
       className="relative h-screen w-full bg-cover bg-center md:bg-center flex items-center justify-center text-white text-center"
       style={{
-        backgroundImage: "url('/assets/conference-banner-principal.webp')",
-        backgroundPosition: "37% center", // Más hacia la derecha en mobile
+        backgroundImage: "url('/assets/2025/carousel10.png')",
+        backgroundPosition: "37% center",
       }}
     >
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/30"></div>
       <div className="absolute inset-0 bg-black bg-opacity-50"></div>
       <div className="relative z-10 max-w-2xl px-4">
         <p className="text-lg flex items-center justify-center gap-2 font-semibold text-start ml-8 sm:ml-0">
@@ -21,25 +23,25 @@ export default function BannerPrincipal() {
         <h1 className="text-3xl md:text-5xl font-bold mt-4">
           Primer congreso nacional de instructores de RCP
         </h1>
-        {/* <h3>¡Un gran comienzo! Nos vemos en la edición 2026</h3> */}
+        <h3>¡Un gran comienzo! Nos vemos en la edición 2026</h3>
 
-        <Button
-          // onClick={() =>
-          //   window.open("https://forms.gle/JS16Ez9W5EaRyiBx5", "_blank")
-          // }
+        {/* <Button
+          onClick={() =>
+            window.open("https://forms.gle/JS16Ez9W5EaRyiBx5", "_blank")
+          }
           className="mt-6 mr-6"
           disabled
         >
           Inscribirme
-        </Button>
-        {/* <Button
+        </Button> */}
+        <Button
           onClick={() =>
             window.open("https://forms.gle/JS16Ez9W5EaRyiBx5", "_blank")
           }
           className="mt-6 mr-6"
         >
           Contanos tu experiencia
-        </Button> */}
+        </Button>
         <AnimatedModalVideo />
       </div>
     </div>

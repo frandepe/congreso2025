@@ -152,12 +152,12 @@ export default function Lives2025() {
         <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-10">
           <h2 className="flex items-center gap-3 text-xl md:text-4xl lg:text-5xl font-bold mb-6 text-black dark:text-white">
             <Radio className="text-red-500" size={40} />
-            En Vivo: Congreso 2025
+            En Vivo. Congreso 2025
           </h2>
           <p className="text-neutral-700 dark:text-neutral-300 text-sm md:text-base max-w-md leading-relaxed">
-            Seguí las charlas y entrevistas en tiempo real con instructores y
-            referentes del Congreso Nacional de RCP 2025. ¡No te pierdas ningún
-            detalle de este evento único!
+            Reviví las charlas y entrevistas del Congreso Nacional de RCP 2025,
+            la mayoría grabadas en vivo. Algunos momentos fueron exclusivos para
+            quienes participaron presencialmente.
           </p>
         </div>
 

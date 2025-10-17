@@ -26,10 +26,10 @@ export function AnimatedModalVideo() {
       <Button
         onClick={handleScroll}
         variant="outline"
-        className="border-red-500 text-red-600 hover:bg-red-50 hover:text-red-600"
+        className="text-gray-700"
       >
-        <Radio className=" text-red-500 animate-pulse mr-1" size={14} />
-        <span className="font-semibold">Ver en vivo</span>
+        <Radio className="mr-1" size={14} />
+        Volver a ver
       </Button>
 
       <AnimatePresence>
