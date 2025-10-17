@@ -127,11 +127,11 @@ const videos = [
   },
   {
     id: "yA3hRvZEW2Y",
-    title: "Homenajes / Habla Francesc Carmona",
+    title: "Día 2 completo",
     thumbnail: "https://img.youtube.com/vi/yA3hRvZEW2Y/mqdefault.jpg",
     avatar: "assets/logo-congreso2025.png",
     date: "16 Octubre 2025",
-    duration: "2:40:16",
+    duration: "8:51:40",
   },
 ];
 
