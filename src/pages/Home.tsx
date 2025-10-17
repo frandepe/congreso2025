@@ -99,18 +99,22 @@ export const Home = () => {
               </button>
 
               <h2 className="text-xl font-bold text-center mb-4 text-primary">
-                🚨 ¡Bienvenido al Congreso Nacional de RCP 2025! 🚨
+                🙌 ¡Gracias por ser parte del Congreso Nacional de RCP 2025! 🙌
               </h2>
               <p className="text-center mb-4">
-                Este es el evento más importante del año en reanimación
-                cardiopulmonar y emergencias médicas.
+                Queremos seguir mejorando. Nos encantaría conocer tu opinión
+                sobre esta edición.
               </p>
               <p className="text-center mb-4 font-semibold text-destructive">
-                📅 Cupos limitados — asegurá tu lugar ahora.
+                📝 Completá una breve encuesta a continuación:
               </p>
               <div className="flex justify-center">
-                <Button onClick={() => navigate("/inscripcion")}>
-                  📝 INSCRIBIRME AHORA
+                <Button
+                  onClick={() =>
+                    window.open("https://forms.gle/JS16Ez9W5EaRyiBx5", "_blank")
+                  }
+                >
+                  💬 RESPONDER ENCUESTA
                 </Button>
               </div>
             </motion.div>

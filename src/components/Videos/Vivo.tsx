@@ -6,8 +6,7 @@ import { HeartHandshake } from "lucide-react";
 
 const LiveVideo = () => {
   const navigate = useNavigate();
-  const videoId = "dOcsfwIfyJY";
-  // const videoId = "I02-AQLPm7I";
+  const videoId = "iRqv_i7QYYE";
 
   const opts = {
     width: "100%",

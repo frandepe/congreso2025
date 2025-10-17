@@ -1,10 +1,8 @@
 import { Calendar, MapPin } from "lucide-react";
 import { Button } from "../ui/button";
-import { useNavigate } from "react-router-dom";
 import { AnimatedModalVideo } from "../AnimatedModal/AnimatedModalVideo";
 // https://forms.gle/JS16Ez9W5EaRyiBx5
 export default function BannerPrincipal() {
-  const navigate = useNavigate();
   return (
     <div
       className="relative h-screen w-full bg-cover bg-center md:bg-center flex items-center justify-center text-white text-center"
@@ -24,8 +22,13 @@ export default function BannerPrincipal() {
           Primer congreso nacional de instructores de RCP
         </h1>
 
-        <Button onClick={() => navigate("/inscripcion")} className="mt-6 mr-6">
-          Inscribirme
+        <Button
+          onClick={() =>
+            window.open("https://forms.gle/JS16Ez9W5EaRyiBx5", "_blank")
+          }
+          className="mt-6 mr-6"
+        >
+          Contanos tu experiencia
         </Button>
         <AnimatedModalVideo />
       </div>

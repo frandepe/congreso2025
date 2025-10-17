@@ -133,6 +133,14 @@ const videos = [
     date: "16 Octubre 2025",
     duration: "8:51:40",
   },
+  {
+    id: "dOcsfwIfyJY",
+    title: "Distrito cardioprotegido",
+    thumbnail: "https://img.youtube.com/vi/dOcsfwIfyJY/mqdefault.jpg",
+    avatar: "assets/logo-congreso2025.png",
+    date: "17 Octubre 2025",
+    duration: "1:11:18",
+  },
 ];
 
 export default function Lives2025() {
