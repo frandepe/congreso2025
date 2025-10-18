@@ -2,16 +2,19 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Radio, X } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export function AnimatedModalVideo() {
   const [open, setOpen] = useState(false);
-  const handleScroll = () => {
-    const liveSection = document.getElementById("live");
-    if (liveSection) {
-      liveSection.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+  const navigate = useNavigate();
 
+  const handleNavigate = () => {
+    navigate("/vivo-2025");
+    // espera a que la navegación ocurra y luego scrollea
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }, 100);
+  };
   return (
     <>
       {/* Trigger */}
@@ -24,7 +27,7 @@ export function AnimatedModalVideo() {
       </Button> */}
 
       <Button
-        onClick={handleScroll}
+        onClick={handleNavigate}
         variant="outline"
         className="text-gray-700"
       >
