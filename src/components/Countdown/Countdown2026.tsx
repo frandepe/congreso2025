@@ -9,8 +9,8 @@ const Countdown2026 = () => {
   });
 
   useEffect(() => {
-    // 15 de octubre de 2025 a las 09:00 (hora de Argentina = UTC-3)
-    const targetDate = new Date("2026-10-15T12:00:00Z").getTime(); // Z = UTC
+    // 9 de octubre de 2026 a las 09:00 (hora de Argentina = UTC-3)
+    const targetDate = new Date("2026-10-09T12:00:00Z").getTime(); // Z = UTC
 
     const updateCountdown = () => {
       const now = new Date().getTime();

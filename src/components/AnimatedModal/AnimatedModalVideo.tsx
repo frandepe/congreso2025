@@ -8,12 +8,15 @@ export function AnimatedModalVideo() {
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
 
+  // const handleNavigate = () => {
+  //   navigate("/vivo-2025");
+  //   // espera a que la navegación ocurra y luego scrollea
+  //   setTimeout(() => {
+  //     window.scrollTo({ top: 0, behavior: "smooth" });
+  //   }, 100);
+  // };
   const handleNavigate = () => {
-    navigate("/vivo-2025");
-    // espera a que la navegación ocurra y luego scrollea
-    setTimeout(() => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }, 100);
+    window.open("https://forms.gle/cSgo6Tni4ZuzUZVc7", "_blank");
   };
   return (
     <>
@@ -31,8 +34,8 @@ export function AnimatedModalVideo() {
         variant="outline"
         className="text-gray-700"
       >
-        <Radio className="mr-1" size={14} />
-        Volver a ver
+        {/* <Radio className="mr-1" size={14} /> */}
+        Preinscripción 2026
       </Button>
 
       <AnimatePresence>
