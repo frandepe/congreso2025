@@ -7,7 +7,7 @@ export function SpeakersTimeline() {
       title: "Miércoles 15 de octubre",
       content: (
         <div className="relative">
-          <div className="absolute right-2 top-10 -translate-y-1/2 w-2/3 h-2/3 bg-[url('/assets/logo-congreso2025.png')] bg-contain bg-no-repeat opacity-10 pointer-events-none lg:block hidden"></div>
+          <div className="absolute right-2 top-10 -translate-y-1/2 w-2/3 h-2/3 bg-[url('/assets/logo-congreso2026.png')] bg-contain bg-no-repeat opacity-10 pointer-events-none lg:block hidden"></div>
 
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
             <strong>9:00 – 9:30 | Apertura y Bienvenida</strong>

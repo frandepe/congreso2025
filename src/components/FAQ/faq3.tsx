@@ -7,95 +7,93 @@ import {
 import { Button } from "@/components/ui/button";
 import { CircleCheckBig } from "lucide-react";
 
-interface FaqItem {
-  id: string;
-  question: string;
-  answer: string;
-}
-
-interface Faq3Props {
-  heading: string;
-  description: string;
-  items?: FaqItem[];
-  supportHeading: string;
-  supportDescription: string;
-  supportButtonText: string;
-  supportButtonUrl: string;
-}
-
 const faqItems = [
   {
     id: "faq-1",
     question: "¿Cuándo y dónde se realizará el Congreso Nacional de RCP?",
     answer:
-      "El congreso se llevará a cabo del 15 al 17 de octubre de 2025 en Trenque Lauquen, Provincia de Buenos Aires, Argentina.",
+      "El congreso se llevará a cabo del 09 al 11 de octubre de 2026 en Trenque Lauquen, Provincia de Buenos Aires, Argentina.",
   },
   {
     id: "faq-2",
     question: "¿Cómo me inscribo?",
     answer: (
       <>
-        Puedes inscribirte a través de los enlaces específicos según tu
-        modalidad de participación:
-        <ul className="list-disc pl-5 mt-2">
-          <li>Un día: $5.000</li>
-          <li>Tres días sin alojamiento: $15.000</li>
-          <li>
-            Tres días con alojamiento en dormís compartidos (cupos limitados):
-            $30.000
-          </li>
-        </ul>
-        <p className="mt-2">
-          Haz{" "}
-          <a
-            className="text-primary underline"
-            href="inscripcion"
-            target="_blank"
-          >
-            clic aquí
-          </a>{" "}
-          para inscribirte
-        </p>
+        Puedes completar la preinscripción haciendo{" "}
+        <a
+          className="text-primary underline"
+          href="https://forms.gle/cSgo6Tni4ZuzUZVc7"
+          target="_blank"
+        >
+          clic aquí
+        </a>
       </>
     ),
+    // answer: (
+    //   <>
+    //     Puedes inscribirte a través de los enlaces específicos según tu
+    //     modalidad de participación:
+    //     <ul className="list-disc pl-5 mt-2">
+    //       <li>Un día: $5.000</li>
+    //       <li>Tres días sin alojamiento: $15.000</li>
+    //       <li>
+    //         Tres días con alojamiento en dormís compartidos (cupos limitados):
+    //         $30.000
+    //       </li>
+    //     </ul>
+    //     <p className="mt-2">
+    //       Haz{" "}
+    //       <a
+    //         className="text-primary underline"
+    //         href="inscripcion"
+    //         target="_blank"
+    //       >
+    //         clic aquí
+    //       </a>{" "}
+    //       para inscribirte
+    //     </p>
+    //   </>
+    // ),
   },
   {
     id: "faq-3",
     question: "¿Qué incluye la inscripción?",
-    answer: (
-      <>
-        Tu inscripción incluye:
-        <ul className="list-disc pl-5 mt-2">
-          <li className="flex gap-2 items-center">
-            <CircleCheckBig color="green" size={18} /> Acceso a todas las
-            conferencias y talleres del congreso.
-          </li>
-          <li className="flex gap-2 items-center">
-            <CircleCheckBig color="green" size={18} /> Materiales del evento
-            (programa, credencial, etc.).
-          </li>
-          <li className="flex gap-2 items-center">
-            <CircleCheckBig color="green" size={18} /> Desayuno y refrigerios en
-            cada break.
-          </li>
-          <li className="flex gap-2 items-center">
-            <CircleCheckBig color="green" size={18} /> Certificado de
-            participación.
-          </li>
-          <li className="flex gap-2">
-            <CircleCheckBig color="orange" className="mt-1" size={20} />
-            Para quienes eligen la opción con alojamiento, incluye 4 noches en
-            dormis compartidos.
-          </li>
-        </ul>
-      </>
-    ),
+    answer: "Esta información estará disponible próximamente.",
+    // answer: (
+    //   <>
+    //     Tu inscripción incluye:
+    //     <ul className="list-disc pl-5 mt-2">
+    //       <li className="flex gap-2 items-center">
+    //         <CircleCheckBig color="green" size={18} /> Acceso a todas las
+    //         conferencias y talleres del congreso.
+    //       </li>
+    //       <li className="flex gap-2 items-center">
+    //         <CircleCheckBig color="green" size={18} /> Materiales del evento
+    //         (programa, credencial, etc.).
+    //       </li>
+    //       <li className="flex gap-2 items-center">
+    //         <CircleCheckBig color="green" size={18} /> Desayuno y refrigerios en
+    //         cada break.
+    //       </li>
+    //       <li className="flex gap-2 items-center">
+    //         <CircleCheckBig color="green" size={18} /> Certificado de
+    //         participación.
+    //       </li>
+    //       <li className="flex gap-2">
+    //         <CircleCheckBig color="orange" className="mt-1" size={20} />
+    //         Para quienes eligen la opción con alojamiento, incluye 4 noches en
+    //         dormis compartidos.
+    //       </li>
+    //     </ul>
+    //   </>
+    // ),
   },
   {
     id: "faq-4",
     question: "¿Cuántos cupos hay disponibles?",
-    answer:
-      "Los cupos son limitados para garantizar una mejor experiencia para todos los asistentes.",
+    // answer:
+    //   "Los cupos son limitados para garantizar una mejor experiencia para todos los asistentes.",
+    answer: "Esta información estará disponible próximamente.",
   },
   {
     id: "faq-5",

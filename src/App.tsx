@@ -10,8 +10,6 @@ import { Inscripcion } from "./pages/Inscripcion";
 import { Expositores } from "./pages/Expositores";
 import { FAQ } from "./pages/Faq";
 import Videos from "./pages/Videos";
-import { NextConference } from "./pages/NextConference";
-import { Muestra } from "./pages/Muestra";
 import Lives2025 from "./pages/Lives2025";
 
 function PageWrapper({ children }: any) {
@@ -33,14 +31,14 @@ function App() {
       <AnimatePresence mode="sync">
         <Routes>
           {/* Ruta SIN layout */}
-          <Route
+          {/* <Route
             path="/vivo-patrocinadores"
             element={
               <PageWrapper>
                 <Muestra />
               </PageWrapper>
             }
-          />
+          /> */}
 
           {/* Rutas CON layout */}
           <Route
@@ -125,14 +123,6 @@ function App() {
                     element={
                       <PageWrapper>
                         <Contact />
-                      </PageWrapper>
-                    }
-                  />
-                  <Route
-                    path="/congreso2026"
-                    element={
-                      <PageWrapper>
-                        <NextConference />
                       </PageWrapper>
                     }
                   />

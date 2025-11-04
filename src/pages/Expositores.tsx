@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { SpeakersCards } from "@/components/SpeakersCards/SpeakersCards";
+import ComingSoonOverlay from "@/components/ComingSoonOverlay/ComingSoonOverlay";
 
 export const Expositores = () => {
   useEffect(() => {
@@ -13,6 +14,7 @@ export const Expositores = () => {
 
   return (
     <div id="top" className="px-6 dark:bg-background">
+      <ComingSoonOverlay />
       <SpeakersCards />
     </div>
   );

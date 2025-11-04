@@ -13,6 +13,7 @@ import { useNavigate } from "react-router-dom";
 import { AnimatedFeatureSpotlight } from "@/components/Banners/PromoCardio";
 import { TextImage2025 } from "@/components/TextImage2025/TextImage2025";
 import Countdown2026 from "@/components/Countdown/Countdown2026";
+import { Testimonials2026 } from "@/components/Testimonials/Testimonials2026";
 
 const demoData: any = {
   title: "Congreso nacional de RCP 2025",
@@ -209,7 +210,7 @@ export const Home = () => {
       <section className="max-w-4xl px-10 mx-auto mt-32">
         <TextImage2025 {...demoData} />
       </section>
-      <div className="flex items-center justify-center w-full bg-muted py-20">
+      {/* <div className="flex items-center justify-center w-full bg-muted py-20">
         <AnimatedFeatureSpotlight
           preheaderIcon={<Activity className="h-4 w-4" />}
           preheaderText="Tecnología cardiovascular de vanguardia desde 1981"
@@ -229,7 +230,8 @@ export const Home = () => {
           imageUrl="/assets/patrocinadores/cardiosistemas.png"
           imageAlt="Cardiosistemas tiene como propósito proveer productos"
         />
-      </div>
+      </div> */}
+      <Testimonials2026 />
       <DescImgs />
 
       <section className="relative md:h-[400px] h-[450px] flex items-center justify-center mb-10 md:mb-40">

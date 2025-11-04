@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { AnimatedModalDemo } from "../AnimatedModal/AnimatedModal";
+import SectionOverlay from "../ComingSoonOverlay/SectionOverlay";
 
 export interface PricingTier {
   name: string;
@@ -87,6 +88,7 @@ export function PricingCard({ tier, paymentFrequency }: PricingCardProps) {
           <ArrowRight className="ml-2 h-4 w-4" />
         </Button>
       </a>
+      <SectionOverlay />
     </Card>
   );
 }

@@ -9,140 +9,71 @@ const SQRT_5000 = Math.sqrt(5000);
 const testimonials = [
   {
     tempId: 0,
-    testimonial:
-      "My favorite solution in the market. We work 5x faster with COMPANY.",
+    testimonial: "Muy bueno. Complieron con todas mis expectativas",
     by: "Alex, CEO at TechCorp",
     imgSrc: "https://i.pravatar.cc/150?img=1",
   },
   {
     tempId: 1,
-    testimonial:
-      "I'm confident my data is safe with COMPANY. I can't say that about other providers.",
+    testimonial: "Espectacular grupo humano, esencia, personal y respeto",
     by: "Dan, CTO at SecureNet",
     imgSrc: "https://i.pravatar.cc/150?img=2",
   },
   {
     tempId: 2,
     testimonial:
-      "I know it's cliche, but we were lost before we found COMPANY. Can't thank you guys enough!",
+      "Excelente jornada, muchas herramientas requerida para aplicar en nuestro pueblo. Gracias, gracias por enseñarnos a enseñar",
     by: "Stephanie, COO at InnovateCo",
     imgSrc: "https://i.pravatar.cc/150?img=3",
   },
   {
     tempId: 3,
     testimonial:
-      "COMPANY's products make planning for the future seamless. Can't recommend them enough!",
+      "Todos los que participamos de este congreso somos, además de perros verdes, agentes multiplicadores. Al volver a casa haremos algo para mejorar nuestra comunidad.",
     by: "Marie, CFO at FuturePlanning",
     imgSrc: "https://i.pravatar.cc/150?img=4",
   },
   {
     tempId: 4,
-    testimonial: "If I could give 11 stars, I'd give 12.",
+    testimonial:
+      "Valoro el calor humano, amabilidad, respeto y compromiso. Pidamos a Messi que haga una práctica de RCP y se dispararán los gestos 🤭",
     by: "Andre, Head of Design at CreativeSolutions",
     imgSrc: "https://i.pravatar.cc/150?img=5",
   },
   {
     tempId: 5,
     testimonial:
-      "SO SO SO HAPPY WE FOUND YOU GUYS!!!! I'd bet you've saved me 100 hours so far.",
+      "Lo que más valoré ha sido el paisaje humano y la calidez de los expositores. Estoy muy conforme. Me siento muy agradecida por la experiencia y me llevo una gran primera impresión.",
     by: "Jeremy, Product Manager at TimeWise",
     imgSrc: "https://i.pravatar.cc/150?img=6",
   },
   {
     tempId: 6,
     testimonial:
-      "Took some convincing, but now that we're on COMPANY, we're never going back.",
+      "Quiero destacar y felicitar xq el grupo que se formo es de pura gente interesada en el tema",
     by: "Pam, Marketing Director at BrandBuilders",
     imgSrc: "https://i.pravatar.cc/150?img=7",
   },
   {
     tempId: 7,
     testimonial:
-      "I would be lost without COMPANY's in-depth analytics. The ROI is EASILY 100X for us.",
+      "Se hizo muy llevadero, no se hizo largo. Muy linda experiencia, muy emotivo.",
     by: "Daniel, Data Scientist at AnalyticsPro",
     imgSrc: "https://i.pravatar.cc/150?img=8",
   },
   {
     tempId: 8,
-    testimonial: "It's just the best. Period.",
+    testimonial:
+      "Valoro la calidez humana, LA SENSIBILIDAD DE NICOLAS!!🙌🏼 llegando a cada uno de nosotros!!!",
     by: "Fernando, UX Designer at UserFirst",
     imgSrc: "https://i.pravatar.cc/150?img=9",
   },
   {
     tempId: 9,
-    testimonial: "I switched 5 years ago and never looked back.",
+    testimonial:
+      'Valoro la posibilidad que nos daban todo el tiempo de participar y de pensar al Congreso como "algo que armamos entre todos"',
     by: "Andy, DevOps Engineer at CloudMasters",
     imgSrc: "https://i.pravatar.cc/150?img=10",
-  },
-  {
-    tempId: 10,
-    testimonial:
-      "I've been searching for a solution like COMPANY for YEARS. So glad I finally found one!",
-    by: "Pete, Sales Director at RevenueRockets",
-    imgSrc: "https://i.pravatar.cc/150?img=11",
-  },
-  {
-    tempId: 11,
-    testimonial:
-      "It's so simple and intuitive, we got the team up to speed in 10 minutes.",
-    by: "Marina, HR Manager at TalentForge",
-    imgSrc: "https://i.pravatar.cc/150?img=12",
-  },
-  {
-    tempId: 12,
-    testimonial:
-      "COMPANY's customer support is unparalleled. They're always there when we need them.",
-    by: "Olivia, Customer Success Manager at ClientCare",
-    imgSrc: "https://i.pravatar.cc/150?img=13",
-  },
-  {
-    tempId: 13,
-    testimonial:
-      "The efficiency gains we've seen since implementing COMPANY are off the charts!",
-    by: "Raj, Operations Manager at StreamlineSolutions",
-    imgSrc: "https://i.pravatar.cc/150?img=14",
-  },
-  {
-    tempId: 14,
-    testimonial:
-      "COMPANY has revolutionized how we handle our workflow. It's a game-changer!",
-    by: "Lila, Workflow Specialist at ProcessPro",
-    imgSrc: "https://i.pravatar.cc/150?img=15",
-  },
-  {
-    tempId: 15,
-    testimonial:
-      "The scalability of COMPANY's solution is impressive. It grows with our business seamlessly.",
-    by: "Trevor, Scaling Officer at GrowthGurus",
-    imgSrc: "https://i.pravatar.cc/150?img=16",
-  },
-  {
-    tempId: 16,
-    testimonial:
-      "I appreciate how COMPANY continually innovates. They're always one step ahead.",
-    by: "Naomi, Innovation Lead at FutureTech",
-    imgSrc: "https://i.pravatar.cc/150?img=17",
-  },
-  {
-    tempId: 17,
-    testimonial:
-      "The ROI we've seen with COMPANY is incredible. It's paid for itself many times over.",
-    by: "Victor, Finance Analyst at ProfitPeak",
-    imgSrc: "https://i.pravatar.cc/150?img=18",
-  },
-  {
-    tempId: 18,
-    testimonial:
-      "COMPANY's platform is so robust, yet easy to use. It's the perfect balance.",
-    by: "Yuki, Tech Lead at BalancedTech",
-    imgSrc: "https://i.pravatar.cc/150?img=19",
-  },
-  {
-    tempId: 19,
-    testimonial:
-      "We've tried many solutions, but COMPANY stands out in terms of reliability and performance.",
-    by: "Zoe, Performance Manager at ReliableSystems",
-    imgSrc: "https://i.pravatar.cc/150?img=20",
   },
 ];
 
@@ -195,9 +126,9 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
         }}
       />
       <img
-        src={testimonial.imgSrc}
-        alt={`${testimonial.by.split(",")[0]}`}
-        className="mb-4 h-14 w-12 bg-muted object-cover object-top"
+        src="/assets/avatar.jpg"
+        alt={`avatar de un perfil anónimo`}
+        className="mb-4 h-10 w-10 bg-muted object-cover object-top"
         style={{
           boxShadow: "3px 3px 0px hsl(var(--background))",
         }}
@@ -210,13 +141,15 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
       >
         "{testimonial.testimonial}"
       </h3>
+
       <p
         className={cn(
           "absolute bottom-8 left-8 right-8 mt-2 text-sm italic",
-          isCenter ? "text-primary-foreground/80" : "text-muted-foreground"
+          isCenter ? "text-primary-foreground/80" : "text-muted-foreground",
+          testimonial.testimonial.length >= 130 ? "hidden md:block" : "block"
         )}
       >
-        - {testimonial.by}
+        - Participante del Congreso 2025
       </p>
     </div>
   );

@@ -42,12 +42,13 @@ function HeroWithGroupImages() {
                 Ver programa <Calendar className="w-4 h-4" />
               </Button>
               <Button
+                disabled
                 size="lg"
                 className="gap-4"
-                onClick={() => {
-                  navigate("/inscripcion");
-                  window.scrollTo(0, 0);
-                }}
+                // onClick={() => {
+                //   navigate("/inscripcion");
+                //   window.scrollTo(0, 0);
+                // }}
               >
                 Inscribirme <MoveRight className="w-4 h-4" />
               </Button>

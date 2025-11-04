@@ -72,11 +72,11 @@ export const Patrocinadores = () => {
               transition={{ duration: 0.3 }}
             >
               <a
-                href="https://forms.gle/3mQqU8Y2nwj3PoR49"
+                // href="https://forms.gle/3mQqU8Y2nwj3PoR49"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Button variant="secondary" className="w-full">
+                <Button variant="secondary" className="w-full" disabled>
                   ¿Quieres ser Auspiciante?
                 </Button>
               </a>

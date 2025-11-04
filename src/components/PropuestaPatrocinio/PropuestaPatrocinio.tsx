@@ -14,7 +14,9 @@ function PropuestaPatrocinio() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button className="w-full">¿Quieres ser Patrocinador?</Button>
+        <Button className="w-full" disabled>
+          ¿Quieres ser Patrocinador?
+        </Button>
       </DialogTrigger>
       <DialogContent className="max-h-[90vh] overflow-y-auto p-0 sm:max-w-3xl">
         <DialogHeader className="border-b border-border px-6 py-4">

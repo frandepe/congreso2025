@@ -45,7 +45,7 @@ export const Inscripcion = () => {
             transition={{ duration: 0.3 }}
           >
             <Calendar className="w-12 h-12 text-blue-600" />
-            <h3 className="text-lg font-semibold mt-2">15 - 17 de Octubre</h3>
+            <h3 className="text-lg font-semibold mt-2">9 - 11 de Octubre</h3>
             <p className="text-gray-600">
               Tres días de formación intensiva con expertos en la materia.
             </p>
