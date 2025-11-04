@@ -14,6 +14,7 @@ import { AnimatedFeatureSpotlight } from "@/components/Banners/PromoCardio";
 import { TextImage2025 } from "@/components/TextImage2025/TextImage2025";
 import Countdown2026 from "@/components/Countdown/Countdown2026";
 import { Testimonials2026 } from "@/components/Testimonials/Testimonials2026";
+import { TextProgressiveBlur } from "@/components/TextProgressiveBlur/TextProgressiveBlur";
 
 const demoData: any = {
   title: "Congreso nacional de RCP 2025",
@@ -270,6 +271,9 @@ export const Home = () => {
         <div className="mt-4 flex justify-center px-12">
           <Comite testimonials={testimonials} />
         </div>
+      </div>
+      <div className="mt-20">
+        <TextProgressiveBlur />
       </div>
     </div>
   );

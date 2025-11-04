@@ -7,7 +7,7 @@ export default function BannerPrincipal() {
     <div
       className="relative h-screen w-full bg-cover bg-center md:bg-center flex items-center justify-center text-white text-center"
       style={{
-        backgroundImage: "url('/assets/2025/carousel10.png')",
+        backgroundImage: "url('/assets/2025/todos.jpg')",
         backgroundPosition: "37% center",
       }}
     >
