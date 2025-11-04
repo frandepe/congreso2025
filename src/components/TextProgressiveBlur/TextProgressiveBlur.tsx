@@ -73,7 +73,7 @@ export const TextProgressiveBlur = () => {
             que estuvieron a disposición del congreso como por ejemplo el
             personal de Espacios Verdes que colaboraron con los homenajes de la
             plantación de los árboles Aquí un agradecimiento especial a las
-            familias de Tomas, Bernardo y Adrian por permitirnos tan hermoso
+            familias de Tomas, Beltrán y Adrian por permitirnos tan hermoso
             homenaje.
           </p>
 
