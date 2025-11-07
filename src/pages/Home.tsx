@@ -233,7 +233,7 @@ export const Home = () => {
         />
       </div> */}
       <Testimonials2026 />
-      <DescImgs />
+      {/* <DescImgs />
 
       <section className="relative md:h-[400px] h-[450px] flex items-center justify-center mb-10 md:mb-40">
         <div className="absolute inset-0">
@@ -253,16 +253,16 @@ export const Home = () => {
         >
           <AudioPlayer />
         </motion.div>
-      </section>
+      </section> */}
 
-      <div>
+      {/* <div>
         <Agradecimientos
           primaryColor="sky-500"
           progressGradientLight="bg-gradient-to-r from-secondary/70 to-secondary"
           progressGradientDark="bg-gradient-to-r from-secondary/70 to-secondary"
           features={features}
         />
-      </div>
+      </div> */}
 
       <div className="relative w-full overflow-hidden rounded-lg">
         <h3 className="text-center font-bold text-primary">
