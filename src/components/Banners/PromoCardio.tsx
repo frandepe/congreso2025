@@ -6,10 +6,10 @@ import { Button, type ButtonProps } from "@/components/ui/button";
 interface AnimatedFeatureSpotlightProps
   extends React.HTMLAttributes<HTMLElement> {
   preheaderIcon?: React.ReactNode;
-  preheaderText: string;
+  preheaderText?: string;
   heading: React.ReactNode;
   description: string;
-  buttonText: string;
+  buttonText?: string;
   buttonProps?: ButtonProps;
   imageUrl: string;
   imageAlt?: string;
@@ -38,7 +38,7 @@ const AnimatedFeatureSpotlight = React.forwardRef<
       <section
         ref={ref}
         className={cn(
-          "w-full max-w-6xl mx-auto p-8 md:p-12 rounded-2xl border overflow-hidden bg-gradient-to-tl from-secondary to-white",
+          "container mx-auto p-8 md:p-12 rounded-2xl border overflow-hidden bg-gradient-to-tl from-secondary to-white",
           className
         )}
         aria-labelledby="feature-spotlight-heading"
@@ -47,10 +47,12 @@ const AnimatedFeatureSpotlight = React.forwardRef<
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           {/* Left Column: Animated Text Content */}
           <div className="flex flex-col space-y-6 text-center md:text-left items-center md:items-start">
-            <div className="flex items-center space-x-2 text-sm font-medium text-muted-foreground animate-in fade-in slide-in-from-top-4 duration-700">
-              {preheaderIcon}
-              <span>{preheaderText}</span>
-            </div>
+            {preheaderText && (
+              <div className="flex items-center space-x-2 text-sm font-medium text-muted-foreground animate-in fade-in slide-in-from-top-4 duration-700">
+                {preheaderIcon}
+                <span>{preheaderText}</span>
+              </div>
+            )}
             <h2
               id="feature-spotlight-heading"
               className="text-4xl lg:text-5xl font-bold tracking-tight text-foreground animate-in fade-in slide-in-from-top-4 duration-700 delay-150"
@@ -60,11 +62,13 @@ const AnimatedFeatureSpotlight = React.forwardRef<
             <p className="text-lg text-muted-foreground leading-relaxed animate-in fade-in slide-in-from-top-4 duration-700 delay-300">
               {description}
             </p>
-            <div className="animate-in fade-in slide-in-from-top-4 duration-700 delay-400">
-              <Button size="lg" {...buttonProps}>
-                {buttonText}
-              </Button>
-            </div>
+            {buttonText && (
+              <div className="animate-in fade-in slide-in-from-top-4 duration-700 delay-400">
+                <Button size="lg" {...buttonProps}>
+                  {buttonText}
+                </Button>
+              </div>
+            )}
           </div>
 
           {/* Right Column: Animated Visual */}
@@ -73,7 +77,7 @@ const AnimatedFeatureSpotlight = React.forwardRef<
             <img
               src={imageUrl}
               alt={imageAlt}
-              className="w-full max-w-md object-contain animate-float"
+              className="w-full max-w-md object-contain animate-float rounded-md shadow-lg"
             />
           </div>
         </div>

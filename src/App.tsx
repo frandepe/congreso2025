@@ -12,7 +12,9 @@ import { Expositores } from "./pages/Expositores";
 import { FAQ } from "./pages/Faq";
 import Videos from "./pages/Videos";
 import Lives2025 from "./pages/Lives2025";
+import SergioMarcos from "./pages/SergioMarcos";
 import { PageLoader } from "./components/LoaderHeart/LoaderHeart";
+import { ScrollToTop } from "./lib/ScrollTop";
 
 function PageWrapper({ children }: any) {
   return (
@@ -29,21 +31,21 @@ function PageWrapper({ children }: any) {
 
 function AppRoutes() {
   const location = useLocation();
-  const [showLoader, setShowLoader] = useState(false);
+  // const [showLoader, setShowLoader] = useState(false);
 
-  useEffect(() => {
-    if (location.pathname === "/") {
-      setShowLoader(true);
-      const timer = setTimeout(() => setShowLoader(false), 3000); // ⏱ Ajusta la duración
-      return () => clearTimeout(timer);
-    } else {
-      setShowLoader(false);
-    }
-  }, [location.pathname]);
+  // useEffect(() => {
+  //   if (location.pathname === "/") {
+  //     setShowLoader(true);
+  //     const timer = setTimeout(() => setShowLoader(false), 3000); // ⏱ Ajusta la duración
+  //     return () => clearTimeout(timer);
+  //   } else {
+  //     setShowLoader(false);
+  //   }
+  // }, [location.pathname]);
 
-  if (showLoader) {
-    return <PageLoader />; // 👈 Solo aparece en "/"
-  }
+  // if (showLoader) {
+  //   return <PageLoader />; // 👈 Solo aparece en "/"
+  // }
 
   return (
     <AnimatePresence mode="sync">
@@ -126,6 +128,14 @@ function AppRoutes() {
                   }
                 />
                 <Route
+                  path="/homenaje-sergio-marcos"
+                  element={
+                    <PageWrapper>
+                      <SergioMarcos />
+                    </PageWrapper>
+                  }
+                />
+                <Route
                   path="/contacto"
                   element={
                     <PageWrapper>
@@ -145,6 +155,7 @@ function AppRoutes() {
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <AppRoutes />
     </BrowserRouter>
   );

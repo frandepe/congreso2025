@@ -19,6 +19,13 @@ const patrocinadoresData = [
     url: "https://cardiosistemas.com.ar/",
   },
   {
+    image: "/assets/patrocinadores/logoVitalica.png",
+    title: "Vitalica",
+    description:
+      "Vitalica es una plataforma educativa diseñada exclusivamente para profesionales y formadores del ámbito de las emergencias médicas. Su objetivo es ofrecer un espacio confiable donde instructores certificados puedan crear, estructurar y publicar cursos especializados en primeros auxilios, RCP, trauma y otras áreas críticas de la atención prehospitalaria. Cada instructor debe acreditar su formación mediante certificaciones avaladas por entidades reconocidas, garantizando la calidad del contenido. Los cursos se organizan en módulos en video o texto, con evaluaciones de opción múltiple y un examen final obligatorio que habilita un certificado oficial otorgado por Vitalica. La plataforma está orientada al perfeccionamiento profesional continuo, pensada para instructores, equipos de emergencia, instituciones de salud y organizaciones que buscan capacitación confiable y verificada.",
+    url: "https://wa.me/5492392561047?text=Hola%2C%20vengo%20desde%20la%20web%20del%20Congreso%20Nacional%20de%20RCP%20y%20quiero%20más%20información%20sobre%20Vitalica.",
+  },
+  {
     image: "/assets/patrocinadores/nd-capacitaciones.png",
     title: "ND Capacitaciones",
     description:
@@ -66,13 +73,7 @@ const patrocinadoresData = [
       "Somos un equipo interdisciplinario de profesionales especializados en salud, seguridad y educación, con una sólida trayectoria en prevención y respuesta a emergencias:",
     url: "/assets/lex.pdf",
   },
-  {
-    image: "/assets/patrocinadores/logo-fmd.png",
-    title: "Desarrollo Web FD",
-    description:
-      "Ayudo a empresas y emprendedores a mejorar sus procesos mediante el desarrollo de soluciones web y móviles",
-    url: "https://frandepe.vercel.app/",
-  },
+
   {
     image: "/assets/patrocinadores/cafe-bar.png",
     title: "Bares & Fondas",

@@ -32,7 +32,7 @@ export function AnimatedModalVideo() {
       <Button
         onClick={handleNavigate}
         variant="outline"
-        className="text-gray-700"
+        className="text-gray-700 dark:text-gray-100"
       >
         {/* <Radio className="mr-1" size={14} /> */}
         Preinscripción 2026

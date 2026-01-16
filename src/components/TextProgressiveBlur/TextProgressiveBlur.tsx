@@ -3,7 +3,12 @@ import React from "react";
 
 export const TextProgressiveBlur = () => {
   return (
-    <div className="relative flex h-full min-h-screen w-full flex-col items-center justify-center bg-gradient-to-b from-[#faf9f6] to-[#f0efec] text-gray-800 overflow-hidden">
+    <div
+      className="relative flex h-full min-h-screen w-full flex-col items-center justify-center
+                bg-gradient-to-b from-[#faf9f6] to-[#f0efec] text-gray-800
+                dark:from-[#121212] dark:to-[#1f1f1f] dark:text-gray-100
+                overflow-hidden"
+    >
       {/* Contenedor principal tipo carta */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}

@@ -4,7 +4,7 @@ import { Comite } from "@/components/Comite/Comite";
 import Countdown from "@/components/Countdown/Countdown";
 import { DescImgs } from "@/components/DescImgs/DescImgs";
 import { AudioPlayer } from "@/components/ui/audio-player";
-import { Activity, Projector, Sandwich, X } from "lucide-react";
+import { Activity, HeartHandshake, Projector, Sandwich, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import React, { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
@@ -102,7 +102,7 @@ const features = [
 export const Home = () => {
   const [openModal, setOpenModal] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   // const handleNavigate = () => {
   //   navigate("/vivo-2025");
@@ -208,7 +208,28 @@ export const Home = () => {
       {/* <div className="my-20">
         <LiveVideo />
       </div> */}
-      <section className="max-w-4xl px-10 mx-auto mt-32">
+      <div className="flex items-center justify-center w-full bg-muted pt-40 pb-24">
+        <AnimatedFeatureSpotlight
+          // preheaderIcon={<HeartHandshake className="h-4 w-4" />}
+          // preheaderText="Instructor de Argentina Reanima"
+          heading={
+            <>
+              <h2 className="text-3xl font-medium md:text-4xl lg:text-5xl text-black">
+                En memoria de Sergio Marcos
+              </h2>
+            </>
+          }
+          description="El Congreso Nacional RCP le dedica unas palabras a Sergio Marcos, recordando su trayectoria y compromiso como instructor. Nuestro legado sigue vivo en cada persona que ha sido formada por él."
+          buttonText="Ver homenaje"
+          buttonProps={{
+            onClick: () => navigate("/homenaje-sergio-marcos"),
+          }}
+          imageUrl="/assets/sergio/3.jpeg"
+          imageAlt="Sergio, instructor de RCP con pechera blanca de Argentina Reanima, demostrando maniobra de desobstrucción de vías aéreas en un muñeco de bebé durante un curso de primeros auxilios."
+        />
+      </div>
+      <section className="px-10 mx-auto bg-gray-200 dark:bg-black/60">
+        {/* <section className="max-w-4xl px-10 mx-auto mt-32"> */}
         <TextImage2025 {...demoData} />
       </section>
       {/* <div className="flex items-center justify-center w-full bg-muted py-20">
@@ -272,7 +293,7 @@ export const Home = () => {
           <Comite testimonials={testimonials} />
         </div>
       </div>
-      <div className="mt-20">
+      <div className="mt-20 ">
         <TextProgressiveBlur />
       </div>
     </div>
