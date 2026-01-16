@@ -3,13 +3,21 @@ import { motion, AnimatePresence } from "framer-motion";
 
 function TransitionSmoot() {
   const images = [
-    { full: "/assets/sergio/2.jpeg", thumb: "/assets/sergio/2.jpeg" },
+    {
+      full: "/assets/sergio/2.jpeg",
+      thumb: "/assets/sergio/2.jpeg",
+      alt: "Sergio Marcos con Sergio Felice, el intendente de Trenque Lauquen y tres personas más; sosteniendo una bandera de Argentina Reanima en el congreso de RCP 2025",
+    },
     {
       full: "/assets/sergio/3.jpeg",
       thumb: "/assets/sergio/3.jpeg",
+      alt: "Sergio, instructor de RCP con pechera blanca de Argentina Reanima, demostrando maniobra de desobstrucción de vías aéreas en un muñeco de bebé durante un curso de primeros auxilios.",
     },
-    { full: "/assets/sergio/1.jpg", thumb: "/assets/sergio/1.jpg" },
-    // agregá tantas imágenes como quieras
+    {
+      full: "/assets/sergio/1.jpg",
+      thumb: "/assets/sergio/1.jpg",
+      alt: "Sergio Marcos con un microfono en la mano dando una charla",
+    },
   ];
   const [current, setCurrent] = useState(0);
 
@@ -27,7 +35,7 @@ function TransitionSmoot() {
           <motion.img
             key={current}
             src={images[current].full}
-            alt={`Slide ${current + 1}`}
+            alt={images[current].alt}
             className="max-h-full w-auto object-contain rounded-lg"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
