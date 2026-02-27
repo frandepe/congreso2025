@@ -16,7 +16,7 @@ type Review = {
 };
 
 // Define the props for the slider component
-interface TestimonialSliderProps {
+interface ComiteSliderProps {
   reviews: Review[];
   /** Optional class name for the container */
   className?: string;
@@ -27,7 +27,7 @@ interface TestimonialSliderProps {
  * It uses framer-motion for animations and is styled with
  * shadcn/ui theme variables.
  */
-export const Comite = ({ reviews, className }: TestimonialSliderProps) => {
+export const Comite = ({ reviews, className }: ComiteSliderProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   // 'direction' helps framer-motion understand slide direction (next vs. prev)
   const [direction, setDirection] = useState<"left" | "right">("right");
@@ -84,7 +84,7 @@ export const Comite = ({ reviews, className }: TestimonialSliderProps) => {
   return (
     <div
       className={cn(
-        "relative w-full min-h-[650px] md:min-h-[600px] overflow-hidden bg-background text-foreground p-8 md:p-12",
+        "relative container mx-auto min-h-[650px] md:min-h-[600px] overflow-hidden text-foreground p-8 md:p-12",
         className,
       )}
     >
@@ -167,7 +167,7 @@ export const Comite = ({ reviews, className }: TestimonialSliderProps) => {
                   {activeReview.name}
                 </h3>
                 <blockquote className="mt-6 text-2xl md:text-3xl font-medium leading-snug">
-                  "{activeReview.quote}"
+                  {activeReview.quote}
                 </blockquote>
               </motion.div>
             </AnimatePresence>

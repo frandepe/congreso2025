@@ -171,7 +171,7 @@ export default function AboutSection() {
                 preserveAspectRatio="xMidYMid slice"
                 width={"100%"}
                 height={"100%"}
-                xlinkHref="https://images.unsplash.com/photo-1718601980986-0ce75101d52d?w=1200&auto=format&fit=crop"
+                xlinkHref="/assets/2025/todos.jpg"
               ></image>
             </svg>
           </TimelineContent>
@@ -186,12 +186,12 @@ export default function AboutSection() {
               className="flex gap-4"
             >
               <div className="flex items-center gap-2 mb-2 sm:text-base text-xs">
-                <span className="text-primary font-bold">2do</span>
+                <span className="text-secondary font-bold">2do</span>
                 <span className="text-gray-600">año con vos</span>
                 <span className="text-gray-300">|</span>
               </div>
               <div className="flex items-center gap-2 mb-2 sm:text-base text-xs">
-                <span className="text-primary font-bold">+10</span>
+                <span className="text-secondary font-bold">+10</span>
                 <span className="text-gray-600">exposiciones</span>
               </div>
             </TimelineContent>
@@ -203,7 +203,7 @@ export default function AboutSection() {
                 customVariants={revealVariants}
                 className="flex lg:text-4xl sm:text-3xl text-2xl items-center gap-2 mb-2"
               >
-                <span className="text-red-500 font-semibold">Congreso</span>
+                <span className="text-secondary font-semibold">Congreso</span>
                 <span className="text-gray-600 uppercase">RCP</span>
               </TimelineContent>
               <TimelineContent
@@ -213,7 +213,7 @@ export default function AboutSection() {
                 customVariants={revealVariants}
                 className="flex items-center gap-2 mb-2 sm:text-base text-xs"
               >
-                <span className="text-red-500 font-bold">Nuestra</span>
+                <span className="text-secondary font-bold">Nuestra</span>
                 <span className="text-gray-600">historia</span>
                 <span className="text-gray-300 lg:hidden block">|</span>
               </TimelineContent>
