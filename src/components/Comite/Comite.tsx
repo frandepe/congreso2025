@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { Transition } from "@headlessui/react";
+import { useNavigate } from "react-router-dom";
 
 interface Testimonial {
   img: string;
@@ -12,12 +13,13 @@ export const Comite = ({ testimonials }: { testimonials: Testimonial[] }) => {
   const [active, setActive] = useState<number>(0);
   const [autorotate, setAutorotate] = useState<boolean>(true);
   const autorotateTiming: number = 7000;
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (!autorotate) return;
     const interval = setInterval(() => {
       setActive(
-        active + 1 === testimonials.length ? 0 : (active) => active + 1
+        active + 1 === testimonials.length ? 0 : (active) => active + 1,
       );
     }, autorotateTiming);
     return () => clearInterval(interval);

@@ -1,10 +1,7 @@
-import { Agradecimientos } from "@/components/Agradecimientos/Agradecimientos";
 import BannerPrincipal from "@/components/Banners/BannerPrincipal";
 import { Comite } from "@/components/Comite/Comite";
-import Countdown from "@/components/Countdown/Countdown";
-import { DescImgs } from "@/components/DescImgs/DescImgs";
-import { AudioPlayer } from "@/components/ui/audio-player";
-import { Activity, HeartHandshake, Projector, Sandwich, X } from "lucide-react";
+
+import { ArrowRightFromLine, Projector, Sandwich, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import React, { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
@@ -286,8 +283,11 @@ export const Home = () => {
       </div> */}
 
       <div className="relative w-full overflow-hidden rounded-lg">
-        <h3 className="text-center font-bold text-primary">
-          Comité organizador
+        <h3
+          className="text-center font-bold text-primary cursor-pointer hover:text-secondary transition-all flex justify-center items-center"
+          onClick={() => navigate("/sobre-nosotros")}
+        >
+          Comité organizador <ArrowRightFromLine size={18} />
         </h3>
         <div className="mt-4 flex justify-center px-12">
           <Comite testimonials={testimonials} />

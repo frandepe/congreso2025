@@ -34,6 +34,15 @@ const reviews = [
     imageSrc: "/assets/speakers/guille-carranza.png",
     thumbnailSrc: "/assets/speakers/guille-carranza.png",
   },
+  {
+    id: 4,
+    name: "Patricia Soto",
+    affiliation: "Comité organizador",
+    quote: "Socia Fundadora y CEO de Nexo Tecnológico",
+    // Thumbnail from the provided screenshot
+    imageSrc: "/assets/speakers/patricia-soto.jpeg",
+    thumbnailSrc: "/assets/speakers/patricia-soto.jpeg",
+  },
 ];
 
 export default function AboutSection() {

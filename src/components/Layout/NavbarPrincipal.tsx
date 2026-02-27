@@ -1,5 +1,12 @@
 import { useState, useEffect } from "react";
-import { HelpCircle, MapPin, Menu, MicVocal, Radio } from "lucide-react";
+import {
+  HelpCircle,
+  Landmark,
+  MapPin,
+  Menu,
+  MicVocal,
+  Radio,
+} from "lucide-react";
 import {
   Accordion,
   AccordionContent,
@@ -175,6 +182,13 @@ const NavbarPrincipal = ({
           description: "Opciones de transporte y hoteles recomendados",
           icon: <MapPin className="size-5 shrink-0" />,
           url: "/ubicacion-y-alojamiento",
+        },
+        {
+          title: "Sobre nosotros",
+          description:
+            "Quiénes somos y nuestro compromiso con la formación en RCP.",
+          icon: <Landmark className="size-5 shrink-0" />,
+          url: "/sobre-nosotros",
         },
         {
           title: "Preguntas Frecuentes",
