@@ -15,6 +15,7 @@ import Lives2025 from "./pages/Lives2025";
 import SergioMarcos from "./pages/SergioMarcos";
 import { PageLoader } from "./components/LoaderHeart/LoaderHeart";
 import { ScrollToTop } from "./lib/ScrollTop";
+import AboutSection from "./pages/About";
 
 function PageWrapper({ children }: any) {
   return (
@@ -84,6 +85,14 @@ function AppRoutes() {
                   element={
                     <PageWrapper>
                       <Inscripcion />
+                    </PageWrapper>
+                  }
+                />
+                <Route
+                  path="/sobre-nosotros"
+                  element={
+                    <PageWrapper>
+                      <AboutSection />
                     </PageWrapper>
                   }
                 />
