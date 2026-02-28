@@ -43,6 +43,16 @@ const reviews = [
     imageSrc: "/assets/speakers/patricia-soto.jpeg",
     thumbnailSrc: "/assets/speakers/patricia-soto.jpeg",
   },
+  {
+    id: 5,
+    name: "Franco De Paulo",
+    affiliation: "Comité organizador",
+    quote:
+      "Especialista en desarrollo de sistemas web y arquitectura de plataformas digitales",
+    // Thumbnail from the provided screenshot
+    imageSrc: "/assets/fran.jpeg",
+    thumbnailSrc: "/assets/fran.jpeg",
+  },
 ];
 
 export default function AboutSection() {
