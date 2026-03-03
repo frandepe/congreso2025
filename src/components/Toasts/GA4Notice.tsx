@@ -11,7 +11,7 @@ export function GA4Notice() {
   return shown ? (
     <Toast
       title="Aviso de privacidad"
-      description="Usamos Google Analytics para medir el uso del sitio y mejorar la experiencia. Al navegar, aceptás el uso de cookies y analítica."
+      description="🍪 Usamos cookies. Queremos mejorar esta página para vos. Solo medimos cuántas visitas tenemos y qué secciones son más populares."
       duration={8000} // 8 segundos
     />
   ) : null;
