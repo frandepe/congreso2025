@@ -1,48 +1,3 @@
-{
-  /* <p>
-            En <strong>Congreso Nacional RCP</strong>, respetamos la privacidad de nuestros usuarios y estamos comprometidos con la
-            protección de sus datos personales. Esta política de privacidad describe cómo recopilamos, usamos y protegemos la
-            información que proporcionas cuando usas nuestro sitio web.
-          </p>
-          <h3 className="font-semibold mt-4">1. Información que recopilamos</h3>
-          <p>
-            Recopilamos la siguiente información cuando los usuarios interactúan con nuestro formulario de contacto: <br />
-            - Nombre y Apellido <br />
-            - Dirección de correo electrónico <br />
-            - Número de teléfono (opcional) <br />
-            - Mensaje que el usuario ingresa en el formulario.
-          </p>
-          <h3 className="font-semibold mt-4">2. Uso de la información</h3>
-          <p>
-            La información proporcionada se utilizará únicamente para responder a las consultas de los usuarios y enviar
-            información relacionada con el Congreso Nacional de RCP. No compartimos ni vendemos tus datos a terceros.
-          </p>
-          <h3 className="font-semibold mt-4">3. Seguridad de la información</h3>
-          <p>
-            Tomamos medidas razonables para proteger tu información personal contra accesos no autorizados, alteraciones o
-            destrucción. Sin embargo, ningún método de transmisión por Internet o método de almacenamiento electrónico es 100%
-            seguro, por lo que no podemos garantizar la seguridad absoluta.
-          </p>
-          <h3 className="font-semibold mt-4">4. Retención de la información</h3>
-          <p>
-            Conservamos la información personal solo durante el tiempo necesario para cumplir con los fines para los cuales fue
-            recopilada o hasta que el usuario solicite su eliminación.
-          </p>
-          <h3 className="font-semibold mt-4">5. Derechos de los usuarios</h3>
-          <p>
-            Tienes derecho a acceder, corregir, o eliminar tus datos personales en cualquier momento. Para ejercer estos
-            derechos, puedes contactarnos a través de nuestro formulario de contacto.
-          </p>
-          <h3 className="font-semibold mt-4">6. Cambios en la política de privacidad</h3>
-          <p>
-            Nos reservamos el derecho de modificar esta política de privacidad en cualquier momento. Te notificaremos sobre
-            cualquier cambio publicando la nueva política en esta página.
-          </p>
-          <p className="text-center text-xs mt-6">
-            Fecha de última actualización: [Fecha]
-          </p> */
-}
-
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -83,61 +38,88 @@ function PoliticasDePrivacidad() {
                     1. Información que recopilamos
                   </h3>
                   <p>
-                    Recopilamos la siguiente información cuando los usuarios
-                    interactúan con nuestro formulario de contacto: <br />
-                    - Nombre y Apellido <br />
-                    - Dirección de correo electrónico <br />
-                    - Número de teléfono (opcional) <br />- Mensaje que el
-                    usuario ingresa en el formulario.
+                    Recopilamos información cuando los usuarios interactúan con
+                    nuestro sitio web, incluyendo:
+                    <br />
+                    - Nombre y Apellido, correo electrónico y teléfono (si
+                    aplica) proporcionados en formularios de contacto.
+                    <br />
+                    - Datos de navegación y comportamiento dentro del sitio,
+                    como páginas visitadas, clicks en botones y tiempo de
+                    permanencia, mediante herramientas de analítica como Google
+                    Analytics 4 (GA4).
+                    <br />- Información del dispositivo y navegador (tipo de
+                    navegador, resolución de pantalla, sistema operativo,
+                    ubicación aproximada por IP).
                   </p>
                   <h3 className="font-semibold mt-4">
                     2. Uso de la información
                   </h3>
                   <p>
-                    La información proporcionada se utilizará únicamente para
-                    responder a las consultas de los usuarios y enviar
-                    información relacionada con el Congreso Nacional de RCP. No
-                    compartimos ni vendemos tus datos a terceros.
+                    La información se utiliza para:
+                    <br />
+                    - Responder consultas de los usuarios.
+                    <br />
+                    - Analizar el uso de nuestro sitio y mejorar la experiencia
+                    de navegación.
+                    <br />
+                    - Medir el desempeño de nuestras campañas y botones de
+                    acción.
+                    <br />
+                    No compartimos ni vendemos tus datos personales a terceros
+                    fuera de los proveedores de servicios (como GA4) necesarios
+                    para el funcionamiento y análisis del sitio.
                   </p>
                   <h3 className="font-semibold mt-4">
-                    3. Seguridad de la información
+                    3. Cookies y herramientas de seguimiento
+                  </h3>
+                  <p>
+                    Utilizamos cookies y herramientas de seguimiento para
+                    recopilar información de navegación y comportamiento. Esto
+                    incluye Google Analytics 4, que nos permite medir visitas,
+                    eventos (clics en botones, formularios completados) y datos
+                    agregados de usuarios.
+                    <br />
+                    Podés configurar tu navegador para bloquear o eliminar
+                    cookies, aunque algunas funciones del sitio podrían verse
+                    afectadas.
+                  </p>
+                  <h3 className="font-semibold mt-4">
+                    4. Seguridad de la información
                   </h3>
                   <p>
                     Tomamos medidas razonables para proteger tu información
                     personal contra accesos no autorizados, alteraciones o
                     destrucción. Sin embargo, ningún método de transmisión por
-                    Internet o método de almacenamiento electrónico es 100%
-                    seguro, por lo que no podemos garantizar la seguridad
-                    absoluta.
+                    Internet o almacenamiento electrónico es 100% seguro.
                   </p>
                   <h3 className="font-semibold mt-4">
-                    4. Retención de la información
+                    5. Retención de la información
                   </h3>
                   <p>
-                    Conservamos la información personal solo durante el tiempo
-                    necesario para cumplir con los fines para los cuales fue
-                    recopilada o hasta que el usuario solicite su eliminación.
+                    Conservamos la información personal solo mientras sea
+                    necesario para los fines descritos o hasta que el usuario
+                    solicite su eliminación.
                   </p>
                   <h3 className="font-semibold mt-4">
-                    5. Derechos de los usuarios
+                    6. Derechos de los usuarios
                   </h3>
                   <p>
-                    Tienes derecho a acceder, corregir, o eliminar tus datos
+                    Tenés derecho a acceder, corregir o eliminar tus datos
                     personales en cualquier momento. Para ejercer estos
-                    derechos, puedes contactarnos a través de nuestro formulario
+                    derechos, podés contactarnos a través de nuestro formulario
                     de contacto.
                   </p>
                   <h3 className="font-semibold mt-4">
-                    6. Cambios en la política de privacidad
+                    7. Cambios en la política de privacidad
                   </h3>
                   <p>
-                    Nos reservamos el derecho de modificar esta política de
-                    privacidad en cualquier momento. Te notificaremos sobre
-                    cualquier cambio publicando la nueva política en esta
-                    página.
+                    Nos reservamos el derecho de modificar esta política en
+                    cualquier momento. Te notificaremos sobre cambios publicando
+                    la nueva versión en esta página.
                   </p>
                   <p className="text-center text-xs mt-6">
-                    Fecha de última actualización: 20 de Marzo, 2025
+                    Fecha de última actualización: 02 de marzo, 2026
                   </p>
                 </div>
               </div>

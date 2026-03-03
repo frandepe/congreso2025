@@ -1,6 +1,6 @@
 import { Route, Routes, BrowserRouter, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Home } from "./pages/Home";
 import { Contact } from "./pages/Contact";
 import { MainLayout } from "./components/Layout/MainLayout";
@@ -13,9 +13,11 @@ import { FAQ } from "./pages/Faq";
 import Videos from "./pages/Videos";
 import Lives2025 from "./pages/Lives2025";
 import SergioMarcos from "./pages/SergioMarcos";
-import { PageLoader } from "./components/LoaderHeart/LoaderHeart";
 import { ScrollToTop } from "./lib/ScrollTop";
 import AboutSection from "./pages/About";
+import ReactGA from "react-ga4";
+import { getTitleForPath } from "./lib/getTitleForPath";
+import { GA4Notice } from "./components/Toasts/GA4Notice";
 
 function PageWrapper({ children }: any) {
   return (
@@ -32,6 +34,18 @@ function PageWrapper({ children }: any) {
 
 function AppRoutes() {
   const location = useLocation();
+  useEffect(() => {
+    // Actualizamos el título dinámicamente
+    document.title = getTitleForPath(location.pathname);
+
+    ReactGA.send({
+      hitType: "pageview",
+      page: location.pathname,
+      title: document.title, // ahora cada página tiene su título
+      // params: { test_mode: true },
+    });
+  }, [location.pathname]);
+
   // const [showLoader, setShowLoader] = useState(false);
 
   // useEffect(() => {
@@ -166,6 +180,7 @@ function App() {
     <BrowserRouter>
       <ScrollToTop />
       <AppRoutes />
+      <GA4Notice />
     </BrowserRouter>
   );
 }
