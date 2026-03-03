@@ -12,6 +12,7 @@ import { TextImage2025 } from "@/components/TextImage2025/TextImage2025";
 import Countdown2026 from "@/components/Countdown/Countdown2026";
 import { Testimonials2026 } from "@/components/Testimonials/Testimonials2026";
 import { TextProgressiveBlur } from "@/components/TextProgressiveBlur/TextProgressiveBlur";
+import { GA4Notice } from "@/components/Toasts/GA4Notice";
 
 const demoData: any = {
   title: "Congreso nacional de RCP 2025",
@@ -296,6 +297,7 @@ export const Home = () => {
       <div className="mt-20 ">
         <TextProgressiveBlur />
       </div>
+      <GA4Notice />
     </div>
   );
 };

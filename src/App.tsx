@@ -17,7 +17,6 @@ import { ScrollToTop } from "./lib/ScrollTop";
 import AboutSection from "./pages/About";
 import ReactGA from "react-ga4";
 import { getTitleForPath } from "./lib/getTitleForPath";
-import { GA4Notice } from "./components/Toasts/GA4Notice";
 
 function PageWrapper({ children }: any) {
   return (
@@ -180,7 +179,6 @@ function App() {
     <BrowserRouter>
       <ScrollToTop />
       <AppRoutes />
-      <GA4Notice />
     </BrowserRouter>
   );
 }
