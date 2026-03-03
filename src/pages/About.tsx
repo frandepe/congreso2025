@@ -29,7 +29,7 @@ const reviews = [
     name: "Guillermo Carranza",
     affiliation: "Comité organizador",
     quote:
-      "Fundador del Centro de Entrenamiento de Especialidades Bomberiles y Primeros Socorros (CEEByPS)",
+      "Consultor en seguridad e instructor en emergencias prehospitalarias",
     // Thumbnail from the provided screenshot
     imageSrc: "/assets/speakers/guille-carranza.png",
     thumbnailSrc: "/assets/speakers/guille-carranza.png",
