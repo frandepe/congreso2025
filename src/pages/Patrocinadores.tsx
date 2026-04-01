@@ -143,11 +143,10 @@ export const Patrocinadores = () => {
                         {card.actions.map((action, actionIndex) => (
                           <a
                             key={action.href}
-                            // href={action.href}
+                            href={action.href}
                             className="block"
                           >
                             <Button
-                              disabled
                               variant={
                                 actionIndex === 0 ? "default" : "outline"
                               }
