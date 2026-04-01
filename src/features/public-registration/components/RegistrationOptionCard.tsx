@@ -23,8 +23,8 @@ export function RegistrationOptionCard({
         "w-full border px-6 py-6 text-left transition-colors",
         "rounded-xl",
         selected
-          ? "border-stone-900 bg-stone-900 text-white"
-          : "border-stone-200 bg-white text-stone-900 hover:border-stone-400",
+          ? "border-stone-900 bg-stone-900 text-white dark:border-emerald-500 dark:bg-stone-950"
+          : "border-stone-200 bg-white text-stone-900 hover:border-stone-400 dark:border-stone-800 dark:bg-stone-900 dark:text-stone-100 dark:hover:border-stone-600",
       ].join(" ")}
     >
       <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
@@ -33,7 +33,9 @@ export function RegistrationOptionCard({
           <p
             className={[
               "mt-3 max-w-2xl text-sm leading-6",
-              selected ? "text-stone-300" : "text-stone-600",
+              selected
+                ? "text-stone-300 dark:text-stone-300"
+                : "text-stone-600 dark:text-stone-400",
             ].join(" ")}
           >
             {description}
@@ -44,7 +46,7 @@ export function RegistrationOptionCard({
           <p
             className={[
               "text-sm font-semibold tracking-[0.08em]",
-              selected ? "text-white" : "text-stone-900",
+              selected ? "text-white" : "text-stone-900 dark:text-stone-100",
             ].join(" ")}
           >
             {price}
@@ -53,7 +55,9 @@ export function RegistrationOptionCard({
             <p
               className={[
                 "text-xs",
-                selected ? "text-stone-300" : "text-stone-500",
+                selected
+                  ? "text-stone-300"
+                  : "text-stone-500 dark:text-stone-400",
               ].join(" ")}
             >
               {priceDetail}
@@ -64,7 +68,7 @@ export function RegistrationOptionCard({
               "h-3.5 w-3.5 rounded-full border",
               selected
                 ? "border-white bg-white"
-                : "border-stone-300 bg-transparent",
+                : "border-stone-300 bg-transparent dark:border-stone-600",
             ].join(" ")}
           />
         </div>

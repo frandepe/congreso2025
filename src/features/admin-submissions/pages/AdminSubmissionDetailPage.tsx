@@ -185,7 +185,7 @@ export function AdminSubmissionDetailPage() {
           </div>
           <div className="rounded-2xl bg-stone-50 px-4 py-3">
             <dt className="text-xs uppercase tracking-[0.2em] text-stone-500">
-              Telefono
+              Teléfono
             </dt>
             <dd className="mt-1 font-medium text-stone-900">{data.phone}</dd>
           </div>
@@ -253,7 +253,8 @@ export function AdminSubmissionDetailPage() {
               Descuento
             </p>
             <p className="mt-1 font-medium text-stone-900">
-              {data.discountAppliedPercentage && data.discountAppliedAmount !== null
+              {data.discountAppliedPercentage &&
+              data.discountAppliedAmount !== null
                 ? `${data.discountAppliedPercentage}% (${formatArsCurrency(
                     data.discountAppliedAmount,
                   )})`
@@ -280,9 +281,7 @@ export function AdminSubmissionDetailPage() {
           </div>
           <div
             className={`rounded-2xl p-4 ${
-              data.secondInstallmentExpired
-                ? "bg-red-50"
-                : "bg-stone-50"
+              data.secondInstallmentExpired ? "bg-red-50" : "bg-stone-50"
             }`}
           >
             <p className="text-xs uppercase tracking-[0.2em] text-stone-500">
@@ -338,7 +337,10 @@ export function AdminSubmissionDetailPage() {
         aria-labelledby="admin-notes-heading"
         className="rounded-[30px] border border-stone-200 bg-white/95 p-6 shadow-[0_24px_80px_-48px_rgba(15,23,42,0.35)]"
       >
-        <h2 id="admin-notes-heading" className="text-xl font-semibold text-stone-900">
+        <h2
+          id="admin-notes-heading"
+          className="text-xl font-semibold text-stone-900"
+        >
           Notas
         </h2>
 

@@ -90,8 +90,8 @@ export function PublicSecondInstallmentPage() {
     "h-12 rounded-md border-stone-300 px-4 text-sm shadow-none";
 
   const fixedAmount = submissionData
-    ? submissionData.installmentAmountExpected ??
-      submissionData.registrationOption.totalAmountExpected / 2
+    ? (submissionData.installmentAmountExpected ??
+      submissionData.registrationOption.totalAmountExpected / 2)
     : 0;
   const secondInstallmentExpired =
     submissionData?.secondInstallmentExpired ?? false;
@@ -348,7 +348,9 @@ export function PublicSecondInstallmentPage() {
                       onClick={() => void handleLookup()}
                       disabled={statusMutation.isPending}
                     >
-                      {statusMutation.isPending ? "Consultando..." : "Consultar"}
+                      {statusMutation.isPending
+                        ? "Consultando..."
+                        : "Consultar"}
                     </Button>
                   </div>
 
@@ -456,8 +458,8 @@ export function PublicSecondInstallmentPage() {
                               className="font-medium underline-offset-4 hover:underline"
                             >
                               {contactEmail}
-                            </a>
-                            {" "}o por WhatsApp al{" "}
+                            </a>{" "}
+                            o por WhatsApp al{" "}
                             <a
                               href="https://wa.me/542392460227"
                               target="_blank"
@@ -626,9 +628,7 @@ export function PublicSecondInstallmentPage() {
                       ) : null}
 
                       <p className="text-sm leading-6 text-stone-600">
-                        La fecha de pago se registra automáticamente con el día
-                        del envío y el comprobante será revisado por el comité
-                        organizador.
+                        El comprobante será revisado por el comité organizador.
                       </p>
                     </section>
 

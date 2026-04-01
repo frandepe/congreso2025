@@ -23,13 +23,13 @@ const bankDetails = [
 
 export function BankTransferDetails() {
   return (
-    <section className="space-y-5 rounded-2xl border border-emerald-100 bg-emerald-50/70 p-5">
+    <section className="space-y-5 rounded-2xl border border-emerald-100 bg-emerald-50/70 p-5 dark:border-emerald-900/70 dark:bg-emerald-950/25">
       <div className="space-y-2">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-700">
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-700 dark:text-emerald-300">
           Datos bancarios
         </p>
-        <p className="text-base font-medium text-stone-950">
-          Realizá la transferencia a esta cuenta antes de subir el comprobante.
+        <p className="text-base font-medium text-stone-950 dark:text-stone-100">
+          Realiza la transferencia a esta cuenta antes de subir el comprobante.
         </p>
       </div>
 
@@ -37,12 +37,12 @@ export function BankTransferDetails() {
         {bankDetails.map((item) => (
           <div
             key={item.label}
-            className="rounded-xl border border-white/80 bg-white/80 px-4 py-3"
+            className="rounded-xl border border-white/80 bg-white/80 px-4 py-3 dark:border-stone-800 dark:bg-stone-900/80"
           >
-            <dt className="text-xs font-semibold uppercase tracking-[0.16em] text-stone-500">
+            <dt className="text-xs font-semibold uppercase tracking-[0.16em] text-stone-500 dark:text-stone-400">
               {item.label}
             </dt>
-            <dd className="mt-1 break-words text-sm font-medium text-stone-950">
+            <dd className="mt-1 break-words text-sm font-medium text-stone-950 dark:text-stone-100">
               {item.value}
             </dd>
           </div>

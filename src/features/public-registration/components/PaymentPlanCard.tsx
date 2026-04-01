@@ -19,8 +19,8 @@ export function PaymentPlanCard({
         "w-full border px-6 py-6 text-left transition-colors",
         "rounded-xl",
         selected
-          ? "border-emerald-900 bg-emerald-900 text-white"
-          : "border-stone-200 bg-white text-stone-900 hover:border-stone-400",
+          ? "border-emerald-900 bg-emerald-900 text-white dark:border-emerald-500 dark:bg-emerald-950"
+          : "border-stone-200 bg-white text-stone-900 hover:border-stone-400 dark:border-stone-800 dark:bg-stone-900 dark:text-stone-100 dark:hover:border-stone-600",
       ].join(" ")}
     >
       <div className="flex items-start justify-between gap-4">
@@ -29,7 +29,9 @@ export function PaymentPlanCard({
           <p
             className={[
               "mt-3 max-w-2xl text-sm leading-6",
-              selected ? "text-emerald-100" : "text-stone-600",
+              selected
+                ? "text-emerald-100"
+                : "text-stone-600 dark:text-stone-400",
             ].join(" ")}
           >
             {description}
@@ -41,7 +43,7 @@ export function PaymentPlanCard({
             "mt-1 h-3.5 w-3.5 rounded-full border",
             selected
               ? "border-white bg-white"
-              : "border-stone-300 bg-transparent",
+              : "border-stone-300 bg-transparent dark:border-stone-600",
           ].join(" ")}
         />
       </div>

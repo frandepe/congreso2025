@@ -26,10 +26,15 @@ import { ScrollToTop } from "@/lib/ScrollTop";
 import { getTitleForPath } from "@/lib/getTitleForPath";
 import { PublicRegistrationPage } from "@/features/public-registration/pages/PublicRegistrationPage";
 import { PublicSecondInstallmentPage } from "@/features/public-registration/pages/PublicSecondInstallmentPage";
+import { PublicExhibitorsPage } from "@/features/commercial-submissions/pages/PublicExhibitorsPage";
+import { PublicAdvertisingPage } from "@/features/commercial-submissions/pages/PublicAdvertisingPage";
+import { PublicCommercialSecondInstallmentPage } from "@/features/commercial-submissions/pages/PublicCommercialSecondInstallmentPage";
 import { AdminLoginPage } from "@/features/auth/pages/AdminLoginPage";
 import { AdminShell } from "@/features/admin-submissions/pages/AdminShell";
 import { AdminSubmissionsPage } from "@/features/admin-submissions/pages/AdminSubmissionsPage";
 import { AdminSubmissionDetailPage } from "@/features/admin-submissions/pages/AdminSubmissionDetailPage";
+import { AdminCommercialSubmissionsPage } from "@/features/admin-commercial-submissions/pages/AdminCommercialSubmissionsPage";
+import { AdminCommercialSubmissionDetailPage } from "@/features/admin-commercial-submissions/pages/AdminCommercialSubmissionDetailPage";
 import { RequireAdminAuth } from "@/features/auth/RequireAdminAuth";
 
 function PageWrapper({ children }: { children: React.ReactNode }) {
@@ -115,6 +120,30 @@ function AppRoutes() {
               element={
                 <PageWrapper>
                   <PublicSecondInstallmentPage />
+                </PageWrapper>
+              }
+            />
+            <Route
+              path="/inscripcion/expositores"
+              element={
+                <PageWrapper>
+                  <PublicExhibitorsPage />
+                </PageWrapper>
+              }
+            />
+            <Route
+              path="/inscripcion/expositores/segunda-cuota"
+              element={
+                <PageWrapper>
+                  <PublicCommercialSecondInstallmentPage />
+                </PageWrapper>
+              }
+            />
+            <Route
+              path="/inscripcion/publicidad"
+              element={
+                <PageWrapper>
+                  <PublicAdvertisingPage />
                 </PageWrapper>
               }
             />
@@ -222,6 +251,22 @@ function AppRoutes() {
                 element={
                   <PageWrapper>
                     <AdminSubmissionDetailPage />
+                  </PageWrapper>
+                }
+              />
+              <Route
+                path="commercial"
+                element={
+                  <PageWrapper>
+                    <AdminCommercialSubmissionsPage />
+                  </PageWrapper>
+                }
+              />
+              <Route
+                path="commercial/submissions/:id"
+                element={
+                  <PageWrapper>
+                    <AdminCommercialSubmissionDetailPage />
                   </PageWrapper>
                 }
               />

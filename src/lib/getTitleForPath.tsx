@@ -3,6 +3,10 @@ export function getTitleForPath(path: string) {
     return "Detalle Admin - Congreso Nacional RCP 2025";
   }
 
+  if (path.startsWith("/admin/commercial/submissions/")) {
+    return "Detalle Admin Comercial - Congreso Nacional RCP 2025";
+  }
+
   if (path === "/inscripcion/participantes") {
     return "Inscripcion Participantes - Congreso Nacional RCP 2025";
   }
@@ -13,6 +17,18 @@ export function getTitleForPath(path: string) {
 
   if (path === "/inscripcion/segunda-cuota") {
     return "Segunda Cuota - Congreso Nacional RCP 2025";
+  }
+
+  if (path === "/inscripcion/expositores") {
+    return "Expositores - Congreso Nacional RCP 2025";
+  }
+
+  if (path === "/inscripcion/expositores/segunda-cuota") {
+    return "Segunda Cuota Expositores - Congreso Nacional RCP 2025";
+  }
+
+  if (path === "/inscripcion/publicidad") {
+    return "Publicidad - Congreso Nacional RCP 2025";
   }
 
   switch (path) {
@@ -44,6 +60,8 @@ export function getTitleForPath(path: string) {
       return "Login Admin - Congreso Nacional RCP 2025";
     case "/admin":
       return "Panel Admin - Congreso Nacional RCP 2025";
+    case "/admin/commercial":
+      return "Panel Comercial - Congreso Nacional RCP 2025";
     default:
       return "Congreso Nacional RCP 2025";
   }
