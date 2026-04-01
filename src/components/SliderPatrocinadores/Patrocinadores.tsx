@@ -1,10 +1,7 @@
-"use client";
-
-import React, { type SVGProps } from "react";
 import { GradientHeading } from "@/components/ui/gradient-heading";
 import { LogoCarousel } from "@/components/ui/logo-carousel";
 
-function NDcapacitaciones(props: SVGProps<SVGSVGElement>) {
+function NDcapacitaciones() {
   return (
     <img
       src={"/assets/patrocinadores/nd-capacitaciones.png"}
@@ -14,7 +11,7 @@ function NDcapacitaciones(props: SVGProps<SVGSVGElement>) {
   );
 }
 
-function NexoTecnologico(props: SVGProps<SVGSVGElement>) {
+function NexoTecnologico() {
   return (
     <img
       src={"/assets/patrocinadores/nexo-tecnologico.png"}
@@ -23,7 +20,7 @@ function NexoTecnologico(props: SVGProps<SVGSVGElement>) {
     />
   );
 }
-function Cardiosistemas(props: SVGProps<SVGSVGElement>) {
+function Cardiosistemas() {
   return (
     <img
       src={"/assets/patrocinadores/cardiosistemas.png"}
@@ -33,13 +30,13 @@ function Cardiosistemas(props: SVGProps<SVGSVGElement>) {
   );
 }
 
-function TL(props: SVGProps<SVGSVGElement>) {
+function TL() {
   return (
     <img src={"/assets/patrocinadores/patro-tl.png"} width={100} height={100} />
   );
 }
 
-const DC = (props: SVGProps<SVGSVGElement>) => (
+const DC = () => (
   <img src={"/assets/patrocinadores/patro-dc.png"} width={100} height={100} />
 );
 

@@ -4,10 +4,14 @@ import App from "./App";
 import "./index.css";
 import ThemeToggle from "./lib/ThemeToggle";
 import ReactGA from "react-ga4";
+import { env } from "@/shared/config/env";
 
-ReactGA.initialize("G-9HB6FQBZSF", {
-  testMode: false,
-});
+if (env.gaMeasurementId) {
+  ReactGA.initialize(env.gaMeasurementId, {
+    testMode: import.meta.env.DEV,
+  });
+}
+
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <App />
