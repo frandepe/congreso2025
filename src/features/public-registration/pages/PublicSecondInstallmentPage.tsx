@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { InlineNotice } from "@/shared/ui/InlineNotice";
+import { useBackendWarmup } from "@/shared/api/useBackendWarmup";
 import { getUserFacingErrorMessage } from "@/shared/utils/getUserFacingErrorMessage";
 import type { PublicSubmissionStatusDto } from "@/features/api/types";
 import {
@@ -59,6 +60,8 @@ function buildAdditionalReceiptFormData(
 }
 
 export function PublicSecondInstallmentPage() {
+  useBackendWarmup();
+
   const contactEmail = "congresonacionalrcp@gmail.com";
   const contactWhatsapp = "2392-460227";
   const [searchParams] = useSearchParams();

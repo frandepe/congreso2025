@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { InlineNotice } from "@/shared/ui/InlineNotice";
+import { useBackendWarmup } from "@/shared/api/useBackendWarmup";
 import { getUserFacingErrorMessage } from "@/shared/utils/getUserFacingErrorMessage";
 import type { PublicCommercialSubmissionStatusDto } from "@/features/api/types";
 import {
@@ -48,6 +49,8 @@ const schema = z.object({
 type FormValues = z.infer<typeof schema>;
 
 export function PublicCommercialSecondInstallmentPage() {
+  useBackendWarmup();
+
   const [searchParams] = useSearchParams();
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [lookupError, setLookupError] = useState<string | null>(null);

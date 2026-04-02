@@ -14,7 +14,11 @@ import {
   getCurrentSubmissionDate,
 } from "@/features/public-registration/public-registration.utils";
 import { InlineNotice } from "@/shared/ui/InlineNotice";
-import type { CommercialOptionCode } from "@/features/api/types";
+import { useBackendWarmup } from "@/shared/api/useBackendWarmup";
+import type {
+  CommercialOptionCode,
+  CommercialSubmissionCreatedDto,
+} from "@/features/api/types";
 import {
   useCommercialPricingCatalogQuery,
   useCommercialSubmissionStatusMutation,
@@ -77,8 +81,11 @@ const textareaClassName =
   "min-h-[120px] rounded-md border-stone-300 px-4 py-3 text-sm shadow-none dark:border-stone-700 dark:bg-stone-900 dark:text-stone-100 dark:placeholder:text-stone-500";
 
 export function PublicAdvertisingPage() {
+  useBackendWarmup();
+
   const [submitError, setSubmitError] = useState<string | null>(null);
-  const [successState, setSuccessState] = useState<null | any>(null);
+  const [successState, setSuccessState] =
+    useState<CommercialSubmissionCreatedDto | null>(null);
   const [trackingCodeInput, setTrackingCodeInput] = useState("");
   const [lookupError, setLookupError] = useState<string | null>(null);
   const successStateRef = useRef<HTMLElement | null>(null);

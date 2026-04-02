@@ -9,6 +9,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { InlineNotice } from "@/shared/ui/InlineNotice";
+import { useBackendWarmup } from "@/shared/api/useBackendWarmup";
 import type {
   PublicDiscountCouponValidationResponseDto,
   PublicSubmissionStatusDto,
@@ -102,6 +103,8 @@ type AppliedDiscountState = {
 };
 
 export function PublicRegistrationPage() {
+  useBackendWarmup();
+
   const storedDraft = useMemo(
     () => readPublicRegistrationDraft(PUBLIC_REGISTRATION_DRAFT_STORAGE_KEY),
     [],

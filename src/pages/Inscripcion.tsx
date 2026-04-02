@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { useBackendWarmup } from "@/shared/api/useBackendWarmup";
 import {
   Calendar,
   MapPin,
@@ -12,6 +13,8 @@ import {
 import { PricingCardDemo } from "@/components/PricingCard/PricingCard";
 
 export const Inscripcion = () => {
+  useBackendWarmup();
+
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-background">
       <section className="relative flex h-[350px] w-full items-center justify-center bg-[url('/assets/banner1-edit.jpg')] bg-cover bg-[center_top_30%]">
