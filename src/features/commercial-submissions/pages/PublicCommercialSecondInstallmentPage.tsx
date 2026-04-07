@@ -48,6 +48,14 @@ const schema = z.object({
 
 type FormValues = z.infer<typeof schema>;
 
+const getCommercialKindLabel = (
+  kind: PublicCommercialSubmissionStatusDto["commercial"]["kind"],
+) => (kind === "STAND" ? "stand" : "publicidad");
+
+const getCommercialSubmissionPath = (
+  kind: PublicCommercialSubmissionStatusDto["commercial"]["kind"] | null,
+) => (kind === "ADVERTISING" ? "/inscripcion/publicidad" : "/inscripcion/expositores");
+
 export function PublicCommercialSecondInstallmentPage() {
   useBackendWarmup();
 
@@ -62,6 +70,7 @@ export function PublicCommercialSecondInstallmentPage() {
   const [recoveryMessage, setRecoveryMessage] = useState<string | null>(null);
   const [recoveryError, setRecoveryError] = useState<string | null>(null);
   const resultsRef = useRef<HTMLDivElement | null>(null);
+  const submitResponseRef = useRef<HTMLDivElement | null>(null);
 
   const createReceiptMutation = useCreateCommercialAdditionalReceiptMutation();
   const statusMutation = useCommercialSubmissionStatusMutation();
@@ -94,6 +103,17 @@ export function PublicCommercialSecondInstallmentPage() {
     });
   }, [submissionData]);
 
+  useEffect(() => {
+    if (!submitError && !successMessage) {
+      return;
+    }
+
+    submitResponseRef.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  }, [submitError, successMessage]);
+
   const handleLookup = async () => {
     setLookupError(null);
     setSuccessMessage(null);
@@ -110,18 +130,11 @@ export function PublicCommercialSecondInstallmentPage() {
       const response = await statusMutation.mutateAsync(submissionId);
       const data = response.data;
 
-      if (data.commercial.kind !== "STAND") {
-        setSubmissionData(null);
-        setLookupError(
-          "Este código corresponde a una solicitud que no admite segunda cuota.",
-        );
-        return;
-      }
 
       if (data.paymentPlanType !== "TWO_INSTALLMENTS") {
         setSubmissionData(null);
         setLookupError(
-          "Este código corresponde a una solicitud de stand que no eligió 2 cuotas.",
+          "Este código corresponde a una solicitud comercial que no eligió 2 cuotas.",
         );
         return;
       }
@@ -137,7 +150,7 @@ export function PublicCommercialSecondInstallmentPage() {
       if (data.secondInstallmentExpired) {
         setSubmissionData(data);
         setLookupError(
-          "Se venció el plazo para informar la segunda cuota del stand. Comunicate con el comité organizador.",
+          "Se venció el plazo para informar la segunda cuota de la solicitud comercial. Comunicate con el comité organizador.",
         );
         return;
       }
@@ -201,7 +214,7 @@ export function PublicCommercialSecondInstallmentPage() {
 
     if (submissionData.secondInstallmentExpired) {
       setSubmitError(
-        "Se venció el plazo para informar la segunda cuota del stand. Comunicate con el comité organizador.",
+        "Se venció el plazo para informar la segunda cuota de la solicitud comercial. Comunicate con el comité organizador.",
       );
       return;
     }
@@ -258,11 +271,11 @@ export function PublicCommercialSecondInstallmentPage() {
           <div className="space-y-10 lg:sticky lg:top-10">
             <div className="space-y-7">
               <p className="text-xs font-semibold uppercase tracking-[0.28em] text-emerald-700 dark:text-emerald-300">
-                Expositores
+                Comercial
               </p>
               <div className="space-y-4">
                 <h1 className="max-w-xl text-4xl font-semibold tracking-tight text-stone-950 sm:text-5xl dark:text-stone-100">
-                  Segunda cuota para stands en 2 pagos
+                  Segunda cuota comercial
                 </h1>
                 <p className="max-w-xl text-base leading-7 text-stone-600 dark:text-stone-400">
                   Consultá el código de seguimiento, verificá el importe fijo de
@@ -276,15 +289,15 @@ export function PublicCommercialSecondInstallmentPage() {
                 Antes de enviar
               </p>
               <ul className="space-y-3 text-sm leading-6 text-stone-700 dark:text-stone-300">
-                <li>1 - Usá el código de seguimiento recibido al contratar el stand.</li>
+                <li>1 - Usá el código de seguimiento recibido al cargar la solicitud comercial.</li>
                 <li>2 - El monto se calcula automáticamente según tu solicitud.</li>
                 <li>3 - Adjuntá solo el comprobante correspondiente a la cuota 2.</li>
               </ul>
               <Link
-                to="/inscripcion/expositores"
+                to={getCommercialSubmissionPath(submissionData?.commercial.kind ?? null)}
                 className="inline-flex text-sm font-medium text-emerald-700 underline-offset-4 hover:underline dark:text-emerald-300"
               >
-                ¿Necesitás cargar la solicitud inicial del stand?
+                ¿Necesitás cargar la solicitud comercial inicial?
               </Link>
             </div>
           </div>
@@ -329,7 +342,7 @@ export function PublicCommercialSecondInstallmentPage() {
                       No tengo mi código
                     </button>
                     <p className="text-stone-500 dark:text-stone-400">
-                      Podés recuperarlo por email si la solicitud está registrada.
+                      Si es una solicitud de stand, podés recuperarlo por email.
                     </p>
                   </div>
 
@@ -383,6 +396,14 @@ export function PublicCommercialSecondInstallmentPage() {
                           </dt>
                           <dd className="text-base font-medium text-stone-950 dark:text-stone-100">
                             {submissionData.commercial.label}
+                          </dd>
+                        </div>
+                        <div className="space-y-1">
+                          <dt className="text-xs font-semibold uppercase tracking-[0.16em] text-stone-500 dark:text-stone-400">
+                            Tipo
+                          </dt>
+                          <dd className="text-base font-medium text-stone-950 dark:text-stone-100">
+                            {getCommercialKindLabel(submissionData.commercial.kind)}
                           </dd>
                         </div>
                         <div className="space-y-1">
@@ -504,13 +525,17 @@ export function PublicCommercialSecondInstallmentPage() {
                   </div>
                 ) : null}
 
-                {submitError ? <InlineNotice variant="error">{submitError}</InlineNotice> : null}
-                {successMessage ? <InlineNotice variant="success">{successMessage}</InlineNotice> : null}
+                {submitError || successMessage ? (
+                  <div ref={submitResponseRef} className="space-y-3">
+                    {submitError ? <InlineNotice variant="error">{submitError}</InlineNotice> : null}
+                    {successMessage ? <InlineNotice variant="success">{successMessage}</InlineNotice> : null}
+                  </div>
+                ) : null}
 
                 <div className="border-t border-stone-200 pt-8 dark:border-stone-800">
                   <div className="flex items-center justify-between gap-4">
                     <Link
-                      to="/inscripcion/expositores"
+                      to={getCommercialSubmissionPath(submissionData?.commercial.kind ?? null)}
                       className="inline-flex rounded-md border border-stone-300 bg-white px-5 py-2.5 text-sm font-medium text-stone-700 transition-colors hover:border-stone-400 dark:border-stone-700 dark:bg-stone-900 dark:text-stone-200 dark:hover:border-stone-600"
                     >
                       Volver

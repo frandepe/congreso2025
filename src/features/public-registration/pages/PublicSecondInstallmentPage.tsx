@@ -79,6 +79,7 @@ export function PublicSecondInstallmentPage() {
   const statusMutation = usePublicSubmissionStatusMutation();
   const recoverTrackingCodeMutation = useRecoverPublicTrackingCodeMutation();
   const resultsRef = useRef<HTMLDivElement | null>(null);
+  const submitResponseRef = useRef<HTMLDivElement | null>(null);
 
   const form = useForm<SecondInstallmentFormValues>({
     resolver: zodResolver(secondInstallmentSchema),
@@ -109,6 +110,17 @@ export function PublicSecondInstallmentPage() {
       block: "start",
     });
   }, [submissionData]);
+
+  useEffect(() => {
+    if (!submitError && !successMessage) {
+      return;
+    }
+
+    submitResponseRef.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  }, [submitError, successMessage]);
 
   useEffect(() => {
     const trackingCode = searchParams.get("trackingCode")?.trim();
@@ -663,14 +675,18 @@ export function PublicSecondInstallmentPage() {
                   </div>
                 ) : null}
 
-                {submitError ? (
-                  <InlineNotice variant="error">{submitError}</InlineNotice>
-                ) : null}
+                {submitError || successMessage ? (
+                  <div ref={submitResponseRef} className="space-y-3">
+                    {submitError ? (
+                      <InlineNotice variant="error">{submitError}</InlineNotice>
+                    ) : null}
 
-                {successMessage ? (
-                  <InlineNotice variant="success">
-                    {successMessage}
-                  </InlineNotice>
+                    {successMessage ? (
+                      <InlineNotice variant="success">
+                        {successMessage}
+                      </InlineNotice>
+                    ) : null}
+                  </div>
                 ) : null}
 
                 <div className="mx-auto max-w-[720px] border-t border-stone-200 pt-8 sm:pt-10">

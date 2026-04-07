@@ -1,5 +1,19 @@
 import type { CommercialSubmissionFormValues } from "@/features/commercial-submissions/commercial-submissions.types";
 
+export function normalizeCommercialWebsiteOrSocialUrl(value: string) {
+  const trimmedValue = value.trim();
+
+  if (!trimmedValue) {
+    return "";
+  }
+
+  if (/^[a-z][a-z\d+\-.]*:\/\//i.test(trimmedValue)) {
+    return trimmedValue;
+  }
+
+  return `https://${trimmedValue}`;
+}
+
 export function buildCommercialSubmissionFormData(
   values: CommercialSubmissionFormValues,
   options?: {
@@ -19,7 +33,10 @@ export function buildCommercialSubmissionFormData(
   formData.append("phone", values.phone);
 
   if (values.websiteOrSocialUrl) {
-    formData.append("websiteOrSocialUrl", values.websiteOrSocialUrl);
+    formData.append(
+      "websiteOrSocialUrl",
+      normalizeCommercialWebsiteOrSocialUrl(values.websiteOrSocialUrl),
+    );
   }
 
   formData.append("commercialKind", values.commercialKind);

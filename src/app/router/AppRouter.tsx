@@ -140,6 +140,14 @@ function AppRoutes() {
               }
             />
             <Route
+              path="/inscripcion/comercial/segunda-cuota"
+              element={
+                <PageWrapper>
+                  <PublicCommercialSecondInstallmentPage />
+                </PageWrapper>
+              }
+            />
+            <Route
               path="/inscripcion/publicidad"
               element={
                 <PageWrapper>

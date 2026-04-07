@@ -6,6 +6,11 @@ type CommercialSubmissionSuccessBlockProps = {
   result: CommercialSubmissionSuccessState;
 };
 
+const getCommercialSecondInstallmentPath = (trackingCode: string) =>
+  `/inscripcion/comercial/segunda-cuota?trackingCode=${encodeURIComponent(
+    trackingCode,
+  )}`;
+
 export function CommercialSubmissionSuccessBlock({
   result,
 }: CommercialSubmissionSuccessBlockProps) {
@@ -63,12 +68,10 @@ export function CommercialSubmissionSuccessBlock({
             ) : null}
             <p>
               <Link
-                to={`/inscripcion/expositores/segunda-cuota?trackingCode=${encodeURIComponent(
-                  result.trackingCode,
-                )}`}
+                to={getCommercialSecondInstallmentPath(result.trackingCode)}
                 className="font-medium text-emerald-700 underline-offset-4 hover:underline dark:text-emerald-300"
               >
-                Ir a la página de segunda cuota para expositores
+                Ir a la página de segunda cuota comercial
               </Link>
             </p>
           </>

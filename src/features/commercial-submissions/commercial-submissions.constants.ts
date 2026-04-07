@@ -13,7 +13,7 @@ export const commercialAdvertisingOptionContent: Record<
   ADVERTISING_WEB_PAGE: {
     title: "Publicidad en página",
     description:
-      "Presencia de la marca dentro del sitio del congreso con contratación simple y pago único.",
+      "Presencia de la marca dentro del sitio del congreso con contratación simple.",
   },
   ADVERTISING_WEB_AND_SCREEN: {
     title: "Página y pantalla",

@@ -18,7 +18,7 @@ export function AdminCommercialSubmissionReceiptCard({ receipts }: Props) {
         Comprobante
       </p>
       <h2 className="mt-1 text-xl font-semibold text-stone-900">
-        Comprobante enviado
+        Comprobantes enviados
       </h2>
 
       {receipts.length === 0 ? (

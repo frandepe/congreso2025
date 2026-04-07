@@ -508,7 +508,7 @@ export function PublicExhibitorsPage() {
                           .secondInstallmentUploadAllowed ? (
                           <Button asChild type="button">
                             <Link
-                              to={`/inscripcion/expositores/segunda-cuota?trackingCode=${encodeURIComponent(
+                              to={`/inscripcion/comercial/segunda-cuota?trackingCode=${encodeURIComponent(
                                 statusMutation.data.data.trackingCode,
                               )}`}
                             >

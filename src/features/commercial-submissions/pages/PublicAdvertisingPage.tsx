@@ -2,17 +2,20 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
 import { Check, FileText, Upload } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { RegistrationOptionCard } from "@/features/public-registration/components/RegistrationOptionCard";
+import { PaymentPlanCard } from "@/features/public-registration/components/PaymentPlanCard";
 import { BankTransferDetails } from "@/features/public-registration/components/BankTransferDetails";
 import {
   formatPublicRegistrationCurrency,
   getCurrentSubmissionDate,
 } from "@/features/public-registration/public-registration.utils";
+import { publicPaymentPlanContent } from "@/features/public-registration/public-registration.constants";
 import { InlineNotice } from "@/shared/ui/InlineNotice";
 import { useBackendWarmup } from "@/shared/api/useBackendWarmup";
 import type {
@@ -24,7 +27,10 @@ import {
   useCommercialSubmissionStatusMutation,
   useCreateCommercialSubmissionMutation,
 } from "@/features/commercial-submissions/commercial-submissions.hooks";
-import { buildCommercialSubmissionFormData } from "@/features/commercial-submissions/commercial-submissions.utils";
+import {
+  buildCommercialSubmissionFormData,
+  normalizeCommercialWebsiteOrSocialUrl,
+} from "@/features/commercial-submissions/commercial-submissions.utils";
 import { CommercialSubmissionSuccessBlock } from "@/features/commercial-submissions/components/CommercialSubmissionSuccessState";
 import { getUserFacingErrorMessage } from "@/shared/utils/getUserFacingErrorMessage";
 import { getCommercialAdvertisingOptionDescription } from "@/features/commercial-submissions/commercial-submissions.constants";
@@ -49,9 +55,19 @@ const schema = z.object({
     .min(
       1,
       "Ingresá la web de la empresa o, si no tiene, Facebook o Instagram.",
-    ),
+    )
+    .refine((value) => {
+      try {
+        new URL(normalizeCommercialWebsiteOrSocialUrl(value));
+        return true;
+      } catch {
+        return false;
+      }
+    }, "Ingresá una web o red social válida."),
   commercialKind: z.literal("ADVERTISING"),
-  paymentPlanType: z.literal("ONE_PAYMENT"),
+  paymentPlanType: z.enum(["ONE_PAYMENT", "TWO_INSTALLMENTS"], {
+    message: "Selecciona una modalidad.",
+  }),
   commercialOptionCode: z
     .string()
     .min(1, "Seleccioná una opción de publicidad."),
@@ -116,9 +132,14 @@ export function PublicAdvertisingPage() {
   });
 
   const selectedOptionCode = form.watch("commercialOptionCode");
+  const paymentPlanType = form.watch("paymentPlanType");
   const receiptFile = form.watch("receipt");
   const selectedOption = advertisingOptions.find(
     (option) => option.code === selectedOptionCode,
+  );
+  const selectedPaymentPlans = useMemo(
+    () => selectedOption?.paymentPlans ?? [],
+    [selectedOption],
   );
 
   const totalAmount = useMemo(
@@ -126,9 +147,35 @@ export function PublicAdvertisingPage() {
     [selectedOption],
   );
 
+  const installmentAmount = useMemo(() => {
+    if (!paymentPlanType) {
+      return 0;
+    }
+
+    return paymentPlanType === "TWO_INSTALLMENTS"
+      ? totalAmount / 2
+      : totalAmount;
+  }, [paymentPlanType, totalAmount]);
+
   useEffect(() => {
-    form.setValue("amountReported", totalAmount);
-  }, [form, totalAmount]);
+    form.setValue("amountReported", installmentAmount);
+  }, [form, installmentAmount]);
+
+  useEffect(() => {
+    if (!selectedOption || selectedPaymentPlans.length === 0) {
+      return;
+    }
+
+    if (selectedPaymentPlans.some((plan) => plan.type === paymentPlanType)) {
+      return;
+    }
+
+    form.setValue("paymentPlanType", selectedPaymentPlans[0].type, {
+      shouldDirty: true,
+      shouldTouch: true,
+      shouldValidate: true,
+    });
+  }, [form, paymentPlanType, selectedOption, selectedPaymentPlans]);
 
   useEffect(() => {
     if (!successState) {
@@ -228,7 +275,7 @@ export function PublicAdvertisingPage() {
                 Las publicidades no admiten cupón de descuento.
               </p>
               <p className="rounded-2xl bg-white px-4 py-3 dark:bg-stone-900 dark:text-stone-200">
-                Cada opción tiene valor fijo y pago único.
+                Cada opción tiene valor fijo y modalidad de pago configurable.
               </p>
             </div>
 
@@ -301,7 +348,11 @@ export function PublicAdvertisingPage() {
                       )}
                     </p>
                     <p className="text-sm leading-6 text-stone-600 dark:text-stone-400">
-                      {statusMutation.data.data.commercial.label} · 1 pago
+                      {statusMutation.data.data.commercial.label} ·{" "}
+                      {statusMutation.data.data.paymentPlanType ===
+                      "TWO_INSTALLMENTS"
+                        ? "2 cuotas"
+                        : "1 pago"}
                     </p>
                   </div>
 
@@ -333,6 +384,46 @@ export function PublicAdvertisingPage() {
                       </dd>
                     </div>
                   </dl>
+
+                  {statusMutation.data.data.paymentPlanType ===
+                    "TWO_INSTALLMENTS" &&
+                  statusMutation.data.data.submittedReceiptsCount <
+                    statusMutation.data.data.installmentCountExpected ? (
+                    <InlineNotice
+                      variant={
+                        statusMutation.data.data.secondInstallmentExpired
+                          ? "error"
+                          : "info"
+                      }
+                    >
+                      <div className="space-y-3">
+                        <p className="font-medium text-stone-900 dark:text-stone-100">
+                          {statusMutation.data.data.secondInstallmentExpired
+                            ? "Esta solicitud tiene la segunda cuota vencida."
+                            : "Esta solicitud aún tiene una cuota pendiente."}
+                        </p>
+                        {statusMutation.data.data.secondInstallmentDueAt ? (
+                          <p className="text-sm leading-6">
+                            {`Fecha límite para informar la segunda cuota: ${formatAdminDate(
+                              statusMutation.data.data.secondInstallmentDueAt,
+                            )}.`}
+                          </p>
+                        ) : null}
+                        {statusMutation.data.data
+                          .secondInstallmentUploadAllowed ? (
+                          <Button asChild type="button">
+                            <Link
+                              to={`/inscripcion/comercial/segunda-cuota?trackingCode=${encodeURIComponent(
+                                statusMutation.data.data.trackingCode,
+                              )}`}
+                            >
+                              Informar segunda cuota
+                            </Link>
+                          </Button>
+                        ) : null}
+                      </div>
+                    </InlineNotice>
+                  ) : null}
 
                   <div className="space-y-3">
                     {statusMutation.data.data.receipts.map((receipt) => (
@@ -390,6 +481,46 @@ export function PublicAdvertisingPage() {
                 ) : null}
               </section>
 
+              <section className="space-y-4 border-t border-stone-200 pt-6 dark:border-stone-800">
+                <h2 className="text-2xl font-semibold tracking-tight text-stone-950 dark:text-stone-100">
+                  Modalidad de pago
+                </h2>
+                {pricingCatalogQuery.data?.installmentsAvailable === false ? (
+                  <InlineNotice variant="info">
+                    {`La modalidad en cuotas estuvo disponible hasta ${formatAdminDate(
+                      pricingCatalogQuery.data.installmentsAvailableUntil,
+                    )} (${pricingCatalogQuery.data.installmentsTimezone}).`}
+                  </InlineNotice>
+                ) : null}
+                {!selectedOption ? (
+                  <InlineNotice variant="info">
+                    Selecciona una opcion de publicidad para ver las modalidades disponibles.
+                  </InlineNotice>
+                ) : null}
+                {selectedPaymentPlans.map((plan) => (
+                  <PaymentPlanCard
+                    key={plan.type}
+                    title={publicPaymentPlanContent[plan.type].title}
+                    description={
+                      publicPaymentPlanContent[plan.type].description
+                    }
+                    selected={paymentPlanType === plan.type}
+                    onSelect={() =>
+                      form.setValue("paymentPlanType", plan.type, {
+                        shouldDirty: true,
+                        shouldTouch: true,
+                        shouldValidate: true,
+                      })
+                    }
+                  />
+                ))}
+                {form.formState.errors.paymentPlanType ? (
+                  <p className="text-sm text-red-600">
+                    {form.formState.errors.paymentPlanType.message}
+                  </p>
+                ) : null}
+              </section>
+
               <section className="grid gap-5 md:grid-cols-2">
                 <label className="space-y-2">
                   <Label htmlFor="companyName">Empresa</Label>
@@ -443,14 +574,15 @@ export function PublicAdvertisingPage() {
                   </Label>
                   <Input
                     id="websiteOrSocialUrl"
-                    type="url"
-                    placeholder="https://tuempresa.com o https://instagram.com/tuempresa"
+                    type="text"
+                    inputMode="url"
+                    placeholder="tuempresa.com o instagram.com/tuempresa"
                     className={fieldClassName}
                     {...form.register("websiteOrSocialUrl")}
                   />
                   <p className="text-sm leading-6 text-stone-600 dark:text-stone-400">
                     Ingresá la web de la empresa. Si no tiene, colocá el enlace
-                    de Facebook o Instagram.
+                    de Facebook o Instagram. No hace falta escribir https://.
                   </p>
                 </label>
               </section>
@@ -464,9 +596,23 @@ export function PublicAdvertisingPage() {
                 <div className="space-y-2 text-sm text-stone-700 dark:text-stone-300">
                   <p>Opción: {selectedOption?.label ?? "-"}</p>
                   <p>
-                    Total a informar:{" "}
+                    Modalidad:{" "}
+                    {paymentPlanType === "TWO_INSTALLMENTS"
+                      ? "2 cuotas"
+                      : paymentPlanType === "ONE_PAYMENT"
+                        ? "1 pago"
+                        : "-"}
+                  </p>
+                  <p>
+                    Total contratado:{" "}
                     <span className="font-semibold text-stone-950 dark:text-stone-100">
                       {formatPublicRegistrationCurrency(totalAmount)}
+                    </span>
+                  </p>
+                  <p>
+                    Importe de este envío:{" "}
+                    <span className="font-semibold text-stone-950 dark:text-stone-100">
+                      {formatPublicRegistrationCurrency(installmentAmount)}
                     </span>
                   </p>
                 </div>

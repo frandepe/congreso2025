@@ -21,7 +21,7 @@ const accessCards = [
         label: "Primer o único pago",
       },
       {
-        href: "/inscripcion/expositores/segunda-cuota",
+        href: "/inscripcion/comercial/segunda-cuota",
         label: "Segunda cuota",
       },
     ],
@@ -29,7 +29,7 @@ const accessCards = [
   {
     title: "Publicidad para marcas",
     description:
-      "Si buscás difusión de marca sin contratar un stand, entrá acá. Vas a poder elegir web, pantalla o banners y enviar todo en un solo flujo.",
+      "Si buscás difusión de marca sin contratar un stand, entrá acá. Vas a poder elegir web, pantalla o banners, iniciar una nueva solicitud o informar la segunda cuota si ya tenés código de seguimiento.",
     icon: Megaphone,
     accentClassName:
       "border-sky-200 bg-[linear-gradient(180deg,#f3fbff_0%,#ffffff_100%)]",
@@ -38,7 +38,11 @@ const accessCards = [
     actions: [
       {
         href: "/inscripcion/publicidad",
-        label: "Ir a publicidad",
+        label: "Primer o único pago",
+      },
+      {
+        href: "/inscripcion/comercial/segunda-cuota",
+        label: "Segunda cuota",
       },
     ],
   },
@@ -88,8 +92,8 @@ export const Patrocinadores = () => {
             Elegí el trámite correcto para tu empresa
           </h2>
           <p className="mt-4 text-base leading-7 text-stone-600">
-            Desde esta página podés iniciar una solicitud de stand, cargar la
-            segunda cuota de un stand ya registrado o contratar una publicidad.
+            Desde esta página podés iniciar una solicitud comercial o cargar la
+            segunda cuota de un stand o publicidad ya registrados.
             Cada acceso te lleva al formulario correcto para evitar confusiones.
           </p>
 
@@ -133,7 +137,7 @@ export const Patrocinadores = () => {
                         <p>
                           {card.eyebrow === "Expositores"
                             ? "Usá el primer botón si vas a iniciar el stand. Usá el segundo solo si ya tenés una solicitud en 2 cuotas."
-                            : "Este acceso es solo para publicidades. No incluye stand ni segunda cuota."}
+                            : "Usá el primer botón si vas a contratar publicidad. Usá el segundo solo si ya tenés una solicitud en 2 cuotas."}
                         </p>
                       </div>
                     </div>
