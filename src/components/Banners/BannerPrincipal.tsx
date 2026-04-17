@@ -16,8 +16,7 @@ export default function BannerPrincipal() {
       <div className="absolute inset-0 bg-black bg-opacity-50"></div>
       <div className="relative z-10 max-w-2xl px-4">
         <p className="text-lg flex items-center justify-center gap-2 font-semibold text-start ml-8 sm:ml-0">
-          <Calendar size={20} className="text-secondary" /> 9-10-11 Octubre,
-          2026
+          <Calendar size={20} className="text-secondary" /> 2-3-4 Octubre, 2026
           <MapPin size={20} className="text-secondary" /> Trenque Lauquen
         </p>
         <h1 className="text-3xl md:text-5xl font-bold mt-4">

@@ -9,8 +9,8 @@ const Countdown2026 = () => {
   });
 
   useEffect(() => {
-    // 9 de octubre de 2026 a las 09:00 (hora de Argentina = UTC-3)
-    const targetDate = new Date("2026-10-09T12:00:00Z").getTime(); // Z = UTC
+    // 2 de octubre de 2026 a las 09:00 (hora de Argentina = UTC-3)
+    const targetDate = new Date("2026-10-02T12:00:00Z").getTime(); // Z = UTC
 
     const updateCountdown = () => {
       const now = new Date().getTime();
@@ -23,7 +23,7 @@ const Countdown2026 = () => {
 
       const days = Math.floor(distance / (1000 * 60 * 60 * 24));
       const hours = Math.floor(
-        (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
       );
       const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((distance % (1000 * 60)) / 1000);

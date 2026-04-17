@@ -7,7 +7,7 @@ import SliderPatrocinadores from "@/components/SliderPatrocinadores/SliderPatroc
 
 const accessCards = [
   {
-    title: "Stands para expositores",
+    title: "Stands para expositores (próximamente)",
     description:
       "Si tu empresa quiere presencia física en el congreso, esta es la opción correcta. Desde acá podés iniciar una nueva solicitud de stand o informar la segunda cuota si ya tenés código de seguimiento.",
     icon: Store,
@@ -27,7 +27,7 @@ const accessCards = [
     ],
   },
   {
-    title: "Publicidad para marcas",
+    title: "Publicidad para marcas (próximamente)",
     description:
       "Si buscás difusión de marca sin contratar un stand, entrá acá. Vas a poder elegir web, pantalla o banners, iniciar una nueva solicitud o informar la segunda cuota si ya tenés código de seguimiento.",
     icon: Megaphone,
@@ -93,8 +93,8 @@ export const Patrocinadores = () => {
           </h2>
           <p className="mt-4 text-base leading-7 text-stone-600">
             Desde esta página podés iniciar una solicitud comercial o cargar la
-            segunda cuota de un stand o publicidad ya registrados.
-            Cada acceso te lleva al formulario correcto para evitar confusiones.
+            segunda cuota de un stand o publicidad ya registrados. Cada acceso
+            te lleva al formulario correcto para evitar confusiones.
           </p>
 
           <div className="mt-10 grid gap-6 lg:grid-cols-2">
@@ -145,25 +145,37 @@ export const Patrocinadores = () => {
                     <div className="mt-auto pt-8">
                       <div className="flex flex-col gap-3">
                         {card.actions.map((action, actionIndex) => (
-                          <a
-                            key={action.href}
-                            href={action.href}
-                            className="block"
+                          <Button
+                            disabled
+                            variant={actionIndex === 0 ? "default" : "outline"}
+                            className={
+                              actionIndex === 0
+                                ? "h-12 w-full justify-between rounded-xl bg-stone-950 px-5 text-sm font-medium text-white hover:bg-stone-800"
+                                : "h-12 w-full justify-between rounded-xl border-stone-300 bg-white px-5 text-sm font-medium text-stone-800 hover:border-stone-400 hover:bg-stone-50"
+                            }
                           >
-                            <Button
-                              variant={
-                                actionIndex === 0 ? "default" : "outline"
-                              }
-                              className={
-                                actionIndex === 0
-                                  ? "h-12 w-full justify-between rounded-xl bg-stone-950 px-5 text-sm font-medium text-white hover:bg-stone-800"
-                                  : "h-12 w-full justify-between rounded-xl border-stone-300 bg-white px-5 text-sm font-medium text-stone-800 hover:border-stone-400 hover:bg-stone-50"
-                              }
-                            >
-                              {action.label}
-                              <ArrowRight className="h-4 w-4" />
-                            </Button>
-                          </a>
+                            {action.label}
+                            <ArrowRight className="h-4 w-4" />
+                          </Button>
+                          // <a
+                          //   key={action.href}
+                          //   href={action.href}
+                          //   className="block"
+                          // >
+                          //   <Button
+                          //     variant={
+                          //       actionIndex === 0 ? "default" : "outline"
+                          //     }
+                          //     className={
+                          //       actionIndex === 0
+                          //         ? "h-12 w-full justify-between rounded-xl bg-stone-950 px-5 text-sm font-medium text-white hover:bg-stone-800"
+                          //         : "h-12 w-full justify-between rounded-xl border-stone-300 bg-white px-5 text-sm font-medium text-stone-800 hover:border-stone-400 hover:bg-stone-50"
+                          //     }
+                          //   >
+                          //     {action.label}
+                          //     <ArrowRight className="h-4 w-4" />
+                          //   </Button>
+                          // </a>
                         ))}
                       </div>
                     </div>
@@ -175,7 +187,7 @@ export const Patrocinadores = () => {
         </motion.div>
       </section>
 
-      <section className="border-y border-stone-200 bg-white">
+      {/* <section className="border-y border-stone-200 bg-white">
         <div className="mx-auto max-w-6xl px-6 py-16 sm:px-8 lg:px-12">
           <div className="mx-auto max-w-3xl text-center">
             <p className="text-xs font-semibold uppercase tracking-[0.24em] text-stone-500">
@@ -198,7 +210,7 @@ export const Patrocinadores = () => {
             />
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section className="bg-white py-16">
         <PatrocinadoresComponent />
