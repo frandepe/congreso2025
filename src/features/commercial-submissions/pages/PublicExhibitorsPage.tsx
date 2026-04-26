@@ -57,11 +57,8 @@ const schema = z.object({
       message: "Adjunta el comprobante.",
     })
     .refine(
-      (value) =>
-        !value ||
-        value.type.startsWith("image/") ||
-        value.type === "application/pdf",
-      "El comprobante debe ser una imagen o PDF.",
+      (value) => !value || value.type.startsWith("image/"),
+      "El comprobante debe ser una imagen.",
     )
     .nullable(),
 });
@@ -806,7 +803,7 @@ export function PublicExhibitorsPage() {
                 <input
                   id="receipt"
                   type="file"
-                  accept="image/*,application/pdf"
+                  accept="image/*"
                   className="sr-only"
                   onChange={(event) => {
                     const file = event.target.files?.[0] ?? null;
@@ -847,7 +844,7 @@ export function PublicExhibitorsPage() {
                         <p className="text-sm leading-6 text-stone-600 dark:text-stone-400">
                           {receiptFile
                             ? receiptFile.name
-                            : "Aceptamos imagen o PDF."}
+                            : "Aceptamos solo imágenes."}
                         </p>
                       </div>
                     </div>

@@ -39,9 +39,8 @@ const schema = z.object({
     .refine(
       (value) =>
         !value ||
-        value.type.startsWith("image/") ||
-        value.type === "application/pdf",
-      "El comprobante debe ser una imagen o PDF.",
+        value.type.startsWith("image/"),
+      "El comprobante debe ser una imagen.",
     )
     .nullable(),
 });
@@ -447,7 +446,7 @@ export function PublicCommercialSecondInstallmentPage() {
                       <input
                         id="receipt"
                         type="file"
-                        accept="image/*,application/pdf"
+                        accept="image/*"
                         className="sr-only"
                         onChange={(event) => {
                           const file = event.target.files?.[0] ?? null;
@@ -478,7 +477,7 @@ export function PublicCommercialSecondInstallmentPage() {
                                 {receiptFile ? "Archivo cargado" : "Sube el comprobante"}
                               </p>
                               <p className="text-sm leading-6 text-stone-600 dark:text-stone-400">
-                                {receiptFile ? receiptFile.name : "Aceptamos imagen o PDF."}
+                                {receiptFile ? receiptFile.name : "Aceptamos solo imágenes."}
                               </p>
                             </div>
                           </div>

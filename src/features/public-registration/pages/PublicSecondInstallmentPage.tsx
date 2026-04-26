@@ -614,7 +614,7 @@ export function PublicSecondInstallmentPage() {
                               <p className="text-sm leading-6 text-stone-600">
                                 {receiptFile
                                   ? receiptFile.name
-                                  : "Aceptamos archivos de imagen. Puedes arrastrar el archivo o seleccionarlo manualmente."}
+                                  : "Aceptamos archivos de imagen."}
                               </p>
                             </div>
                           </div>

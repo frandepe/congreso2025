@@ -1238,7 +1238,7 @@ export function PublicRegistrationPage() {
                       </dl>
                     </section>
 
-                    <section className="space-y-4">
+                    <section className="space-y-4 pb-4">
                       <div className="space-y-2">
                         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-stone-500 dark:text-stone-400">
                           Comprobante
@@ -1297,7 +1297,7 @@ export function PublicRegistrationPage() {
                               <p className="text-sm leading-6 text-stone-600 dark:text-stone-400">
                                 {receiptFile
                                   ? receiptFile.name
-                                  : "Aceptamos archivos de imagen. Puedes arrastrar el archivo o seleccionarlo manualmente."}
+                                  : "Aceptamos archivos de imagen."}
                               </p>
                             </div>
                           </div>
