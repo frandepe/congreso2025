@@ -91,7 +91,7 @@ export const Patrocinadores = () => {
           <h2 className="mt-3 text-3xl font-semibold tracking-tight text-stone-950 sm:text-4xl">
             Elegí el trámite correcto para tu empresa
           </h2>
-          <p className="mt-4 text-base leading-7 text-stone-600">
+          <p className="mt-4 text-base leading-7 text-stone-600 dark:text-white">
             Desde esta página podés iniciar una solicitud comercial o cargar la
             segunda cuota de un stand o publicidad ya registrados. Cada acceso
             te lleva al formulario correcto para evitar confusiones.
@@ -212,7 +212,7 @@ export const Patrocinadores = () => {
         </div>
       </section> */}
 
-      <section className="bg-white py-16">
+      <section className="light:bg-white dark:bg-gray-700 py-16">
         <PatrocinadoresComponent />
         <SliderPatrocinadores />
       </section>

@@ -17,7 +17,7 @@ export function getUserFacingErrorMessage(
 ) {
   if (error instanceof ApiClientError) {
     if (error.status >= 500) {
-      return "Hubo un problema en el servidor. Intenta nuevamente en unos minutos.";
+      return "Hubo un problema en el servidor. Intenta nuevamente en un minuto.";
     }
 
     if (typeof error.message === "string" && error.message.trim()) {

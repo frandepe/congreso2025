@@ -3,7 +3,7 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
-import { Check, FileText, Upload } from "lucide-react";
+import { Check, FileText, Loader, Upload } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -456,6 +456,12 @@ export function PublicAdvertisingPage() {
                 <h2 className="text-3xl font-semibold tracking-tight text-stone-950 dark:text-stone-100">
                   Seleccioná el formato
                 </h2>
+                {pricingCatalogQuery.isLoading ? (
+                  <p className="flex items-center gap-2 rounded-lg border border-stone-300 p-2 text-sm text-stone-500 dark:border-stone-700 dark:bg-stone-950 dark:text-stone-400">
+                    <Loader className="animate-spin" /> Cargando opciones y
+                    precios, esto puede demorar algunos segundos...
+                  </p>
+                ) : null}
                 {advertisingOptions.map((option) => (
                   <RegistrationOptionCard
                     key={option.code}
@@ -494,7 +500,8 @@ export function PublicAdvertisingPage() {
                 ) : null}
                 {!selectedOption ? (
                   <InlineNotice variant="info">
-                    Selecciona una opcion de publicidad para ver las modalidades disponibles.
+                    Selecciona una opcion de publicidad para ver las modalidades
+                    disponibles.
                   </InlineNotice>
                 ) : null}
                 {selectedPaymentPlans.map((plan) => (
@@ -576,13 +583,13 @@ export function PublicAdvertisingPage() {
                     id="websiteOrSocialUrl"
                     type="text"
                     inputMode="url"
-                    placeholder="tuempresa.com o instagram.com/tuempresa"
+                    placeholder="www.tuempresa.com o www.instagram.com/tuempresa"
                     className={fieldClassName}
                     {...form.register("websiteOrSocialUrl")}
                   />
                   <p className="text-sm leading-6 text-stone-600 dark:text-stone-400">
                     Ingresá la web de la empresa. Si no tiene, colocá el enlace
-                    de Facebook o Instagram. No hace falta escribir https://.
+                    de Facebook o Instagram.
                   </p>
                 </label>
               </section>

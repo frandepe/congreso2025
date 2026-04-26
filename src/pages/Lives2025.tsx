@@ -1,112 +1,7 @@
-import {
-  CircularGallery,
-  GalleryItem,
-} from "@/components/Carousels/Carousel2025";
 import StoriesCarousel from "@/components/Videos/StorieCarousel";
 import { Radio } from "lucide-react";
 import { useState } from "react";
 import YouTube from "react-youtube";
-
-const galleryData: GalleryItem[] = [
-  {
-    common: "",
-    binomial: "",
-    photo: {
-      url: "/assets/2025/carousel1.jpg",
-      text: "",
-      pos: "47% 35%",
-      by: "",
-    },
-  },
-  {
-    common: "",
-    binomial: "",
-    photo: {
-      url: "/assets/2025/carousel2.jpg",
-      text: "",
-      pos: "75% 65%",
-      by: "",
-    },
-  },
-  {
-    common: "",
-    binomial: "",
-    photo: {
-      url: "/assets/2025/carousel3.jpg",
-      text: "",
-      pos: "53% 43%",
-      by: "",
-    },
-  },
-  {
-    common: "",
-    binomial: "",
-    photo: {
-      url: "/assets/2025/carousel4.jpg",
-      text: "",
-      pos: "65% 65%",
-      by: "",
-    },
-  },
-  {
-    common: "",
-    binomial: "",
-    photo: {
-      url: "/assets/2025/carousel5.jpg",
-      text: "",
-      pos: "50% 25%",
-      by: "",
-    },
-  },
-  {
-    common: "",
-    binomial: "",
-    photo: {
-      url: "/assets/2025/carousel6.jpg",
-      text: "",
-      pos: "47%",
-      by: "",
-    },
-  },
-  {
-    common: "",
-    binomial: "",
-    photo: {
-      url: "/assets/2025/carousel7.jpg",
-      text: "",
-      pos: "65% 35%",
-      by: "",
-    },
-  },
-  {
-    common: "",
-    binomial: "",
-    photo: {
-      url: "/assets/2025/carousel1.jpg",
-      text: "",
-      by: "",
-    },
-  },
-  {
-    common: "",
-    binomial: "",
-    photo: {
-      url: "/assets/2025/carousel2.jpg",
-      text: "",
-      pos: "35%",
-      by: "",
-    },
-  },
-  {
-    common: "",
-    binomial: "",
-    photo: {
-      url: "/assets/2025/carousel3.jpg",
-      text: "",
-      by: "",
-    },
-  },
-];
 
 const videos = [
   {
@@ -207,17 +102,6 @@ export default function Lives2025() {
         </div>
 
         {/* This inner container sticks to the top while scrolling */}
-      </div>
-      <div
-        className="w-full bg-background text-foreground"
-        style={{ height: "500vh" }}
-      >
-        {/* This inner container sticks to the top while scrolling */}
-        <div className="w-full h-screen sticky top-0 flex flex-col items-center justify-center overflow-hidden">
-          <div className="w-full h-full">
-            <CircularGallery items={galleryData} />
-          </div>
-        </div>
       </div>
     </div>
   );

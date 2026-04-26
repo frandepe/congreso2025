@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState, type FormEvent } from "react";
 import { FormProvider, useForm, useWatch } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Check, FileText, Upload } from "lucide-react";
+import { Check, FileText, Loader, Upload } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -317,8 +317,9 @@ export function PublicRegistrationPage() {
 
   const isSubmitting = mutation.isPending;
   const fieldClassName =
-    "h-12 rounded-md border-stone-300 px-4 text-sm shadow-none";
-  const textareaClassName = "rounded-md border-stone-300 px-4 py-3 shadow-none";
+    "h-12 rounded-md border-stone-300 bg-white px-4 text-sm text-stone-900 shadow-none dark:border-stone-700 dark:bg-stone-950 dark:text-stone-100";
+  const textareaClassName =
+    "rounded-md border-stone-300 bg-white px-4 py-3 text-stone-900 shadow-none dark:border-stone-700 dark:bg-stone-950 dark:text-stone-100";
   const receiptFile = form.watch("receipt");
   const pricingErrorMessage = pricingCatalogQuery.isError
     ? getUserFacingErrorMessage(
@@ -529,19 +530,19 @@ export function PublicRegistrationPage() {
     statusResult?.secondInstallmentUploadAllowed ?? false;
 
   return (
-    <div className="min-h-screen bg-stone-50">
+    <div className="min-h-screen bg-stone-50 dark:bg-stone-950">
       <section className="mx-auto max-w-[88rem] px-8 py-20 sm:px-10 lg:px-14">
         <div className="grid gap-16 lg:grid-cols-[minmax(0,0.88fr)_minmax(0,1.12fr)] lg:items-start">
           <div className="space-y-10 lg:sticky lg:top-10">
             <div className="space-y-7">
-              <p className="text-xs font-semibold uppercase tracking-[0.28em] text-emerald-700">
+              <p className="text-xs font-semibold uppercase tracking-[0.28em] text-emerald-700 dark:text-emerald-300">
                 Inscripción online
               </p>
               <div className="space-y-4">
-                <h1 className="max-w-xl text-4xl font-semibold tracking-tight text-stone-950 sm:text-5xl">
+                <h1 className="max-w-xl text-4xl font-semibold tracking-tight text-stone-950 dark:text-stone-100 sm:text-5xl">
                   Inscripción al congreso
                 </h1>
-                <p className="max-w-xl text-base leading-7 text-stone-600">
+                <p className="max-w-xl text-base leading-7 text-stone-600 dark:text-stone-400">
                   Completá tus datos, seleccioná la modalidad correspondiente y
                   adjuntá el comprobante de transferencia. Cada envío queda
                   sujeto a revisión manual por parte del comité organizador.
@@ -549,8 +550,8 @@ export function PublicRegistrationPage() {
               </div>
             </div>
 
-            <div className="max-w-xl border-t border-stone-200 pt-8">
-              <p className="text-sm leading-7 text-stone-600">
+            <div className="max-w-xl border-t border-stone-200 pt-8 dark:border-stone-800">
+              <p className="text-sm leading-7 text-stone-600 dark:text-stone-400">
                 La transferencia se realiza fuera de la web. En este formulario
                 solo registramos la inscripción, el comprobante enviado y la
                 modalidad elegida para que el comité pueda revisarlo luego.
@@ -566,7 +567,7 @@ export function PublicRegistrationPage() {
                 }
               >
                 <div className="space-y-3">
-                  <p className="font-medium text-stone-900">
+                  <p className="font-medium text-stone-900 dark:text-stone-100">
                     Detectamos una inscripcion previa en 2 cuotas
                     {pendingSecondInstallmentSuggestion.participantName
                       ? ` para ${pendingSecondInstallmentSuggestion.participantName}`
@@ -599,7 +600,7 @@ export function PublicRegistrationPage() {
                     <Button
                       type="button"
                       variant="outline"
-                      className="border-stone-300 bg-white"
+                      className="border-stone-300 bg-white dark:border-stone-700 dark:bg-stone-950 dark:text-stone-100 dark:hover:bg-stone-900"
                       onClick={() =>
                         setDismissedPendingInstallmentCode(
                           pendingSecondInstallmentSuggestion.trackingCode,
@@ -613,15 +614,15 @@ export function PublicRegistrationPage() {
               </InlineNotice>
             ) : null}
 
-            <section className="max-w-xl space-y-5 border-t border-stone-200 pt-8">
+            <section className="max-w-xl space-y-5 border-t border-stone-200 pt-8 dark:border-stone-800">
               <div className="space-y-2">
-                <p className="text-xs font-semibold uppercase tracking-[0.24em] text-stone-500">
+                <p className="text-xs font-semibold uppercase tracking-[0.24em] text-stone-500 dark:text-stone-400">
                   Seguimiento
                 </p>
-                <h2 className="text-2xl font-semibold tracking-tight text-stone-950">
+                <h2 className="text-2xl font-semibold tracking-tight text-stone-950 dark:text-stone-100">
                   Consultar estado
                 </h2>
-                <p className="text-sm leading-7 text-stone-600">
+                <p className="text-sm leading-7 text-stone-600 dark:text-stone-400">
                   Ingresá tu código de seguimiento para ver el estado actual de
                   la inscripción y de los comprobantes enviados.
                 </p>
@@ -667,12 +668,12 @@ export function PublicRegistrationPage() {
               </form>
 
               {showRecoveryForm ? (
-                <div className="space-y-4 rounded-lg border border-stone-200 bg-stone-50 px-4 py-4">
+                <div className="space-y-4 rounded-lg border border-stone-200 bg-stone-50 px-4 py-4 dark:border-stone-800 dark:bg-stone-900/70">
                   <div className="space-y-1">
-                    <p className="text-sm font-medium text-stone-900">
+                    <p className="text-sm font-medium text-stone-900 dark:text-stone-100">
                       Recuperar código por email
                     </p>
-                    <p className="text-sm leading-6 text-stone-600">
+                    <p className="text-sm leading-6 text-stone-600 dark:text-stone-400">
                       Ingresá el email que usaste al inscribirte. Si encontramos
                       una inscripción válida, te enviaremos el código por
                       correo.
@@ -692,7 +693,7 @@ export function PublicRegistrationPage() {
                       variant="outline"
                       onClick={() => void handleRecoverySubmit()}
                       disabled={recoverTrackingCodeMutation.isPending}
-                      className="rounded-md border-stone-300 bg-white px-5 text-stone-700"
+                      className="rounded-md border-stone-300 bg-white px-5 text-stone-700 dark:border-stone-700 dark:bg-stone-950 dark:text-stone-100 dark:hover:bg-stone-900"
                     >
                       {recoverTrackingCodeMutation.isPending
                         ? "Enviando..."
@@ -724,38 +725,38 @@ export function PublicRegistrationPage() {
               {statusResult ? (
                 <div
                   ref={statusResultRef}
-                  className="space-y-5 border-t border-stone-200 pt-5"
+                  className="space-y-5 border-t border-stone-200 pt-5 dark:border-stone-800"
                 >
                   <div className="space-y-2">
-                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-stone-500">
+                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-stone-500 dark:text-stone-400">
                       Estado actual
                     </p>
-                    <p className="text-lg font-semibold text-stone-950">
+                    <p className="text-lg font-semibold text-stone-950 dark:text-stone-100">
                       {getRegistrationStatusLabel(statusResult.status)}
                     </p>
-                    <p className="text-sm leading-6 text-stone-600">
+                    <p className="text-sm leading-6 text-stone-600 dark:text-stone-400">
                       {statusResult.registrationOption.label} ·{" "}
                       {getPaymentPlanLabel(statusResult.paymentPlanType)}
                     </p>
                   </div>
 
-                  <dl className="space-y-3 text-sm leading-6 text-stone-700">
+                  <dl className="space-y-3 text-sm leading-6 text-stone-700 dark:text-stone-300">
                     <div className="flex items-start justify-between gap-4">
                       <dt className="text-stone-500">Código</dt>
-                      <dd className="text-right font-medium text-stone-900">
+                      <dd className="text-right font-medium text-stone-900 dark:text-stone-100">
                         {statusResult.trackingCode}
                       </dd>
                     </div>
                     <div className="flex items-start justify-between gap-4">
                       <dt className="text-stone-500">Enviados</dt>
-                      <dd className="text-right font-medium text-stone-900">
+                      <dd className="text-right font-medium text-stone-900 dark:text-stone-100">
                         {statusResult.submittedReceiptsCount} de{" "}
                         {statusResult.installmentCountExpected} comprobantes
                       </dd>
                     </div>
                     <div className="flex items-start justify-between gap-4">
                       <dt className="text-stone-500">Última actualización</dt>
-                      <dd className="text-right font-medium text-stone-900">
+                      <dd className="text-right font-medium text-stone-900 dark:text-stone-100">
                         {formatAdminDate(statusResult.updatedAt)}
                       </dd>
                     </div>
@@ -768,7 +769,7 @@ export function PublicRegistrationPage() {
                       }
                     >
                       <div className="space-y-3">
-                        <p className="font-medium text-stone-900">
+                        <p className="font-medium text-stone-900 dark:text-stone-100">
                           {statusResult.secondInstallmentExpired
                             ? "Esta inscripción tiene la segunda cuota vencida."
                             : "Esta inscripcion aún tiene una cuota pendiente."}
@@ -822,17 +823,17 @@ export function PublicRegistrationPage() {
                     {statusResult.receipts.map((receipt) => (
                       <div
                         key={receipt.installmentNumber}
-                        className="flex items-center justify-between gap-4 border-t border-stone-200 pt-3 text-sm"
+                        className="flex items-center justify-between gap-4 border-t border-stone-200 pt-3 text-sm dark:border-stone-800"
                       >
                         <div>
-                          <p className="font-medium text-stone-900">
+                          <p className="font-medium text-stone-900 dark:text-stone-100">
                             Cuota {receipt.installmentNumber}
                           </p>
-                          <p className="text-stone-500">
+                          <p className="text-stone-500 dark:text-stone-400">
                             Recibido el {formatAdminDate(receipt.createdAt)}
                           </p>
                         </div>
-                        <p className="font-medium text-stone-900">
+                        <p className="font-medium text-stone-900 dark:text-stone-100">
                           {getReceiptStatusLabel(receipt.status)}
                         </p>
                       </div>
@@ -843,11 +844,11 @@ export function PublicRegistrationPage() {
             </section>
           </div>
 
-          <div className="rounded-2xl border border-stone-200 bg-white px-7 py-9 shadow-[0_18px_60px_-40px_rgba(15,23,42,0.22)] sm:px-10 sm:py-10 lg:px-12">
+          <div className="rounded-2xl border border-stone-200 bg-white px-7 py-9 text-stone-900 shadow-[0_18px_60px_-40px_rgba(15,23,42,0.22)] dark:border-stone-800 dark:bg-stone-900 dark:text-stone-100 dark:shadow-[0_22px_70px_-45px_rgba(0,0,0,0.65)] sm:px-10 sm:py-10 lg:px-12">
             <PublicRegistrationStepIndicator currentStep={currentStep} />
 
             <div className="mt-10 max-w-2xl space-y-4">
-              <h2 className="text-3xl font-semibold tracking-tight text-stone-950">
+              <h2 className="text-3xl font-semibold tracking-tight text-stone-950 dark:text-stone-100">
                 {currentStep === 1 ? "Datos personales" : ""}
                 {currentStep === 2 ? "Opción de inscripción" : ""}
                 {currentStep === 3 ? "Modalidad de pago" : ""}
@@ -855,7 +856,7 @@ export function PublicRegistrationPage() {
                   ? "Revisá el envío y adjuntá el comprobante"
                   : ""}
               </h2>
-              <p className="text-sm leading-7 text-stone-600">
+              <p className="text-sm leading-7 text-stone-600 dark:text-stone-400">
                 {currentStep === 1
                   ? "Ingresa los datos del participante tal como deben quedar registrados en la inscripción."
                   : ""}
@@ -963,13 +964,13 @@ export function PublicRegistrationPage() {
                       </label>
                     </div>
 
-                    <section className="space-y-4 border-t border-stone-200 pt-6">
+                    <section className="space-y-4 border-t border-stone-200 pt-6 dark:border-stone-800">
                       <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
                         <div>
-                          <p className="text-sm font-medium text-stone-900">
+                          <p className="text-sm font-medium text-stone-900 dark:text-stone-100">
                             Descuento para participantes del primer congreso
                           </p>
-                          <p className="text-sm text-stone-600">
+                          <p className="text-sm text-stone-600 dark:text-stone-400">
                             Solicitá el cupón y aplicalo con el mismo email de
                             la inscripción.
                           </p>
@@ -978,7 +979,7 @@ export function PublicRegistrationPage() {
                         <Button
                           type="button"
                           variant="ghost"
-                          className="h-auto justify-start px-0 text-emerald-700 hover:bg-transparent hover:text-emerald-800"
+                          className="h-auto justify-start px-0 text-emerald-700 hover:bg-transparent hover:text-emerald-800 dark:text-emerald-300 dark:hover:text-emerald-200"
                           onClick={() => {
                             setShowDiscountRequestForm((current) => !current);
                             setDiscountRequestError(null);
@@ -1101,8 +1102,9 @@ export function PublicRegistrationPage() {
                 {currentStep === 2 ? (
                   <div className="space-y-4">
                     {pricingCatalogQuery.isLoading ? (
-                      <p className="text-sm text-stone-500">
-                        Cargando opciones y precios...
+                      <p className="flex items-center gap-2 rounded-lg border border-stone-300 p-2 text-sm text-stone-500 dark:border-stone-700 dark:bg-stone-950 dark:text-stone-400">
+                        <Loader className="animate-spin" /> Cargando opciones y
+                        precios, esto puede demorar algunos segundos...
                       </p>
                     ) : null}
                     {registrationOptions.map((option) => (
@@ -1150,7 +1152,7 @@ export function PublicRegistrationPage() {
                       </InlineNotice>
                     ) : null}
                     {!selectedOption ? (
-                      <p className="text-sm text-stone-500">
+                      <p className="text-sm text-stone-500 dark:text-stone-400">
                         Primero selecciona una opcion de inscripcion.
                       </p>
                     ) : null}
@@ -1183,52 +1185,52 @@ export function PublicRegistrationPage() {
                   <div className="mx-auto max-w-[720px] space-y-10">
                     <BankTransferDetails />
 
-                    <section className="space-y-5 border-b border-stone-200 pb-8">
-                      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-stone-500">
+                    <section className="space-y-5 border-b border-stone-200 pb-8 dark:border-stone-800">
+                      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-stone-500 dark:text-stone-400">
                         Resumen
                       </p>
                       <dl className="space-y-5">
                         <div className="space-y-1">
-                          <dt className="text-xs font-semibold uppercase tracking-[0.16em] text-stone-500">
+                          <dt className="text-xs font-semibold uppercase tracking-[0.16em] text-stone-500 dark:text-stone-400">
                             Opción elegida
                           </dt>
-                          <dd className="text-base font-medium text-stone-950">
+                          <dd className="text-base font-medium text-stone-950 dark:text-stone-100">
                             {selectedRegistrationOption?.title ?? "-"}
                           </dd>
                         </div>
                         <div className="space-y-1">
-                          <dt className="text-xs font-semibold uppercase tracking-[0.16em] text-stone-500">
+                          <dt className="text-xs font-semibold uppercase tracking-[0.16em] text-stone-500 dark:text-stone-400">
                             Modalidad
                           </dt>
-                          <dd className="text-base font-medium text-stone-950">
+                          <dd className="text-base font-medium text-stone-950 dark:text-stone-100">
                             {paymentPlanLabel}
                           </dd>
                         </div>
                         <div className="space-y-1">
-                          <dt className="text-xs font-semibold uppercase tracking-[0.16em] text-stone-500">
+                          <dt className="text-xs font-semibold uppercase tracking-[0.16em] text-stone-500 dark:text-stone-400">
                             Cuota actual
                           </dt>
-                          <dd className="text-base font-medium text-stone-950">
+                          <dd className="text-base font-medium text-stone-950 dark:text-stone-100">
                             {currentInstallmentLabel}
                           </dd>
                         </div>
                         <div className="space-y-2 pt-2">
-                          <dt className="text-xs font-semibold uppercase tracking-[0.16em] text-stone-500">
+                          <dt className="text-xs font-semibold uppercase tracking-[0.16em] text-stone-500 dark:text-stone-400">
                             Monto
                           </dt>
-                          <dd className="text-3xl font-semibold tracking-tight text-stone-950 sm:text-[2.15rem]">
+                          <dd className="text-3xl font-semibold tracking-tight text-stone-950 dark:text-stone-100 sm:text-[2.15rem]">
                             {formatPublicRegistrationCurrency(
                               currentInstallmentAmount ??
                                 suggestedAmount ??
                                 watchedValues.amountReported,
                             )}
                           </dd>
-                          <p className="text-sm leading-6 text-stone-600">
+                          <p className="text-sm leading-6 text-stone-600 dark:text-stone-400">
                             Importe definido según la opción y la modalidad
                             seleccionadas.
                           </p>
                           {hasAppliedDiscount && selectedPaymentPlan ? (
-                            <p className="text-sm leading-6 text-emerald-700">
+                            <p className="text-sm leading-6 text-emerald-700 dark:text-emerald-300">
                               {`Incluye ${appliedDiscount?.discountPercentage}% OFF sobre el total de la inscripción.`}
                             </p>
                           ) : null}
@@ -1238,10 +1240,10 @@ export function PublicRegistrationPage() {
 
                     <section className="space-y-4">
                       <div className="space-y-2">
-                        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-stone-500">
+                        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-stone-500 dark:text-stone-400">
                           Comprobante
                         </p>
-                        <p className="text-base font-medium text-stone-950">
+                        <p className="text-base font-medium text-stone-950 dark:text-stone-100">
                           Subí el comprobante
                         </p>
                       </div>
@@ -1265,10 +1267,10 @@ export function PublicRegistrationPage() {
                         htmlFor="receipt"
                         className={`block cursor-pointer rounded-lg border px-5 py-5 transition-colors ${
                           form.formState.errors.receipt
-                            ? "border-red-300 bg-red-50/40"
+                            ? "border-red-300 bg-red-50/40 dark:border-red-900/70 dark:bg-red-950/30"
                             : receiptFile
-                              ? "border-stone-300 bg-stone-50/60"
-                              : "border-stone-300 bg-white hover:border-stone-400"
+                              ? "border-stone-300 bg-stone-50/60 dark:border-stone-700 dark:bg-stone-950"
+                              : "border-stone-300 bg-white hover:border-stone-400 dark:border-stone-700 dark:bg-stone-950 dark:hover:border-stone-500"
                         }`}
                       >
                         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
@@ -1276,8 +1278,8 @@ export function PublicRegistrationPage() {
                             <div
                               className={`mt-0.5 rounded-full p-2 ${
                                 receiptFile
-                                  ? "bg-stone-900 text-white"
-                                  : "bg-stone-100 text-stone-600"
+                                  ? "bg-stone-900 text-white dark:bg-emerald-500 dark:text-stone-950"
+                                  : "bg-stone-100 text-stone-600 dark:bg-stone-800 dark:text-stone-300"
                               }`}
                             >
                               {receiptFile ? (
@@ -1287,12 +1289,12 @@ export function PublicRegistrationPage() {
                               )}
                             </div>
                             <div className="min-w-0 space-y-1">
-                              <p className="text-sm font-medium text-stone-950">
+                              <p className="text-sm font-medium text-stone-950 dark:text-stone-100">
                                 {receiptFile
                                   ? "Archivo cargado"
                                   : "Subí el comprobante"}
                               </p>
-                              <p className="text-sm leading-6 text-stone-600">
+                              <p className="text-sm leading-6 text-stone-600 dark:text-stone-400">
                                 {receiptFile
                                   ? receiptFile.name
                                   : "Aceptamos archivos de imagen. Puedes arrastrar el archivo o seleccionarlo manualmente."}
@@ -1300,7 +1302,7 @@ export function PublicRegistrationPage() {
                             </div>
                           </div>
 
-                          <span className="inline-flex shrink-0 items-center justify-center rounded-md border border-stone-300 bg-white px-4 py-2 text-sm font-medium text-stone-700">
+                          <span className="inline-flex shrink-0 items-center justify-center rounded-md border border-stone-300 bg-white px-4 py-2 text-sm font-medium text-stone-700 dark:border-stone-700 dark:bg-stone-900 dark:text-stone-200">
                             {receiptFile
                               ? "Cambiar archivo"
                               : "Seleccionar archivo"}
@@ -1308,7 +1310,7 @@ export function PublicRegistrationPage() {
                         </div>
 
                         {receiptFile ? (
-                          <div className="mt-4 flex items-center gap-2 border-t border-stone-200 pt-4 text-sm text-stone-600">
+                          <div className="mt-4 flex items-center gap-2 border-t border-stone-200 pt-4 text-sm text-stone-600 dark:border-stone-800 dark:text-stone-400">
                             <FileText className="h-4 w-4 shrink-0" />
                             <span className="truncate">
                               Listo para enviarse con la inscripción.
@@ -1323,7 +1325,7 @@ export function PublicRegistrationPage() {
                         </p>
                       ) : null}
 
-                      <p className="text-sm leading-6 text-stone-600">
+                      <p className="text-sm leading-6 text-stone-600 dark:text-stone-400">
                         El comprobante será revisado por el comité organizador
                         antes de confirmar la inscripción.
                       </p>
@@ -1364,7 +1366,7 @@ export function PublicRegistrationPage() {
             {successState ? (
               <section
                 ref={successStateRef}
-                className="mt-10 border-t border-stone-200 pt-10"
+                className="mt-10 border-t border-stone-200 pt-10 dark:border-stone-800"
               >
                 <PublicRegistrationSuccessBlock result={successState} />
               </section>

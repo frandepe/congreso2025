@@ -60,7 +60,7 @@ export function PricingCardDemo() {
         <h2 className="text-4xl font-bold text-stone-950">
           Opciones de inscripción
         </h2>
-        <p className="mt-4 text-base leading-7 text-stone-600">
+        <p className="mt-4 text-base leading-7 text-stone-600 dark:text-white">
           Si vas a inscribirte por primera vez o consultar tu estado, entrá a la
           pagina principal de inscripcion. Si ya pagaste la primera cuota y
           querés informar la segunda, usá la pantalla especifica de segunda

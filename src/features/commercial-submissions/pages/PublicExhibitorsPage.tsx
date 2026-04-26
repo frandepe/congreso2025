@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { Check, FileText, Upload } from "lucide-react";
+import { Check, FileText, Loader, Upload } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -107,6 +107,7 @@ export function PublicExhibitorsPage() {
   const validateCouponMutation =
     useValidateCommercialStandDiscountCouponMutation();
   const standOption = pricingCatalogQuery.data?.standOptions[0];
+  console.log("pricingCatalogQuery", pricingCatalogQuery);
 
   const form = useForm<FormValues>({
     resolver: zodResolver(schema),
@@ -551,6 +552,12 @@ export function PublicExhibitorsPage() {
                 <h2 className="text-3xl font-semibold tracking-tight text-stone-950 dark:text-stone-100">
                   Configura el stand
                 </h2>
+                {pricingCatalogQuery.isLoading ? (
+                  <p className="flex items-center gap-2 rounded-lg border border-stone-300 p-2 text-sm text-stone-500 dark:border-stone-700 dark:bg-stone-950 dark:text-stone-400">
+                    <Loader className="animate-spin" /> Cargando opciones y
+                    precios, esto puede demorar algunos segundos...
+                  </p>
+                ) : null}
                 <RegistrationOptionCard
                   title="Stand 3x3"
                   price={formatPublicRegistrationCurrency(
