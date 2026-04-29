@@ -71,7 +71,6 @@ const schema = z.object({
   commercialOptionCode: z
     .string()
     .min(1, "Seleccioná una opción de publicidad."),
-  includesEquipment: z.boolean(),
   amountReported: z.number().positive(),
   paymentDate: z.string().min(1, "Ingresá la fecha de pago."),
   notes: z.string(),
@@ -120,7 +119,6 @@ export function PublicAdvertisingPage() {
       commercialKind: "ADVERTISING",
       paymentPlanType: "ONE_PAYMENT",
       commercialOptionCode: "",
-      includesEquipment: false,
       amountReported: 0,
       paymentDate: getCurrentSubmissionDate(),
       notes: "",

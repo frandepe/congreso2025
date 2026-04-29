@@ -17,6 +17,7 @@ import { UbicacionYAlojamiento } from "@/pages/UbicacionYAlojamiento";
 import { Patrocinadores } from "@/pages/Patrocinadores";
 import { Inscripcion } from "@/pages/Inscripcion";
 import { Expositores } from "@/pages/Expositores";
+import { CatalogosLivingsPage } from "@/pages/CatalogosLivings";
 import { FAQ } from "@/pages/Faq";
 import Videos from "@/pages/Videos";
 import Lives2025 from "@/pages/Lives2025";
@@ -36,6 +37,7 @@ import { AdminSubmissionDetailPage } from "@/features/admin-submissions/pages/Ad
 import { AdminCommercialSubmissionsPage } from "@/features/admin-commercial-submissions/pages/AdminCommercialSubmissionsPage";
 import { AdminCommercialSubmissionDetailPage } from "@/features/admin-commercial-submissions/pages/AdminCommercialSubmissionDetailPage";
 import { RequireAdminAuth } from "@/features/auth/RequireAdminAuth";
+import Images2025 from "@/pages/Images2025";
 
 function PageWrapper({ children }: { children: React.ReactNode }) {
   return (
@@ -165,9 +167,7 @@ function AppRoutes() {
             />
             <Route
               path="/inscripcion-test"
-              element={
-                <Navigate to="/inscripcion/participantes" replace />
-              }
+              element={<Navigate to="/inscripcion/participantes" replace />}
             />
             <Route
               path="/sobre-nosotros"
@@ -214,6 +214,22 @@ function AppRoutes() {
               element={
                 <PageWrapper>
                   <Expositores />
+                </PageWrapper>
+              }
+            />
+            <Route
+              path="/catalogos-livings"
+              element={
+                <PageWrapper>
+                  <CatalogosLivingsPage />
+                </PageWrapper>
+              }
+            />
+            <Route
+              path="/galeria-2025"
+              element={
+                <PageWrapper>
+                  <Images2025 />
                 </PageWrapper>
               }
             />

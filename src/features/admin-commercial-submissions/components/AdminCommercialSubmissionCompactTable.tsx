@@ -60,9 +60,6 @@ export function AdminCommercialSubmissionCompactTable({ submissions }: Props) {
                     </p>
                     <p className="mt-2 text-xs text-stone-500">
                       {formatArsCurrency(submission.totalAmountExpected)}
-                      {submission.commercialKind === "STAND" && submission.includesEquipment
-                        ? " / equipado"
-                        : ""}
                       {submission.paymentPlanType === "TWO_INSTALLMENTS"
                         ? ` / ${submission.submittedReceiptsCount} de ${submission.installmentCountExpected} cuotas`
                         : ""}

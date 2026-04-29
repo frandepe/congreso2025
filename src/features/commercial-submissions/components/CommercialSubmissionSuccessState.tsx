@@ -52,6 +52,17 @@ export function CommercialSubmissionSuccessBlock({
             result.paymentPlanType === "TWO_INSTALLMENTS" ? "2 cuotas" : "1 pago"
           }.`}
         </p>
+        {result.commercial.kind === "STAND" ? (
+          <p>
+            El equipamiento adicional para el stand se gestiona aparte.{" "}
+            <Link
+              to="/catalogos-livings"
+              className="font-medium text-emerald-700 underline-offset-4 hover:underline dark:text-emerald-300"
+            >
+              Ver opciones de livings y equipamiento
+            </Link>
+          </p>
+        ) : null}
         {result.paymentPlanType === "TWO_INSTALLMENTS" ? (
           <>
             <p>

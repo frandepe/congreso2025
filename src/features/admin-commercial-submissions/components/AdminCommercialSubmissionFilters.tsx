@@ -10,12 +10,10 @@ type Props = {
   commercialKind: string;
   commercialOptionCode: string;
   hasDiscountCoupon: string;
-  includesEquipment: string;
   onStatusChange: (value: string) => void;
   onCommercialKindChange: (value: string) => void;
   onCommercialOptionChange: (value: string) => void;
   onDiscountCouponChange: (value: string) => void;
-  onIncludesEquipmentChange: (value: string) => void;
   onReset: () => void;
 };
 
@@ -27,12 +25,10 @@ export function AdminCommercialSubmissionFilters({
   commercialKind,
   commercialOptionCode,
   hasDiscountCoupon,
-  includesEquipment,
   onStatusChange,
   onCommercialKindChange,
   onCommercialOptionChange,
   onDiscountCouponChange,
-  onIncludesEquipmentChange,
   onReset,
 }: Props) {
   return (
@@ -56,7 +52,7 @@ export function AdminCommercialSubmissionFilters({
         </Button>
       </div>
 
-      <div className="mt-5 grid gap-4 md:grid-cols-2 xl:grid-cols-5">
+      <div className="mt-5 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
         <label className="space-y-2">
           <span className="text-sm font-medium text-stone-700">Estado</span>
           <select className={selectClassName} value={status} onChange={(event) => onStatusChange(event.target.value)}>
@@ -92,15 +88,6 @@ export function AdminCommercialSubmissionFilters({
           <select className={selectClassName} value={hasDiscountCoupon} onChange={(event) => onDiscountCouponChange(event.target.value)}>
             <option value="">Todas</option>
             <option value="true">Con cupon</option>
-          </select>
-        </label>
-
-        <label className="space-y-2">
-          <span className="text-sm font-medium text-stone-700">Equipamiento</span>
-          <select className={selectClassName} value={includesEquipment} onChange={(event) => onIncludesEquipmentChange(event.target.value)}>
-            <option value="">Todos</option>
-            <option value="true">Con equipamiento</option>
-            <option value="false">Sin equipamiento</option>
           </select>
         </label>
       </div>

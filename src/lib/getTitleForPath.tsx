@@ -31,6 +31,10 @@ export function getTitleForPath(path: string) {
     return "Publicidad - Congreso Nacional RCP 2025";
   }
 
+  if (path === "/catalogos-livings") {
+    return "Catalogos Livings - Congreso Nacional RCP 2025";
+  }
+
   switch (path) {
     case "/":
       return "Inicio - Congreso Nacional RCP 2025";
@@ -52,6 +56,8 @@ export function getTitleForPath(path: string) {
       return "Vivo 2025 - Congreso Nacional RCP 2025";
     case "/expositores":
       return "Expositores - Congreso Nacional RCP 2025";
+    case "/catalogos-livings":
+      return "Catalogos Livings - Congreso Nacional RCP 2025";
     case "/homenaje-sergio-marcos":
       return "Homenaje a Sergio Marcos - Congreso Nacional RCP 2025";
     case "/contacto":

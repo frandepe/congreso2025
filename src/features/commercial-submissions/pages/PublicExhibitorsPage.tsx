@@ -5,7 +5,6 @@ import { useForm } from "react-hook-form";
 import { Check, FileText, Loader, Upload } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
@@ -48,7 +47,6 @@ const schema = z.object({
   commercialKind: z.literal("STAND"),
   commercialOptionCode: z.literal("STAND_SPACE_3X3"),
   paymentPlanType: z.string().min(1, "Selecciona una modalidad."),
-  includesEquipment: z.boolean(),
   amountReported: z.number().positive(),
   paymentDate: z.string().min(1, "Ingresá la fecha de pago."),
   notes: z.string(),
@@ -117,7 +115,6 @@ export function PublicExhibitorsPage() {
       commercialKind: "STAND",
       commercialOptionCode: "STAND_SPACE_3X3",
       paymentPlanType: "",
-      includesEquipment: false,
       amountReported: 0,
       paymentDate: getCurrentSubmissionDate(),
       notes: "",
@@ -127,7 +124,6 @@ export function PublicExhibitorsPage() {
 
   const watchedEmail = form.watch("email").trim().toLowerCase();
   const paymentPlanType = form.watch("paymentPlanType");
-  const includesEquipment = form.watch("includesEquipment");
   const receiptFile = form.watch("receipt");
 
   const totalAmount = useMemo(() => {
@@ -142,10 +138,9 @@ export function PublicExhibitorsPage() {
 
     return (
       standOption.baseAmount -
-      discountAmount +
-      (includesEquipment ? standOption.equipmentAdditionalAmount : 0)
+      discountAmount
     );
-  }, [appliedDiscount, includesEquipment, standOption, watchedEmail]);
+  }, [appliedDiscount, standOption, watchedEmail]);
 
   const installmentAmount = useMemo(() => {
     if (!paymentPlanType) {
@@ -347,8 +342,9 @@ export function PublicExhibitorsPage() {
                   Contratá tu stand para el congreso
                 </h1>
                 <p className="max-w-xl text-base leading-7 text-stone-600 dark:text-stone-400">
-                  Reservá el espacio comercial de 3x3, sumá equipamiento si lo
-                  necesitás y adjuntá el comprobante para revisión.
+                  Reservá el espacio comercial de 3x3 y adjuntá el comprobante
+                  para revisión. El equipamiento adicional se gestiona por
+                  separado.
                 </p>
               </div>
             </div>
@@ -361,14 +357,12 @@ export function PublicExhibitorsPage() {
                 )}
               </p>
               <p className="rounded-2xl bg-white px-4 py-3 dark:bg-stone-900 dark:text-stone-200">
-                Plus por stand equipado:{" "}
-                {formatPublicRegistrationCurrency(
-                  standOption?.equipmentAdditionalAmount ?? 150000,
-                )}
-              </p>
-              <p className="rounded-2xl bg-white px-4 py-3 dark:bg-stone-900 dark:text-stone-200">
                 Descuento habilitado solo con cupón para expositores del primer
                 congreso.
+              </p>
+              <p className="rounded-2xl bg-white px-4 py-3 dark:bg-stone-900 dark:text-stone-200">
+                Luego de contratar el stand vas a poder consultar por separado
+                las opciones de livings y equipamiento adicional.
               </p>
             </div>
 
@@ -564,30 +558,6 @@ export function PublicExhibitorsPage() {
                   selected
                   onSelect={() => undefined}
                 />
-                <label className="flex items-start gap-3 rounded-xl border border-stone-200 bg-stone-50 px-4 py-4 dark:border-stone-800 dark:bg-stone-950/60">
-                  <Checkbox
-                    checked={includesEquipment}
-                    onCheckedChange={(checked) =>
-                      form.setValue("includesEquipment", checked === true, {
-                        shouldDirty: true,
-                        shouldTouch: true,
-                        shouldValidate: true,
-                      })
-                    }
-                  />
-                  <span className="space-y-1">
-                    <span className="block text-sm font-medium text-stone-900 dark:text-stone-100">
-                      Agregar stand equipado
-                    </span>
-                    <span className="block text-sm leading-6 text-stone-600 dark:text-stone-400">
-                      Incluye equipamiento adicional por{" "}
-                      {formatPublicRegistrationCurrency(
-                        standOption?.equipmentAdditionalAmount ?? 150000,
-                      )}
-                      .
-                    </span>
-                  </span>
-                </label>
               </section>
 
               <section className="space-y-4 border-t border-stone-200 pt-6 dark:border-stone-800">
@@ -771,10 +741,6 @@ export function PublicExhibitorsPage() {
                     {formatPublicRegistrationCurrency(
                       standOption?.baseAmount ?? 300000,
                     )}
-                  </p>
-                  <p>
-                    Equipamiento:{" "}
-                    {includesEquipment ? "Incluido" : "No incluido"}
                   </p>
                   <p>
                     Descuento:{" "}

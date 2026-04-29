@@ -25,9 +25,6 @@ function buildQuery(params: AdminCommercialSubmissionsListQuery) {
   if (params.hasDiscountCoupon) {
     searchParams.set("hasDiscountCoupon", params.hasDiscountCoupon);
   }
-  if (params.includesEquipment) {
-    searchParams.set("includesEquipment", params.includesEquipment);
-  }
 
   const queryString = searchParams.toString();
   return queryString ? `?${queryString}` : "";

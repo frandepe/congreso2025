@@ -52,8 +52,6 @@ function buildSubmissionRow(
     "Web o red social": submission.websiteOrSocialUrl ?? "",
     Moneda: submission.currencyCode,
     "Base original": submission.baseAmountExpected,
-    "Adicional equipamiento": submission.equipmentAdditionalAmount ?? "",
-    "Incluye equipamiento": submission.includesEquipment ? "Si" : "No",
     "Descuento monto": submission.discountAppliedAmount ?? "",
     "Cupon descuento": submission.discountCouponCode ?? "",
     "Email descuento": submission.discountEligibleEmailNormalized ?? "",

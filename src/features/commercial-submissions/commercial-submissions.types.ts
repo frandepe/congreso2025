@@ -15,7 +15,6 @@ export type CommercialSubmissionFormValues = {
   commercialKind: CommercialKind;
   commercialOptionCode: CommercialOptionCode;
   paymentPlanType: PaymentPlanType;
-  includesEquipment: boolean;
   amountReported: number;
   paymentDate: string;
   notes: string;

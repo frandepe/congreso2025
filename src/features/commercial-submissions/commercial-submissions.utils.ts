@@ -43,7 +43,6 @@ export function buildCommercialSubmissionFormData(
   formData.append("commercialOptionCode", values.commercialOptionCode);
   formData.append("paymentPlanType", values.paymentPlanType);
   formData.append("installmentNumber", "1");
-  formData.append("includesEquipment", String(values.includesEquipment));
   formData.append("amountReported", String(values.amountReported));
 
   if (options?.discountCouponCode) {

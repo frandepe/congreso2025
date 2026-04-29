@@ -44,8 +44,6 @@ export function AdminCommercialSubmissionsPage() {
       (searchParams.get("commercialOptionCode") as CommercialOptionCode | null) || undefined,
     hasDiscountCoupon:
       (searchParams.get("hasDiscountCoupon") as "true" | null) || undefined,
-    includesEquipment:
-      (searchParams.get("includesEquipment") as "true" | "false" | null) || undefined,
   };
 
   const { data, isLoading, isError, error, refetch, isFetching } =
@@ -220,12 +218,10 @@ export function AdminCommercialSubmissionsPage() {
         commercialKind={searchParams.get("commercialKind") ?? ""}
         commercialOptionCode={searchParams.get("commercialOptionCode") ?? ""}
         hasDiscountCoupon={searchParams.get("hasDiscountCoupon") ?? ""}
-        includesEquipment={searchParams.get("includesEquipment") ?? ""}
         onStatusChange={(value) => updateSearchParams({ status: value || null }, true)}
         onCommercialKindChange={(value) => updateSearchParams({ commercialKind: value || null }, true)}
         onCommercialOptionChange={(value) => updateSearchParams({ commercialOptionCode: value || null }, true)}
         onDiscountCouponChange={(value) => updateSearchParams({ hasDiscountCoupon: value || null }, true)}
-        onIncludesEquipmentChange={(value) => updateSearchParams({ includesEquipment: value || null }, true)}
         onReset={handleReset}
       />
 

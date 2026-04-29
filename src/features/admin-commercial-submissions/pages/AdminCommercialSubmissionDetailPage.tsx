@@ -155,14 +155,10 @@ export function AdminCommercialSubmissionDetailPage() {
 
       <section className="rounded-[30px] border border-stone-200 bg-white/95 p-6 shadow-[0_24px_80px_-48px_rgba(15,23,42,0.35)]">
         <h2 className="text-xl font-semibold text-stone-900">Economia</h2>
-        <div className="mt-4 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+        <div className="mt-4 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           <div className="rounded-2xl bg-stone-50 p-4">
             <p className="text-xs uppercase tracking-[0.2em] text-stone-500">Base</p>
             <p className="mt-1 font-medium text-stone-900">{formatArsCurrency(data.baseAmountExpected)}</p>
-          </div>
-          <div className="rounded-2xl bg-stone-50 p-4">
-            <p className="text-xs uppercase tracking-[0.2em] text-stone-500">Equipamiento</p>
-            <p className="mt-1 font-medium text-stone-900">{data.equipmentAdditionalAmount !== null ? formatArsCurrency(data.equipmentAdditionalAmount) : "-"}</p>
           </div>
           <div className="rounded-2xl bg-stone-50 p-4">
             <p className="text-xs uppercase tracking-[0.2em] text-stone-500">Descuento</p>
@@ -173,6 +169,16 @@ export function AdminCommercialSubmissionDetailPage() {
             <p className="mt-1 font-medium text-stone-900">{formatArsCurrency(data.totalAmountExpected)}</p>
           </div>
         </div>
+
+        {data.equipmentAdditionalAmount !== null || data.includesEquipment ? (
+          <div className="mt-4 rounded-2xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900">
+            Registro histórico con equipamiento adicional:
+            {" "}
+            {data.equipmentAdditionalAmount !== null
+              ? formatArsCurrency(data.equipmentAdditionalAmount)
+              : "sin monto disponible"}.
+          </div>
+        ) : null}
 
         <dl className="mt-6 grid gap-3 text-sm text-stone-700 md:grid-cols-2 xl:grid-cols-4">
           <div className="rounded-2xl bg-stone-50 px-4 py-3">
@@ -198,10 +204,6 @@ export function AdminCommercialSubmissionDetailPage() {
           <div className="rounded-2xl bg-stone-50 px-4 py-3">
             <dt className="text-xs uppercase tracking-[0.2em] text-stone-500">Email descuento</dt>
             <dd className="mt-1 font-medium text-stone-900">{data.discountEligibleEmailNormalized ?? "-"}</dd>
-          </div>
-          <div className="rounded-2xl bg-stone-50 px-4 py-3">
-            <dt className="text-xs uppercase tracking-[0.2em] text-stone-500">Incluye equipamiento</dt>
-            <dd className="mt-1 font-medium text-stone-900">{data.includesEquipment ? "Si" : "No"}</dd>
           </div>
           <div className="rounded-2xl bg-stone-50 px-4 py-3">
             <dt className="text-xs uppercase tracking-[0.2em] text-stone-500">Moneda</dt>
