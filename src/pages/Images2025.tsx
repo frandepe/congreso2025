@@ -4,8 +4,16 @@ import React from "react";
 
 const Images2025 = () => {
   return (
-    <section className="w-full bg-white text-stone-900 dark:bg-stone-950 dark:text-white">
-      <div className="mx-auto max-w-6xl px-4 py-24">
+    <section className="relative w-full overflow-hidden bg-white text-stone-900 dark:bg-stone-950 dark:text-white">
+      {/* FONDO */}
+      <img
+        src="/blurry-gradient-haikei1.svg"
+        alt="Fondo"
+        className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-20"
+      />
+
+      {/* CONTENIDO */}
+      <div className="relative z-10 mx-auto max-w-6xl px-4 py-24">
         {/* BLOQUE 1 */}
         <div className="flex flex-col items-center text-center">
           <span className="mb-3 text-xs uppercase tracking-[0.25em] text-stone-500 dark:text-stone-400">
