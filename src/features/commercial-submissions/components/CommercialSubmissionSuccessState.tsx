@@ -36,7 +36,10 @@ export function CommercialSubmissionSuccessBlock({
       </div>
 
       <div className="mt-8 space-y-3 border-t border-emerald-200 pt-6 text-sm leading-6 text-stone-700 dark:border-emerald-900/60 dark:text-stone-300">
-        <p>La solicitud queda pendiente de revisión manual por parte del comité organizador.</p>
+        <p>
+          La solicitud queda pendiente de revisión manual por parte del comité
+          organizador.
+        </p>
         <p>
           {`Opcion contratada: ${result.commercial.label}. Total esperado: ${new Intl.NumberFormat(
             "es-AR",
@@ -49,7 +52,9 @@ export function CommercialSubmissionSuccessBlock({
         </p>
         <p>
           {`Modalidad: ${
-            result.paymentPlanType === "TWO_INSTALLMENTS" ? "2 cuotas" : "1 pago"
+            result.paymentPlanType === "TWO_INSTALLMENTS"
+              ? "2 cuotas"
+              : "1 pago"
           }.`}
         </p>
         {result.commercial.kind === "STAND" ? (
@@ -66,11 +71,17 @@ export function CommercialSubmissionSuccessBlock({
         {result.paymentPlanType === "TWO_INSTALLMENTS" ? (
           <>
             <p>
-              {`Importe informado en esta carga: ${new Intl.NumberFormat("es-AR", {
-                style: "currency",
-                currency: "ARS",
-                maximumFractionDigits: 0,
-              }).format(result.installmentAmountExpected ?? result.commercial.totalAmountExpected / 2)}.`}
+              {`Importe informado en esta carga: ${new Intl.NumberFormat(
+                "es-AR",
+                {
+                  style: "currency",
+                  currency: "ARS",
+                  maximumFractionDigits: 0,
+                },
+              ).format(
+                result.installmentAmountExpected ??
+                  result.commercial.totalAmountExpected / 2,
+              )}.`}
             </p>
             {result.secondInstallmentDueAt ? (
               <p>{`Fecha límite para informar la cuota 2: ${formatAdminDate(
