@@ -11,8 +11,8 @@ type WarmupSessionState = {
 
 let backendWarmupPromise: Promise<void> | null = null;
 
-function getPingUrl() {
-  return `${env.apiBaseUrl.replace(/\/+$/, "")}/ping`;
+function getDbPingUrl() {
+  return `${env.apiBaseUrl.replace(/\/+$/, "")}/db-ping`;
 }
 
 function canUseSessionStorage() {
@@ -82,7 +82,7 @@ export function warmupBackend() {
     }, BACKEND_WARMUP_TIMEOUT_MS);
 
     try {
-      await fetch(getPingUrl(), {
+      await fetch(getDbPingUrl(), {
         method: "GET",
         signal: controller.signal,
         headers: {
