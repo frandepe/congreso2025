@@ -76,6 +76,7 @@ export function Footer({
               <PoliticasDePrivacidad />
             </ul>
           </div>
+
           <div className="mt-6 text-sm leading-6 text-muted-foreground whitespace-nowrap lg:mt-0 lg:row-[1/3] lg:col-[1/4]">
             <div>{copyright.text}</div>
             {copyright.license && (
@@ -90,6 +91,7 @@ export function Footer({
                 </a>
               </div>
             )}
+            <p>v1.0.0</p>
           </div>
         </div>
       </div>

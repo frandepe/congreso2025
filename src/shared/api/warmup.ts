@@ -1,8 +1,8 @@
 import { env } from "@/shared/config/env";
 
-const BACKEND_WARMUP_STORAGE_KEY = "backend-warmup:v1";
+const BACKEND_WARMUP_STORAGE_KEY = "backend-warmup:db-ping:v1";
 const BACKEND_WARMUP_ERROR_COOLDOWN_MS = 5 * 60 * 1000;
-const BACKEND_WARMUP_TIMEOUT_MS = 8000;
+const BACKEND_WARMUP_TIMEOUT_MS = 40000;
 
 type WarmupSessionState = {
   status: "success" | "error";
@@ -16,7 +16,15 @@ function getDbPingUrl() {
 }
 
 function canUseSessionStorage() {
-  return typeof window !== "undefined" && typeof window.sessionStorage !== "undefined";
+  if (typeof window === "undefined") {
+    return false;
+  }
+
+  try {
+    return typeof window.sessionStorage !== "undefined";
+  } catch {
+    return false;
+  }
 }
 
 function readWarmupSessionState(): WarmupSessionState | null {
@@ -82,13 +90,17 @@ export function warmupBackend() {
     }, BACKEND_WARMUP_TIMEOUT_MS);
 
     try {
-      await fetch(getDbPingUrl(), {
+      const response = await fetch(getDbPingUrl(), {
         method: "GET",
         signal: controller.signal,
         headers: {
           Accept: "application/json",
         },
       });
+
+      if (!response.ok) {
+        throw new Error("Backend warmup failed");
+      }
 
       writeWarmupSessionState({
         status: "success",
