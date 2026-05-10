@@ -1,13 +1,10 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Radio, X } from "lucide-react";
-import { useNavigate } from "react-router-dom";
-import ReactGA from "react-ga4";
+import { X } from "lucide-react";
 
 export function AnimatedModalVideo() {
   const [open, setOpen] = useState(false);
-  const navigate = useNavigate();
 
   // const handleNavigate = () => {
   //   navigate("/vivo-2025");
@@ -17,12 +14,6 @@ export function AnimatedModalVideo() {
   //   }, 100);
   // };
   const handleNavigate = () => {
-    ReactGA.event({
-      category: "CTA",
-      action: "click_preinscripcion",
-      label: "Hero Section",
-      value: 1,
-    });
     // ReactGA.gtag("event", "click_preinscripcion", {
     //   category: "CTA",
     //   label: "Hero Section",

@@ -47,7 +47,7 @@ export const Inscripcion = () => {
             transition={{ duration: 0.3 }}
           >
             <Calendar className="h-12 w-12 text-blue-600" />
-            <h3 className="mt-2 text-lg font-semibold">9 - 11 de Octubre</h3>
+            <h3 className="mt-2 text-lg font-semibold">2 - 3 - 4 de Octubre</h3>
             <p className="text-gray-600">
               Tres días de formación intensiva con expertos en la materia.
             </p>
@@ -74,8 +74,7 @@ export const Inscripcion = () => {
               Solo 70 lugares disponibles.
             </h3>
             <p className="text-gray-600">
-              Asegurá tu lugar con alojamiento en nuestros "Dormis
-              Municipales"!
+              Asegurá tu lugar con alojamiento en nuestros "Dormis Municipales"!
             </p>
           </motion.div>
         </div>

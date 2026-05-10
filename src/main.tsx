@@ -8,6 +8,9 @@ import { env } from "@/shared/config/env";
 
 if (env.gaMeasurementId) {
   ReactGA.initialize(env.gaMeasurementId, {
+    gtagOptions: {
+      send_page_view: false,
+    },
     testMode: import.meta.env.DEV,
   });
 }
