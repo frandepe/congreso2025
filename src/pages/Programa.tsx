@@ -1,5 +1,4 @@
 import { AnimatedTooltipPreview } from "@/components/AnimatedTooltipPreview/AnimatedTooltipPreview";
-import ComingSoonOverlay from "@/components/ComingSoonOverlay/ComingSoonOverlay";
 import { SpeakersTimeline } from "@/components/SpeakersTimeline/SpeakersTimeline";
 import { Button } from "@/components/ui/button";
 import { MoveRight } from "lucide-react";
@@ -10,7 +9,6 @@ export const Programa = () => {
   const navigate = useNavigate();
   return (
     <div className="dark:bg-background">
-      <ComingSoonOverlay />
       <SpeakersTimeline />
       <div className="flex justify-center">
         <div className="flex flex-col items-center max-w-max">
@@ -18,7 +16,9 @@ export const Programa = () => {
           <AnimatedTooltipPreview />
           <Button
             className="gap-4"
-            onClick={() => navigate("/expositores#top")}
+            onClick={() =>
+              navigate("/expositores#top", { state: { scrollToTop: true } })
+            }
             aria-label="Ver todos los expositores"
           >
             Ver todos <MoveRight className="w-4 h-4" />

@@ -15,13 +15,14 @@ const patrocinadores = [
   },
   { id: 4, img: "/assets/patrocinadores/argentinareanima.png", title: "Patro" },
   { id: 5, img: "/assets/patrocinadores/nexo-tecnologico.png", title: "Patro" },
-  { id: 6, img: "/assets/patrocinadores/lecsy.png", title: "Patro" },
-  { id: 7, img: "/assets/patrocinadores/driplan.png", title: "Patro" },
-  { id: 8, img: "/assets/patrocinadores/aces.png", title: "Patro" },
-  { id: 9, img: "/assets/patrocinadores/cafe-bar.png", title: "Patro" },
-  { id: 10, img: "/assets/patrocinadores/lex.png", title: "Patro" },
-  { id: 11, img: "/assets/patrocinadores/la-pataca.png", title: "Patro" },
-  { id: 12, img: "/assets/patrocinadores/cardiosistemas.png", title: "Patro" },
+  { id: 6, img: "/assets/patrocinadores/logoVitalica.png", title: "Patro" },
+  // { id: 6, img: "/assets/patrocinadores/lecsy.png", title: "Patro" },
+  // { id: 7, img: "/assets/patrocinadores/driplan.png", title: "Patro" },
+  // { id: 8, img: "/assets/patrocinadores/aces.png", title: "Patro" },
+  // { id: 9, img: "/assets/patrocinadores/cafe-bar.png", title: "Patro" },
+  // { id: 10, img: "/assets/patrocinadores/lex.png", title: "Patro" },
+  // { id: 11, img: "/assets/patrocinadores/la-pataca.png", title: "Patro" },
+  // { id: 12, img: "/assets/patrocinadores/cardiosistemas.png", title: "Patro" },
 ];
 
 const SliderPatrocinadores = () => {
@@ -30,7 +31,7 @@ const SliderPatrocinadores = () => {
       <MarqueeFade side="left" />
       <MarqueeFade side="right" />
       <MarqueeContent>
-        {patrocinadores.map((p, index) => (
+        {patrocinadores.map((p) => (
           <MarqueeItem
             key={p.id}
             className="w-32 h-32 flex items-center justify-center gap-4 mx-4"

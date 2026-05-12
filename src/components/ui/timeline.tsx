@@ -1,13 +1,8 @@
 "use client";
-import {
-  useMotionValueEvent,
-  useScroll,
-  useTransform,
-  motion,
-} from "framer-motion";
+import { useScroll, useTransform, motion } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
 import { Button } from "./button";
-import { Download, HeartPulse, Plus } from "lucide-react";
+import { Download, HeartPulse } from "lucide-react";
 
 interface TimelineEntry {
   title: string;
@@ -38,16 +33,16 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
     <div className="w-full font-sans md:px-10" ref={containerRef}>
       <div className="max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-10">
         <h2 className="text-lg md:text-4xl mb-4 text-black dark:text-white flex gap-2 items-center">
-          <HeartPulse className="text-primary" /> Primer congreso nacional de
+          <HeartPulse className="text-primary" /> Segundo congreso nacional de
           instructores de RCP
         </h2>
         <p className="text-neutral-700 dark:text-neutral-300 text-sm md:text-base max-w-sm">
-          15, 16 y 17 de octubre de 2025
+          2, 3 y 4 de octubre de 2026
         </p>
 
         {/* Enlace para descarga */}
         <a
-          href="/assets/Primer-congreso-nacional-de-instructores-de-RCP.pdf"
+          href="/assets/Segundo-congreso-nacional-de-instructores-de-RCP.pdf"
           download
         >
           <Button className="mt-4">

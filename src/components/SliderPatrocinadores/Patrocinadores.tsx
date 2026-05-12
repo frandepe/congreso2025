@@ -20,10 +20,10 @@ function NexoTecnologico() {
     />
   );
 }
-function Cardiosistemas() {
+function Vitalica() {
   return (
     <img
-      src={"/assets/patrocinadores/cardiosistemas.png"}
+      src={"/assets/patrocinadores/logoVitalica.png"}
       width={100}
       height={100}
     />
@@ -50,7 +50,7 @@ const allLogos = [
   { name: "TL", id: 2, img: TL },
   { name: "NexoTecnologico", id: 3, img: NexoTecnologico },
   { name: "NDcapacitaciones", id: 4, img: NDcapacitaciones },
-  { name: "Cardiosistemas", id: 5, img: Cardiosistemas },
+  { name: "Vitalica", id: 5, img: Vitalica },
 ];
 
 export function PatrocinadoresComponent() {
