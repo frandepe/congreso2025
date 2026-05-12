@@ -10,11 +10,14 @@ import { useNavigate } from "react-router-dom";
 import { AnimatedFeatureSpotlight } from "@/components/Banners/PromoCardio";
 import { TextImage2025 } from "@/components/TextImage2025/TextImage2025";
 import Countdown2026 from "@/components/Countdown/Countdown2026";
-import { Testimonials2026 } from "@/components/Testimonials/Testimonials2026";
+// import { Testimonials2026 } from "@/components/Testimonials/Testimonials2026";
 import { TextProgressiveBlur } from "@/components/TextProgressiveBlur/TextProgressiveBlur";
 import { GA4Notice } from "@/components/Toasts/GA4Notice";
+import { Agradecimientos } from "@/components/Agradecimientos/Agradecimientos";
+import { DescImgs } from "@/components/DescImgs/DescImgs";
+// import AudioPlayer from "@/components/ui/audio-player";
 
-const demoData: any = {
+const demoData = {
   title: "Congreso nacional de RCP 2025",
   description:
     "Si te lo perdiste o querés volver a disfrutarlo, acá podés revivir cada momento del Congreso Nacional de Instructores de RCP 2025. Las charlas, los debates, las experiencias… todo está disponible para vos",
@@ -206,7 +209,9 @@ export const Home = () => {
       {/* <div className="my-20">
         <LiveVideo />
       </div> */}
-      <div className="flex items-center justify-center w-full bg-muted pt-40 pb-24">
+      <DescImgs />
+
+      <div className="flex items-center justify-center w-full bg-muted pt-24 pb-24">
         <AnimatedFeatureSpotlight
           // preheaderIcon={<HeartHandshake className="h-4 w-4" />}
           // preheaderText="Instructor de Argentina Reanima"
@@ -226,10 +231,14 @@ export const Home = () => {
           imageAlt="Sergio, instructor de RCP con pechera blanca de Argentina Reanima, demostrando maniobra de desobstrucción de vías aéreas en un muñeco de bebé durante un curso de primeros auxilios."
         />
       </div>
-      <section className="px-10 mx-auto bg-gray-200 dark:bg-black/60">
-        {/* <section className="max-w-4xl px-10 mx-auto mt-32"> */}
-        <TextImage2025 {...demoData} />
-      </section>
+      <div>
+        <Agradecimientos
+          primaryColor="sky-500"
+          progressGradientLight="bg-gradient-to-r from-secondary/70 to-secondary"
+          progressGradientDark="bg-gradient-to-r from-secondary/70 to-secondary"
+          features={features}
+        />
+      </div>
       {/* <div className="flex items-center justify-center w-full bg-muted py-20">
         <AnimatedFeatureSpotlight
           preheaderIcon={<Activity className="h-4 w-4" />}
@@ -251,10 +260,9 @@ export const Home = () => {
           imageAlt="Cardiosistemas tiene como propósito proveer productos"
         />
       </div> */}
-      <Testimonials2026 />
-      {/* <DescImgs />
+      {/* <Testimonials2026 /> */}
 
-      <section className="relative md:h-[400px] h-[450px] flex items-center justify-center mb-10 md:mb-40">
+      {/* <section className="relative md:h-[400px] h-[450px] flex items-center justify-center mb-10 md:mb-40">
         <div className="absolute inset-0">
           <div
             className="absolute inset-0 bg-[url('/assets/radio1.jpg')] bg-cover"
@@ -274,16 +282,10 @@ export const Home = () => {
         </motion.div>
       </section> */}
 
-      {/* <div>
-        <Agradecimientos
-          primaryColor="sky-500"
-          progressGradientLight="bg-gradient-to-r from-secondary/70 to-secondary"
-          progressGradientDark="bg-gradient-to-r from-secondary/70 to-secondary"
-          features={features}
-        />
-      </div> */}
-
-      <div className="relative w-full overflow-hidden rounded-lg">
+      <section className="px-10 mx-auto bg-gray-200 dark:bg-black/60">
+        <TextImage2025 {...demoData} />
+      </section>
+      <div className="relative w-full overflow-hidden rounded-lg mt-24">
         <h3
           className="text-center font-bold text-primary cursor-pointer hover:text-secondary transition-all flex justify-center items-center"
           onClick={() => navigate("/sobre-nosotros")}

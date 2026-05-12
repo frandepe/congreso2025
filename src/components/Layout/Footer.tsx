@@ -91,7 +91,7 @@ export function Footer({
                 </a>
               </div>
             )}
-            <p>v1.0.1</p>
+            <p className="text-xs">v1.1.2</p>
           </div>
         </div>
       </div>

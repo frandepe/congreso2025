@@ -1,5 +1,4 @@
 import {
-  Twitter,
   Facebook,
   Instagram,
   Heart,
@@ -47,7 +46,7 @@ function MainFooter() {
           { href: "/contacto", label: "Contacto" },
         ]}
         copyright={{
-          text: "© 2025 Todos los derechos reservados.",
+          text: "© 2026 Todos los derechos reservados.",
           license: "Diseñado y desarrollado por - ",
         }}
       />

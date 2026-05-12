@@ -1,4 +1,4 @@
-import { Calendar, MicVocal, MoveRight } from "lucide-react";
+import { Calendar, MoveRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "./badge";
 import { useNavigate } from "react-router-dom";
@@ -19,14 +19,17 @@ function HeroWithGroupImages() {
                 RCP
               </h1>
               <p className="text-lg leading-relaxed tracking-tight text-muted-foreground max-w-md text-left">
-                El Primer Congreso Nacional de RCP es mucho más que un evento;
-                es una oportunidad para transformar tu enfoque como instructor.
-                Con charlas, talleres y simulaciones, este congreso te brindará
-                nuevas herramientas para perfeccionar tus enseñanzas y crear un
-                mayor impacto en las personas que forman. Si quieres estar a la
-                vanguardia de la formación en emergencias, no puedes faltar. ¡Te
-                esperamos para aprender, compartir y seguir salvando vidas
-                juntos!
+                El Segundo Congreso Nacional de Instructores de RCP no es solo
+                un evento: es un espacio para actualizarte, conectar con
+                referentes nacionales e internacionales y llevar tus
+                capacitaciones al siguiente nivel. Vas a vivir exposiciones de
+                alto nivel, experiencias reales, networking profesional y nuevas
+                herramientas para fortalecer tu rol como instructor, generar
+                mayor impacto en tu comunidad y seguir profesionalizando la
+                enseñanza de la RCP y los primeros auxilios. Si buscás crecer,
+                conectar con otros instructores y mantenerte a la vanguardia de
+                la formación en emergencias, este congreso es para vos. Nos
+                vemos para aprender, compartir y seguir salvando vidas juntos.
               </p>
             </div>
             <div className="flex flex-row gap-4">
@@ -66,7 +69,7 @@ function HeroWithGroupImages() {
             />
             <img
               className="bg-muted rounded-md aspect-square object-cover brightness-75"
-              src="/assets/lugar-verde.png"
+              src="/assets/lugar-verde.jpg"
             />
           </div>
         </div>

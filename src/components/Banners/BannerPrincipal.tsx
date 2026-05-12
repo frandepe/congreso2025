@@ -25,7 +25,7 @@ export default function BannerPrincipal() {
 
         {/* <Button
           onClick={() =>
-            window.open("https://forms.gle/JS16Ez9W5EaRyiBx5", "_blank")
+            navigate("/inscripcion")
           }
           className="mt-6 mr-6"
           disabled

@@ -6,23 +6,24 @@ import {
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { CircleCheckBig } from "lucide-react";
+// import { CircleCheckBig } from "lucide-react";
 
 const faqItems = [
   {
     id: "faq-1",
     question: "¿Cuándo y dónde se realizará el Congreso Nacional de RCP?",
     answer:
-      "El congreso se llevará a cabo del 09 al 11 de octubre de 2026 en Trenque Lauquen, Provincia de Buenos Aires, Argentina.",
+      "El congreso se llevará a cabo el 2, 3 y 4 de octubre de 2026 en el Polideportívo de Trenque Lauquen, Provincia de Buenos Aires, Argentina.",
   },
   {
     id: "faq-2",
     question: "¿Cómo me inscribo?",
     answer: (
       <>
-        Puedes completar la preinscripción haciendo{" "}
+        Puedes completar la inscripción directamente desde la we haciendo{" "}
         <a
           className="text-primary underline"
-          href="https://forms.gle/cSgo6Tni4ZuzUZVc7"
+          // href="/inscripcion/participantes"
           target="_blank"
         >
           clic aquí
@@ -58,48 +59,70 @@ const faqItems = [
   {
     id: "faq-3",
     question: "¿Qué incluye la inscripción?",
-    answer: "Esta información estará disponible próximamente.",
-    // answer: (
-    //   <>
-    //     Tu inscripción incluye:
-    //     <ul className="list-disc pl-5 mt-2">
-    //       <li className="flex gap-2 items-center">
-    //         <CircleCheckBig color="green" size={18} /> Acceso a todas las
-    //         conferencias y talleres del congreso.
-    //       </li>
-    //       <li className="flex gap-2 items-center">
-    //         <CircleCheckBig color="green" size={18} /> Materiales del evento
-    //         (programa, credencial, etc.).
-    //       </li>
-    //       <li className="flex gap-2 items-center">
-    //         <CircleCheckBig color="green" size={18} /> Desayuno y refrigerios en
-    //         cada break.
-    //       </li>
-    //       <li className="flex gap-2 items-center">
-    //         <CircleCheckBig color="green" size={18} /> Certificado de
-    //         participación.
-    //       </li>
-    //       <li className="flex gap-2">
-    //         <CircleCheckBig color="orange" className="mt-1" size={20} />
-    //         Para quienes eligen la opción con alojamiento, incluye 4 noches en
-    //         dormis compartidos.
-    //       </li>
-    //     </ul>
-    //   </>
-    // ),
+    answer: (
+      <>
+        Tu inscripción incluye:
+        <ul className="list-disc pl-5 mt-2">
+          <li className="flex gap-2 items-center">
+            <CircleCheckBig color="green" size={18} /> Acceso a todas las
+            conferencias y talleres del congreso.
+          </li>
+          <li className="flex gap-2 items-center">
+            <CircleCheckBig color="green" size={18} /> Materiales del evento
+            (programa, credencial, etc.).
+          </li>
+          <li className="flex gap-2 items-center">
+            <CircleCheckBig color="green" size={18} /> Desayuno y refrigerios en
+            cada break.
+          </li>
+          <li className="flex gap-2 items-center">
+            <CircleCheckBig color="green" size={18} /> Certificado de
+            participación.
+          </li>
+          <li className="flex gap-2">
+            <CircleCheckBig color="orange" className="mt-1" size={20} />
+            Para quienes eligen la opción con alojamiento, incluye 4 noches en
+            dormis compartidos.
+          </li>
+        </ul>
+      </>
+    ),
   },
   {
     id: "faq-4",
     question: "¿Cuántos cupos hay disponibles?",
-    // answer:
-    //   "Los cupos son limitados para garantizar una mejor experiencia para todos los asistentes.",
-    answer: "Esta información estará disponible próximamente.",
+    answer:
+      "Los cupos son limitados para garantizar una mejor experiencia para todos los asistentes.",
   },
   {
     id: "faq-5",
     question: "¿Cómo puedo ser patrocinador o auspiciante del congreso?",
-    answer:
-      "Si quieres apoyar el evento, completa el formulario en nuestra web y te enviaremos los requisitos detallados.",
+    answer: (
+      <div className="space-y-3 text-muted-foreground">
+        <p>
+          Si representás a una empresa, institución o marca y querés acompañar
+          el congreso, contamos con espacios para exposición comercial y
+          propuestas de publicidad institucional. Haz click en los siguientes
+          enlaces para conocer las opciones disponibles:
+        </p>
+
+        <div className="flex flex-col gap-2 text-sm sm:flex-row sm:gap-6">
+          <a
+            // href="/inscripcion/expositores"
+            className="inline-flex w-fit items-center border-b border-transparent text-foreground transition-colors hover:border-foreground/30"
+          >
+            Participar como expositor
+          </a>
+
+          <a
+            // href="/inscripcion/publicidad"
+            className="inline-flex w-fit items-center border-b border-transparent text-foreground transition-colors hover:border-foreground/30"
+          >
+            Opciones de publicidad y auspicio
+          </a>
+        </div>
+      </div>
+    ),
   },
   {
     id: "faq-6",

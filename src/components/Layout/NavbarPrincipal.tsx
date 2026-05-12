@@ -6,6 +6,7 @@ import {
   Menu,
   MicVocal,
   Radio,
+  Youtube,
 } from "lucide-react";
 import {
   Accordion,
@@ -167,14 +168,14 @@ const NavbarPrincipal = ({
         },
         {
           title: "Congreso 2025 en vivo",
-          description: "Sigue las charlas y entrevistas en tiempo real",
-          icon: <Radio className="size-5 shrink-0 text-red-500" />,
+          description: "Reviví las charlas y entrevistas del 2025",
+          icon: <Radio className="size-5 shrink-0" />,
           url: "/vivo-2025",
         },
         {
-          title: "Charlas y entrevistas",
-          description: "Con instructores y referentes del Congreso",
-          icon: <Radio className="size-5 shrink-0" />,
+          title: "Charlas pre congreso",
+          description: "Con instructores y referentes",
+          icon: <Youtube className="size-5 shrink-0" />,
           url: "/videos",
         },
         {
