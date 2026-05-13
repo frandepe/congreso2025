@@ -20,7 +20,7 @@ const faqItems = [
     question: "¿Cómo me inscribo?",
     answer: (
       <>
-        Puedes completar la inscripción directamente desde la we haciendo{" "}
+        Puedes completar la inscripción haciendo{" "}
         <a
           className="text-primary underline"
           // href="/inscripcion/participantes"

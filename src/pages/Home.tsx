@@ -1,10 +1,10 @@
 import BannerPrincipal from "@/components/Banners/BannerPrincipal";
 import { Comite } from "@/components/Comite/Comite";
 
-import { ArrowRightFromLine, Projector, Sandwich, X } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
-import React, { useEffect, useState } from "react";
-import { Button } from "@/components/ui/button";
+import { ArrowRightFromLine, Projector, Sandwich } from "lucide-react";
+// import { motion, AnimatePresence } from "framer-motion";
+import React from "react";
+// import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 // import LiveVideo from "@/components/Videos/Vivo";
 import { AnimatedFeatureSpotlight } from "@/components/Banners/PromoCardio";
@@ -101,8 +101,8 @@ const features = [
 ];
 
 export const Home = () => {
-  const [openModal, setOpenModal] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
+  // const [openModal, setOpenModal] = useState(false);
+  // const [isMobile, setIsMobile] = useState(false);
   const navigate = useNavigate();
 
   // const handleNavigate = () => {
@@ -114,24 +114,24 @@ export const Home = () => {
   // };
 
   // Detectar si es mobile
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768); // < md en Tailwind
-    };
+  // useEffect(() => {
+  //   const checkMobile = () => {
+  //     setIsMobile(window.innerWidth < 768); // < md en Tailwind
+  //   };
 
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
+  //   checkMobile();
+  //   window.addEventListener("resize", checkMobile);
 
-    return () => window.removeEventListener("resize", checkMobile);
-  }, []);
+  //   return () => window.removeEventListener("resize", checkMobile);
+  // }, []);
 
   // Abrir modal luego de 3s SOLO si es mobile
-  useEffect(() => {
-    if (isMobile) {
-      const timer = setTimeout(() => setOpenModal(true), 3000);
-      return () => clearTimeout(timer);
-    }
-  }, [isMobile]);
+  // useEffect(() => {
+  //   if (isMobile) {
+  //     const timer = setTimeout(() => setOpenModal(true), 3000);
+  //     return () => clearTimeout(timer);
+  //   }
+  // }, [isMobile]);
 
   const testimonials = [
     {
@@ -154,7 +154,7 @@ export const Home = () => {
   return (
     <div className="relative dark:bg-background">
       {/* Modal solo en mobile */}
-      <AnimatePresence>
+      {/* <AnimatePresence>
         {openModal && isMobile && (
           <motion.div
             className="fixed inset-0 flex items-center justify-center bg-black/60 z-50"
@@ -197,7 +197,7 @@ export const Home = () => {
             </motion.div>
           </motion.div>
         )}
-      </AnimatePresence>
+      </AnimatePresence> */}
 
       {/* Resto de la página */}
       <div className="relative">

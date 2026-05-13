@@ -8,12 +8,12 @@ const people = [
     designation: "CEO en Marta Iriarte Consultoría Laboral",
     image: "/assets/speakers/cara/marta-iriarte.jpg",
   },
-  {
-    id: 2,
-    name: "Nicolas De Paulo",
-    designation: "Instrucor de primeros auxilios",
-    image: "/assets/speakers/cara/nicolas-de-paulo.jpg",
-  },
+  // {
+  //   id: 2,
+  //   name: "Nicolas De Paulo",
+  //   designation: "Instrucor de primeros auxilios",
+  //   image: "/assets/speakers/cara/nicolas-de-paulo.jpg",
+  // },
   {
     id: 3,
     name: "Grupo Inemer",

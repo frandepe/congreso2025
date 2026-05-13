@@ -1,8 +1,10 @@
 import { Calendar, MapPin } from "lucide-react";
+
 import { Button } from "../ui/button";
-import { AnimatedModalVideo } from "../AnimatedModal/AnimatedModalVideo";
-// https://forms.gle/JS16Ez9W5EaRyiBx5
+import { useNavigate } from "react-router-dom";
+
 export default function BannerPrincipal() {
+  const navigate = useNavigate();
   return (
     <div
       className="relative h-screen w-full bg-cover bg-center md:bg-center flex items-center justify-center text-white text-center"
@@ -23,24 +25,13 @@ export default function BannerPrincipal() {
           Segundo congreso nacional de instructores de RCP
         </h1>
 
-        {/* <Button
-          onClick={() =>
-            navigate("/inscripcion")
-          }
+        <Button
+          onClick={() => navigate("/inscripcion")}
           className="mt-6 mr-6"
           disabled
         >
-          Inscribirme
-        </Button> */}
-        <Button
-          onClick={() =>
-            window.open("https://forms.gle/JS16Ez9W5EaRyiBx5", "_blank")
-          }
-          className="mt-6 mr-6"
-        >
-          Contanos tu experiencia
+          Inscribirme ¡Falta poco!
         </Button>
-        <AnimatedModalVideo />
       </div>
     </div>
   );

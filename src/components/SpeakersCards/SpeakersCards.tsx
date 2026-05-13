@@ -29,7 +29,7 @@ export function SpeakersCards() {
       src: "/assets/speakers/guillermo-sandrone.jpg",
       subtitle: "Abogado",
       description:
-        "Trabajé varios años en diversos sectores de administración de justicia penal. También fui docente y asistente en instituciones de enseñanza superior. Participé de distintos proyectos de investigación. Redacté y colaboré en publicaciones jurídicas.",
+        "Disertará sobre la perspectiva jurídico-legal de los primeros auxilios. Guillermo es abogado diplomado por la Universidad Nacional de Córdoba y posee una maestría en Derecho Penal de la Universidad Torcuato Di Tella. Trabajó varios años en diversos sectores de administración de justicia penal y en el Ministerio Público Fiscal, desempeñándose actualmente como profesional independiente. También ejerció la docencia y asistencia en instituciones de enseñanza superior, incluyendo el Instituto Superior de Seguridad Pública, y en espacios de educación no formal como el Batallón de Exploradores de Río III. Participó de distintos proyectos de investigación y colaboró en publicaciones jurídicas.",
     },
     {
       title: "Martín Labarrieta",
@@ -113,61 +113,26 @@ export function SpeakersCards() {
       subtitle: "Emprendedor en el ámbito de las emergencias",
       description: (
         <>
-          Profesor de filosofía (Profesorado Domingo Savio, Córdoba) y Bachiller
-          en Teología en el Instituto Salesiano de Enseñanza Teológica de Buenos
-          Aires.
+          Docente y coordinador académico especializado en formación de
+          instructores en Primeros Auxilios, RCP y DEA, con más de 20 años de
+          experiencia en capacitación, diseño pedagógico y conducción de
+          programas de formación vinculados a la respuesta ante emergencias.
           <br />
-          <br />
-          Se desempeñó como docente y directivo en escuelas de nivel medio, y
-          tiene experiencia en educación no formal, así como en docencia en
-          nivel terciario.
-          <br />
-          <br />
-          Es instructor matriculado de RCP y Primeros Auxilios del Ministerio de
-          Salud de la Provincia de Buenos Aires. Es instructor nivel 3 del
-          Health and Safety Institute (ASHI): instructor de primeros auxilios
-          básicos, avanzados y agrestes (WFA), soporte vital básico, control
-          avanzado de hemorragias y administración de oxígeno.
-          <br />
-          <br />
-          También es instructor de Primeros Auxilios, RCP y DAE, y de Soporte
-          Vital Básico certificado por el Emergency Care & Safety Institute
-          (ECSI). Además, es instructor de Stop The Bleed certificado por el
-          American College of Surgeons e instructor de Primeros Auxilios y RCP
-          acreditado por la Universidad Nacional de Tres de Febrero.
-          <br />
-          <br />
-          Técnico en Emergencias Médicas (TEM). Cuenta con formación en
-          socorrismo para ambientes naturales (WFR), soporte vital para
-          profesionales de la salud (BLS), soporte vital cardiovascular
-          avanzado, soporte vital en el trauma prehospitalario (PHTLS), primeros
-          auxilios emocionales y psicológicos (nivel 2), atención en áreas
-          hostiles y manejo de incidentes con múltiples víctimas.
-          <br />
-          <br />
-          Su formación se completa con capacitaciones en rescate en altura
-          (urbano y agreste), rescate acuático y en aguas blancas (SRT),
-          operaciones con materiales peligrosos, supervivencia, uso de
-          extintores, prevención de incendios y evacuación de edificios.
-          <br />
-          <br />
-          Como voluntario de Cruz Roja Argentina, participó en numerosos
-          operativos de prevención y socorro en eventos públicos y privados,
-          colaborando también en formación en primeros auxilios y simulacros.
-          <br />
-          <br />
-          Impartió cursos y certificó bajo lineamientos de programas
-          internacionales de ASHI, ECSI, Stop The Bleed y AIDER. Fue responsable
-          del diseño y coordinación del “Ciclo de Actualización Académica en
-          Prevención de Accidentes y Actuación en Emergencias en el Ámbito
-          Educativo Formal” del Instituto del Profesorado Don Bosco (A-1005).
-          <br />
-          <br />
-          También diseñó el Programa de formación de Primeros Auxilios para
-          Animadores Salesianos (PAAS), dedicándose durante más de 15 años a la
-          formación de instructores. Además, escribió y editó manuales, guías de
-          clase, presentaciones y programas para uso interno de la institución
-          salesiana.
+          Desarrolla su actividad en el ámbito de la educación superior y la
+          formación institucional, con especial dedicación a la preparación de
+          instructores capaces de replicar estándares de enseñanza basados en
+          evidencia científica y criterios pedagógicos actualizados. <br />
+          Actualmente coordina propuestas académicas y programas de formación de
+          instructores en el marco del Programa PAAS (Programa de Primeros
+          Auxilios para Animadores Salesianos), tanto en espacios internos de
+          formación institucional como en la Diplomatura Universitaria en
+          Instrucción de Primeros Auxilios, RCP y DEA de la Universidad
+          Salesiana, articulando enfoques educativos, simulación práctica y
+          estrategias de intervención comunitaria.
+          <br /> Su trabajo se centra en la profesionalización de la enseñanza
+          de los primeros auxilios, la formación de multiplicadores y la
+          construcción de modelos pedagógicos aplicados a contextos reales de
+          emergencia
         </>
       ),
     },
