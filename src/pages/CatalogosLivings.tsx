@@ -18,7 +18,8 @@ const WHATSAPP_URL =
 const livingLines = [
   {
     name: "Línea Madera",
-    price: "$40.000",
+    // price: "$40.000",
+    price: "$100.000",
     availability: "4",
     capacity: "10 personas",
     images: [
@@ -35,7 +36,8 @@ const livingLines = [
   },
   {
     name: "Línea Hierro",
-    price: "$55.000",
+    price: "$120.000",
+    // price: "$55.000",
     availability: "3",
     capacity: "7 personas",
     images: [
@@ -53,7 +55,8 @@ const livingLines = [
   },
   {
     name: "Línea Cubo",
-    price: "$57.000",
+    price: "$120.000",
+    // price: "$57.000",
     availability: "2",
     capacity: "10 personas",
     images: [
@@ -71,7 +74,8 @@ const livingLines = [
   },
   {
     name: "Línea Gervasoni",
-    price: "$72.000",
+    price: "$150.000",
+    // price: "$72.000",
     availability: "2",
     capacity: "8/9 personas",
     images: [
@@ -89,7 +93,8 @@ const livingLines = [
   },
   {
     name: "Línea Caña",
-    price: "$49.000",
+    price: "$120.000",
+    // price: "$49.000",
     availability: "3",
     capacity: "7/8 personas",
     images: [
@@ -107,7 +112,8 @@ const livingLines = [
   },
   {
     name: "Línea Barras",
-    price: "$42.000",
+    price: "$100.000",
+    // price: "$42.000",
     availability: "4 barras",
     capacity: null,
     images: [
@@ -121,22 +127,22 @@ const livingLines = [
     ],
     accent: "bg-slate-700",
   },
-  {
-    name: "Línea Mesas",
-    price: "$20.000 mesa / $2.500 silla",
-    availability: "6 mesas / 170 sillas",
-    capacity: null,
-    images: [
-      "/livings/linea-mesas1.jpg",
-      "/livings/linea-mesas2.jpg",
-      "/livings/linea-mesas3.jpg",
-    ],
-    items: [
-      "1 mesa de campo desnuda de madera",
-      "10/12 sillas tijera blancas apilables",
-    ],
-    accent: "bg-rose-800",
-  },
+  // {
+  //   name: "Línea Mesas",
+  //   price: "$20.000 mesa / $2.500 silla",
+  //   availability: "6 mesas / 170 sillas",
+  //   capacity: null,
+  //   images: [
+  //     "/livings/linea-mesas1.jpg",
+  //     "/livings/linea-mesas2.jpg",
+  //     "/livings/linea-mesas3.jpg",
+  //   ],
+  //   items: [
+  //     "1 mesa de campo desnuda de madera",
+  //     "10/12 sillas tijera blancas apilables",
+  //   ],
+  //   accent: "bg-rose-800",
+  // },
 ];
 
 type LivingLine = (typeof livingLines)[number];
