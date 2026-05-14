@@ -96,7 +96,7 @@ const features = [
     title: "Food truck Los Cuscus",
     description:
       "La mejor calidad y servicio en comida rápida la tenemos con nosotros",
-    image: "/assets/foot-truck2.jpg",
+    image: "/assets/foot-truck.jpg",
   },
 ];
 

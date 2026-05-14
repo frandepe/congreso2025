@@ -158,13 +158,13 @@ export function SpeakersTimeline() {
               cardioprotegidas
             </strong>
             <br />
-            Disertante: Martín Labarrieta.
+            Disertantes: Martín Labarrieta y Julio Godoy.
             <br />
             Exposición + preguntas.
           </p>
 
           <p className={itemClass}>
-            <strong>18:30 – 20:00 | Networking y visita a stands</strong>
+            <strong>18:30 - 20:00 | Networking y visita a stands</strong>
           </p>
 
           <p className={itemClass}>
@@ -194,10 +194,10 @@ export function SpeakersTimeline() {
 
           <p className={itemClass}>
             <strong>
-              10:00 – 11:30 | Capacitaciones con la referencia de la ERC
+              10:00 - 11:30 | Capacitaciones con la referencia de la ERC
             </strong>
             <br />
-            Disertantes internacionales (España).
+            Disertante: Meritxell Ros (España)
             <br />
             Exposición + preguntas.
           </p>

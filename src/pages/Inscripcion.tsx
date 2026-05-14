@@ -11,6 +11,7 @@ import {
   Mic,
 } from "lucide-react";
 import { PricingCardDemo } from "@/components/PricingCard/PricingCard";
+import { AnimatedModalDemo } from "@/components/AnimatedModal/AnimatedModal";
 
 export const Inscripcion = () => {
   useBackendWarmup();
@@ -89,7 +90,7 @@ export const Inscripcion = () => {
       >
         <PricingCardDemo />
       </motion.div>
-
+      <AnimatedModalDemo />
       <motion.section
         className="px-6 py-16 text-center"
         initial={{ opacity: 0 }}

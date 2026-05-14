@@ -1,10 +1,10 @@
 import { Calendar, MapPin } from "lucide-react";
 
 import { Button } from "../ui/button";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 export default function BannerPrincipal() {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   return (
     <div
       className="relative h-screen w-full bg-cover bg-center md:bg-center flex items-center justify-center text-white text-center"
@@ -26,11 +26,10 @@ export default function BannerPrincipal() {
         </h1>
 
         <Button
-          onClick={() => navigate("/inscripcion")}
-          className="mt-6 mr-6"
-          disabled
+          // onClick={() => navigate("/inscripcion")}
+          className="mt-6 mr-6 cursor-not-allowed"
         >
-          Inscribirme ¡Falta poco!
+          Inscripción abierta el 18-05
         </Button>
       </div>
     </div>

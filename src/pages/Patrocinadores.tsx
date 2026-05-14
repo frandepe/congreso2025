@@ -187,7 +187,7 @@ export const Patrocinadores = () => {
         </motion.div>
       </section>
 
-      {/* <section className="border-y border-stone-200 bg-white">
+      <section className="border-y border-stone-200 bg-white">
         <div className="mx-auto max-w-6xl px-6 py-16 sm:px-8 lg:px-12">
           <div className="mx-auto max-w-3xl text-center">
             <p className="text-xs font-semibold uppercase tracking-[0.24em] text-stone-500">
@@ -204,13 +204,13 @@ export const Patrocinadores = () => {
 
           <div className="mt-10 overflow-hidden rounded-[28px] border border-stone-200 bg-stone-50 p-4 shadow-[0_24px_80px_-56px_rgba(15,23,42,0.45)] sm:p-6">
             <img
-              src="/assets/mapa-patrocinadores.jpeg"
+              src="/assets/mapa-patrocinadores_2026.jpg"
               alt="Mapa general de patrocinadores y expositores"
               className="w-full rounded-[20px] object-contain"
             />
           </div>
         </div>
-      </section> */}
+      </section>
 
       <section className="light:bg-white dark:bg-gray-700 py-16">
         <PatrocinadoresComponent />

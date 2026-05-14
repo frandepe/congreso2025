@@ -29,7 +29,8 @@ function HeroWithGroupImages() {
                 enseñanza de la RCP y los primeros auxilios. Si buscás crecer,
                 conectar con otros instructores y mantenerte a la vanguardia de
                 la formación en emergencias, este congreso es para vos. Nos
-                vemos para aprender, compartir y seguir salvando vidas juntos.
+                vemos para aprender, intercambiar y seguir formando personas
+                preparadas para actuar cuando más importa.
               </p>
             </div>
             <div className="flex flex-row gap-4">

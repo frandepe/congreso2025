@@ -40,9 +40,9 @@ const people = [
   },
   {
     id: 7,
-    name: "Titirifeos",
-    designation: "Manuel y Compañia de Títeres",
-    image: "/assets/speakers/cara/titirifeos.jpg",
+    name: "Meritxell Ros",
+    designation: "Técnico de Emergencias Sanitarias.",
+    image: "/assets/speakers/cara/meritxell-ros.jpg",
   },
   {
     id: 8,

@@ -263,7 +263,7 @@ const NavbarPrincipal = ({
             <Sheet>
               <SheetTrigger asChild>
                 <Button variant="outline" aria-label="Cerrar o abrir menú">
-                  <Menu className="size-4 mr-1" /> Menú
+                  <Menu className="size-4" />
                 </Button>
               </SheetTrigger>
               <SheetContent className="overflow-y-auto">

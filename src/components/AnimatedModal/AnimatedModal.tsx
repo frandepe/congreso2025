@@ -3,7 +3,6 @@ import {
   Modal,
   ModalBody,
   ModalContent,
-  ModalFooter,
   ModalTrigger,
 } from "@/components/ui/animated-modal";
 import { Button } from "@/components/ui/button";
@@ -36,7 +35,7 @@ export function AnimatedModalDemo() {
             className="relative group/modal-btn bg-primary dark:bg-white dark:text-black text-white hover:bg-secondary dark:hover:bg-white/90"
           >
             <span className="group-hover/modal-btn:translate-x-40 text-center transition duration-500">
-              Dormitorios
+              Ver Dormitorios
             </span>
             <div className="-translate-x-40 group-hover/modal-btn:translate-x-0 flex items-center justify-center absolute inset-0 transition duration-500 text-white dark:text-black z-20">
               <Hotel className="h-4 w-4 mr-1" />
@@ -114,20 +113,6 @@ export function AnimatedModalDemo() {
               </div>
             </div>
           </ModalContent>
-          <ModalFooter className="gap-4">
-            <a
-              // href="https://forms.gle/TJTWvP7sP33L4gK99"
-              target="_blank"
-            >
-              <Button
-                variant="default"
-                className="w-28 bg-black text-white dark:bg-white dark:text-black border border-black"
-                disabled
-              >
-                Inscribirse
-              </Button>
-            </a>
-          </ModalFooter>
         </ModalBody>
       </Modal>
     </div>
