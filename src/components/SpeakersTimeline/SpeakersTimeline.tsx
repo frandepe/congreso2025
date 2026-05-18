@@ -23,31 +23,31 @@ export function SpeakersTimeline() {
 
           <p className={itemClass}>
             <strong>
-              08:30 – 09:30 | Show infantil: RCP para Nivel Inicial
+              08:30 - 09:30 | Show infantil: RCP para Nivel Inicial
             </strong>
           </p>
 
           <p className={itemClass}>
             <strong>
-              10:00 – 11:00 | Show infantil: RCP para Nivel Inicial
+              10:00 - 11:00 | Show infantil: RCP para Nivel Inicial
             </strong>
           </p>
 
           <p className={itemClass}>
             <strong>
-              13:30 – 14:30 | Show infantil: RCP para Nivel Inicial
+              13:30 - 14:30 | Show infantil: RCP para Nivel Inicial
             </strong>
           </p>
 
           <p className={itemClass}>
             <strong>
-              15:00 – 16:00 | Show infantil: RCP para Nivel Inicial
+              15:00 - 16:00 | Show infantil: RCP para Nivel Inicial
             </strong>
           </p>
 
           <p className={itemClass}>
             <strong>
-              17:30 – 21:00 | Atención a personas con discapacidad y TEA en
+              17:30 - 21:00 | Atención a personas con discapacidad y TEA en
               emergencias
             </strong>
             <br />
@@ -72,15 +72,15 @@ export function SpeakersTimeline() {
       content: (
         <div>
           <p className={itemClass}>
-            <strong>08:00 – 08:30 | Acreditaciones</strong>
+            <strong>08:00 - 08:30 | Acreditaciones</strong>
           </p>
 
           <p className={itemClass}>
-            <strong>08:30 – 09:00 | Apertura oficial y bienvenida</strong>
+            <strong>08:30 - 09:00 | Apertura oficial y bienvenida</strong>
           </p>
 
           <p className={itemClass}>
-            <strong>09:00 – 10:30 | Guías 2025 – Enfoque desde la ERC</strong>
+            <strong>09:00 - 10:30 | Guías 2025 – Enfoque desde la ERC</strong>
             <br />
             Disertante: Miguel Ángel Grimas Salinas (España).
             <br />
@@ -88,7 +88,7 @@ export function SpeakersTimeline() {
           </p>
 
           <p className={itemClass}>
-            <strong>10:30 – 11:30 | Aspectos legales en la RCP</strong>
+            <strong>10:30 - 11:30 | Aspectos legales en la RCP</strong>
             <br />
             Disertante: Dr. Guillermo Sandrone.
             <br />
@@ -96,25 +96,25 @@ export function SpeakersTimeline() {
           </p>
 
           <p className={itemClass}>
-            <strong>11:30 – 11:45 | Coffee break</strong>
+            <strong>11:30 - 11:45 | Coffee break</strong>
           </p>
 
           <p className={itemClass}>
             <strong>
-              11:45 – 12:45 | RCP en mujeres: igualdad en la emergencia.
+              11:45 - 12:45 | RCP en mujeres: igualdad en la emergencia.
             </strong>
             <br />
             Un aporte para seguir eliminando desigualdades, especialmente en el
             acceso a la RCP.
             <br />
-            Disertante: Velasco Emiliano – UNISAL.
+            Disertante: Velasco Emiliano y Carolina Gómez - UNISAL.
             <br />
             Exposición + preguntas.
           </p>
 
           <p className={itemClass}>
             <strong>
-              12:45 – 13:45 | Cómo diseñar un show infantil con temática de RCP
+              12:45 - 13:45 | Cómo diseñar un show infantil con temática de RCP
             </strong>
             <br />
             Disertante: Manuel y Compañía de Títeres TITIRIFEOS.
@@ -123,12 +123,12 @@ export function SpeakersTimeline() {
           </p>
 
           <p className={itemClass}>
-            <strong>13:45 – 15:15 | Almuerzo y visita a stands</strong>
+            <strong>13:45 - 15:15 | Almuerzo y visita a stands</strong>
           </p>
 
           <p className={itemClass}>
             <strong>
-              15:15 – 16:15 | Muerte súbita en el deporte. Cardioasistencia en
+              15:15 - 16:15 | Muerte súbita en el deporte. Cardioasistencia en
               eventos deportivos.
             </strong>
             <br />
@@ -139,7 +139,7 @@ export function SpeakersTimeline() {
 
           <p className={itemClass}>
             <strong>
-              16:15 – 17:15 | Cómo convertir tus capacitaciones en un
+              16:15 - 17:15 | Cómo convertir tus capacitaciones en un
               emprendimiento exitoso
             </strong>
             <br />
@@ -149,12 +149,12 @@ export function SpeakersTimeline() {
           </p>
 
           <p className={itemClass}>
-            <strong>17:15 – 17:30 | Coffee break</strong>
+            <strong>17:15 - 17:30 | Coffee break</strong>
           </p>
 
           <p className={itemClass}>
             <strong>
-              17:30 – 18:30 | Planificación y organización de zonas
+              17:30 - 18:30 | Planificación y organización de zonas
               cardioprotegidas
             </strong>
             <br />
@@ -180,16 +180,16 @@ export function SpeakersTimeline() {
         <div>
           <p className={itemClass}>
             <strong>
-              08:30 – 09:00 | Apertura de puertas y acreditaciones
+              08:30 - 09:00 | Apertura de puertas y acreditaciones
             </strong>
           </p>
 
           <p className={itemClass}>
-            <strong>09:00 – 09:30 | Apertura de la jornada</strong>
+            <strong>09:00 - 09:30 | Apertura de la jornada</strong>
           </p>
 
           <p className={itemClass}>
-            <strong>09:30 – 10:00 | Espacio de homenajes</strong>
+            <strong>09:30 - 10:00 | Espacio de homenajes</strong>
           </p>
 
           <p className={itemClass}>
@@ -204,28 +204,28 @@ export function SpeakersTimeline() {
 
           <p className={itemClass}>
             <strong>
-              11:30 – 13:00 | Adaptación de cursos de RCP para personas con
+              11:30 - 13:00 | Adaptación de cursos de RCP para personas con
               discapacidad
             </strong>
             <br />
-            Disertante: Grupo Inemer — Esteban Verón.
+            Disertante: Grupo Inemer — Esteban Verón y Julieta Passarelli.
             <br />
             Exposición + preguntas.
           </p>
 
           <p className={itemClass}>
-            <strong>13:00 – 14:30 | Almuerzo y visita a stands</strong>
+            <strong>13:00 - 14:30 | Almuerzo y visita a stands</strong>
           </p>
 
           <p className={itemClass}>
-            <strong>14:30 – 15:30 | Testimonio en primera persona</strong>
+            <strong>14:30 - 15:30 | Testimonio en primera persona</strong>
             <br />
             Exposición + preguntas.
           </p>
 
           <p className={itemClass}>
             <strong>
-              15:30 – 16:30 | Psicología en emergencias aplicada a la RCP
+              15:30 - 16:30 | Psicología en emergencias aplicada a la RCP
             </strong>
             <br />
             Disertantes: Equipo PAE (equipos formados por la Lic. Alicia
@@ -237,15 +237,15 @@ export function SpeakersTimeline() {
           </p>
 
           <p className={itemClass}>
-            <strong>16:30 – 16:45 | Coffee break</strong>
+            <strong>16:30 - 16:45 | Coffee break</strong>
           </p>
 
           <p className={itemClass}>
-            <strong>16:45 – 17:15 | Networking</strong>
+            <strong>16:45 - 17:15 | Networking</strong>
           </p>
 
           <p className={itemClass}>
-            <strong>17:15 – 17:30 | Entrega de certificados</strong>
+            <strong>17:15 - 17:30 | Entrega de certificados</strong>
           </p>
 
           <p className={itemClass}>

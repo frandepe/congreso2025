@@ -12,6 +12,30 @@ type SpreadsheetCellValue = number | string;
 
 type SpreadsheetRow = Record<string, SpreadsheetCellValue>;
 
+const committeeReportHeaders = [
+  "Fecha inscripcion",
+  "Estado",
+  "Nombre",
+  "Apellido",
+  "DNI",
+  "Email",
+  "Telefono",
+  "Opcion inscripcion",
+  "Plan de pago",
+  "Total esperado",
+  "Comprobantes enviados",
+  "Comprobantes aprobados",
+  "Cuota 1 estado",
+  "Cuota 1 fecha pago",
+  "Cuota 1 monto",
+  "Cuota 1 comprobante",
+  "Cuota 2 estado",
+  "Cuota 2 fecha pago",
+  "Cuota 2 monto",
+  "Cuota 2 comprobante",
+  "Observaciones internas",
+] as const;
+
 function escapeSpreadsheetValue(value: SpreadsheetCellValue) {
   return String(value)
     .replaceAll("&", "&amp;")
@@ -140,8 +164,83 @@ function buildReceiptRows(
   );
 }
 
-function buildWorksheetXml(sheetName: string, rows: SpreadsheetRow[]) {
-  const headers = rows.length > 0 ? Object.keys(rows[0]) : [];
+function getApprovedReceiptsCount(submission: AdminSubmissionDetailDto) {
+  return submission.receipts.filter((receipt) => receipt.status === "APPROVED")
+    .length;
+}
+
+function findReceiptByInstallment(
+  submission: AdminSubmissionDetailDto,
+  installmentNumber: number,
+) {
+  return submission.receipts.findLast(
+    (receipt) => receipt.installmentNumber === installmentNumber,
+  );
+}
+
+function buildCommitteeReportRow(
+  submission: AdminSubmissionDetailDto,
+): SpreadsheetRow {
+  const firstInstallmentReceipt = findReceiptByInstallment(submission, 1);
+  const secondInstallmentReceipt = findReceiptByInstallment(submission, 2);
+
+  return {
+    "Fecha inscripcion": formatExportDate(submission.createdAt),
+    Estado: getRegistrationStatusLabel(submission.status),
+    Nombre: submission.firstName,
+    Apellido: submission.lastName,
+    DNI: submission.dni,
+    Email: submission.email,
+    Telefono: submission.phone,
+    "Opcion inscripcion": submission.registrationOptionLabelSnapshot,
+    "Plan de pago": getPaymentPlanLabel(submission.paymentPlanType),
+    "Total esperado": submission.totalAmountExpected,
+    "Comprobantes enviados": submission.receipts.length,
+    "Comprobantes aprobados": getApprovedReceiptsCount(submission),
+    "Cuota 1 estado": firstInstallmentReceipt
+      ? getReceiptStatusLabel(firstInstallmentReceipt.status)
+      : "",
+    "Cuota 1 fecha pago": formatExportDate(
+      firstInstallmentReceipt?.paymentDate ?? null,
+    ),
+    "Cuota 1 monto": firstInstallmentReceipt?.amountReported ?? "",
+    "Cuota 1 comprobante": firstInstallmentReceipt?.receiptUrl ?? "",
+    "Cuota 2 estado": secondInstallmentReceipt
+      ? getReceiptStatusLabel(secondInstallmentReceipt.status)
+      : "",
+    "Cuota 2 fecha pago": formatExportDate(
+      secondInstallmentReceipt?.paymentDate ?? null,
+    ),
+    "Cuota 2 monto": secondInstallmentReceipt?.amountReported ?? "",
+    "Cuota 2 comprobante": secondInstallmentReceipt?.receiptUrl ?? "",
+    "Observaciones internas": submission.internalNote ?? "",
+  };
+}
+
+function buildCommitteeReportRows(
+  submissions: AdminSubmissionDetailDto[],
+): SpreadsheetRow[] {
+  return [...submissions]
+    .filter(
+      (submission) =>
+        submission.status === "FULLY_PAID" ||
+        submission.status === "PARTIALLY_PAID",
+    )
+    .sort(
+      (leftSubmission, rightSubmission) =>
+        new Date(leftSubmission.createdAt).getTime() -
+        new Date(rightSubmission.createdAt).getTime(),
+    )
+    .map(buildCommitteeReportRow);
+}
+
+function buildWorksheetXml(
+  sheetName: string,
+  rows: SpreadsheetRow[],
+  headersOverride?: readonly string[],
+) {
+  const headers =
+    headersOverride ?? (rows.length > 0 ? Object.keys(rows[0]) : []);
   const allRows = [
     headers,
     ...rows.map((row) => headers.map((header) => row[header] ?? "")),
@@ -173,11 +272,16 @@ function buildWorkbookXml(
   submissions: AdminSubmissionDetailDto[],
   exportedAt: string,
 ) {
+  const committeeReportRows = buildCommitteeReportRows(submissions);
   const submissionRows = submissions.map(buildSubmissionRow);
   const receiptRows = submissions.flatMap(buildReceiptRows);
   const summaryRows: SpreadsheetRow[] = [
     { Campo: "Exportado en", Valor: exportedAt },
     { Campo: "Total solicitudes", Valor: submissions.length },
+    {
+      Campo: "Total informe comite",
+      Valor: committeeReportRows.length,
+    },
     {
       Campo: "Total comprobantes",
       Valor: submissions.reduce(
@@ -200,6 +304,11 @@ function buildWorkbookXml(
     </Style>
   </Styles>
   ${buildWorksheetXml("Resumen", summaryRows)}
+  ${buildWorksheetXml(
+    "Informe comite",
+    committeeReportRows,
+    committeeReportHeaders,
+  )}
   ${buildWorksheetXml("Solicitudes", submissionRows)}
   ${buildWorksheetXml("Comprobantes", receiptRows)}
 </Workbook>`;

@@ -75,11 +75,61 @@ export function SpeakersCards() {
       ),
     },
     {
-      title: "Grupo Inemer",
-      src: "/assets/speakers/inemer.jpg",
-      subtitle: "Esteban Verón - Julieta Passarelli",
-      description:
-        "INEMER está formado por capacitadores, docentes e instructores certificados bajo la norma NFPA 1020, dedicados a la formación en emergencias y urgencias. Con más de 25 años de trayectoria, trabajamos en escenarios reales vinculados a emergencias, desastres y coordinación de fuerzas, con el objetivo de mejorar la calidad de respuesta ante situaciones críticas.",
+      title: "Esteban Verón",
+      src: "/assets/speakers/esteban-veron.jpg",
+      subtitle: "Capacitador en emergencias inclusivas",
+      description: (
+        <>
+          Paramédico, rescatista, bombero, Instructor Internacional NFPA 1020 y
+          CEO, director y fundador de INEMER; con más de 25 años de trayectoria
+          en atención prehospitalaria, gestión de emergencias, rescate y
+          formación operativa. Es además instructor y embajador de Stop the
+          Bleed (USA), especializado en control de hemorragias y respuesta
+          inmediata ante situaciones críticas. Cuenta con formación en gestión
+          de riesgos y desastres, psicología de la emergencia, primeros auxilios
+          emocionales, emergencias en el ámbito minero y pedagogía docente
+          aplicada a la formación operativa. A lo largo de su trayectoria ha
+          desarrollado programas de capacitación, protocolos adaptados y
+          dispositivos de intervención destinados a equipos de salud, fuerzas de
+          seguridad, bomberos, rescatistas, operadores de emergencia e
+          instituciones educativas. Como creador de INEMER, lidera el desarrollo
+          técnico y estratégico de programas de fortalecimiento institucional y
+          emergencias inclusivas, siendo referente en Argentina en la
+          incorporación de protocolos adaptados para personas con discapacidad y
+          neurodivergencias dentro de los sistemas de respuesta, evacuación y
+          atención prehospitalaria.
+        </>
+      ),
+    },
+    {
+      title: "Julieta Passarelli",
+      src: "/assets/speakers/julieta-passarelli.jpg",
+      subtitle:
+        "Arquitecta - Consultora en gobernanza sostenible e inteligencia territorial",
+      description: (
+        <>
+          Arquitecta urbanista, docente instructora, investigadora y consultora
+          en gobernanza sostenible, inteligencia territorial y gestión del
+          riesgo con enfoque inclusivo, con más de 20 años de experiencia en
+          planificación estratégica y articulación institucional. Dentro de
+          INEMER aporta la dimensión territorial y sistémica de la gestión del
+          riesgo, incorporando criterios de accesibilidad a escala
+          arquitectónica, urbana, periurbana y territorial, junto con enfoques
+          de inclusión operativa, optimización de tiempos de respuesta,
+          planificación colaborativa y articulación interinstitucional aplicados
+          al diseño de programas, protocolos y dispositivos de respuesta ante
+          emergencias y catástrofes. Se desempeña como asesora en sostenibilidad
+          en el Prorrectorado de Desarrollo Territorial de la Universidad
+          Nacional de Córdoba (UNC) y como consultora en innovación pública e
+          inteligencia territorial para la Legislatura de la Provincia de
+          Córdoba, participando en procesos de planificación colaborativa,
+          gobernanza territorial y fortalecimiento institucional. Además,
+          asesora a diversas organizaciones vinculadas al desarrollo
+          territorial, la sostenibilidad, la innovación pública y la resiliencia
+          comunitaria, promoviendo modelos de articulación colaborativa entre
+          actores públicos, privados, académicos y sociales.
+        </>
+      ),
     },
     {
       title: "Marta Iriarte",

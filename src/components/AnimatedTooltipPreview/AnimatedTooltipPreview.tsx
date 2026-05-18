@@ -16,9 +16,9 @@ const people = [
   // },
   {
     id: 3,
-    name: "Grupo Inemer",
-    designation: "Esteban Verón - Julieta Passarelli",
-    image: "/assets/speakers/cara/inemer.jpg",
+    name: "Esteban Verón",
+    designation: "Capacitador en emergencias inclusivas",
+    image: "/assets/speakers/cara/esteban-veron.jpg",
   },
   {
     id: 4,
