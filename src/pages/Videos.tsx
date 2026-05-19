@@ -14,7 +14,7 @@ const videos = [
   },
   {
     id: "3i1a090V7PY",
-    title: "Miguel Angel Grimas Salinas - Presentación",
+    title: "Miguel Angel Grima Salinas - Presentación",
     thumbnail: "https://img.youtube.com/vi/3i1a090V7PY/mqdefault.jpg",
     avatar: "assets/speakers/cara/miguel-angel-grima-cara.jpg",
     date: "02 Septiembre 2025",

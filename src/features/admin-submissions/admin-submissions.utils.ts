@@ -1,8 +1,10 @@
 import type {
+  ApprovalEmailResultDto,
   PaymentReceiptStatus,
   PaymentPlanType,
   RegistrationStatus,
 } from "@/features/api/types";
+import type { ActionToastMessage } from "@/shared/ui/ActionToast";
 
 const dateFormatter = new Intl.DateTimeFormat("es-AR", {
   dateStyle: "short",
@@ -175,4 +177,37 @@ export function formatBytesToReadableSize(value: number | null) {
   }
 
   return `${(value / (1024 * 1024)).toFixed(1)} MB`;
+}
+
+export function getApprovalEmailToastMessage(
+  approvalEmail: ApprovalEmailResultDto,
+): ActionToastMessage {
+  switch (approvalEmail.status) {
+    case "sent":
+      return {
+        variant: "success",
+        title: "Cambios guardados",
+        description: "Email de aprobacion enviado.",
+      };
+    case "failed":
+      return {
+        variant: "error",
+        title: "Cambios guardados",
+        description: "No se pudo enviar el email de aprobacion.",
+      };
+    case "transport_not_configured":
+      return {
+        variant: "info",
+        title: "Cambios guardados",
+        description:
+          "Email no enviado porque el transporte no esta configurado.",
+      };
+    case "not_applicable":
+    default:
+      return {
+        variant: "info",
+        title: "Cambios guardados",
+        description: "No correspondia enviar email de aprobacion.",
+      };
+  }
 }

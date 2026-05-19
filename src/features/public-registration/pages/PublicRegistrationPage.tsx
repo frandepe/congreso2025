@@ -120,7 +120,6 @@ export function PublicRegistrationPage() {
   const [recoveryEmail, setRecoveryEmail] = useState("");
   const [recoveryMessage, setRecoveryMessage] = useState<string | null>(null);
   const [recoveryError, setRecoveryError] = useState<string | null>(null);
-  const [showDiscountRequestForm, setShowDiscountRequestForm] = useState(false);
   const [discountRequestEmail, setDiscountRequestEmail] = useState("");
   const [discountRequestMessage, setDiscountRequestMessage] = useState<
     string | null
@@ -233,6 +232,16 @@ export function PublicRegistrationPage() {
       "El cupon se quitó porque cambiaste el email de la inscripción.",
     );
   }, [appliedDiscount, normalizedFormEmail]);
+
+  useEffect(() => {
+    if (!normalizedFormEmail) {
+      return;
+    }
+
+    setDiscountRequestEmail((current) =>
+      current.trim() ? current : normalizedFormEmail,
+    );
+  }, [normalizedFormEmail]);
 
   useEffect(() => {
     persistPublicRegistrationDraft(
@@ -964,78 +973,64 @@ export function PublicRegistrationPage() {
                       </label>
                     </div>
 
-                    <section className="space-y-4 border-t border-stone-200 pt-6 dark:border-stone-800">
+                    <section className="rounded-xl border border-emerald-200 bg-emerald-50/80 p-4 dark:border-emerald-900 dark:bg-emerald-950/30">
                       <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
                         <div>
-                          <p className="text-sm font-medium text-stone-900 dark:text-stone-100">
+                          <span className="mb-2 inline-flex rounded-full bg-emerald-600 px-2.5 py-1 text-xs font-semibold text-white">
+                            Beneficio exclusivo
+                          </span>
+                          <p className="text-sm font-semibold text-emerald-700 dark:text-emerald-300">
                             Descuento para participantes del primer congreso
                           </p>
                           <p className="text-sm text-stone-600 dark:text-stone-400">
-                            Solicitá el cupón y aplicalo con el mismo email de
-                            la inscripción.
+                            Solicitá tu cupón utilizando el mismo email con el
+                            que te inscribiste en el primer congreso.
                           </p>
+                        </div>
+                      </div>
+
+                      <div className="flex flex-col gap-3 sm:flex-row sm:items-end mt-2">
+                        <div className="flex-1 space-y-2">
+                          <Label htmlFor="discount-request-email">
+                            Email para solicitar el cupón
+                          </Label>
+                          <Input
+                            id="discount-request-email"
+                            type="email"
+                            value={discountRequestEmail}
+                            placeholder="tuemail@dominio.com"
+                            className={fieldClassName}
+                            onChange={(event) =>
+                              setDiscountRequestEmail(event.target.value)
+                            }
+                          />
                         </div>
 
                         <Button
                           type="button"
-                          variant="ghost"
-                          className="h-auto justify-start px-0 text-emerald-700 hover:bg-transparent hover:text-emerald-800 dark:text-emerald-300 dark:hover:text-emerald-200"
-                          onClick={() => {
-                            setShowDiscountRequestForm((current) => !current);
-                            setDiscountRequestError(null);
-                            setDiscountRequestMessage(null);
-                            setDiscountRequestEmail(
-                              watchedValues.email?.trim()
-                                ? watchedValues.email.trim()
-                                : "",
-                            );
-                          }}
+                          onClick={() => void handleRequestDiscountCoupon()}
+                          disabled={requestDiscountCouponMutation.isPending}
                         >
-                          {showDiscountRequestForm
-                            ? "Ocultar solicitud"
-                            : "Obtener cupón"}
+                          {requestDiscountCouponMutation.isPending
+                            ? "Solicitando..."
+                            : "Solicitar cupón"}
                         </Button>
                       </div>
 
-                      {showDiscountRequestForm ? (
-                        <div className="flex flex-col gap-3 sm:flex-row sm:items-end">
-                          <div className="flex-1 space-y-2">
-                            <Label htmlFor="discount-request-email">
-                              Email para recibir el cupón
-                            </Label>
-                            <Input
-                              id="discount-request-email"
-                              type="email"
-                              value={discountRequestEmail}
-                              placeholder="tuemail@dominio.com"
-                              className={fieldClassName}
-                              onChange={(event) =>
-                                setDiscountRequestEmail(event.target.value)
-                              }
-                            />
-                          </div>
-
-                          <Button
-                            type="button"
-                            onClick={() => void handleRequestDiscountCoupon()}
-                            disabled={requestDiscountCouponMutation.isPending}
-                          >
-                            {requestDiscountCouponMutation.isPending
-                              ? "Solicitando..."
-                              : "Enviar cupón"}
-                          </Button>
-                        </div>
-                      ) : null}
-
                       <div className="flex flex-col gap-3 sm:flex-row sm:items-end">
                         <div className="flex-1 space-y-2">
+                          <p className="text-xs text-stone-700 dark:text-stone-400">
+                            Una vez solicitado, ingresá el código recibido (por
+                            ejemplo: DESC-F3E6-EF33-0531) y luego presioná
+                            “Aplicar descuento”.
+                          </p>
                           <Label htmlFor="discount-coupon-code">
                             Cupón de descuento
                           </Label>
                           <Input
                             id="discount-coupon-code"
                             value={discountCouponInput}
-                            placeholder="Ingresa el código recibido"
+                            placeholder="Ingresa el código recibido por email"
                             className={fieldClassName}
                             onChange={(event) =>
                               setDiscountCouponInput(event.target.value)
@@ -1045,13 +1040,13 @@ export function PublicRegistrationPage() {
 
                         <Button
                           type="button"
-                          variant="outline"
+                          variant="default"
                           onClick={() => void handleApplyDiscountCoupon()}
                           disabled={validateDiscountCouponMutation.isPending}
                         >
                           {validateDiscountCouponMutation.isPending
                             ? "Validando..."
-                            : "Aplicar"}
+                            : "Aplicar descuento"}
                         </Button>
                       </div>
 

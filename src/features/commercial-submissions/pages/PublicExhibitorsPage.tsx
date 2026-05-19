@@ -136,10 +136,7 @@ export function PublicExhibitorsPage() {
         ? appliedDiscount.discountAmount
         : 0;
 
-    return (
-      standOption.baseAmount -
-      discountAmount
-    );
+    return standOption.baseAmount - discountAmount;
   }, [appliedDiscount, standOption, watchedEmail]);
 
   const installmentAmount = useMemo(() => {
@@ -595,12 +592,17 @@ export function PublicExhibitorsPage() {
                 ) : null}
               </section>
 
-              <section className="space-y-4 border-t border-stone-200 pt-6 dark:border-stone-800">
-                <div className="flex flex-col gap-3 sm:flex-row sm:items-end">
+              <section className="rounded-xl border border-emerald-200 bg-emerald-50/80 p-4 dark:border-emerald-900 dark:bg-emerald-950/30">
+                <span className="mb-2 inline-flex rounded-full bg-emerald-600 px-2.5 py-1 text-xs font-semibold text-white">
+                  Beneficio exclusivo
+                </span>
+                <p className="text-sm font-semibold text-emerald-700 dark:text-emerald-300">
+                  Solo si contrataste un stand en el primer congreso
+                </p>
+                <div className="flex flex-col gap-3 sm:flex-row sm:items-end mt-2">
                   <div className="flex-1 space-y-2">
                     <Label htmlFor="coupon-request-email">
-                      Email para solicitar el cupón (solo si contrataste un
-                      stand en el primer congreso)
+                      Email para solicitar el cupón
                     </Label>
                     <Input
                       id="coupon-request-email"
@@ -617,12 +619,17 @@ export function PublicExhibitorsPage() {
                   >
                     {requestCouponMutation.isPending
                       ? "Solicitando..."
-                      : "Enviar cupón"}
+                      : "Solicitar cupón"}
                   </Button>
                 </div>
 
                 <div className="flex flex-col gap-3 sm:flex-row sm:items-end">
                   <div className="flex-1 space-y-2">
+                    <p className="text-xs text-stone-700 dark:text-stone-400">
+                      Una vez solicitado, ingresá el código recibido (por
+                      ejemplo: DESC-F3E6-EF33-0531) y luego presioná “Aplicar
+                      descuento”.
+                    </p>
                     <Label htmlFor="coupon-code">Cupón de descuento</Label>
                     <Input
                       id="coupon-code"
@@ -634,13 +641,13 @@ export function PublicExhibitorsPage() {
                   </div>
                   <Button
                     type="button"
-                    variant="outline"
+                    variant="default"
                     onClick={() => void handleApplyCoupon()}
                     disabled={validateCouponMutation.isPending}
                   >
                     {validateCouponMutation.isPending
                       ? "Validando..."
-                      : "Aplicar"}
+                      : "Aplicar descuento"}
                   </Button>
                 </div>
 

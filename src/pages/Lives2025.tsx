@@ -6,7 +6,7 @@ import YouTube from "react-youtube";
 const videos = [
   {
     id: "KHMjuGrFHr0",
-    title: "Miguel Angel Grimas Salinas",
+    title: "Miguel Angel Grima Salinas",
     thumbnail: "https://img.youtube.com/vi/KHMjuGrFHr0/mqdefault.jpg",
     avatar: "assets/speakers/miguel-angel-grima.jpeg",
     date: "15 Octubre 2025",

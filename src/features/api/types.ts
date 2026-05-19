@@ -133,6 +133,23 @@ export type AdminSubmissionDetailDto = {
   receipts: AdminSubmissionDetailReceiptDto[];
 };
 
+export type ApprovalEmailStatus =
+  | "sent"
+  | "failed"
+  | "not_applicable"
+  | "transport_not_configured";
+
+export type ApprovalEmailResultDto = {
+  status: ApprovalEmailStatus;
+  attempted: boolean;
+  recipientEmail: string | null;
+  reason:
+    | "transition_to_fully_paid"
+    | "no_transition_to_fully_paid"
+    | "email_transport_not_configured"
+    | "send_failed";
+};
+
 export type AdminSubmissionUpdateDto = {
   id: string;
   status: RegistrationStatus;
@@ -140,6 +157,7 @@ export type AdminSubmissionUpdateDto = {
   reviewedAt: string | null;
   reviewedByAdmin: { id: string; email: string } | null;
   updatedAt: string;
+  approvalEmail: ApprovalEmailResultDto;
 };
 
 export type PublicSubmissionCreatedDto = {
@@ -458,6 +476,7 @@ export type AdminCommercialSubmissionUpdateDto = {
   reviewedAt: string | null;
   reviewedByAdmin: { id: string; email: string } | null;
   updatedAt: string;
+  approvalEmail: ApprovalEmailResultDto;
 };
 
 export type AdminCommercialSubmissionsListQuery = {

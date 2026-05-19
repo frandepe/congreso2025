@@ -14,9 +14,14 @@ import { getUserFacingErrorMessage } from "@/shared/utils/getUserFacingErrorMess
 import { useUpdateAdminCommercialSubmissionMutation } from "@/features/admin-commercial-submissions/admin-commercial-submissions.hooks";
 import { commercialStatusOptions } from "@/features/admin-commercial-submissions/admin-commercial-submissions.constants";
 import {
+  getApprovalEmailToastMessage,
   getRegistrationStatusAppearance,
   getRegistrationStatusLabel,
 } from "@/features/admin-submissions/admin-submissions.utils";
+import {
+  ActionToast,
+  type ActionToastMessage,
+} from "@/shared/ui/ActionToast";
 
 const reviewSchema = z.object({
   status: z.enum([
@@ -42,9 +47,13 @@ const selectClassName =
 export function AdminCommercialSubmissionReviewForm({ submission }: Props) {
   const [submitMessage, setSubmitMessage] = useState<string | null>(null);
   const [submitError, setSubmitError] = useState<string | null>(null);
+  const [toastMessage, setToastMessage] =
+    useState<ActionToastMessage | null>(null);
   const errorNoticeRef = useRef<HTMLDivElement | null>(null);
   const successNoticeRef = useRef<HTMLDivElement | null>(null);
-  const updateMutation = useUpdateAdminCommercialSubmissionMutation(submission.id);
+  const updateMutation = useUpdateAdminCommercialSubmissionMutation(
+    submission.id,
+  );
 
   const form = useForm<ReviewFormValues>({
     resolver: zodResolver(reviewSchema),
@@ -61,46 +70,93 @@ export function AdminCommercialSubmissionReviewForm({ submission }: Props) {
     });
     setSubmitMessage(null);
     setSubmitError(null);
+    setToastMessage(null);
   }, [form, submission.internalNote, submission.status]);
 
   useEffect(() => {
-    if (submitError) errorNoticeRef.current?.focus();
+    if (submitError) {
+      errorNoticeRef.current?.focus();
+    }
   }, [submitError]);
+
   useEffect(() => {
-    if (submitMessage) successNoticeRef.current?.focus();
+    if (submitMessage) {
+      successNoticeRef.current?.focus();
+    }
   }, [submitMessage]);
 
   const onSubmit = form.handleSubmit(async (values) => {
     setSubmitError(null);
     setSubmitMessage(null);
+    setToastMessage(null);
 
     try {
-      await updateMutation.mutateAsync({
+      const response = await updateMutation.mutateAsync({
         status: values.status,
         internalNote: values.internalNote.trim()
           ? values.internalNote.trim()
           : null,
       });
+
       setSubmitMessage("Cambios guardados.");
+      setToastMessage(getApprovalEmailToastMessage(response.data.approvalEmail));
     } catch (error) {
-      setSubmitError(
-        getUserFacingErrorMessage(error, "No se pudieron guardar los cambios."),
+      const message = getUserFacingErrorMessage(
+        error,
+        "No se pudieron guardar los cambios.",
       );
+
+      setSubmitError(message);
+      setToastMessage({
+        variant: "error",
+        title: "No se pudieron guardar los cambios",
+        description: message,
+      });
+    }
+  }, (errors) => {
+    const message = "Revisa los campos marcados antes de guardar.";
+
+    setSubmitMessage(null);
+    setSubmitError(message);
+    setToastMessage({
+      variant: "error",
+      title: "No se pudieron guardar los cambios",
+      description: message,
+    });
+
+    if (errors.status) {
+      form.setFocus("status");
+      return;
+    }
+
+    if (errors.internalNote) {
+      form.setFocus("internalNote");
     }
   });
 
   const currentStatus = form.watch("status") ?? submission.status;
   const statusAppearance = getRegistrationStatusAppearance(currentStatus);
+  const statusError = form.formState.errors.status?.message;
+  const internalNoteError = form.formState.errors.internalNote?.message;
 
   return (
     <section className="rounded-[30px] border border-stone-200 bg-white/95 p-6 shadow-[0_24px_80px_-48px_rgba(15,23,42,0.35)]">
+      {toastMessage ? (
+        <ActionToast
+          {...toastMessage}
+          onClose={() => setToastMessage(null)}
+        />
+      ) : null}
+
       <p className="text-xs font-semibold uppercase tracking-[0.24em] text-emerald-700">
         Revision
       </p>
       <h2 className="mt-1 text-xl font-semibold text-stone-900">
         Actualizar estado administrativo
       </h2>
-      <div className={`mt-4 rounded-2xl border px-4 py-3 ${statusAppearance.badgeClassName}`}>
+      <div
+        className={`mt-4 rounded-2xl border px-4 py-3 ${statusAppearance.badgeClassName}`}
+      >
         <p className="text-xs font-semibold uppercase tracking-[0.2em] opacity-70">
           Estado seleccionado
         </p>
@@ -112,27 +168,62 @@ export function AdminCommercialSubmissionReviewForm({ submission }: Props) {
       <form className="mt-5 space-y-5" onSubmit={onSubmit}>
         <label className="block space-y-2">
           <Label htmlFor="status">Estado</Label>
-          <select id="status" className={selectClassName} {...form.register("status")}>
+          <select
+            id="status"
+            className={selectClassName}
+            disabled={updateMutation.isPending}
+            aria-invalid={Boolean(statusError)}
+            {...form.register("status")}
+          >
             {commercialStatusOptions.map((option) => (
-              <option key={option.value} value={option.value}>{option.label}</option>
+              <option key={option.value} value={option.value}>
+                {option.label}
+              </option>
             ))}
           </select>
+          {statusError ? (
+            <p className="text-sm font-medium text-red-700">{statusError}</p>
+          ) : null}
         </label>
 
         <label className="block space-y-2">
           <Label htmlFor="internalNote">Nota interna</Label>
-          <Textarea id="internalNote" rows={5} maxLength={1000} {...form.register("internalNote")} />
+          <Textarea
+            id="internalNote"
+            rows={5}
+            disabled={updateMutation.isPending}
+            maxLength={1000}
+            aria-invalid={Boolean(internalNoteError)}
+            {...form.register("internalNote")}
+          />
+          {internalNoteError ? (
+            <p className="text-sm font-medium text-red-700">
+              {internalNoteError}
+            </p>
+          ) : null}
         </label>
 
         {submitError ? (
           <div ref={errorNoticeRef} tabIndex={-1}>
-            <InlineNotice variant="error">{submitError}</InlineNotice>
+            <InlineNotice
+              variant="error"
+              role="alert"
+              ariaLive="assertive"
+            >
+              {submitError}
+            </InlineNotice>
           </div>
         ) : null}
 
         {submitMessage ? (
           <div ref={successNoticeRef} tabIndex={-1}>
-            <InlineNotice variant="success">{submitMessage}</InlineNotice>
+            <InlineNotice
+              variant="success"
+              role="status"
+              ariaLive="polite"
+            >
+              {submitMessage}
+            </InlineNotice>
           </div>
         ) : null}
 

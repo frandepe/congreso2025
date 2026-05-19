@@ -12,9 +12,14 @@ import { Textarea } from "@/components/ui/textarea";
 import { registrationStatusOptions } from "@/features/admin-submissions/admin-submissions.constants";
 import { useUpdateAdminSubmissionMutation } from "@/features/admin-submissions/admin-submissions.hooks";
 import {
+  getApprovalEmailToastMessage,
   getRegistrationStatusAppearance,
   getRegistrationStatusLabel,
 } from "@/features/admin-submissions/admin-submissions.utils";
+import {
+  ActionToast,
+  type ActionToastMessage,
+} from "@/shared/ui/ActionToast";
 import { InlineNotice } from "@/shared/ui/InlineNotice";
 import { getUserFacingErrorMessage } from "@/shared/utils/getUserFacingErrorMessage";
 
@@ -46,6 +51,8 @@ export function AdminSubmissionReviewForm({
 }: AdminSubmissionReviewFormProps) {
   const [submitMessage, setSubmitMessage] = useState<string | null>(null);
   const [submitError, setSubmitError] = useState<string | null>(null);
+  const [toastMessage, setToastMessage] =
+    useState<ActionToastMessage | null>(null);
   const errorNoticeRef = useRef<HTMLDivElement | null>(null);
   const successNoticeRef = useRef<HTMLDivElement | null>(null);
   const updateMutation = useUpdateAdminSubmissionMutation(submission.id);
@@ -65,6 +72,7 @@ export function AdminSubmissionReviewForm({
     });
     setSubmitMessage(null);
     setSubmitError(null);
+    setToastMessage(null);
   }, [form, submission.internalNote, submission.status]);
 
   useEffect(() => {
@@ -82,9 +90,10 @@ export function AdminSubmissionReviewForm({
   const onSubmit = form.handleSubmit(async (values) => {
     setSubmitMessage(null);
     setSubmitError(null);
+    setToastMessage(null);
 
     try {
-      await updateMutation.mutateAsync({
+      const response = await updateMutation.mutateAsync({
         status: values.status,
         internalNote: values.internalNote.trim()
           ? values.internalNote.trim()
@@ -92,17 +101,30 @@ export function AdminSubmissionReviewForm({
       });
 
       setSubmitMessage("Cambios guardados.");
+      setToastMessage(getApprovalEmailToastMessage(response.data.approvalEmail));
     } catch (error) {
-      setSubmitError(
-        getUserFacingErrorMessage(
-          error,
-          "No se pudieron guardar los cambios.",
-        ),
+      const message = getUserFacingErrorMessage(
+        error,
+        "No se pudieron guardar los cambios.",
       );
+
+      setSubmitError(message);
+      setToastMessage({
+        variant: "error",
+        title: "No se pudieron guardar los cambios",
+        description: message,
+      });
     }
   }, (errors) => {
+    const message = "Revisa los campos marcados antes de guardar.";
+
     setSubmitMessage(null);
-    setSubmitError("Revisa los campos marcados antes de guardar.");
+    setSubmitError(message);
+    setToastMessage({
+      variant: "error",
+      title: "No se pudieron guardar los cambios",
+      description: message,
+    });
 
     if (errors.status) {
       form.setFocus("status");
@@ -124,6 +146,13 @@ export function AdminSubmissionReviewForm({
       aria-labelledby="admin-review-heading"
       className="rounded-[30px] border border-stone-200 bg-white/95 p-6 shadow-[0_24px_80px_-48px_rgba(15,23,42,0.35)]"
     >
+      {toastMessage ? (
+        <ActionToast
+          {...toastMessage}
+          onClose={() => setToastMessage(null)}
+        />
+      ) : null}
+
       <div>
         <p className="text-xs font-semibold uppercase tracking-[0.24em] text-emerald-700">
           Revision
@@ -148,7 +177,7 @@ export function AdminSubmissionReviewForm({
             id="admin-review-status-description"
             className="mt-2 text-sm leading-6 text-stone-700"
           >
-            El color acompaña el estado, pero la referencia principal es este
+            El color acompania el estado, pero la referencia principal es este
             texto: {getRegistrationStatusLabel(currentStatus)}.
           </p>
         </div>
@@ -215,8 +244,8 @@ export function AdminSubmissionReviewForm({
             {...form.register("internalNote")}
           />
           <p id="admin-review-note-help" className="text-sm text-stone-500">
-            Esta nota es interna y sirve para dejar contexto para el comite. Maximo
-            1000 caracteres.
+            Esta nota es interna y sirve para dejar contexto para el comite.
+            Maximo 1000 caracteres.
           </p>
           {internalNoteError ? (
             <p

@@ -1,74 +1,92 @@
+const BASE_TITLE = "Congreso Nacional RCP 2026";
+
 export function getTitleForPath(path: string) {
   if (path.startsWith("/admin/submissions/")) {
-    return "Detalle Admin - Congreso Nacional RCP 2025";
+    return `Detalle Admin - ${BASE_TITLE}`;
   }
 
   if (path.startsWith("/admin/commercial/submissions/")) {
-    return "Detalle Admin Comercial - Congreso Nacional RCP 2025";
+    return `Detalle Admin Comercial - ${BASE_TITLE}`;
   }
 
   if (path === "/inscripcion/participantes") {
-    return "Inscripcion Participantes - Congreso Nacional RCP 2025";
+    return `Inscripcion Participantes - ${BASE_TITLE}`;
   }
 
   if (path === "/inscripcion-test") {
-    return "Inscripcion Participantes - Congreso Nacional RCP 2025";
+    return `Inscripcion Participantes - ${BASE_TITLE}`;
   }
 
   if (path === "/inscripcion/segunda-cuota") {
-    return "Segunda Cuota - Congreso Nacional RCP 2025";
+    return `Segunda Cuota - ${BASE_TITLE}`;
   }
 
   if (path === "/inscripcion/expositores") {
-    return "Expositores - Congreso Nacional RCP 2025";
+    return `Expositores - ${BASE_TITLE}`;
   }
 
   if (path === "/inscripcion/expositores/segunda-cuota") {
-    return "Segunda Cuota Expositores - Congreso Nacional RCP 2025";
+    return `Segunda Cuota Expositores - ${BASE_TITLE}`;
   }
 
   if (path === "/inscripcion/publicidad") {
-    return "Publicidad - Congreso Nacional RCP 2025";
+    return `Publicidad - ${BASE_TITLE}`;
   }
 
   if (path === "/catalogos-livings") {
-    return "Catalogos Livings - Congreso Nacional RCP 2025";
+    return `Catalogos Livings - ${BASE_TITLE}`;
   }
 
   switch (path) {
     case "/":
-      return "Inicio - Congreso Nacional RCP 2025";
+      return `Inicio - ${BASE_TITLE}`;
+
     case "/programa":
-      return "Programa - Congreso Nacional RCP 2025";
+      return `Programa - ${BASE_TITLE}`;
+
     case "/ubicacion-y-alojamiento":
-      return "Ubicacion y Alojamiento - Congreso Nacional RCP 2025";
+      return `Ubicacion y Alojamiento - ${BASE_TITLE}`;
+
     case "/inscripcion":
-      return "Inscripcion - Congreso Nacional RCP 2025";
+      return `Inscripcion - ${BASE_TITLE}`;
+
     case "/sobre-nosotros":
-      return "Sobre Nosotros - Congreso Nacional RCP 2025";
+      return `Sobre Nosotros - ${BASE_TITLE}`;
+
     case "/patrocinadores":
-      return "Patrocinadores - Congreso Nacional RCP 2025";
+      return `Patrocinadores - ${BASE_TITLE}`;
+
     case "/preguntas-frecuentes":
-      return "Preguntas Frecuentes - Congreso Nacional RCP 2025";
+      return `Preguntas Frecuentes - ${BASE_TITLE}`;
+
     case "/videos":
-      return "Videos - Congreso Nacional RCP 2025";
-    case "/vivo-2025":
-      return "Vivo 2025 - Congreso Nacional RCP 2025";
+      return `Videos - ${BASE_TITLE}`;
+
+    case "/vivo-2026":
+      return `Vivo 2026 - ${BASE_TITLE}`;
+
     case "/expositores":
-      return "Expositores - Congreso Nacional RCP 2025";
+      return `Expositores - ${BASE_TITLE}`;
+
     case "/catalogos-livings":
-      return "Catalogos Livings - Congreso Nacional RCP 2025";
+      return `Catalogos Livings - ${BASE_TITLE}`;
+
     case "/homenaje-sergio-marcos":
-      return "Homenaje a Sergio Marcos - Congreso Nacional RCP 2025";
+      return `Homenaje a Sergio Marcos - ${BASE_TITLE}`;
+
     case "/contacto":
-      return "Contacto - Congreso Nacional RCP 2025";
+      return `Contacto - ${BASE_TITLE}`;
+
     case "/admin/login":
-      return "Login Admin - Congreso Nacional RCP 2025";
+      return `Login Admin - ${BASE_TITLE}`;
+
     case "/admin":
-      return "Panel Admin - Congreso Nacional RCP 2025";
+      return `Panel Admin - ${BASE_TITLE}`;
+
     case "/admin/commercial":
-      return "Panel Comercial - Congreso Nacional RCP 2025";
+      return `Panel Comercial - ${BASE_TITLE}`;
+
     default:
-      return "Congreso Nacional RCP 2025";
+      return BASE_TITLE;
   }
 }

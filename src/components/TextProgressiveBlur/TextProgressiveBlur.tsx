@@ -49,11 +49,11 @@ export const TextProgressiveBlur = () => {
 
           <p>
             A los expositores, tanto a los que estuvieron vía streaming desde
-            España, caso de Miguel Ángel Grimas Salinas y Francesc Carmona como
-            a quienes estuvieron en persona, la gente del Equipo PAE, la gente
-            de Argentina Reanima, Mariano Casoy, la misma Patricia Soto,
-            Guillermo Carmona y Emiliano, todos ellos nos aportaron sus
-            conocimientos y los brindaron de una manera genial.
+            España, caso de Miguel Ángel Grima Salinas y Francesc Carmona como a
+            quienes estuvieron en persona, la gente del Equipo PAE, la gente de
+            Argentina Reanima, Mariano Casoy, la misma Patricia Soto, Guillermo
+            Carmona y Emiliano, todos ellos nos aportaron sus conocimientos y
+            los brindaron de una manera genial.
           </p>
 
           <p>

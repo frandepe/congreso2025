@@ -29,7 +29,7 @@ export function SpeakersTimeline() {
 
           <p className={itemClass}>
             <strong>
-              10:00 - 11:00 | Show infantil: RCP para Nivel Inicial
+              10:30 - 11:30 | Show infantil: RCP para Nivel Inicial
             </strong>
           </p>
 
@@ -41,7 +41,7 @@ export function SpeakersTimeline() {
 
           <p className={itemClass}>
             <strong>
-              15:00 - 16:00 | Show infantil: RCP para Nivel Inicial
+              15:30 - 16:30 | Show infantil: RCP para Nivel Inicial
             </strong>
           </p>
 
@@ -60,7 +60,7 @@ export function SpeakersTimeline() {
               <br />
               Cupo exclusivo para 16 instructores.
               <br />
-              Horario a confirmar.
+              Horario: 14:00hs.
             </p>
           </div>
         </div>
@@ -80,11 +80,17 @@ export function SpeakersTimeline() {
           </p>
 
           <p className={itemClass}>
-            <strong>09:00 - 10:30 | Guías 2025 – Enfoque desde la ERC</strong>
+            <strong>09:00 - 10:30 | Guías 2025 - Detrás de un curso ERC</strong>
             <br />
-            Disertante: Miguel Ángel Grimas Salinas (España).
+            Disertantes: Miguel Ángel Grima y Meritxell Ros (España)
             <br />
-            Exposición + preguntas.
+            El papel del Director y del Instructor en la calidad docente Miguel
+            Ángel Grima y Meritxell Ros (España) Taller dinámico orientado a
+            instructores de RCP y Soporte Vital, centrado en el funcionamiento
+            real de una formación ERC desde dentro. A través de experiencias
+            reales y casos prácticos, se abordará el papel del Director e
+            Instructor ERC, la preparación de cursos, la gestión del aula y la
+            evaluación de alumnos.
           </p>
 
           <p className={itemClass}>
@@ -119,7 +125,11 @@ export function SpeakersTimeline() {
             <br />
             Disertante: Manuel y Compañía de Títeres TITIRIFEOS.
             <br />
-            Exposición + preguntas.
+            Cómo dar capacitaciones de una manera no convencional. Acercar
+            contenidos sobre prevención de accidentes domésticos y de RCP a
+            través de un formato participativo, donde los títeres, la música en
+            vivo y el humor funcionan como un puente para lograr aprendizajes
+            significativos de una manera cercana, clara y profundamente humana.
           </p>
 
           <p className={itemClass}>
@@ -134,7 +144,11 @@ export function SpeakersTimeline() {
             <br />
             Disertante: Javier González.
             <br />
-            Exposición + preguntas.
+            * Presentación del equipo Runner Cardioprotegido
+            <br />
+            * Muerte súbita en el deporte - Espectativa vs realidad
+            <br />* Cardioasistencia en eventos deportivos ( necesidad,
+            importancia, capacitación , ley 27.159)
           </p>
 
           <p className={itemClass}>
@@ -145,7 +159,14 @@ export function SpeakersTimeline() {
             <br />
             Disertante: Marta Iriarte.
             <br />
-            Exposición + preguntas.
+            Cómo pasar de dar cursos sueltos a tener un proyecto que se sostenga
+            en el tiempo. Como identificar tu nicho, definir valor diferencial
+            frente a otros centros de capacitación. Hacer hincapié que en RCP el
+            diferencial no está solo en el precio, si no en la experiencia, el
+            seguimiento post-curso y el respaldo de la certificación. Análisis
+            de los distintos públicos. Cómo armar una propuesta comercial.
+            Realismo sobre los obstáculos y cosas a mejorar para ser un
+            emprendedor exitoso.
           </p>
 
           <p className={itemClass}>
@@ -194,12 +215,17 @@ export function SpeakersTimeline() {
 
           <p className={itemClass}>
             <strong>
-              10:00 - 11:30 | Capacitaciones con la referencia de la ERC
+              10:00 - 11:30 | Instructor de RCP: Taller práctico de
+              perfeccionamiento docente
             </strong>
             <br />
-            Disertante: Meritxell Ros (España)
+            Disertantes: Miguel Ángel Grima y Meritxell Ros (España)
             <br />
-            Exposición + preguntas.
+            Taller eminentemente práctico enfocado en mejorar la calidad docente
+            de las formaciones de RCP. Se trabajarán aspectos como la
+            organización del espacio, colocación de alumnos y material,
+            comunicación docente, dinámicas prácticas y recursos aplicables
+            desde el día siguiente en cualquier curso.
           </p>
 
           <p className={itemClass}>
@@ -208,7 +234,7 @@ export function SpeakersTimeline() {
               discapacidad
             </strong>
             <br />
-            Disertante: Grupo Inemer — Esteban Verón y Julieta Passarelli.
+            Disertantes: Grupo Inemer — Esteban Verón y Julieta Passarelli.
             <br />
             Exposición + preguntas.
           </p>
@@ -233,7 +259,15 @@ export function SpeakersTimeline() {
             <br />
             Moderador: Nicolás De Paulo.
             <br />
-            Exposición + preguntas.
+            En esta charla del equipo PAE le brindaran información y
+            herramientas a los instructores para que sus alumnos se protejan
+            ante la situación de una Reanimación Cardiopulmonar (RCP) fallida,
+            que actúa como un detonante crítico y de alto impacto en el
+            desarrollo y agravamiento del Trastorno por Estrés Postraumático
+            (TEPT), afectando tanto a profesionales de la salud y rescatistas
+            como a testigos particulares. La muerte del paciente tras un
+            esfuerzo físico y emocional extremo quiebra las expectativas de
+            salvación, generando consecuencias psicológicas profundas.
           </p>
 
           <p className={itemClass}>
