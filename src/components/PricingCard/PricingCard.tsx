@@ -1,4 +1,4 @@
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { ArrowRight, FileSearch, ReceiptText } from "lucide-react";
 import { Button } from "@/components/ui/button";
 // import { PricingCard } from "@/components/ui/pricing-card";
@@ -102,16 +102,16 @@ export function PricingCardDemo() {
               </p>
             </div>
 
-            {/* <Button asChild className="mt-8 h-12 rounded-xl px-6 text-sm">
+            <Button asChild className="mt-8 h-12 rounded-xl px-6 text-sm">
               <Link to="/inscripcion/participantes">
                 Ir a inscripcion
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
-            </Button> */}
-            <Button className="mt-8 h-12 rounded-xl px-6 text-sm" disabled>
+            </Button>
+            {/* <Button className="mt-8 h-12 rounded-xl px-6 text-sm" disabled>
               Ir a inscripcion (próximamente)
               <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
+            </Button> */}
           </div>
         </section>
 
@@ -147,15 +147,15 @@ export function PricingCardDemo() {
               </p>
             </div>
 
-            <Button
+            {/* <Button
               variant="outline"
               className="mt-8 h-12 rounded-xl border-stone-300 bg-white px-6 text-sm text-stone-900"
               disabled
             >
               Ir a segunda cuota (próximamente)
               <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
-            {/* <Button
+            </Button> */}
+            <Button
               asChild
               variant="outline"
               className="mt-8 h-12 rounded-xl border-stone-300 bg-white px-6 text-sm text-stone-900"
@@ -164,7 +164,7 @@ export function PricingCardDemo() {
                 Ir a segunda cuota
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
-            </Button> */}
+            </Button>
           </div>
         </section>
       </div>

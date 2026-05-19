@@ -145,37 +145,37 @@ export const Patrocinadores = () => {
                     <div className="mt-auto pt-8">
                       <div className="flex flex-col gap-3">
                         {card.actions.map((action, actionIndex) => (
-                          <Button
-                            disabled
-                            variant={actionIndex === 0 ? "default" : "outline"}
-                            className={
-                              actionIndex === 0
-                                ? "h-12 w-full justify-between rounded-xl bg-stone-950 px-5 text-sm font-medium text-white hover:bg-stone-800"
-                                : "h-12 w-full justify-between rounded-xl border-stone-300 bg-white px-5 text-sm font-medium text-stone-800 hover:border-stone-400 hover:bg-stone-50"
-                            }
-                          >
-                            {action.label}
-                            <ArrowRight className="h-4 w-4" />
-                          </Button>
-                          // <a
-                          //   key={action.href}
-                          //   href={action.href}
-                          //   className="block"
+                          // <Button
+                          //   disabled
+                          //   variant={actionIndex === 0 ? "default" : "outline"}
+                          //   className={
+                          //     actionIndex === 0
+                          //       ? "h-12 w-full justify-between rounded-xl bg-stone-950 px-5 text-sm font-medium text-white hover:bg-stone-800"
+                          //       : "h-12 w-full justify-between rounded-xl border-stone-300 bg-white px-5 text-sm font-medium text-stone-800 hover:border-stone-400 hover:bg-stone-50"
+                          //   }
                           // >
-                          //   <Button
-                          //     variant={
-                          //       actionIndex === 0 ? "default" : "outline"
-                          //     }
-                          //     className={
-                          //       actionIndex === 0
-                          //         ? "h-12 w-full justify-between rounded-xl bg-stone-950 px-5 text-sm font-medium text-white hover:bg-stone-800"
-                          //         : "h-12 w-full justify-between rounded-xl border-stone-300 bg-white px-5 text-sm font-medium text-stone-800 hover:border-stone-400 hover:bg-stone-50"
-                          //     }
-                          //   >
-                          //     {action.label}
-                          //     <ArrowRight className="h-4 w-4" />
-                          //   </Button>
-                          // </a>
+                          //   {action.label}
+                          //   <ArrowRight className="h-4 w-4" />
+                          // </Button>
+                          <a
+                            key={action.href}
+                            href={action.href}
+                            className="block"
+                          >
+                            <Button
+                              variant={
+                                actionIndex === 0 ? "default" : "outline"
+                              }
+                              className={
+                                actionIndex === 0
+                                  ? "h-12 w-full justify-between rounded-xl bg-stone-950 px-5 text-sm font-medium text-white hover:bg-stone-800"
+                                  : "h-12 w-full justify-between rounded-xl border-stone-300 bg-white px-5 text-sm font-medium text-stone-800 hover:border-stone-400 hover:bg-stone-50"
+                              }
+                            >
+                              {action.label}
+                              <ArrowRight className="h-4 w-4" />
+                            </Button>
+                          </a>
                         ))}
                       </div>
                     </div>

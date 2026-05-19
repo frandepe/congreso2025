@@ -271,7 +271,7 @@ export function SpeakersCards() {
     {
       title: "Javier Gonzalez",
       src: "/assets/speakers/javier-gonzalez.jpg",
-      subtitle: "Superintendencia de comunicaciones",
+      subtitle: "Cardioasistencia en eventos deportivos",
       description: (
         <>
           Técnico en emergencias médicas de la UNLP

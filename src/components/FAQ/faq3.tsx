@@ -23,7 +23,7 @@ const faqItems = [
         Puedes completar la inscripción haciendo{" "}
         <a
           className="text-primary underline"
-          // href="/inscripcion/participantes"
+          href="/inscripcion/participantes"
           target="_blank"
         >
           clic aquí
@@ -108,14 +108,14 @@ const faqItems = [
 
         <div className="flex flex-col gap-2 text-sm sm:flex-row sm:gap-6">
           <a
-            // href="/inscripcion/expositores"
+            href="/inscripcion/expositores"
             className="inline-flex w-fit items-center border-b border-transparent text-foreground transition-colors hover:border-foreground/30"
           >
             Participar como expositor
           </a>
 
           <a
-            // href="/inscripcion/publicidad"
+            href="/inscripcion/publicidad"
             className="inline-flex w-fit items-center border-b border-transparent text-foreground transition-colors hover:border-foreground/30"
           >
             Opciones de publicidad y auspicio

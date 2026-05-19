@@ -53,7 +53,7 @@ const people = [
   {
     id: 9,
     name: "Javier Gonzalez",
-    designation: "Superintendencia de comunicaciones",
+    designation: "Cardioasistencia en eventos deportivos",
     image: "/assets/speakers/cara/javier-gonzalez.jpg",
   },
 ];
