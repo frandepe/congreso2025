@@ -551,6 +551,34 @@ export function PublicRegistrationPage() {
                 <h1 className="max-w-xl text-4xl font-semibold tracking-tight text-stone-950 dark:text-stone-100 sm:text-5xl">
                   Inscripción al congreso
                 </h1>
+                <div className="grid grid-cols-1 gap-4 border-y border-primary/15 py-4 sm:grid-cols-3">
+                  <div className="flex flex-col">
+                    <span className="text-sm text-stone-500 dark:text-stone-400">
+                      1 día
+                    </span>
+                    <span className="text-2xl font-semibold text-primary">
+                      $15.000
+                    </span>
+                  </div>
+
+                  <div className="flex flex-col">
+                    <span className="text-sm text-stone-500 dark:text-stone-400">
+                      3 días
+                    </span>
+                    <span className="text-2xl font-semibold text-primary">
+                      $40.000
+                    </span>
+                  </div>
+
+                  <div className="flex flex-col">
+                    <span className="text-sm text-stone-500 dark:text-stone-400">
+                      3 días con alojamiento
+                    </span>
+                    <span className="text-2xl font-semibold text-primary">
+                      $70.000
+                    </span>
+                  </div>
+                </div>
                 <p className="max-w-xl text-base leading-7 text-stone-600 dark:text-stone-400">
                   Completá tus datos, seleccioná la modalidad correspondiente y
                   adjuntá el comprobante de transferencia. Cada envío queda

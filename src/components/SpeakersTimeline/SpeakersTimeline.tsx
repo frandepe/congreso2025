@@ -98,7 +98,13 @@ export function SpeakersTimeline() {
             <br />
             Disertante: Dr. Guillermo Sandrone.
             <br />
-            Exposición + preguntas.
+            Aspectos legales de la RCP
+            <br />
+            Ley 27.159 Tu protección y responsabilidad al intervenir como
+            instructor. El respaldo de una matrícula de habilitación. Deber de
+            enseñar el estándar actualizado de ERC/AHA. El límite entre
+            Instructor y Rescatista. Documentación y consentimiento en la
+            capacitación. Responsabilidad docente
           </p>
 
           <p className={itemClass}>
