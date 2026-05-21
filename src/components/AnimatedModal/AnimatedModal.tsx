@@ -30,10 +30,7 @@ export function AnimatedModalDemo() {
     <div className="flex items-center justify-center">
       <Modal>
         <ModalTrigger>
-          <Button
-            variant="default"
-            className="relative group/modal-btn bg-primary dark:bg-white dark:text-black text-white hover:bg-secondary dark:hover:bg-white/90"
-          >
+          <Button variant="outline">
             <span className="group-hover/modal-btn:translate-x-40 text-center transition duration-500">
               Ver Dormitorios
             </span>

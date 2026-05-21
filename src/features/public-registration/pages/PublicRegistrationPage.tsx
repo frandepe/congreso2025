@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState, type FormEvent } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { FormProvider, useForm, useWatch } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -12,7 +12,6 @@ import { InlineNotice } from "@/shared/ui/InlineNotice";
 import { useBackendWarmup } from "@/shared/api/useBackendWarmup";
 import type {
   PublicDiscountCouponValidationResponseDto,
-  PublicSubmissionStatusDto,
 } from "@/features/api/types";
 import { getUserFacingErrorMessage } from "@/shared/utils/getUserFacingErrorMessage";
 import {
@@ -42,8 +41,6 @@ import {
   usePendingSecondInstallmentLookupMutation,
   usePublicPricingCatalogQuery,
   useRequestPublicDiscountCouponMutation,
-  useRecoverPublicTrackingCodeMutation,
-  usePublicSubmissionStatusMutation,
   useValidatePublicDiscountCouponMutation,
 } from "@/features/public-registration/public-registration.hooks";
 import { PublicRegistrationStepIndicator } from "@/features/public-registration/components/PublicRegistrationStepIndicator";
@@ -54,9 +51,6 @@ import { PublicRegistrationSuccessBlock } from "@/features/public-registration/c
 import { BankTransferDetails } from "@/features/public-registration/components/BankTransferDetails";
 import {
   formatAdminDate,
-  getPaymentPlanLabel,
-  getReceiptStatusLabel,
-  getRegistrationStatusLabel,
 } from "@/features/admin-submissions/admin-submissions.utils";
 
 const publicRegistrationSchema = z.object({
@@ -115,11 +109,6 @@ export function PublicRegistrationPage() {
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [successState, setSuccessState] =
     useState<PublicRegistrationSuccessState | null>(null);
-  const [trackingCodeInput, setTrackingCodeInput] = useState("");
-  const [showRecoveryForm, setShowRecoveryForm] = useState(false);
-  const [recoveryEmail, setRecoveryEmail] = useState("");
-  const [recoveryMessage, setRecoveryMessage] = useState<string | null>(null);
-  const [recoveryError, setRecoveryError] = useState<string | null>(null);
   const [discountRequestEmail, setDiscountRequestEmail] = useState("");
   const [discountRequestMessage, setDiscountRequestMessage] = useState<
     string | null
@@ -139,7 +128,6 @@ export function PublicRegistrationPage() {
   const [dismissedPendingInstallmentCode, setDismissedPendingInstallmentCode] =
     useState<string | null>(null);
   const lastPendingInstallmentLookupKeyRef = useRef<string | null>(null);
-  const statusResultRef = useRef<HTMLDivElement | null>(null);
   const successStateRef = useRef<HTMLElement | null>(null);
 
   const form = useForm<PublicRegistrationFormValues>({
@@ -155,8 +143,6 @@ export function PublicRegistrationPage() {
   const pricingCatalogQuery = usePublicPricingCatalogQuery();
   const requestDiscountCouponMutation =
     useRequestPublicDiscountCouponMutation();
-  const statusMutation = usePublicSubmissionStatusMutation();
-  const recoverTrackingCodeMutation = useRecoverPublicTrackingCodeMutation();
   const validateDiscountCouponMutation =
     useValidatePublicDiscountCouponMutation();
   const pendingSecondInstallmentMutation =
@@ -303,7 +289,6 @@ export function PublicRegistrationPage() {
       );
       const response = await mutation.mutateAsync(formData);
       setSuccessState(response.data);
-      setTrackingCodeInput(response.data.trackingCode);
       clearPublicRegistrationDraft(PUBLIC_REGISTRATION_DRAFT_STORAGE_KEY);
       form.reset({
         ...defaultPublicRegistrationDraft,
@@ -350,44 +335,6 @@ export function PublicRegistrationPage() {
     form.getValues("paymentPlanType") === "TWO_INSTALLMENTS"
       ? "Cuota 1 de 2"
       : "Pago único";
-
-  const handleStatusLookup = async (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-
-    if (!trackingCodeInput.trim()) {
-      return;
-    }
-
-    await statusMutation.mutateAsync(trackingCodeInput.trim());
-  };
-
-  const handleRecoverySubmit = async () => {
-    setRecoveryError(null);
-    setRecoveryMessage(null);
-
-    const email = recoveryEmail.trim();
-
-    if (!email) {
-      setRecoveryError("Ingresa tu email.");
-      return;
-    }
-
-    try {
-      const response = await recoverTrackingCodeMutation.mutateAsync(email);
-      if (response.data.found) {
-        setRecoveryMessage(response.data.message);
-      } else {
-        setRecoveryError(response.data.message);
-      }
-    } catch (error) {
-      setRecoveryError(
-        getUserFacingErrorMessage(
-          error,
-          "No se pudo enviar el correo de recuperación. Intenta nuevamente.",
-        ),
-      );
-    }
-  };
 
   const handleRequestDiscountCoupon = async () => {
     setDiscountRequestError(null);
@@ -465,21 +412,6 @@ export function PublicRegistrationPage() {
     }
   };
 
-  const statusResult = statusMutation.data?.data as
-    | PublicSubmissionStatusDto
-    | undefined;
-
-  useEffect(() => {
-    if (!statusResult) {
-      return;
-    }
-
-    statusResultRef.current?.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
-  }, [statusResult]);
-
   useEffect(() => {
     if (!successState) {
       return;
@@ -532,11 +464,6 @@ export function PublicRegistrationPage() {
       dismissedPendingInstallmentCode
       ? pendingSecondInstallmentMutation.data.data
       : null;
-  const hasPendingSecondInstallment =
-    statusResult?.paymentPlanType === "TWO_INSTALLMENTS" &&
-    statusResult.submittedReceiptsCount < statusResult.installmentCountExpected;
-  const canUploadPendingSecondInstallment =
-    statusResult?.secondInstallmentUploadAllowed ?? false;
 
   return (
     <div className="min-h-screen bg-stone-50 dark:bg-stone-950">
@@ -651,234 +578,6 @@ export function PublicRegistrationPage() {
               </InlineNotice>
             ) : null}
 
-            <section className="max-w-xl space-y-5 border-t border-stone-200 pt-8 dark:border-stone-800">
-              <div className="space-y-2">
-                <p className="text-xs font-semibold uppercase tracking-[0.24em] text-stone-500 dark:text-stone-400">
-                  Seguimiento
-                </p>
-                <h2 className="text-2xl font-semibold tracking-tight text-stone-950 dark:text-stone-100">
-                  Consultar estado
-                </h2>
-                <p className="text-sm leading-7 text-stone-600 dark:text-stone-400">
-                  Ingresá tu código de seguimiento para ver el estado actual de
-                  la inscripción y de los comprobantes enviados.
-                </p>
-              </div>
-
-              <form
-                className="space-y-4"
-                onSubmit={(event) => void handleStatusLookup(event)}
-              >
-                <label className="space-y-2">
-                  <Label htmlFor="trackingCode">Código de seguimiento</Label>
-                  <Input
-                    id="trackingCode"
-                    value={trackingCodeInput}
-                    onChange={(event) =>
-                      setTrackingCodeInput(event.target.value)
-                    }
-                    placeholder="Ej. RCP-CMN7-1GB6-M000-E4TW-2IME-RXR2"
-                    className={fieldClassName}
-                  />
-                </label>
-
-                <div className="flex items-center justify-between gap-3">
-                  <p
-                    className="text-xs leading-5 text-primary cursor-pointer hover:underline"
-                    onClick={() => {
-                      setShowRecoveryForm((current) => !current);
-                      setRecoveryError(null);
-                      setRecoveryMessage(null);
-                    }}
-                  >
-                    No tengo mi código de identificación.
-                  </p>
-                  <Button
-                    type="submit"
-                    disabled={
-                      statusMutation.isPending || !trackingCodeInput.trim()
-                    }
-                  >
-                    {statusMutation.isPending ? "Consultando..." : "Consultar"}
-                  </Button>
-                </div>
-              </form>
-
-              {showRecoveryForm ? (
-                <div className="space-y-4 rounded-lg border border-stone-200 bg-stone-50 px-4 py-4 dark:border-stone-800 dark:bg-stone-900/70">
-                  <div className="space-y-1">
-                    <p className="text-sm font-medium text-stone-900 dark:text-stone-100">
-                      Recuperar código por email
-                    </p>
-                    <p className="text-sm leading-6 text-stone-600 dark:text-stone-400">
-                      Ingresá el email que usaste al inscribirte. Si encontramos
-                      una inscripción válida, te enviaremos el código por
-                      correo.
-                    </p>
-                  </div>
-
-                  <div className="flex flex-col gap-3 sm:flex-row">
-                    <Input
-                      type="email"
-                      value={recoveryEmail}
-                      onChange={(event) => setRecoveryEmail(event.target.value)}
-                      placeholder="tuemail@dominio.com"
-                      className={fieldClassName}
-                    />
-                    <Button
-                      type="button"
-                      variant="outline"
-                      onClick={() => void handleRecoverySubmit()}
-                      disabled={recoverTrackingCodeMutation.isPending}
-                      className="rounded-md border-stone-300 bg-white px-5 text-stone-700 dark:border-stone-700 dark:bg-stone-950 dark:text-stone-100 dark:hover:bg-stone-900"
-                    >
-                      {recoverTrackingCodeMutation.isPending
-                        ? "Enviando..."
-                        : "Enviar email"}
-                    </Button>
-                  </div>
-
-                  {recoveryError ? (
-                    <InlineNotice variant="error">{recoveryError}</InlineNotice>
-                  ) : null}
-
-                  {recoveryMessage ? (
-                    <InlineNotice variant="success">
-                      {recoveryMessage}
-                    </InlineNotice>
-                  ) : null}
-                </div>
-              ) : null}
-
-              {statusMutation.isError ? (
-                <InlineNotice variant="error">
-                  {getUserFacingErrorMessage(
-                    statusMutation.error,
-                    "No se pudo consultar el estado de la inscripción.",
-                  )}
-                </InlineNotice>
-              ) : null}
-
-              {statusResult ? (
-                <div
-                  ref={statusResultRef}
-                  className="space-y-5 border-t border-stone-200 pt-5 dark:border-stone-800"
-                >
-                  <div className="space-y-2">
-                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-stone-500 dark:text-stone-400">
-                      Estado actual
-                    </p>
-                    <p className="text-lg font-semibold text-stone-950 dark:text-stone-100">
-                      {getRegistrationStatusLabel(statusResult.status)}
-                    </p>
-                    <p className="text-sm leading-6 text-stone-600 dark:text-stone-400">
-                      {statusResult.registrationOption.label} ·{" "}
-                      {getPaymentPlanLabel(statusResult.paymentPlanType)}
-                    </p>
-                  </div>
-
-                  <dl className="space-y-3 text-sm leading-6 text-stone-700 dark:text-stone-300">
-                    <div className="flex items-start justify-between gap-4">
-                      <dt className="text-stone-500">Código</dt>
-                      <dd className="text-right font-medium text-stone-900 dark:text-stone-100">
-                        {statusResult.trackingCode}
-                      </dd>
-                    </div>
-                    <div className="flex items-start justify-between gap-4">
-                      <dt className="text-stone-500">Enviados</dt>
-                      <dd className="text-right font-medium text-stone-900 dark:text-stone-100">
-                        {statusResult.submittedReceiptsCount} de{" "}
-                        {statusResult.installmentCountExpected} comprobantes
-                      </dd>
-                    </div>
-                    <div className="flex items-start justify-between gap-4">
-                      <dt className="text-stone-500">Última actualización</dt>
-                      <dd className="text-right font-medium text-stone-900 dark:text-stone-100">
-                        {formatAdminDate(statusResult.updatedAt)}
-                      </dd>
-                    </div>
-                  </dl>
-
-                  {hasPendingSecondInstallment ? (
-                    <InlineNotice
-                      variant={
-                        statusResult.secondInstallmentExpired ? "error" : "info"
-                      }
-                    >
-                      <div className="space-y-3">
-                        <p className="font-medium text-stone-900 dark:text-stone-100">
-                          {statusResult.secondInstallmentExpired
-                            ? "Esta inscripción tiene la segunda cuota vencida."
-                            : "Esta inscripcion aún tiene una cuota pendiente."}
-                        </p>
-                        {statusResult.secondInstallmentDueAt ? (
-                          <p className="text-sm leading-6">
-                            {`Fecha límite para informar la segunda cuota: ${formatAdminDate(
-                              statusResult.secondInstallmentDueAt,
-                            )}.`}
-                          </p>
-                        ) : null}
-                        {statusResult.secondInstallmentExpired ? (
-                          <p className="text-sm leading-6">
-                            Comunicate a{" "}
-                            <a
-                              href="mailto:congresonacionalrcp@gmail.com"
-                              className="font-medium underline-offset-4 hover:underline"
-                            >
-                              congresonacionalrcp@gmail.com
-                            </a>{" "}
-                            o por WhatsApp al{" "}
-                            <a
-                              href="https://wa.me/542392460227"
-                              target="_blank"
-                              rel="noreferrer"
-                              className="font-medium underline-offset-4 hover:underline"
-                            >
-                              2392-460227
-                            </a>
-                            .
-                          </p>
-                        ) : null}
-                        <div className="flex flex-wrap gap-3">
-                          {canUploadPendingSecondInstallment ? (
-                            <Button asChild type="button">
-                              <Link
-                                to={`/inscripcion/segunda-cuota?trackingCode=${encodeURIComponent(
-                                  statusResult.trackingCode,
-                                )}`}
-                              >
-                                Pagar segunda cuota
-                              </Link>
-                            </Button>
-                          ) : null}
-                        </div>
-                      </div>
-                    </InlineNotice>
-                  ) : null}
-
-                  <div className="space-y-3">
-                    {statusResult.receipts.map((receipt) => (
-                      <div
-                        key={receipt.installmentNumber}
-                        className="flex items-center justify-between gap-4 border-t border-stone-200 pt-3 text-sm dark:border-stone-800"
-                      >
-                        <div>
-                          <p className="font-medium text-stone-900 dark:text-stone-100">
-                            Cuota {receipt.installmentNumber}
-                          </p>
-                          <p className="text-stone-500 dark:text-stone-400">
-                            Recibido el {formatAdminDate(receipt.createdAt)}
-                          </p>
-                        </div>
-                        <p className="font-medium text-stone-900 dark:text-stone-100">
-                          {getReceiptStatusLabel(receipt.status)}
-                        </p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              ) : null}
-            </section>
           </div>
 
           <div className="rounded-2xl border border-stone-200 bg-white px-7 py-9 text-stone-900 shadow-[0_18px_60px_-40px_rgba(15,23,42,0.22)] dark:border-stone-800 dark:bg-stone-900 dark:text-stone-100 dark:shadow-[0_22px_70px_-45px_rgba(0,0,0,0.65)] sm:px-10 sm:py-10 lg:px-12">
