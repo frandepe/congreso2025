@@ -1,10 +1,7 @@
 import { Calendar, MapPin } from "lucide-react";
-
-import { Button } from "../ui/button";
-import { useNavigate } from "react-router-dom";
+import BtnHover from "../Buttons/BtnHover";
 
 export default function BannerPrincipal() {
-  const navigate = useNavigate();
   return (
     <div
       className="relative h-screen w-full bg-cover bg-center md:bg-center flex items-center justify-center text-white text-center"
@@ -25,12 +22,13 @@ export default function BannerPrincipal() {
           Segundo congreso nacional de instructores de RCP
         </h1>
 
-        <Button
+        {/* <Button
           onClick={() => navigate("/inscripcion/participantes")}
           className="mt-6 mr-6"
         >
           Inscribirme
-        </Button>
+        </Button> */}
+        <BtnHover />
       </div>
     </div>
   );
