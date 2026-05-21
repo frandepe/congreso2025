@@ -62,8 +62,17 @@ export function AdminCommercialSubmissionsPage() {
 
   const completedRevenue =
     data?.items
-      .filter((item) => item.status === "FULLY_PAID")
-      .reduce((total, item) => total + item.totalAmountExpected, 0) ?? 0;
+      .filter(
+        (item) =>
+          item.status === "FULLY_PAID" || item.status === "PARTIALLY_PAID",
+      )
+      .reduce((total, item) => {
+        if (item.status === "PARTIALLY_PAID") {
+          return total + (item.approvedFirstInstallmentAmount ?? 0);
+        }
+
+        return total + item.totalAmountExpected;
+      }, 0) ?? 0;
   const nonRejectedRevenue =
     data?.items
       .filter((item) => item.status !== "REJECTED")
@@ -190,7 +199,7 @@ export function AdminCommercialSubmissionsPage() {
               {formatArsCurrency(completedRevenue)}
             </p>
             <p className="mt-1 text-sm text-stone-500">
-              acumulado (solo aprobadas)
+              aprobadas + parciales
             </p>
           </div>
           <div className="rounded-2xl border border-sky-100 bg-sky-50/80 p-4 shadow-sm">

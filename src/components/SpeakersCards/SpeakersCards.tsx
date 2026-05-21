@@ -292,7 +292,7 @@ export function SpeakersCards() {
       ),
     },
     {
-      title: "Manuel y Compañia de Titeres",
+      title: "Manuel de RCP con tus manos y Compañia de Títeres",
       src: "/assets/speakers/titirifeos.jpg",
       subtitle: "TITIRIFEOS",
       description: (

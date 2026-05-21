@@ -10,9 +10,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { InlineNotice } from "@/shared/ui/InlineNotice";
 import { useBackendWarmup } from "@/shared/api/useBackendWarmup";
-import type {
-  PublicDiscountCouponValidationResponseDto,
-} from "@/features/api/types";
+import type { PublicDiscountCouponValidationResponseDto } from "@/features/api/types";
 import { getUserFacingErrorMessage } from "@/shared/utils/getUserFacingErrorMessage";
 import {
   defaultPublicRegistrationDraft,
@@ -49,9 +47,7 @@ import { RegistrationOptionCard } from "@/features/public-registration/component
 import { PaymentPlanCard } from "@/features/public-registration/components/PaymentPlanCard";
 import { PublicRegistrationSuccessBlock } from "@/features/public-registration/components/PublicRegistrationSuccessState";
 import { BankTransferDetails } from "@/features/public-registration/components/BankTransferDetails";
-import {
-  formatAdminDate,
-} from "@/features/admin-submissions/admin-submissions.utils";
+import { formatAdminDate } from "@/features/admin-submissions/admin-submissions.utils";
 
 const publicRegistrationSchema = z.object({
   firstName: z.string().trim().min(1, "Ingresa tu nombre."),
@@ -507,18 +503,16 @@ export function PublicRegistrationPage() {
                   </div>
                 </div>
                 <p className="max-w-xl text-base leading-7 text-stone-600 dark:text-stone-400">
-                  Completá tus datos, seleccioná la modalidad correspondiente y
-                  adjuntá el comprobante de transferencia. Cada envío queda
-                  sujeto a revisión manual por parte del comité organizador.
+                  Completá tus datos, seleccioná la modalidad y adjuntá el
+                  comprobante de transferencia para que el comité pueda revisar
+                  tu inscripción.
                 </p>
               </div>
             </div>
 
             <div className="max-w-xl border-t border-stone-200 pt-8 dark:border-stone-800">
               <p className="text-sm leading-7 text-stone-600 dark:text-stone-400">
-                La transferencia se realiza fuera de la web. En este formulario
-                solo registramos la inscripción, el comprobante enviado y la
-                modalidad elegida para que el comité pueda revisarlo luego.
+                La transferencia se realiza fuera de la web.
               </p>
             </div>
 
@@ -577,7 +571,6 @@ export function PublicRegistrationPage() {
                 </div>
               </InlineNotice>
             ) : null}
-
           </div>
 
           <div className="rounded-2xl border border-stone-200 bg-white px-7 py-9 text-stone-900 shadow-[0_18px_60px_-40px_rgba(15,23,42,0.22)] dark:border-stone-800 dark:bg-stone-900 dark:text-stone-100 dark:shadow-[0_22px_70px_-45px_rgba(0,0,0,0.65)] sm:px-10 sm:py-10 lg:px-12">

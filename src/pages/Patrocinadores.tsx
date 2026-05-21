@@ -7,9 +7,9 @@ import SliderPatrocinadores from "@/components/SliderPatrocinadores/SliderPatroc
 
 const accessCards = [
   {
-    title: "Stands para expositores (próximamente)",
+    title: "Stands para expositores",
     description:
-      "Si tu empresa quiere presencia física en el congreso, esta es la opción correcta. Desde acá podés iniciar una nueva solicitud de stand o informar la segunda cuota si ya tenés código de seguimiento.",
+      "Si tu empresa quiere presencia física en el congreso, esta es la opción correcta.",
     icon: Store,
     accentClassName:
       "border-emerald-200 bg-[linear-gradient(180deg,#f5fff8_0%,#ffffff_100%)]",
@@ -27,9 +27,9 @@ const accessCards = [
     ],
   },
   {
-    title: "Publicidad para marcas (próximamente)",
+    title: "Publicidad para marcas",
     description:
-      "Si buscás difusión de marca sin contratar un stand, entrá acá. Vas a poder elegir web, pantalla o banners, iniciar una nueva solicitud o informar la segunda cuota si ya tenés código de seguimiento.",
+      "Potenciá la visibilidad de tu marca durante el congreso. Difundite en nuestra web, pantallas oficiales, banners y distintos espacios publicitarios.",
     icon: Megaphone,
     accentClassName:
       "border-sky-200 bg-[linear-gradient(180deg,#f3fbff_0%,#ffffff_100%)]",
@@ -93,8 +93,7 @@ export const Patrocinadores = () => {
           </h2>
           <p className="mt-4 text-base leading-7 text-stone-600 dark:text-white">
             Desde esta página podés iniciar una solicitud comercial o cargar la
-            segunda cuota de un stand o publicidad ya registrados. Cada acceso
-            te lleva al formulario correcto para evitar confusiones.
+            segunda cuota de un stand o publicidad ya registrados.
           </p>
 
           <div className="mt-10 grid gap-6 lg:grid-cols-2">
@@ -136,8 +135,8 @@ export const Patrocinadores = () => {
                         <BadgeCheck className="mt-0.5 h-5 w-5 shrink-0 text-emerald-600" />
                         <p>
                           {card.eyebrow === "Expositores"
-                            ? "Usá el primer botón si vas a iniciar el stand. Usá el segundo solo si ya tenés una solicitud en 2 cuotas."
-                            : "Usá el primer botón si vas a contratar publicidad. Usá el segundo solo si ya tenés una solicitud en 2 cuotas."}
+                            ? "Usá el primer botón para comprar un stand. Usá el segundo solo para pagar la segunda cuota."
+                            : "Usá el primer botón si vas a contratar publicidad. Usá el segundo solo para pagar la segunda cuota"}
                         </p>
                       </div>
                     </div>
@@ -145,18 +144,6 @@ export const Patrocinadores = () => {
                     <div className="mt-auto pt-8">
                       <div className="flex flex-col gap-3">
                         {card.actions.map((action, actionIndex) => (
-                          // <Button
-                          //   disabled
-                          //   variant={actionIndex === 0 ? "default" : "outline"}
-                          //   className={
-                          //     actionIndex === 0
-                          //       ? "h-12 w-full justify-between rounded-xl bg-stone-950 px-5 text-sm font-medium text-white hover:bg-stone-800"
-                          //       : "h-12 w-full justify-between rounded-xl border-stone-300 bg-white px-5 text-sm font-medium text-stone-800 hover:border-stone-400 hover:bg-stone-50"
-                          //   }
-                          // >
-                          //   {action.label}
-                          //   <ArrowRight className="h-4 w-4" />
-                          // </Button>
                           <a
                             key={action.href}
                             href={action.href}

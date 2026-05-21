@@ -3,7 +3,6 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { Check, FileText, Loader, Upload } from "lucide-react";
-import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -21,7 +20,6 @@ import { useBackendWarmup } from "@/shared/api/useBackendWarmup";
 import type { CommercialSubmissionCreatedDto } from "@/features/api/types";
 import {
   useCommercialPricingCatalogQuery,
-  useCommercialSubmissionStatusMutation,
   useCreateCommercialSubmissionMutation,
   useRequestCommercialStandDiscountCouponMutation,
   useValidateCommercialStandDiscountCouponMutation,
@@ -29,11 +27,8 @@ import {
 import { buildCommercialSubmissionFormData } from "@/features/commercial-submissions/commercial-submissions.utils";
 import { CommercialSubmissionSuccessBlock } from "@/features/commercial-submissions/components/CommercialSubmissionSuccessState";
 import { getUserFacingErrorMessage } from "@/shared/utils/getUserFacingErrorMessage";
-import {
-  formatAdminDate,
-  getReceiptStatusLabel,
-  getRegistrationStatusLabel,
-} from "@/features/admin-submissions/admin-submissions.utils";
+import { formatAdminDate } from "@/features/admin-submissions/admin-submissions.utils";
+import { Link } from "react-router-dom";
 
 const schema = z.object({
   companyName: z.string().trim().min(1, "Ingresá el nombre de la empresa."),
@@ -87,22 +82,17 @@ export function PublicExhibitorsPage() {
   const [couponInput, setCouponInput] = useState("");
   const [couponMessage, setCouponMessage] = useState<string | null>(null);
   const [couponError, setCouponError] = useState<string | null>(null);
-  const [trackingCodeInput, setTrackingCodeInput] = useState("");
-  const [lookupError, setLookupError] = useState<string | null>(null);
   const [appliedDiscount, setAppliedDiscount] =
     useState<AppliedDiscountState | null>(null);
   const successStateRef = useRef<HTMLElement | null>(null);
-  const statusResultRef = useRef<HTMLDivElement | null>(null);
 
   const pricingCatalogQuery = useCommercialPricingCatalogQuery();
-  const statusMutation = useCommercialSubmissionStatusMutation();
   const createMutation = useCreateCommercialSubmissionMutation();
   const requestCouponMutation =
     useRequestCommercialStandDiscountCouponMutation();
   const validateCouponMutation =
     useValidateCommercialStandDiscountCouponMutation();
   const standOption = pricingCatalogQuery.data?.standOptions[0];
-  console.log("pricingCatalogQuery", pricingCatalogQuery);
 
   const form = useForm<FormValues>({
     resolver: zodResolver(schema),
@@ -186,43 +176,6 @@ export function PublicExhibitorsPage() {
       block: "start",
     });
   }, [successState]);
-
-  useEffect(() => {
-    if (!statusMutation.data?.data || lookupError) {
-      return;
-    }
-
-    statusResultRef.current?.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
-  }, [lookupError, statusMutation.data]);
-
-  const handleStatusLookup = async () => {
-    setLookupError(null);
-
-    if (!trackingCodeInput.trim()) {
-      return;
-    }
-
-    try {
-      const response = await statusMutation.mutateAsync(
-        trackingCodeInput.trim(),
-      );
-      const result = response.data;
-
-      if (result.commercial.kind !== "STAND") {
-        setLookupError("Este código no corresponde a una solicitud de stand.");
-      }
-    } catch (error) {
-      setLookupError(
-        getUserFacingErrorMessage(
-          error,
-          "No se pudo consultar el estado de la solicitud de stand.",
-        ),
-      );
-    }
-  };
 
   const handleRequestCoupon = async () => {
     setRequestError(null);
@@ -340,198 +293,39 @@ export function PublicExhibitorsPage() {
                 </h1>
                 <p className="max-w-xl text-base leading-7 text-stone-600 dark:text-stone-400">
                   Reservá el espacio comercial de 3x3 y adjuntá el comprobante
-                  para revisión. El equipamiento adicional se gestiona por
-                  separado.
+                  para revisión.
                 </p>
               </div>
             </div>
 
             <div className="space-y-4 border-t border-stone-200 pt-8 text-sm text-stone-700 dark:border-stone-800 dark:text-stone-300">
               <p className="rounded-2xl bg-white px-4 py-3 dark:bg-stone-900 dark:text-stone-200">
-                Stand 3x3:{" "}
-                {formatPublicRegistrationCurrency(
-                  standOption?.baseAmount ?? 300000,
-                )}
-              </p>
-              <p className="rounded-2xl bg-white px-4 py-3 dark:bg-stone-900 dark:text-stone-200">
                 Descuento habilitado solo con cupón para expositores del primer
                 congreso.
               </p>
               <p className="rounded-2xl bg-white px-4 py-3 dark:bg-stone-900 dark:text-stone-200">
                 Luego de contratar el stand vas a poder consultar por separado
-                las opciones de livings y equipamiento adicional.
+                las{" "}
+                <Link
+                  to="/catalogos-livings"
+                  className="underline"
+                  target="_blank"
+                >
+                  opciones de livings y equipamiento adicional
+                </Link>
+                .
+              </p>
+              <p className="rounded-2xl bg-white px-4 py-3 dark:bg-stone-900 dark:text-stone-200">
+                ¿Necesitas mayor asesoramiento?{" "}
+                <Link
+                  to="/contacto"
+                  className="underline text-primary"
+                  target="_blank"
+                >
+                  Contactanos
+                </Link>
               </p>
             </div>
-
-            <section className="space-y-5 border-t border-stone-200 pt-8 dark:border-stone-800">
-              <div className="space-y-2">
-                <p className="text-xs font-semibold uppercase tracking-[0.24em] text-stone-500 dark:text-stone-400">
-                  Seguimiento
-                </p>
-                <h2 className="text-2xl font-semibold tracking-tight text-stone-950 dark:text-stone-100">
-                  Consultar estado del stand
-                </h2>
-                <p className="text-sm leading-7 text-stone-600 dark:text-stone-400">
-                  Ingresá tu código de seguimiento para ver el estado actual de
-                  la solicitud y de los comprobantes enviados.
-                </p>
-              </div>
-
-              <div className="space-y-4">
-                <label className="space-y-2">
-                  <Label htmlFor="trackingCode">Código de seguimiento</Label>
-                  <Input
-                    id="trackingCode"
-                    value={trackingCodeInput}
-                    onChange={(event) =>
-                      setTrackingCodeInput(event.target.value)
-                    }
-                    placeholder="Ej. COM-ABCD-EFGH-IJKL"
-                    className={fieldClassName}
-                  />
-                </label>
-                <div className="flex justify-end">
-                  <Button
-                    type="button"
-                    disabled={
-                      statusMutation.isPending || !trackingCodeInput.trim()
-                    }
-                    onClick={() => void handleStatusLookup()}
-                  >
-                    {statusMutation.isPending ? "Consultando..." : "Consultar"}
-                  </Button>
-                </div>
-              </div>
-
-              {lookupError ? (
-                <InlineNotice variant="error">{lookupError}</InlineNotice>
-              ) : null}
-
-              {statusMutation.isError && !lookupError ? (
-                <InlineNotice variant="error">
-                  {getUserFacingErrorMessage(
-                    statusMutation.error,
-                    "No se pudo consultar el estado de la solicitud de stand.",
-                  )}
-                </InlineNotice>
-              ) : null}
-
-              {statusMutation.data?.data &&
-              statusMutation.data.data.commercial.kind === "STAND" ? (
-                <div
-                  ref={statusResultRef}
-                  className="space-y-5 border-t border-stone-200 pt-5 dark:border-stone-800"
-                >
-                  <div className="space-y-2">
-                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-stone-500 dark:text-stone-400">
-                      Estado actual
-                    </p>
-                    <p className="text-lg font-semibold text-stone-950 dark:text-stone-100">
-                      {getRegistrationStatusLabel(
-                        statusMutation.data.data.status,
-                      )}
-                    </p>
-                    <p className="text-sm leading-6 text-stone-600 dark:text-stone-400">
-                      {statusMutation.data.data.commercial.label} ·{" "}
-                      {statusMutation.data.data.paymentPlanType ===
-                      "TWO_INSTALLMENTS"
-                        ? "2 cuotas"
-                        : "1 pago"}
-                    </p>
-                  </div>
-
-                  <dl className="space-y-3 text-sm leading-6 text-stone-700 dark:text-stone-300">
-                    <div className="flex items-start justify-between gap-4">
-                      <dt className="text-stone-500 dark:text-stone-400">
-                        Código
-                      </dt>
-                      <dd className="text-right font-medium text-stone-900 dark:text-stone-100">
-                        {statusMutation.data.data.trackingCode}
-                      </dd>
-                    </div>
-                    <div className="flex items-start justify-between gap-4">
-                      <dt className="text-stone-500 dark:text-stone-400">
-                        Enviados
-                      </dt>
-                      <dd className="text-right font-medium text-stone-900 dark:text-stone-100">
-                        {statusMutation.data.data.submittedReceiptsCount} de{" "}
-                        {statusMutation.data.data.installmentCountExpected}{" "}
-                        comprobantes
-                      </dd>
-                    </div>
-                    <div className="flex items-start justify-between gap-4">
-                      <dt className="text-stone-500 dark:text-stone-400">
-                        Ultima actualizacion
-                      </dt>
-                      <dd className="text-right font-medium text-stone-900 dark:text-stone-100">
-                        {formatAdminDate(statusMutation.data.data.updatedAt)}
-                      </dd>
-                    </div>
-                  </dl>
-
-                  {statusMutation.data.data.paymentPlanType ===
-                    "TWO_INSTALLMENTS" &&
-                  statusMutation.data.data.submittedReceiptsCount <
-                    statusMutation.data.data.installmentCountExpected ? (
-                    <InlineNotice
-                      variant={
-                        statusMutation.data.data.secondInstallmentExpired
-                          ? "error"
-                          : "info"
-                      }
-                    >
-                      <div className="space-y-3">
-                        <p className="font-medium text-stone-900 dark:text-stone-100">
-                          {statusMutation.data.data.secondInstallmentExpired
-                            ? "Esta solicitud tiene la segunda cuota vencida."
-                            : "Esta solicitud aún tiene una cuota pendiente."}
-                        </p>
-                        {statusMutation.data.data.secondInstallmentDueAt ? (
-                          <p className="text-sm leading-6">
-                            {`Fecha límite para informar la segunda cuota: ${formatAdminDate(
-                              statusMutation.data.data.secondInstallmentDueAt,
-                            )}.`}
-                          </p>
-                        ) : null}
-                        {statusMutation.data.data
-                          .secondInstallmentUploadAllowed ? (
-                          <Button asChild type="button">
-                            <Link
-                              to={`/inscripcion/comercial/segunda-cuota?trackingCode=${encodeURIComponent(
-                                statusMutation.data.data.trackingCode,
-                              )}`}
-                            >
-                              Informar segunda cuota
-                            </Link>
-                          </Button>
-                        ) : null}
-                      </div>
-                    </InlineNotice>
-                  ) : null}
-
-                  <div className="space-y-3">
-                    {statusMutation.data.data.receipts.map((receipt) => (
-                      <div
-                        key={receipt.installmentNumber}
-                        className="flex items-center justify-between gap-4 border-t border-stone-200 pt-3 text-sm dark:border-stone-800"
-                      >
-                        <div>
-                          <p className="font-medium text-stone-900 dark:text-stone-100">
-                            Cuota {receipt.installmentNumber}
-                          </p>
-                          <p className="text-stone-500 dark:text-stone-400">
-                            Recibido el {formatAdminDate(receipt.createdAt)}
-                          </p>
-                        </div>
-                        <p className="font-medium text-stone-900 dark:text-stone-100">
-                          {getReceiptStatusLabel(receipt.status)}
-                        </p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              ) : null}
-            </section>
           </div>
 
           <div className="rounded-2xl border border-stone-200 bg-white px-7 py-9 shadow-[0_18px_60px_-40px_rgba(15,23,42,0.22)] sm:px-10 sm:py-10 lg:px-12 dark:border-stone-800 dark:bg-stone-900">

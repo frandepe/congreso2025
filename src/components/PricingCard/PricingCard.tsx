@@ -58,7 +58,7 @@ export function PricingCardDemo() {
     <div className="mx-auto w-full max-w-6xl px-6">
       <div className="mx-auto max-w-3xl text-center">
         <h2 className="text-4xl font-bold text-stone-950">
-          Opciones de inscripción
+          Inscripción y segunda cuota
         </h2>
       </div>
 

@@ -234,6 +234,23 @@ function buildCommitteeReportRows(
     .map(buildCommitteeReportRow);
 }
 
+function getApprovedRevenueAmount(submission: AdminSubmissionDetailDto) {
+  if (submission.status === "FULLY_PAID") {
+    return submission.totalAmountExpected;
+  }
+
+  if (submission.status === "PARTIALLY_PAID") {
+    const approvedFirstInstallmentReceipt = submission.receipts.find(
+      (receipt) =>
+        receipt.installmentNumber === 1 && receipt.status === "APPROVED",
+    );
+
+    return approvedFirstInstallmentReceipt?.amountReported ?? 0;
+  }
+
+  return 0;
+}
+
 function buildWorksheetXml(
   sheetName: string,
   rows: SpreadsheetRow[],
@@ -281,6 +298,13 @@ function buildWorkbookXml(
     {
       Campo: "Total informe comite",
       Valor: committeeReportRows.length,
+    },
+    {
+      Campo: "Monto aprobadas + parciales",
+      Valor: submissions.reduce(
+        (total, submission) => total + getApprovedRevenueAmount(submission),
+        0,
+      ),
     },
     {
       Campo: "Total comprobantes",
