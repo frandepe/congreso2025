@@ -60,111 +60,114 @@ export function PricingCardDemo() {
         <h2 className="text-4xl font-bold text-stone-950">
           Opciones de inscripción
         </h2>
-        <p className="mt-4 text-base leading-7 text-stone-600 dark:text-white">
-          Si vas a inscribirte por primera vez o consultar tu estado, entrá a la
-          pagina principal de inscripcion. Si ya pagaste la primera cuota y
-          querés informar la segunda, usá la pantalla especifica de segunda
-          cuota.
-        </p>
       </div>
 
-      <div className="mt-10 grid gap-6 lg:grid-cols-2">
-        <section className="relative overflow-hidden rounded-[32px] border border-stone-200 bg-[linear-gradient(145deg,rgba(255,255,255,0.98),rgba(241,245,249,0.96))] p-8 shadow-[0_26px_80px_-52px_rgba(15,23,42,0.35)]">
+      <div className="mt-10 grid items-stretch gap-6 lg:grid-cols-2">
+        <section className="relative flex h-full flex-col overflow-hidden rounded-[32px] border border-emerald-200 bg-[linear-gradient(145deg,rgba(255,255,255,0.98),rgba(236,253,245,0.92))] p-8 shadow-[0_26px_80px_-52px_rgba(6,78,59,0.4)]">
           <div
             aria-hidden="true"
-            className="absolute right-0 top-0 h-32 w-32 rounded-full bg-emerald-100/70 blur-3xl"
+            className="absolute -right-8 -top-8 h-44 w-44 rounded-full bg-emerald-200/70 blur-3xl"
           />
-          <div className="relative">
-            <div className="inline-flex rounded-2xl bg-emerald-50 p-3 text-emerald-700">
+
+          <div className="relative flex h-full flex-col">
+            <div className="inline-flex w-fit rounded-2xl bg-emerald-100 p-3 text-emerald-700">
               <FileSearch className="h-6 w-6" />
             </div>
-            <p className="mt-5 text-xs font-semibold uppercase tracking-[0.28em] text-emerald-700">
-              Opcion recomendada
-            </p>
-            <h3 className="mt-3 text-2xl font-semibold tracking-tight text-stone-950">
-              Inscribirme o consultar mi estado
-            </h3>
-            <p className="mt-4 text-sm leading-7 text-stone-600">
-              Entrá acá si todaváa no hiciste tu inscripción o si querés revisar
-              el estado de una solicitud ya enviada con tu código de
-              seguimiento.
+
+            <p className="mt-5 text-xs font-semibold uppercase tracking-[0.26em] text-emerald-700">
+              Opción recomendada
             </p>
 
-            <div className="mt-6 space-y-3 text-sm text-stone-700">
-              <p className="rounded-2xl bg-white/90 px-4 py-3">
-                Para inscripción inicial
-              </p>
-              <p className="rounded-2xl bg-white/90 px-4 py-3">
-                Para consultar estado de seguimiento
-              </p>
-              <p className="rounded-2xl bg-white/90 px-4 py-3">
-                Para recuperar tu código por email
-              </p>
+            <h3 className="mt-3 text-3xl font-semibold tracking-tight text-stone-950">
+              Inscripción al congreso
+            </h3>
+
+            <p className="mt-4 text-sm leading-7 text-stone-600">
+              Completá tus datos, elegí la modalidad y cargá el comprobante para
+              iniciar tu inscripción.
+            </p>
+
+            <div className="mt-7 divide-y divide-emerald-100 rounded-2xl border border-emerald-100 bg-white/85 text-sm shadow-sm">
+              <div className="flex items-center justify-between px-4 py-3">
+                <span className="text-stone-700">1 día</span>
+                <strong className="text-stone-950">$15.000</strong>
+              </div>
+              <div className="flex items-center justify-between px-4 py-3">
+                <span className="text-stone-700">3 días</span>
+                <strong className="text-stone-950">$40.000</strong>
+              </div>
+              <div className="flex items-center justify-between px-4 py-3">
+                <span className="text-stone-700">3 días con alojamiento</span>
+                <strong className="text-stone-950">$70.000</strong>
+              </div>
             </div>
 
-            <Button asChild className="mt-8 h-12 rounded-xl px-6 text-sm">
-              <Link to="/inscripcion/participantes">
-                Ir a inscripcion
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-            {/* <Button className="mt-8 h-12 rounded-xl px-6 text-sm" disabled>
-              Ir a inscripcion (próximamente)
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Button> */}
+            <div className="mt-auto pt-8">
+              <Button asChild className="h-12 rounded-xl px-7 text-sm">
+                <Link to="/inscripcion/participantes">
+                  Inscribirme
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
           </div>
         </section>
 
-        <section className="relative overflow-hidden rounded-[32px] border border-stone-200 bg-[linear-gradient(145deg,rgba(255,251,235,0.98),rgba(255,255,255,0.96))] p-8 shadow-[0_26px_80px_-52px_rgba(15,23,42,0.35)]">
+        <section className="relative flex h-full flex-col overflow-hidden rounded-[32px] border border-amber-200/80 bg-[linear-gradient(145deg,rgba(255,251,235,0.96),rgba(255,255,255,0.94))] p-8 shadow-[0_26px_80px_-58px_rgba(120,53,15,0.35)]">
           <div
             aria-hidden="true"
-            className="absolute left-0 top-0 h-32 w-32 rounded-full bg-amber-100/70 blur-3xl"
+            className="absolute -left-8 -top-8 h-44 w-44 rounded-full bg-amber-200/60 blur-3xl"
           />
-          <div className="relative">
-            <div className="inline-flex rounded-2xl bg-amber-50 p-3 text-amber-700">
+
+          <div className="relative flex h-full flex-col">
+            <div className="inline-flex w-fit rounded-2xl bg-amber-100 p-3 text-amber-700">
               <ReceiptText className="h-6 w-6" />
             </div>
-            <p className="mt-5 text-xs font-semibold uppercase tracking-[0.28em] text-amber-700">
-              Solo si ya pagaste la primera
-            </p>
-            <h3 className="mt-3 text-2xl font-semibold tracking-tight text-stone-950">
-              Informar segunda cuota
-            </h3>
-            <p className="mt-4 text-sm leading-7 text-stone-600">
-              Usá esta pantalla únicamente si tu inscripción fue en 2 cuotas y
-              ahora necesitas cargar el comprobante del segundo pago.
+
+            <p className="mt-5 text-xs font-semibold uppercase tracking-[0.26em] text-amber-700">
+              Solo si ya te inscribiste
             </p>
 
-            <div className="mt-6 space-y-3 text-sm text-stone-700">
-              <p className="rounded-2xl bg-white/90 px-4 py-3">
-                Necesitás tu código de seguimiento
-              </p>
-              <p className="rounded-2xl bg-white/90 px-4 py-3">
-                Solo aplica a inscripciones en 2 cuotas
-              </p>
-              <p className="rounded-2xl bg-white/90 px-4 py-3">
-                No usar para inscripción inicial
-              </p>
+            <h3 className="mt-3 text-3xl font-semibold tracking-tight text-stone-950">
+              Cargar segunda cuota
+            </h3>
+
+            <p className="mt-4 text-sm leading-7 text-stone-600">
+              Usá esta opción únicamente si ya hiciste la inscripción inicial y
+              elegiste pagar en 2 cuotas.
+            </p>
+
+            <div className="mt-7 rounded-2xl border border-amber-100 bg-white/75 p-4 text-sm">
+              <p className="font-medium text-stone-800">Vas a necesitar:</p>
+
+              <ul className="mt-3 space-y-2 text-stone-600">
+                <li>
+                  • Código de seguimiento{" "}
+                  <span className="text-xs">
+                    (lo recibiste por email al completar tu inscripción)
+                  </span>
+                </li>
+                <li>• Comprobante del segundo pago</li>
+                <li>• El mismo email de la inscripción</li>
+              </ul>
             </div>
 
-            {/* <Button
-              variant="outline"
-              className="mt-8 h-12 rounded-xl border-stone-300 bg-white px-6 text-sm text-stone-900"
-              disabled
-            >
-              Ir a segunda cuota (próximamente)
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Button> */}
-            <Button
-              asChild
-              variant="outline"
-              className="mt-8 h-12 rounded-xl border-stone-300 bg-white px-6 text-sm text-stone-900"
-            >
-              <Link to="/inscripcion/segunda-cuota">
-                Ir a segunda cuota
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
+            <div className="mt-auto pt-8">
+              <Button
+                asChild
+                variant="outline"
+                className="h-12 rounded-xl border-amber-200 bg-white/80 px-7 text-sm text-stone-900 hover:bg-amber-50"
+              >
+                <Link to="/inscripcion/segunda-cuota">
+                  Informar segunda cuota
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+
+              <p className="mt-4 text-xs leading-6 text-stone-500">
+                No uses esta opción para iniciar una inscripción nueva.
+              </p>
+            </div>
           </div>
         </section>
       </div>
