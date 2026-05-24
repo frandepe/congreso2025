@@ -1,3 +1,4 @@
+import { HelpChatbotWidget } from "@/features/help-chatbot";
 import { MainFooter } from "./MainFooter";
 import { NavbarPrincipal } from "./NavbarPrincipal";
 
@@ -14,6 +15,7 @@ export const MainLayout = ({ children }: { children: React.ReactNode }) => {
 
       {/* Pie de página */}
       <MainFooter />
+      <HelpChatbotWidget />
     </div>
   );
 };
