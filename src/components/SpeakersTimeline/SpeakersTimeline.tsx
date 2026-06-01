@@ -52,6 +52,17 @@ export function SpeakersTimeline() {
             </strong>
             <br />
             Disertantes: Grupo Inemer — Esteban Verón y Julieta Passarelli.
+            <br />
+            Emergencias Inclusivas - Abordaje Operativo y Sistémico <br />
+            La intervención en emergencias que involucran personas con
+            discapacidad. <br /> A partir de un enfoque técnico, operativo y
+            sistémico, la disertación trabajará sobre la adaptación de
+            protocolos prehospitalarios, evacuación, manejo de crisis y
+            accesibilidad operativa, incorporando además una mirada integral
+            sobre las barreras institucionales, espaciales y territoriales que
+            condicionan la respuesta ante emergencias. <br />
+            La actividad combina experiencia de campo, análisis de casos reales
+            y herramientas aplicables a contextos operativos concretos.
           </p>
 
           <div className="border-l-4 border-neutral-400 pl-4 mb-8">
@@ -129,7 +140,8 @@ export function SpeakersTimeline() {
               12:45 - 13:45 | Cómo diseñar un show infantil con temática de RCP
             </strong>
             <br />
-            Disertante: Manuel y Compañía de Títeres TITIRIFEOS.
+            Disertantes: Manuel de RCP con tus manos y Compañía de titeres
+            TITIRIFEOS
             <br />
             Cómo dar capacitaciones de una manera no convencional. Acercar
             contenidos sobre prevención de accidentes domésticos y de RCP a
@@ -187,7 +199,16 @@ export function SpeakersTimeline() {
             <br />
             Disertantes: Martín Labarrieta y Julio Godoy.
             <br />
-            Exposición + preguntas.
+            La disertación propone redefinir el rol del instructor en RCP y uso
+            del DEA dentro del modelo de Zonas Cardioseguras, trascendiendo la
+            función tradicional de capacitador para posicionarlo como un actor
+            clave en la implementación, verificación y sostenimiento de sistemas
+            de cardioprotección en territorio. <br />
+            Objetivo de la disertación: Fortalecer el rol del instructor como
+            actor técnico y estratégico dentro de las Zonas Cardioseguras,
+            brindándole herramientas para intervenir no solo en la capacitación,
+            sino también en la evaluación, control y mejora de los sistemas de
+            respuesta ante emergencias cardíacas.
           </p>
 
           <p className={itemClass}>
@@ -242,7 +263,15 @@ export function SpeakersTimeline() {
             <br />
             Disertantes: Grupo Inemer — Esteban Verón y Julieta Passarelli.
             <br />
-            Exposición + preguntas.
+            Protocolos de Emergencia en Personas con Discapacidad: Adaptación
+            Operativa, Toma de Decisiones y Sistemas de Respuesta. <br />
+            Criterios de intervención prehospitalaria en situaciones que
+            involucren personas con discapacidad, abordando la brecha existente
+            entre los protocolos técnicos y su aplicación real en territorio.{" "}
+            <br /> Se trabajará sobre evaluación de escena, toma de decisiones
+            bajo presión, adaptación operativa de protocolos y articulación del
+            sistema de respuesta, integrando además un rol play práctico
+            orientado al instructorado inclusivo.
           </p>
 
           <p className={itemClass}>
