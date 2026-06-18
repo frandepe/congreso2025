@@ -217,6 +217,7 @@ export function PublicSecondInstallmentPage() {
       );
     }
   };
+  console.log("submissionData", submissionData);
 
   const onSubmit = form.handleSubmit(async (values) => {
     setSubmitError(null);
@@ -506,6 +507,15 @@ export function PublicSecondInstallmentPage() {
                         </div>
                         <div className="space-y-1">
                           <dt className="text-xs font-semibold uppercase tracking-[0.16em] text-stone-500">
+                            Datos personales
+                          </dt>
+                          <dd className="text-base font-medium text-stone-950">
+                            {submissionData.email} - {submissionData.firstName}{" "}
+                            {submissionData.lastName}
+                          </dd>
+                        </div>
+                        <div className="space-y-1">
+                          <dt className="text-xs font-semibold uppercase tracking-[0.16em] text-stone-500">
                             Inscripción
                           </dt>
                           <dd className="text-base font-medium text-stone-950">
@@ -542,15 +552,11 @@ export function PublicSecondInstallmentPage() {
                         ) : null}
                         <div className="space-y-2 pt-2">
                           <dt className="text-xs font-semibold uppercase tracking-[0.16em] text-stone-500">
-                            Monto fijo
+                            Monto fijo a informar
                           </dt>
                           <dd className="text-3xl font-semibold tracking-tight text-stone-950 sm:text-[2.15rem]">
                             {formatPublicRegistrationCurrency(fixedAmount)}
                           </dd>
-                          <p className="text-sm leading-6 text-stone-600">
-                            Importe definido por el backend para la segunda
-                            cuota de esta inscripción.
-                          </p>
                         </div>
                       </dl>
                     </section>
