@@ -11,7 +11,7 @@ import { AnimatedFeatureSpotlight } from "@/components/Banners/PromoCardio";
 import { TextImage2025 } from "@/components/TextImage2025/TextImage2025";
 import Countdown2026 from "@/components/Countdown/Countdown2026";
 // import { Testimonials2026 } from "@/components/Testimonials/Testimonials2026";
-import { TextProgressiveBlur } from "@/components/TextProgressiveBlur/TextProgressiveBlur";
+// import { TextProgressiveBlur } from "@/components/TextProgressiveBlur/TextProgressiveBlur";
 import { GA4Notice } from "@/components/Toasts/GA4Notice";
 import { Agradecimientos } from "@/components/Agradecimientos/Agradecimientos";
 import { DescImgs } from "@/components/DescImgs/DescImgs";
@@ -142,12 +142,12 @@ export const Home = () => {
     {
       img: "/assets/logo-navbar.png",
       quote: "Patricia Soto - Guillermo Carranza - Sergio Felice",
-      role: "Secretaria general",
+      role: "Secretaría general",
     },
     {
       img: "https://frandepe.vercel.app/imgs/foto2.png",
       quote: "Franco De Paulo",
-      role: "Secretaria técnica",
+      role: "Secretaría técnica",
     },
   ];
 
@@ -211,26 +211,6 @@ export const Home = () => {
       </div> */}
       <DescImgs />
 
-      <div className="flex items-center justify-center w-full bg-muted pt-24 pb-24">
-        <AnimatedFeatureSpotlight
-          // preheaderIcon={<HeartHandshake className="h-4 w-4" />}
-          // preheaderText="Instructor de Argentina Reanima"
-          heading={
-            <>
-              <h2 className="text-3xl font-medium md:text-4xl lg:text-5xl text-black">
-                En memoria de Sergio Marcos
-              </h2>
-            </>
-          }
-          description="El Congreso Nacional RCP le dedica unas palabras a Sergio Marcos, recordando su trayectoria y compromiso como instructor. Nuestro legado sigue vivo en cada persona que ha sido formada por él."
-          buttonText="Ver homenaje"
-          buttonProps={{
-            onClick: () => navigate("/homenaje-sergio-marcos"),
-          }}
-          imageUrl="/assets/sergio/3.jpeg"
-          imageAlt="Sergio, instructor de RCP con pechera blanca de Argentina Reanima, demostrando maniobra de desobstrucción de vías aéreas en un muñeco de bebé durante un curso de primeros auxilios."
-        />
-      </div>
       <div>
         <Agradecimientos
           primaryColor="sky-500"
@@ -285,6 +265,26 @@ export const Home = () => {
       <section className="px-10 mx-auto bg-gray-200 dark:bg-black/60">
         <TextImage2025 {...demoData} />
       </section>
+      <div className="flex items-center justify-center w-full bg-muted pt-24 pb-24">
+        <AnimatedFeatureSpotlight
+          // preheaderIcon={<HeartHandshake className="h-4 w-4" />}
+          // preheaderText="Instructor de Argentina Reanima"
+          heading={
+            <>
+              <h2 className="text-3xl font-medium md:text-4xl lg:text-5xl text-black">
+                En memoria de Sergio Marcos
+              </h2>
+            </>
+          }
+          description="El Congreso Nacional RCP le dedica unas palabras a Sergio Marcos, recordando su trayectoria y compromiso como instructor. Nuestro legado sigue vivo en cada persona que ha sido formada por él."
+          buttonText="Ver homenaje"
+          buttonProps={{
+            onClick: () => navigate("/homenaje-sergio-marcos"),
+          }}
+          imageUrl="/assets/sergio/3.jpeg"
+          imageAlt="Sergio, instructor de RCP con pechera blanca de Argentina Reanima, demostrando maniobra de desobstrucción de vías aéreas en un muñeco de bebé durante un curso de primeros auxilios."
+        />
+      </div>
       <div className="relative w-full overflow-hidden rounded-lg mt-24">
         <h3
           className="text-center font-bold text-primary cursor-pointer hover:text-secondary transition-all flex justify-center items-center"
@@ -296,9 +296,9 @@ export const Home = () => {
           <Comite testimonials={testimonials} />
         </div>
       </div>
-      <div className="mt-20 ">
+      {/* <div className="mt-20 ">
         <TextProgressiveBlur />
-      </div>
+      </div> */}
       <GA4Notice />
     </div>
   );
