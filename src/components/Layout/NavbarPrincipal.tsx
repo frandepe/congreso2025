@@ -51,6 +51,7 @@ interface Navbar1Props {
     name: string;
     url: string;
   }[];
+  topOffsetClassName?: string;
 }
 
 const renderMenuItem = (item: MenuItem) => {
@@ -142,6 +143,7 @@ const NavbarPrincipal = ({
     src: "/assets/logo-navbar.png",
     alt: "logo congreso nacional de rcp 2025",
   },
+  topOffsetClassName = "top-0",
   menu = [
     { title: "Inicio", url: "/" },
     {
@@ -167,17 +169,18 @@ const NavbarPrincipal = ({
           url: "/expositores",
         },
         {
+          title: "Charlas precongreso 2026",
+          description: "Videos con instructores y referentes",
+          icon: <Youtube className="size-5 shrink-0" />,
+          url: "/vivo-2026",
+        },
+        {
           title: "Congreso 2025 en vivo",
           description: "Reviví las charlas y entrevistas del 2025",
           icon: <Radio className="size-5 shrink-0" />,
           url: "/vivo-2025",
         },
-        {
-          title: "Charlas pre congreso",
-          description: "Con instructores y referentes",
-          icon: <Youtube className="size-5 shrink-0" />,
-          url: "/videos",
-        },
+
         {
           title: "Ubicación y alojamiento",
           description: "Opciones de transporte y hoteles recomendados",
@@ -227,7 +230,7 @@ const NavbarPrincipal = ({
 
   return (
     <section
-      className={`py-2 flex justify-center fixed top-0 left-0 z-40 w-full bg-background shadow-md transition-all px-6 duration-300 ${
+      className={`py-2 flex justify-center fixed ${topOffsetClassName} left-0 z-40 w-full bg-background shadow-md transition-all px-6 duration-300 ${
         isNavVisible ? "opacity-100" : "opacity-0 -translate-y-full"
       }`}
     >

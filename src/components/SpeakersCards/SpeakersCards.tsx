@@ -13,7 +13,7 @@ export function SpeakersCards() {
     },
 
     {
-      title: "Miguel Ángel Grima Salinas",
+      title: "Miguel Ángel Grima Salinas - España",
       src: "/assets/speakers/miguel-angel-grima.jpeg",
       subtitle: "Emprendedor en el ámbito de las emergencias",
       description: (
@@ -59,7 +59,7 @@ export function SpeakersCards() {
       ),
     },
     {
-      title: "Meritxell Ros",
+      title: "Meritxell Ros - España",
       src: "/assets/speakers/meritxell-ros.jpg",
       subtitle: "Técnico de Emergencias Sanitarias.",
       description: (

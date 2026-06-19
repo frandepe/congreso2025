@@ -62,6 +62,9 @@ export function getTitleForPath(path: string) {
     case "/videos":
       return `Videos - ${BASE_TITLE}`;
 
+    case "/videos-precongreso":
+      return `Videos Precongreso - ${BASE_TITLE}`;
+
     case "/vivo-2026":
       return `Vivo 2026 - ${BASE_TITLE}`;
 

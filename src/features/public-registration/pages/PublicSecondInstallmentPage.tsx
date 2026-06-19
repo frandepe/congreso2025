@@ -217,7 +217,6 @@ export function PublicSecondInstallmentPage() {
       );
     }
   };
-  console.log("submissionData", submissionData);
 
   const onSubmit = form.handleSubmit(async (values) => {
     setSubmitError(null);

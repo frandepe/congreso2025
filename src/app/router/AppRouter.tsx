@@ -19,8 +19,8 @@ import { Inscripcion } from "@/pages/Inscripcion";
 import { Expositores } from "@/pages/Expositores";
 import { CatalogosLivingsPage } from "@/pages/CatalogosLivings";
 import { FAQ } from "@/pages/Faq";
-import Videos from "@/pages/Videos";
 import Lives2025 from "@/pages/Lives2025";
+import Lives2026 from "@/pages/Lives2026";
 import SergioMarcos from "@/pages/SergioMarcos";
 import AboutSection from "@/pages/About";
 import { ScrollToTop } from "@/lib/ScrollTop";
@@ -195,9 +195,13 @@ function AppRoutes() {
             />
             <Route
               path="/videos"
+              element={<Navigate to="/videos-precongreso" replace />}
+            />
+            <Route
+              path="/videos-precongreso"
               element={
                 <PageWrapper>
-                  <Videos />
+                  <Lives2026 />
                 </PageWrapper>
               }
             />
@@ -206,6 +210,14 @@ function AppRoutes() {
               element={
                 <PageWrapper>
                   <Lives2025 />
+                </PageWrapper>
+              }
+            />
+            <Route
+              path="/vivo-2026"
+              element={
+                <PageWrapper>
+                  <Lives2026 />
                 </PageWrapper>
               }
             />
