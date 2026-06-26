@@ -18,7 +18,6 @@ import {
 } from "@/features/public-registration/public-registration.hooks";
 import {
   formatPublicRegistrationCurrency,
-  getCurrentSubmissionDate,
 } from "@/features/public-registration/public-registration.utils";
 import { BankTransferDetails } from "@/features/public-registration/components/BankTransferDetails";
 import {
@@ -53,7 +52,6 @@ function buildAdditionalReceiptFormData(
   const formData = new FormData();
   formData.append("installmentNumber", "2");
   formData.append("amountReported", String(amountReported));
-  formData.append("paymentDate", getCurrentSubmissionDate());
   formData.append("receipt", values.receipt);
 
   return formData;

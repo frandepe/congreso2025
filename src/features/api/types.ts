@@ -528,7 +528,6 @@ export type PublicCreateSubmissionRequest = {
   installmentNumber: number;
   amountReported: number;
   discountCouponCode?: string;
-  paymentDate?: string;
   notes?: string;
   receipt: File;
 };
@@ -536,7 +535,6 @@ export type PublicCreateSubmissionRequest = {
 export type PublicCreateAdditionalReceiptRequest = {
   installmentNumber: number;
   amountReported: number;
-  paymentDate?: string;
   receipt: File;
 };
 

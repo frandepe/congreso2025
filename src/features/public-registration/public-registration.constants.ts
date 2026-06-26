@@ -16,7 +16,6 @@ export const defaultPublicRegistrationDraft: PublicRegistrationDraft = {
   registrationOptionCode: "",
   paymentPlanType: "",
   amountReported: 0,
-  paymentDate: "",
   notes: "",
   step: 1,
 };

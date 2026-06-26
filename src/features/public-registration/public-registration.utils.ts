@@ -118,7 +118,6 @@ export function toPublicRegistrationDraft(
     registrationOptionCode: values.registrationOptionCode,
     paymentPlanType: values.paymentPlanType,
     amountReported: values.amountReported,
-    paymentDate: values.paymentDate,
     notes: values.notes,
     step,
   };
@@ -148,10 +147,6 @@ export function buildPublicSubmissionFormData(
 
   if (options?.discountCouponCode) {
     formData.append("discountCouponCode", options.discountCouponCode);
-  }
-
-  if (values.paymentDate) {
-    formData.append("paymentDate", values.paymentDate);
   }
 
   if (values.notes) {

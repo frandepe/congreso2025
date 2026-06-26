@@ -11,7 +11,6 @@ export type PublicRegistrationDraft = {
   registrationOptionCode: string;
   paymentPlanType: string;
   amountReported: number;
-  paymentDate: string;
   notes: string;
   step: PublicRegistrationWizardStep;
 };

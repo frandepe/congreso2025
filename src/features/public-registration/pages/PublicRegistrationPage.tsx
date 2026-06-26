@@ -22,7 +22,6 @@ import {
   buildPublicSubmissionFormData,
   clearPublicRegistrationDraft,
   formatPublicRegistrationCurrency,
-  getCurrentSubmissionDate,
   getPublicRegistrationOption,
   getSuggestedInstallmentAmount,
   persistPublicRegistrationDraft,
@@ -58,11 +57,6 @@ const publicRegistrationSchema = z.object({
   registrationOptionCode: z.string().min(1, "Selecciona una opción."),
   paymentPlanType: z.string().min(1, "Selecciona una modalidad."),
   amountReported: z.number().positive("Ingresa un monto válido."),
-  paymentDate: z
-    .string()
-    .refine((value) => !value || !Number.isNaN(new Date(value).getTime()), {
-      message: "Ingresa una fecha válida.",
-    }),
   notes: z.string(),
   receipt: z
     .custom<File | null>((value) => value instanceof File, {
@@ -275,7 +269,6 @@ export function PublicRegistrationPage() {
         {
           ...values,
           amountReported: normalizedAmount,
-          paymentDate: getCurrentSubmissionDate(),
         },
         {
           discountCouponCode: hasAppliedDiscount
