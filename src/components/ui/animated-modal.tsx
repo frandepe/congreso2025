@@ -8,6 +8,7 @@ import React, {
   useRef,
   useState,
 } from "react";
+import { createPortal } from "react-dom";
 
 interface ModalContextType {
   open: boolean;
@@ -48,6 +49,8 @@ export const ModalTrigger = ({
   const { setOpen } = useModal();
   return (
     <button
+      type="button"
+      aria-haspopup="dialog"
       className={cn(
         "px-4 py-2 rounded-md text-black dark:text-white text-center relative overflow-hidden",
         className
@@ -78,9 +81,28 @@ export const ModalBody = ({
 
   const modalRef: any = useRef(null);
   const { setOpen } = useModal();
+
+  useEffect(() => {
+    if (!open) {
+      return;
+    }
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setOpen(false);
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [open, setOpen]);
+
   useOutsideClick(modalRef, () => setOpen(false));
 
-  return (
+  const modal = (
     <AnimatePresence>
       {open && (
         <motion.div
@@ -88,14 +110,16 @@ export const ModalBody = ({
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.3 }}
-          className="fixed inset-0 h-full w-full flex items-center justify-center z-50 backdrop-blur-sm"
+          className="fixed inset-0 z-[200] flex h-full w-full items-center justify-center backdrop-blur-sm"
         >
           <Overlay />
 
           <motion.div
             ref={modalRef}
+            role="dialog"
+            aria-modal="true"
             className={cn(
-              "min-h-[50%] max-h-[90%] md:max-w-[40%] bg-white dark:bg-neutral-950 border border-transparent dark:border-neutral-800 md:rounded-2xl relative z-50 flex flex-col flex-1 overflow-hidden",
+              "relative z-[201] flex min-h-[50%] max-h-[90%] flex-1 flex-col overflow-hidden border border-transparent bg-white dark:border-neutral-800 dark:bg-neutral-950 md:max-w-[40%] md:rounded-2xl",
               className
             )}
             initial={{
@@ -128,6 +152,8 @@ export const ModalBody = ({
       )}
     </AnimatePresence>
   );
+
+  return createPortal(modal, document.body);
 };
 
 export const ModalContent = ({
@@ -168,7 +194,7 @@ const Overlay = ({ className }: { className?: string }) => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.3 }}
-      className={`fixed inset-0 h-full w-full bg-black bg-opacity-50 backdrop-blur-md z-50 ${className}`}
+      className={`fixed inset-0 z-[200] h-full w-full bg-black bg-opacity-50 backdrop-blur-md ${className}`}
     ></motion.div>
   );
 };
@@ -177,6 +203,8 @@ const CloseIcon = () => {
   const { setOpen } = useModal();
   return (
     <button
+      type="button"
+      aria-label="Cerrar"
       onClick={() => setOpen(false)}
       className="absolute top-4 right-4 group"
     >

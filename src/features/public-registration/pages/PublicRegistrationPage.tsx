@@ -2,8 +2,9 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { FormProvider, useForm, useWatch } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Check, FileText, Loader, Upload } from "lucide-react";
+import { Check, FileText, Info, Loader, Upload } from "lucide-react";
 import { Link } from "react-router-dom";
+import { AnimatedModalDemo } from "@/components/AnimatedModal/AnimatedModal";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -500,6 +501,26 @@ export function PublicRegistrationPage() {
                   comprobante de transferencia para que el comité pueda revisar
                   tu inscripción.
                 </p>
+              </div>
+            </div>
+            <div className="mt-8 rounded-lg border border-amber-200 bg-amber-50 p-4 dark:border-amber-900/50 dark:bg-amber-950/20">
+              <div className="flex items-start gap-3">
+                <Info className="mt-0.5 h-5 w-5 shrink-0 text-amber-600" />
+                <div>
+                  <p className="font-semibold text-stone-900 dark:text-stone-100">
+                    ¿Tenés dudas sobre el alojamiento?
+                  </p>
+                  <p className="mt-1 text-sm text-stone-600 dark:text-stone-400">
+                    Conocé cómo funciona esta modalidad, qué incluye y resolvé
+                    las dudas más frecuentes.
+                  </p>
+                  <div className="mt-3">
+                    <AnimatedModalDemo
+                      centered={false}
+                      triggerLabel="Ver información sobre alojamiento →"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
 
