@@ -4,6 +4,7 @@ import {
   Heart,
   MessageCircle,
   Youtube,
+  Linkedin,
 } from "lucide-react";
 import { Footer } from "./Footer";
 
@@ -16,7 +17,7 @@ function MainFooter() {
         socialLinks={[
           {
             icon: <Facebook className="h-5 w-5" />,
-            href: "https://www.facebook.com/profile.php?id=61574079247674",
+            href: "https://www.facebook.com/profile.php?id=61590514847618",
             label: "Facebook",
           },
           {
@@ -28,6 +29,11 @@ function MainFooter() {
             icon: <Youtube className="h-5 w-5" />,
             href: "https://www.youtube.com/@CongresoNacionalRCP",
             label: "YouTube",
+          },
+          {
+            icon: <Linkedin className="h-5 w-5" />,
+            href: "https://www.linkedin.com/company/congreso-nacional-de-rcp",
+            label: "LinkedIn",
           },
           {
             icon: <MessageCircle className="h-5 w-5" />,

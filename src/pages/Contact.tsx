@@ -30,7 +30,7 @@ export const Contact = () => {
             <div className="flex items-center space-x-4 text-gray-700 hover:text-secondary transition-all duration-300 cursor-pointer">
               <Facebook size={28} className="text-primary" />
               <a
-                href="https://www.facebook.com/profile.php?id=61574079247674"
+                href="https://www.facebook.com/profile.php?id=61590514847618"
                 target="_blank"
                 rel="noopener noreferrer"
               >

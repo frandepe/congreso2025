@@ -111,7 +111,25 @@ function PoliticasDePrivacidad() {
                     de contacto.
                   </p>
                   <h3 className="font-semibold mt-4">
-                    7. Cambios en la política de privacidad
+                    7. Política de cancelaciones y devoluciones
+                  </h3>
+                  <p>
+                    Las inscripciones al Congreso Nacional de RCP, así como la
+                    contratación de stands comerciales u otros espacios de
+                    participación, no admiten cancelación ni devolución del
+                    importe abonado, cualquiera sea el motivo. Esto se debe a
+                    que la organización asume compromisos económicos,
+                    administrativos y logísticos desde el momento en que se
+                    confirma la inscripción o reserva. En caso de que un
+                    participante no pueda asistir, podrá solicitar la
+                    transferencia de su inscripción a otra persona, siempre que
+                    lo comunique a la organización con la antelación suficiente
+                    y que el cambio sea aprobado por la organización. La
+                    organización se reserva el derecho de solicitar la
+                    información necesaria para efectuar dicha transferencia.
+                  </p>
+                  <h3 className="font-semibold mt-4">
+                    8. Cambios en la política de privacidad
                   </h3>
                   <p>
                     Nos reservamos el derecho de modificar esta política en
@@ -119,7 +137,7 @@ function PoliticasDePrivacidad() {
                     la nueva versión en esta página.
                   </p>
                   <p className="text-center text-xs mt-6">
-                    Fecha de última actualización: 02 de marzo, 2026
+                    Fecha de última actualización: 21 de Julio, 2026
                   </p>
                 </div>
               </div>
