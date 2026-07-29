@@ -65,6 +65,17 @@ export function SpeakersTimeline() {
             y herramientas aplicables a contextos operativos concretos.
           </p>
 
+          <p className={itemClass}>
+            <strong>
+              20:00 | Capacitacion en RCP. Prevención de intoxicación por
+              monóxido de carbono.
+            </strong>
+            <br />
+            A cargo de Camuzzi y Argentina Reanima.
+            <br />
+            Charla abierta y gratuita a la comunidad
+          </p>
+
           <div className="border-l-4 border-neutral-400 pl-4 mb-8">
             <p className={itemClass}>
               <strong>Capacitación especial con certificación ERC</strong>

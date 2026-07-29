@@ -92,7 +92,11 @@ const instructors = [
 ];
 
 const courseInfo = [
-  { label: "Fecha", value: "Viernes 2 de octubre", icon: CalendarDays },
+  {
+    label: "Fecha",
+    value: "Viernes 2 de octubre - 14:00hs",
+    icon: CalendarDays,
+  },
   { label: "Lugar", value: "Trenque Lauquen, Buenos Aires", icon: MapPin },
   { label: "Duración", value: "6 horas", icon: Clock },
   { label: "Modalidad", value: "100% práctica", icon: HeartPulse },
@@ -220,8 +224,8 @@ export function CursoOficialErc() {
               Por qué este curso
             </p>
             <h2 className="mt-3 text-3xl font-black text-darkGreen sm:text-5xl dark:text-white">
-              Una oportunidad poco frecuente de certificar con estándares ERC
-              en Argentina.
+              Una oportunidad poco frecuente de certificar con estándares ERC en
+              Argentina.
             </h2>
           </div>
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
