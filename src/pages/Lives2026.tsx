@@ -1,6 +1,8 @@
 import StoriesCarousel from "@/components/Videos/StorieCarousel";
-import { Radio } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { ArrowRight, Award, CalendarDays, Radio, Users } from "lucide-react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import YouTube from "react-youtube";
 
 const videos = [
@@ -37,10 +39,37 @@ export default function Lives2026() {
             Mirá las entrevistas exclusivas con los disertantes invitados del
             Congreso Nacional de RCP 2026.
           </p>
+          <div className="mt-8 rounded-md border border-orange/30 bg-white p-5 shadow-sm dark:border-white/10 dark:bg-white/5">
+            <div className="flex items-center gap-2 text-sm font-bold uppercase tracking-[0.14em] text-orange">
+              <Award className="size-4" />
+              Curso Oficial ERC
+            </div>
+            <h3 className="mt-3 text-2xl font-black leading-tight text-darkGreen dark:text-white">
+              Soporte Vital Básico y DEA
+            </h3>
+            <div className="mt-4 flex flex-wrap gap-2 text-xs font-bold text-darkGreen dark:text-white">
+              <span className="inline-flex items-center gap-1 rounded-full bg-orange/10 px-3 py-1.5">
+                <CalendarDays className="size-3.5 text-orange" />
+                Viernes 2 de octubre
+              </span>
+              <span className="inline-flex items-center gap-1 rounded-full bg-orange/10 px-3 py-1.5">
+                <Users className="size-3.5 text-orange" />
+                Solo 16 cupos
+              </span>
+            </div>
+            <Button
+              asChild
+              variant="secondary"
+              className="mt-5 gap-2 rounded-md transition-transform duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] active:scale-[0.97]"
+            >
+              <Link to="/curso-oficial-erc">
+                Ver curso <ArrowRight className="size-4" />
+              </Link>
+            </Button>
+          </div>
         </div>
 
         <div className="flex flex-col items-center w-full px-4 mt-10 md:mt-0">
-          {/* Video grande */}
           <div className="w-full max-w-4xl aspect-video rounded-2xl overflow-hidden shadow-lg">
             <YouTube
               videoId={selectedVideo}
@@ -58,7 +87,6 @@ export default function Lives2026() {
             />
           </div>
 
-          {/* Carrusel de cards */}
           <div className="w-full max-w-4xl">
             <div className="flex items-center gap-2 mt-4">
               <h2>Videos precongreso</h2>

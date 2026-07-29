@@ -16,6 +16,7 @@ import { Programa } from "@/pages/Programa";
 import { UbicacionYAlojamiento } from "@/pages/UbicacionYAlojamiento";
 import { Patrocinadores } from "@/pages/Patrocinadores";
 import { Inscripcion } from "@/pages/Inscripcion";
+import { CursoOficialErc } from "@/pages/CursoOficialErc";
 import { Expositores } from "@/pages/Expositores";
 import { CatalogosLivingsPage } from "@/pages/CatalogosLivings";
 import { FAQ } from "@/pages/Faq";
@@ -114,6 +115,14 @@ function AppRoutes() {
               element={
                 <PageWrapper>
                   <Inscripcion />
+                </PageWrapper>
+              }
+            />
+            <Route
+              path="/curso-oficial-erc"
+              element={
+                <PageWrapper>
+                  <CursoOficialErc />
                 </PageWrapper>
               }
             />

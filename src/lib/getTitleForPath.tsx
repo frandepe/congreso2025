@@ -21,6 +21,10 @@ export function getTitleForPath(path: string) {
     return `Segunda Cuota - ${BASE_TITLE}`;
   }
 
+  if (path === "/curso-oficial-erc") {
+    return `Curso Oficial ERC - ${BASE_TITLE}`;
+  }
+
   if (path === "/inscripcion/expositores") {
     return `Expositores - ${BASE_TITLE}`;
   }
