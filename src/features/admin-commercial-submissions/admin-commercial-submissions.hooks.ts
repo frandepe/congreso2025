@@ -11,6 +11,7 @@ import type {
 import {
   getAdminCommercialSubmissionDetailRequest,
   getAdminCommercialSubmissionsRequest,
+  getAllAdminCommercialSubmissionListItemsRequest,
   updateAdminCommercialSubmissionRequest,
 } from "@/features/admin-commercial-submissions/admin-commercial-submissions.api";
 
@@ -25,6 +26,27 @@ export function useAdminCommercialSubmissionsQuery(
         items: response.data,
         meta: response.meta,
       };
+    },
+    placeholderData: keepPreviousData,
+  });
+}
+
+export function useAdminCommercialSubmissionDashboardQuery(
+  filters: AdminCommercialSubmissionsListQuery,
+) {
+  const dashboardFilters = {
+    status: filters.status,
+    commercialKind: filters.commercialKind,
+    commercialOptionCode: filters.commercialOptionCode,
+    hasDiscountCoupon: filters.hasDiscountCoupon,
+  };
+
+  return useQuery({
+    queryKey: ["admin-commercial-submissions-dashboard", dashboardFilters],
+    queryFn: async () => {
+      const items =
+        await getAllAdminCommercialSubmissionListItemsRequest(dashboardFilters);
+      return { items };
     },
     placeholderData: keepPreviousData,
   });

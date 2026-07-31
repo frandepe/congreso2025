@@ -13,7 +13,10 @@ import { downloadAdminSubmissionsExcel } from "@/features/admin-submissions/admi
 import { AdminSubmissionCompactTable } from "@/features/admin-submissions/components/AdminSubmissionCompactTable";
 import { AdminSubmissionFilters } from "@/features/admin-submissions/components/AdminSubmissionFilters";
 import { AdminSubmissionsPagination } from "@/features/admin-submissions/components/AdminSubmissionsPagination";
-import { useAdminSubmissionsQuery } from "@/features/admin-submissions/admin-submissions.hooks";
+import {
+  useAdminSubmissionDashboardQuery,
+  useAdminSubmissionsQuery,
+} from "@/features/admin-submissions/admin-submissions.hooks";
 import { ADMIN_SUBMISSIONS_PAGE_SIZE } from "@/features/admin-submissions/admin-submissions.constants";
 import {
   formatArsCurrency,
@@ -64,21 +67,26 @@ export function AdminSubmissionsPage() {
 
   const { data, isLoading, isError, error, refetch, isFetching } =
     useAdminSubmissionsQuery(filters);
+  const { data: dashboardData, isFetching: isDashboardFetching } =
+    useAdminSubmissionDashboardQuery(filters);
+
+  const dashboardItems = dashboardData?.items ?? [];
 
   const totalsByStatus = {
     PENDING_REVIEW:
-      data?.items.filter((item) => item.status === "PENDING_REVIEW").length ??
-      0,
+      dashboardItems.filter((item) => item.status === "PENDING_REVIEW")
+        .length ?? 0,
     PARTIALLY_PAID:
-      data?.items.filter((item) => item.status === "PARTIALLY_PAID").length ??
-      0,
+      dashboardItems.filter((item) => item.status === "PARTIALLY_PAID")
+        .length ?? 0,
     FULLY_PAID:
-      data?.items.filter((item) => item.status === "FULLY_PAID").length ?? 0,
+      dashboardItems.filter((item) => item.status === "FULLY_PAID").length ??
+      0,
     REJECTED:
-      data?.items.filter((item) => item.status === "REJECTED").length ?? 0,
+      dashboardItems.filter((item) => item.status === "REJECTED").length ?? 0,
   };
   const completedRevenue =
-    data?.items
+    dashboardItems
       .filter(
         (item) =>
           item.status === "FULLY_PAID" || item.status === "PARTIALLY_PAID",
@@ -89,11 +97,11 @@ export function AdminSubmissionsPage() {
         }
 
         return total + item.totalAmountExpected;
-      }, 0) ?? 0;
+      }, 0);
   const nonRejectedRevenue =
-    data?.items
+    dashboardItems
       .filter((item) => item.status !== "REJECTED")
-      .reduce((total, item) => total + item.totalAmountExpected, 0) ?? 0;
+      .reduce((total, item) => total + item.totalAmountExpected, 0);
 
   const updateSearchParams = (
     updates: Partial<Record<string, string | null>>,
@@ -208,7 +216,9 @@ export function AdminSubmissionsPage() {
               {isExporting ? "Generando Excel..." : "Descargar Excel completo"}
             </Button>
             <Badge className="border-stone-200 bg-white/90 px-3 py-1 text-stone-700 hover:bg-white/90 hover:text-stone-700">
-              {isFetching ? "Actualizando resultados" : "Panel sincronizado"}
+              {isFetching || isDashboardFetching
+                ? "Actualizando resultados"
+                : "Panel sincronizado"}
             </Badge>
             <Badge className="border-emerald-100 bg-emerald-50 px-3 py-1 text-emerald-800 hover:bg-emerald-50 hover:text-emerald-800">
               {data?.meta?.total ?? 0} solicitudes
@@ -245,7 +255,7 @@ export function AdminSubmissionsPage() {
                   {total}
                 </p>
                 <p className="mt-1 text-sm text-stone-500">
-                  solicitudes en esta pagina
+                  solicitudes segun filtros
                 </p>
               </div>
             );
@@ -281,7 +291,7 @@ export function AdminSubmissionsPage() {
               {formatArsCurrency(nonRejectedRevenue)}
             </p>
             <p className="mt-1 text-sm text-stone-500">
-              total visible excepto rechazadas
+              total excepto rechazadas
             </p>
           </div>
         </div>

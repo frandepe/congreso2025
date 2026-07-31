@@ -11,6 +11,7 @@ import type {
 import {
   getAdminSubmissionDetailRequest,
   getAdminSubmissionsRequest,
+  getAllAdminSubmissionListItemsRequest,
   updateAdminSubmissionRequest,
 } from "@/features/admin-submissions/admin-submissions.api";
 
@@ -23,6 +24,27 @@ export function useAdminSubmissionsQuery(filters: AdminSubmissionsListQuery) {
         items: response.data,
         meta: response.meta,
       };
+    },
+    placeholderData: keepPreviousData,
+  });
+}
+
+export function useAdminSubmissionDashboardQuery(
+  filters: AdminSubmissionsListQuery,
+) {
+  const dashboardFilters = {
+    status: filters.status,
+    registrationOptionCode: filters.registrationOptionCode,
+    paymentPlanType: filters.paymentPlanType,
+    hasDiscountCoupon: filters.hasDiscountCoupon,
+  };
+
+  return useQuery({
+    queryKey: ["admin-submissions-dashboard", dashboardFilters],
+    queryFn: async () => {
+      const items =
+        await getAllAdminSubmissionListItemsRequest(dashboardFilters);
+      return { items };
     },
     placeholderData: keepPreviousData,
   });

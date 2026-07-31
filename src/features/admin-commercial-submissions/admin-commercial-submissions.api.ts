@@ -10,6 +10,11 @@ import { apiRequest } from "@/shared/api/client";
 
 const ADMIN_COMMERCIAL_SUBMISSIONS_EXPORT_PAGE_SIZE = 50;
 
+type AdminCommercialSubmissionsListFilters = Omit<
+  AdminCommercialSubmissionsListQuery,
+  "page" | "pageSize"
+>;
+
 function buildQuery(params: AdminCommercialSubmissionsListQuery) {
   const searchParams = new URLSearchParams();
 
@@ -58,26 +63,7 @@ export function updateAdminCommercialSubmissionRequest(
 }
 
 export async function getAllAdminCommercialSubmissionDetailsRequest() {
-  const firstPageResponse = await getAdminCommercialSubmissionsRequest({
-    page: 1,
-    pageSize: ADMIN_COMMERCIAL_SUBMISSIONS_EXPORT_PAGE_SIZE,
-  });
-
-  const totalPages = firstPageResponse.meta?.totalPages ?? 1;
-  const listItems = [...firstPageResponse.data];
-
-  if (totalPages > 1) {
-    const remainingPageResponses = await Promise.all(
-      Array.from({ length: totalPages - 1 }, (_, index) =>
-        getAdminCommercialSubmissionsRequest({
-          page: index + 2,
-          pageSize: ADMIN_COMMERCIAL_SUBMISSIONS_EXPORT_PAGE_SIZE,
-        }),
-      ),
-    );
-
-    listItems.push(...remainingPageResponses.flatMap((response) => response.data));
-  }
+  const listItems = await getAllAdminCommercialSubmissionListItemsRequest();
 
   const detailResponses = [];
 
@@ -93,4 +79,33 @@ export async function getAllAdminCommercialSubmissionDetailsRequest() {
   }
 
   return detailResponses;
+}
+
+export async function getAllAdminCommercialSubmissionListItemsRequest(
+  filters: AdminCommercialSubmissionsListFilters = {},
+) {
+  const firstPageResponse = await getAdminCommercialSubmissionsRequest({
+    ...filters,
+    page: 1,
+    pageSize: ADMIN_COMMERCIAL_SUBMISSIONS_EXPORT_PAGE_SIZE,
+  });
+
+  const totalPages = firstPageResponse.meta?.totalPages ?? 1;
+  const listItems = [...firstPageResponse.data];
+
+  if (totalPages > 1) {
+    const remainingPageResponses = await Promise.all(
+      Array.from({ length: totalPages - 1 }, (_, index) =>
+        getAdminCommercialSubmissionsRequest({
+          ...filters,
+          page: index + 2,
+          pageSize: ADMIN_COMMERCIAL_SUBMISSIONS_EXPORT_PAGE_SIZE,
+        }),
+      ),
+    );
+
+    listItems.push(...remainingPageResponses.flatMap((response) => response.data));
+  }
+
+  return listItems;
 }

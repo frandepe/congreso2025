@@ -10,6 +10,11 @@ import { apiRequest } from "@/shared/api/client";
 
 const ADMIN_SUBMISSIONS_EXPORT_PAGE_SIZE = 50;
 
+type AdminSubmissionsListFilters = Omit<
+  AdminSubmissionsListQuery,
+  "page" | "pageSize"
+>;
+
 function buildAdminSubmissionsQuery(params: AdminSubmissionsListQuery) {
   const searchParams = new URLSearchParams();
 
@@ -68,28 +73,7 @@ export function updateAdminSubmissionRequest(
 }
 
 export async function getAllAdminSubmissionDetailsRequest() {
-  const firstPageResponse = await getAdminSubmissionsRequest({
-    page: 1,
-    pageSize: ADMIN_SUBMISSIONS_EXPORT_PAGE_SIZE,
-  });
-
-  const totalPages = firstPageResponse.meta?.totalPages ?? 1;
-  const listItems = [...firstPageResponse.data];
-
-  if (totalPages > 1) {
-    const remainingPageResponses = await Promise.all(
-      Array.from({ length: totalPages - 1 }, (_, index) =>
-        getAdminSubmissionsRequest({
-          page: index + 2,
-          pageSize: ADMIN_SUBMISSIONS_EXPORT_PAGE_SIZE,
-        }),
-      ),
-    );
-
-    listItems.push(
-      ...remainingPageResponses.flatMap((response) => response.data),
-    );
-  }
+  const listItems = await getAllAdminSubmissionListItemsRequest();
 
   const detailResponses = [];
 
@@ -103,4 +87,35 @@ export async function getAllAdminSubmissionDetailsRequest() {
   }
 
   return detailResponses;
+}
+
+export async function getAllAdminSubmissionListItemsRequest(
+  filters: AdminSubmissionsListFilters = {},
+) {
+  const firstPageResponse = await getAdminSubmissionsRequest({
+    ...filters,
+    page: 1,
+    pageSize: ADMIN_SUBMISSIONS_EXPORT_PAGE_SIZE,
+  });
+
+  const totalPages = firstPageResponse.meta?.totalPages ?? 1;
+  const listItems = [...firstPageResponse.data];
+
+  if (totalPages > 1) {
+    const remainingPageResponses = await Promise.all(
+      Array.from({ length: totalPages - 1 }, (_, index) =>
+        getAdminSubmissionsRequest({
+          ...filters,
+          page: index + 2,
+          pageSize: ADMIN_SUBMISSIONS_EXPORT_PAGE_SIZE,
+        }),
+      ),
+    );
+
+    listItems.push(
+      ...remainingPageResponses.flatMap((response) => response.data),
+    );
+  }
+
+  return listItems;
 }

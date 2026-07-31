@@ -211,16 +211,6 @@ export function PublicRegistrationPage() {
   }, [appliedDiscount, normalizedFormEmail]);
 
   useEffect(() => {
-    if (!normalizedFormEmail) {
-      return;
-    }
-
-    setDiscountRequestEmail((current) =>
-      current.trim() ? current : normalizedFormEmail,
-    );
-  }, [normalizedFormEmail]);
-
-  useEffect(() => {
     persistPublicRegistrationDraft(
       PUBLIC_REGISTRATION_DRAFT_STORAGE_KEY,
       toPublicRegistrationDraft(
