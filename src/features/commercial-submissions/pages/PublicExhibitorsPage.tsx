@@ -343,7 +343,7 @@ export function PublicExhibitorsPage() {
                 <RegistrationOptionCard
                   title="Stand 3x3"
                   price={formatPublicRegistrationCurrency(
-                    standOption?.baseAmount ?? 300000,
+                    standOption?.baseAmount ?? 250000,
                   )}
                   description="Espacio comercial para presencia de marca durante el congreso."
                   selected
@@ -540,7 +540,7 @@ export function PublicExhibitorsPage() {
                   <p>
                     Base:{" "}
                     {formatPublicRegistrationCurrency(
-                      standOption?.baseAmount ?? 300000,
+                      standOption?.baseAmount ?? 250000,
                     )}
                   </p>
                   <p>
