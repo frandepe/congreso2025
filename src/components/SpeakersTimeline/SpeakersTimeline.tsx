@@ -148,17 +148,19 @@ export function SpeakersTimeline() {
 
           <p className={itemClass}>
             <strong>
-              12:45 - 13:45 | Cómo diseñar un show infantil con temática de RCP
+              12:45 - 13:45 | Los títeres como herramienta pedagógica para la
+              prevención
             </strong>
             <br />
             Disertantes: Manuel de RCP con tus manos y Compañía de titeres
             TITIRIFEOS
             <br />
-            Cómo dar capacitaciones de una manera no convencional. Acercar
-            contenidos sobre prevención de accidentes domésticos y de RCP a
-            través de un formato participativo, donde los títeres, la música en
-            vivo y el humor funcionan como un puente para lograr aprendizajes
-            significativos de una manera cercana, clara y profundamente humana.
+            El desafío de las capacitaciones con herramientas no convencionales.
+            Acercar contenidos sobre prevención de accidentes domésticos y de
+            RCP a través de un formato participativo, donde los títeres, la
+            música en vivo y el humor funcionan como un puente para lograr
+            aprendizajes significativos de una manera cercana, clara y
+            profundamente humana.
           </p>
 
           <p className={itemClass}>

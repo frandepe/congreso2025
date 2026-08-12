@@ -1,8 +1,8 @@
 "use client";
 import { useScroll, useTransform, motion } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
-import { Button } from "./button";
-import { Download, HeartPulse } from "lucide-react";
+// import { Button } from "./button";
+import { HeartPulse } from "lucide-react";
 
 interface TimelineEntry {
   title: string;
@@ -41,14 +41,14 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
         </p>
 
         {/* Enlace para descarga */}
-        <a
+        {/* <a
           href="/assets/Segundo-congreso-nacional-de-instructores-de-RCP.pdf"
           download
         >
           <Button className="mt-4">
             <Download size={16} className="mr-2" /> Descargar programa
           </Button>
-        </a>
+        </a> */}
       </div>
 
       <div ref={ref} className="relative max-w-7xl mx-auto pb-20">
