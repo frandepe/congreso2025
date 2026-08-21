@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, BadgeCheck, Megaphone, Store } from "lucide-react";
+import { ArrowRight, HelpCircle, Megaphone, Store } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CardsPatrocinadoresPagination } from "@/components/CardsPatrocinadoresPagination/CardsPatrocinadoresPagination";
 import { PatrocinadoresComponent } from "@/components/SliderPatrocinadores/Patrocinadores";
@@ -16,10 +16,6 @@ const accessCards = [
     iconClassName: "bg-emerald-600 text-white",
     eyebrow: "Expositores",
     actions: [
-      {
-        href: "/contacto-patrocinio",
-        label: "Consultar sin compromiso",
-      },
       {
         href: "/inscripcion/expositores",
         label: "Primer o único pago",
@@ -100,6 +96,42 @@ export const Patrocinadores = () => {
             segunda cuota de un stand o publicidad ya registrados.
           </p>
 
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.4 }}
+            transition={{ duration: 0.35 }}
+            className="mt-8 rounded-2xl border border-emerald-200 bg-white px-5 py-5 text-left shadow-[0_18px_60px_-48px_rgba(15,23,42,0.24)] sm:px-6"
+          >
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+              <div className="flex gap-4">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-emerald-50 text-emerald-700">
+                  <HelpCircle className="h-5 w-5" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold tracking-tight text-stone-950">
+                    ¿Tenés dudas o querés conocer las opciones?
+                  </h3>
+                  <p className="mt-2 max-w-3xl text-sm leading-6 text-stone-600">
+                    Contanos qué necesita tu empresa o institución y desde la
+                    organización del Congreso te asesoramos sobre stands,
+                    publicidad y alternativas de participación.
+                  </p>
+                </div>
+              </div>
+
+              <a href="/contacto-patrocinio" className="shrink-0">
+                <Button
+                  variant="outline"
+                  className="h-11 w-full justify-between rounded-xl border-emerald-200 bg-emerald-50 px-4 text-sm font-medium text-emerald-800 hover:border-emerald-300 hover:bg-emerald-100 sm:w-auto sm:min-w-[220px]"
+                >
+                  Quiero recibir información
+                  <ArrowRight className="h-4 w-4" />
+                </Button>
+              </a>
+            </div>
+          </motion.div>
+
           <div className="mt-10 grid gap-6 lg:grid-cols-2">
             {accessCards.map((card, index) => {
               const Icon = card.icon;
@@ -133,17 +165,6 @@ export const Patrocinadores = () => {
                     <p className="mt-5 text-sm leading-7 text-stone-700">
                       {card.description}
                     </p>
-
-                    <div className="mt-6 rounded-2xl border border-stone-200 bg-white px-4 py-4">
-                      <div className="flex items-start gap-3 text-sm text-stone-700">
-                        <BadgeCheck className="mt-0.5 h-5 w-5 shrink-0 text-emerald-600" />
-                        <p>
-                          {card.eyebrow === "Expositores"
-                            ? "Si necesitás asesoramiento, consultá sin compromiso. Usá los accesos de pago solo cuando ya tengas decidido contratar."
-                            : "Usá el primer botón si vas a contratar publicidad. Usá el segundo solo para pagar la segunda cuota"}
-                        </p>
-                      </div>
-                    </div>
 
                     <div className="mt-auto pt-8">
                       <div className="flex flex-col gap-3">
