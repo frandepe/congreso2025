@@ -318,7 +318,7 @@ export function PublicExhibitorsPage() {
               <p className="rounded-2xl bg-white px-4 py-3 dark:bg-stone-900 dark:text-stone-200">
                 ¿Necesitas mayor asesoramiento?{" "}
                 <Link
-                  to="/contacto"
+                  to="/contacto-patrocinio"
                   className="underline text-primary"
                   target="_blank"
                 >

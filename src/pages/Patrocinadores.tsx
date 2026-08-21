@@ -17,6 +17,10 @@ const accessCards = [
     eyebrow: "Expositores",
     actions: [
       {
+        href: "/contacto-patrocinio",
+        label: "Consultar sin compromiso",
+      },
+      {
         href: "/inscripcion/expositores",
         label: "Primer o único pago",
       },
@@ -135,7 +139,7 @@ export const Patrocinadores = () => {
                         <BadgeCheck className="mt-0.5 h-5 w-5 shrink-0 text-emerald-600" />
                         <p>
                           {card.eyebrow === "Expositores"
-                            ? "Usá el primer botón para comprar un stand. Usá el segundo solo para pagar la segunda cuota."
+                            ? "Si necesitás asesoramiento, consultá sin compromiso. Usá los accesos de pago solo cuando ya tengas decidido contratar."
                             : "Usá el primer botón si vas a contratar publicidad. Usá el segundo solo para pagar la segunda cuota"}
                         </p>
                       </div>
@@ -191,7 +195,7 @@ export const Patrocinadores = () => {
 
           <div className="mt-10 overflow-hidden rounded-[28px] border border-stone-200 bg-stone-50 p-4 shadow-[0_24px_80px_-56px_rgba(15,23,42,0.45)] sm:p-6">
             <img
-              src="/assets/mapa-patrocinadores_2026.jpg"
+              src="/assets/mapa-patrocinadores_2026_v2.png"
               alt="Mapa general de patrocinadores y expositores"
               className="w-full rounded-[20px] object-contain"
             />

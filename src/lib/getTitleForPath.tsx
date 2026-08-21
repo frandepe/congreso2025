@@ -41,6 +41,10 @@ export function getTitleForPath(path: string) {
     return `Catalogos Livings - ${BASE_TITLE}`;
   }
 
+  if (path === "/contacto-patrocinio") {
+    return `Contacto Patrocinio - ${BASE_TITLE}`;
+  }
+
   switch (path) {
     case "/":
       return `Inicio - ${BASE_TITLE}`;

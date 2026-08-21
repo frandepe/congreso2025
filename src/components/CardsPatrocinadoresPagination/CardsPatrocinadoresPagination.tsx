@@ -66,13 +66,13 @@ const patrocinadoresData = [
   //     "La Asociación para la Capacitación en Emergencias y Socorros (ACES) es una organización académica sin fines de lucro fundada en el año 2000 con sus casas matrices en Argentina y Canadá. Se dedica a la enseñanza médica, entrenamiento en emergencias, seguridad y rescate. También se dedica a difundir programas de prevención para especialistas y personal de la salud. Desde su constitución la institución trabaja en forma continua para alcanzar los mayores estándares en excelencia educativa. ACES es miembro de la red internacional de entrenamiento AIDER, cuenta con más de cinco mil instructores certificados en América Latina, Brasil, Canadá, España, Estados Unidos, Portugal y Tailandia. La institución ofrece y enseña más de treinta cursos diferentes provenientes de instituciones científicas y médicas ampliamente reconocidas. Todas las formaciones son internacionalmente certificadas por la Asociación Internacional ACES, por la red AIDER Canadá y/o por American ECHO, todas ellas instituciones internacionales de primer nivel. Las capacitaciones brindadas, siguen las últimas recomendaciones de ILCOR, el consejo Europeo de Resucitación, la AAP (American Academy of Pediatrics) y la OPS (Organización Panamericana de la Salud), y están en constante actualización para estar siempre al día con los protocolos más recientes.",
   //   url: "https://www.acesint.org/web/es/",
   // },
-  // {
-  //   image: "/assets/patrocinadores/lex.png",
-  //   title: "LEX",
-  //   description:
-  //     "Somos un equipo interdisciplinario de profesionales especializados en salud, seguridad y educación, con una sólida trayectoria en prevención y respuesta a emergencias:",
-  //   url: "/assets/lex.pdf",
-  // },
+  {
+    image: "/assets/patrocinadores/lex.png",
+    title: "LEX",
+    description:
+      "Somos un equipo interdisciplinario de profesionales especializados en salud, seguridad y educación, con una sólida trayectoria en prevención y respuesta a emergencias:",
+    url: "/assets/lex.pdf",
+  },
   // {
   //   image: "/assets/patrocinadores/cafe-bar.png",
   //   title: "Bares & Fondas",
@@ -87,6 +87,27 @@ const patrocinadoresData = [
   //     "En La Pataca encontrás la dulzura de tu día con el mejor Dulce de Leche, Chocolates, Bombones, creados uno a uno, rellenos con dulce de leche y bañados con chocolate, Alfajores, Patacos todo de produccion propia y en temporada de Pascua, Huevos, conejitos, gallinitas...todos hechos a mano, con la calidad de siempre. Encontranos en Roca 856 de Trenque Lauquen o en nuestra pagina lapataca.com",
   //   url: "https://www.lapataca.com",
   // },
+  {
+    image: "/assets/patrocinadores/unisal.png",
+    title: "UNISAL",
+    description:
+      "La Universidad Salesiana orienta su visión a la formación y desarrollo de una comunidad pluralista, reflexiva y protagónica, comprometida con la organización de una red dinámica de conocimientos y actitudes, capaz de desarrollar un proyecto educativo de formación humana y científica, fundado en una cosmovisión cristiana, con clara incidencia social y cultural",
+    url: "https://www.unisal.edu.ar/",
+  },
+  {
+    image: "/assets/patrocinadores/inemer.png",
+    title: "INEMER",
+    description:
+      "Fortalecemos sistemas de respuesta integrando formación especializada, planificación territorial, coordinación institucional y estándares internacionales para abordar emergencias de manera más profesional, inclusiva e integral.",
+    url: "https://inemer.com.ar/",
+  },
+  {
+    image: "/assets/patrocinadores/instituto-40.jpg",
+    title: "Instituto 40",
+    description:
+      "Enseñanza de Educación Superior y Técnica en Trenque Lauquen, Provincia de Buenos Aires, Argentina.",
+    url: "https://www.instagram.com/isfdyt40/?hl=es-la",
+  },
   {
     image: "/assets/patrocinadores/patro-tl.png",
     title: "Trenque Lauquen",

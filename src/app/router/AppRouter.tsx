@@ -31,6 +31,7 @@ import { PublicSecondInstallmentPage } from "@/features/public-registration/page
 import { PublicExhibitorsPage } from "@/features/commercial-submissions/pages/PublicExhibitorsPage";
 import { PublicAdvertisingPage } from "@/features/commercial-submissions/pages/PublicAdvertisingPage";
 import { PublicCommercialSecondInstallmentPage } from "@/features/commercial-submissions/pages/PublicCommercialSecondInstallmentPage";
+import { SponsorshipContactPage } from "@/features/sponsorship-contact/pages/SponsorshipContactPage";
 import { AdminLoginPage } from "@/features/auth/pages/AdminLoginPage";
 import { AdminShell } from "@/features/admin-submissions/pages/AdminShell";
 import { AdminSubmissionsPage } from "@/features/admin-submissions/pages/AdminSubmissionsPage";
@@ -191,6 +192,14 @@ function AppRoutes() {
               element={
                 <PageWrapper>
                   <Patrocinadores />
+                </PageWrapper>
+              }
+            />
+            <Route
+              path="/contacto-patrocinio"
+              element={
+                <PageWrapper>
+                  <SponsorshipContactPage />
                 </PageWrapper>
               }
             />

@@ -402,6 +402,11 @@ export type CommercialTrackingCodeRecoveryResponseDto = {
   message: string;
 };
 
+export type SponsorshipContactCreatedDto = {
+  sent: true;
+  message: string;
+};
+
 export type AdminCommercialSubmissionListItemDto = {
   id: string;
   createdAt: string;
@@ -561,4 +566,13 @@ export type CommercialCreateAdditionalReceiptRequest = {
   amountReported: number;
   paymentDate?: string;
   receipt: File;
+};
+
+export type SponsorshipContactRequest = {
+  companyName: string;
+  contactName: string;
+  email: string;
+  phone?: string;
+  message?: string;
+  website?: string;
 };
