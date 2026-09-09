@@ -7,7 +7,7 @@ import {
   Routes,
   useLocation,
 } from "react-router-dom";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import ReactGA from "react-ga4";
 import { MainLayout } from "@/components/Layout/MainLayout";
 import { Home } from "@/pages/Home";
@@ -40,14 +40,17 @@ import { AdminCommercialSubmissionsPage } from "@/features/admin-commercial-subm
 import { AdminCommercialSubmissionDetailPage } from "@/features/admin-commercial-submissions/pages/AdminCommercialSubmissionDetailPage";
 import { RequireAdminAuth } from "@/features/auth/RequireAdminAuth";
 import Images2025 from "@/pages/Images2025";
+import { AsistenciaTrenque } from "@/pages/AsistenciaTrenque";
 
 function PageWrapper({ children }: { children: React.ReactNode }) {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -20 }}
-      transition={{ duration: 0.25 }}
+      exit={shouldReduceMotion ? undefined : { opacity: 0, y: -20 }}
+      transition={{ duration: shouldReduceMotion ? 0 : 0.25 }}
     >
       {children}
     </motion.div>
@@ -276,6 +279,14 @@ function AppRoutes() {
               element={
                 <PageWrapper>
                   <Contact />
+                </PageWrapper>
+              }
+            />
+            <Route
+              path="/asistencia-trenque"
+              element={
+                <PageWrapper>
+                  <AsistenciaTrenque />
                 </PageWrapper>
               }
             />

@@ -3,6 +3,7 @@ import {
   HelpCircle,
   Landmark,
   MapPin,
+  MapPinned,
   Menu,
   MicVocal,
   Radio,
@@ -173,6 +174,12 @@ const NavbarPrincipal = ({
           description: "Videos con instructores y referentes",
           icon: <Youtube className="size-5 shrink-0" />,
           url: "/vivo-2026",
+        },
+        {
+          title: "Asistencia Trenque",
+          description: "Solo para residentes de Trenque Lauquen",
+          icon: <MapPinned className="size-5 shrink-0" />,
+          url: "/asistencia-trenque",
         },
         {
           title: "Congreso 2025 en vivo",

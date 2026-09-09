@@ -88,6 +88,9 @@ export function getTitleForPath(path: string) {
     case "/contacto":
       return `Contacto - ${BASE_TITLE}`;
 
+    case "/asistencia-trenque":
+      return `Asistencia Trenque Lauquen - ${BASE_TITLE}`;
+
     case "/admin/login":
       return `Login Admin - ${BASE_TITLE}`;
 
