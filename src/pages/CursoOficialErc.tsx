@@ -135,9 +135,7 @@ export function CursoOficialErc() {
 
             <h1 className="text-4xl font-black leading-[1.02] tracking-normal text-darkGreen sm:text-5xl lg:text-7xl dark:text-white">
               Curso Oficial ERC
-              <span className="mt-2 block text-orange">
-                Soporte Vital Básico y DEA
-              </span>
+              <span className="mt-2 block text-red-500">CUPOS AGOTADOS</span>
             </h1>
 
             <p className="mt-6 max-w-2xl text-base leading-8 text-slate-700 sm:text-lg dark:text-slate-200">
@@ -159,12 +157,12 @@ export function CursoOficialErc() {
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
               <Button
-                asChild
+                disabled
                 size="lg"
                 className="h-12 rounded-md bg-darkGreen px-7 text-base shadow-lg shadow-darkGreen/20 transition-transform duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] active:scale-[0.97]"
               >
                 <a
-                  href={whatsappRegistrationUrl}
+                  // href={whatsappRegistrationUrl}
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -416,7 +414,7 @@ export function CursoOficialErc() {
                 </p>
               </div>
               <Button
-                asChild
+                disabled
                 size="lg"
                 variant="secondary"
                 className="h-12 rounded-md px-7 text-base shadow-lg shadow-orange/20 transition-transform duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] active:scale-[0.97]"
