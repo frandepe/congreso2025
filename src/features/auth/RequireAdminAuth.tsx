@@ -4,13 +4,13 @@ import { useAuth } from "@/features/auth/useAuth";
 
 export function RequireAdminAuth() {
   const location = useLocation();
-  const { isAuthenticated, isHydrating } = useAuth();
+  const { admin, isAuthenticated, isHydrating } = useAuth();
 
   if (isHydrating) {
     return <AuthHydrationFallback />;
   }
 
-  if (!isAuthenticated) {
+  if (!isAuthenticated || admin?.role !== "ADMIN") {
     return (
       <Navigate
         to="/admin/login"

@@ -143,7 +143,7 @@ export function SpeakersTimeline() {
             <br />
             Disertante: Velasco Emiliano y Carolina Gómez - UNISAL.
             <br />
-            Exposición + preguntas.
+            Exposición.
           </p>
 
           <p className={itemClass}>
@@ -294,12 +294,12 @@ export function SpeakersTimeline() {
           <p className={itemClass}>
             <strong>14:30 - 15:30 | Testimonio en primera persona</strong>
             <br />
-            Exposición + preguntas.
+            Exposición.
           </p>
 
           <p className={itemClass}>
             <strong>
-              15:30 - 16:30 | Psicología en emergencias aplicada a la RCP
+              15:30 - 16:30 | Cuidados emocionales aplicados a la RCP
             </strong>
             <br />
             Disertantes: Equipo PAE (equipos formados por la Lic. Alicia

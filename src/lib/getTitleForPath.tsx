@@ -91,6 +91,9 @@ export function getTitleForPath(path: string) {
     case "/asistencia-trenque":
       return `Asistencia Trenque Lauquen - ${BASE_TITLE}`;
 
+    case "/certificados":
+      return `Certificados - ${BASE_TITLE}`;
+
     case "/admin/login":
       return `Login Admin - ${BASE_TITLE}`;
 
@@ -99,6 +102,9 @@ export function getTitleForPath(path: string) {
 
     case "/admin/commercial":
       return `Panel Comercial - ${BASE_TITLE}`;
+
+    case "/admin/inscriptos":
+      return `Inscriptos Admin - ${BASE_TITLE}`;
 
     default:
       return BASE_TITLE;

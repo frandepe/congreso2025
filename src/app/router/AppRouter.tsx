@@ -38,9 +38,11 @@ import { AdminSubmissionsPage } from "@/features/admin-submissions/pages/AdminSu
 import { AdminSubmissionDetailPage } from "@/features/admin-submissions/pages/AdminSubmissionDetailPage";
 import { AdminCommercialSubmissionsPage } from "@/features/admin-commercial-submissions/pages/AdminCommercialSubmissionsPage";
 import { AdminCommercialSubmissionDetailPage } from "@/features/admin-commercial-submissions/pages/AdminCommercialSubmissionDetailPage";
+import { AdminInscriptosPage } from "@/features/admin-inscriptos/pages/AdminInscriptosPage";
 import { RequireAdminAuth } from "@/features/auth/RequireAdminAuth";
 import Images2025 from "@/pages/Images2025";
 import { AsistenciaTrenque } from "@/pages/AsistenciaTrenque";
+import { CertificatesPage } from "@/features/certificates/pages/CertificatesPage";
 
 function PageWrapper({ children }: { children: React.ReactNode }) {
   const shouldReduceMotion = useReducedMotion();
@@ -290,6 +292,14 @@ function AppRoutes() {
                 </PageWrapper>
               }
             />
+            <Route
+              path="/certificados"
+              element={
+                <PageWrapper>
+                  <CertificatesPage />
+                </PageWrapper>
+              }
+            />
           </Route>
 
           <Route
@@ -332,6 +342,14 @@ function AppRoutes() {
                 element={
                   <PageWrapper>
                     <AdminCommercialSubmissionDetailPage />
+                  </PageWrapper>
+                }
+              />
+              <Route
+                path="inscriptos"
+                element={
+                  <PageWrapper>
+                    <AdminInscriptosPage />
                   </PageWrapper>
                 }
               />

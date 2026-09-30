@@ -13,6 +13,11 @@ const adminNavItems = [
     label: "Comercial",
     description: "Stands y publicidades",
   },
+  {
+    to: "/admin/inscriptos",
+    label: "Inscriptos",
+    description: "Listado de inscripciones aprobadas",
+  },
 ];
 
 export function AdminShell() {
