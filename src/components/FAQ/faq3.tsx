@@ -17,16 +17,15 @@ const faqItems = [
   },
   {
     id: "faq-2",
-    question: "¿Cómo me inscribo?",
+    question: "¿Cómo obtengo mi certificado?",
     answer: (
       <>
-        Puedes completar la inscripción haciendo{" "}
+        El Congreso 2026 ya finalizó. Consultá tu certificado{" "}
         <a
           className="text-primary underline"
-          href="/inscripcion/participantes"
-          target="_blank"
+          href="/certificados"
         >
-          clic aquí
+          en esta página
         </a>
       </>
     ),
@@ -90,9 +89,9 @@ const faqItems = [
   },
   {
     id: "faq-4",
-    question: "¿Cuántos cupos hay disponibles?",
+    question: "¿Cuándo se realizó el Congreso?",
     answer:
-      "Los cupos son limitados para garantizar una mejor experiencia para todos los asistentes.",
+      "El Congreso Nacional de RCP 2026 se realizó los días 2, 3 y 4 de octubre en Trenque Lauquen.",
   },
   {
     id: "faq-5",
@@ -108,17 +107,10 @@ const faqItems = [
 
         <div className="flex flex-col gap-2 text-sm sm:flex-row sm:gap-6">
           <a
-            href="/inscripcion/expositores"
+            href="/contacto-patrocinio"
             className="inline-flex w-fit items-center border-b border-transparent text-foreground transition-colors hover:border-foreground/30"
           >
-            Participar como expositor
-          </a>
-
-          <a
-            href="/inscripcion/publicidad"
-            className="inline-flex w-fit items-center border-b border-transparent text-foreground transition-colors hover:border-foreground/30"
-          >
-            Opciones de publicidad y auspicio
+            Contactar a la organización
           </a>
         </div>
       </div>

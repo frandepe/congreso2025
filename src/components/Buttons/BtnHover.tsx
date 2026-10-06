@@ -6,10 +6,10 @@ const BtnHover = () => {
   const navigate = useNavigate();
   return (
     <Button
-      onClick={() => navigate("/inscripcion/participantes")}
+      onClick={() => navigate("/certificados")}
       className="
       mt-4
-        group relative px-[35px] py-[12px]
+        group relative px-4 py-[12px] sm:px-[35px]
         text-[17px] font-medium
         text-[#181818]
         bg-secondary
@@ -22,7 +22,7 @@ const BtnHover = () => {
         active:scale-95
       "
     >
-      Inscribirme
+      Certificaciones 2026
       {/* Star 1 */}
       <div
         className="

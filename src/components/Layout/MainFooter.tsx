@@ -43,7 +43,7 @@ function MainFooter() {
         ]}
         mainLinks={[
           { href: "/programa", label: "Programa" },
-          { href: "/inscripcion", label: "Inscripción" },
+          { href: "/certificados", label: "Certificaciones 2026" },
           {
             href: "/ubicacion-y-alojamiento",
             label: "Ubicación y Alojamiento",

@@ -1,7 +1,7 @@
 export type CertificateParticipant = {
   nombre: string;
   apellido: string;
-  email: string;
-  dni: string;
+  dni: string | null;
 };
 
+export type CertificateSearchMethod = "dni" | "fullName";

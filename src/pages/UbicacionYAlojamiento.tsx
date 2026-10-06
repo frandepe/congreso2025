@@ -75,9 +75,6 @@ function DormisMunicipalesCallout() {
                   centered={false}
                   triggerLabel="Ver informacion sobre alojamiento"
                 />
-                <Button variant="outline" asChild>
-                  <a href="/inscripcion/participantes">Inscribirme</a>
-                </Button>
               </div>
             </div>
 

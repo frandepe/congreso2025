@@ -32,13 +32,12 @@ const patrocinadoresData = [
       "Es una empresa dedicada a la Capacitación en emergencias, con una alta experiencia en el tema de mas de 30 años, brinda diferentes capacitaciones relacionadas al accionar del ciudadano común frente a emergencias. En la empresa podes encontrar las siguientes capacitaciones:  “Socorros urbanos con RCP y DEA”  “Formador de Brigadistas de Emergencias”  “Monitor de Zonas Cardio Seguras”  “Primeros Auxilios para Perros y Gatos”  “Primeros Socorros Psicológicos”",
     url: "https://ndcapacitaciones.com.ar",
   },
-  // {
-  //   image: "/assets/patrocinadores/driplan.png",
-  //   title: "Driplan",
-  //   description: `Se especializa en la provisión de equipamiento médico de alta complejidad, con un enfoque particular en soluciones cardiológicas de excelencia. Nuestra función como empresa es acompañar a instituciones públicas y privadas en la incorporación de tecnología confiable, eficiente y de última generación, que contribuya a elevar los estándares de seguridad y atención médica.
-  //   A través de nuestros desfibriladores de vanguardia, ofrecemos equipos diseñados para garantizar máxima precisión, autonomía y facilidad de uso en situaciones críticas, permitiendo una respuesta inmediata y efectiva frente a emergencias cardiovasculares. De este modo, contribuimos de manera directa a la prevención, el cuidado de la salud y la protección de la vida en cada entorno donde estamos presentes.`,
-  //   url: "https://www.driplan.com/",
-  // },
+  {
+    image: "/assets/patrocinadores/nissan.png",
+    title: "Nissan",
+    description: `Compañía automotriz global de origen japonés fundada en 1933, reconocida como uno de los fabricantes de vehículos más innovadores y consolidados del mundo`,
+    url: "https://www.nissan.com.ar/",
+  },
   // {
   //   image: "/assets/patrocinadores/lecsy.png",
   //   title: "LECSY",

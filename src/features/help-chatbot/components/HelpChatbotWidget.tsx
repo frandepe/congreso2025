@@ -14,12 +14,12 @@ const initialMessages: HelpChatbotMessage[] = [
   {
     id: "assistant-welcome",
     role: "assistant",
-    text: "Hola. ¿Tenés una consulta? Puedo orientarte sobre inscripción, pagos, alojamiento y más.",
+    text: "Hola. ¿Tenés una consulta? Puedo orientarte sobre certificaciones, el programa y más.",
   },
 ];
 
 const fallbackText =
-  "No encontré esa consulta. Puedo ayudarte con inscripción, precios, alojamiento, segunda cuota, programa, expositores, stands, publicidad o contacto.";
+  "No encontré esa consulta. Puedo ayudarte con certificaciones, el programa, expositores, alojamiento o contacto.";
 
 export function HelpChatbotWidget() {
   const [isOpen, setIsOpen] = useState(false);

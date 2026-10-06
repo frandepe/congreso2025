@@ -1,56 +1,58 @@
-import inscriptosData from "@/shared/utils/inscriptos.json";
-import inscriptosLocalesData from "@/shared/utils/inscriptosLocales.json";
-import type { CertificateParticipant } from "./certificates.types";
+import certificaciones2026Data from "@/shared/utils/certificaciones2026.json";
+import type {
+  CertificateParticipant,
+  CertificateSearchMethod,
+} from "./certificates.types";
 
 type RawParticipant = Partial<CertificateParticipant>;
 
-export const normalizeDni = (value: string) => value.replace(/[.\s-]/g, "");
+export const normalizeDni = (value: string) => value.replace(/\D/g, "");
 
-export const normalizeEmail = (value: string) => value.trim().toLowerCase();
+export const normalizeFullName = (value: string) =>
+  value
+    .trim()
+    .replace(/\s+/g, " ")
+    .toLocaleLowerCase("es")
+    .replaceAll("ñ", "\uE000")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replaceAll("\uE000", "ñ");
 
 const toParticipant = (participant: RawParticipant): CertificateParticipant => ({
   nombre: typeof participant.nombre === "string" ? participant.nombre.trim() : "",
   apellido:
     typeof participant.apellido === "string" ? participant.apellido.trim() : "",
-  email: typeof participant.email === "string" ? participant.email.trim() : "",
-  dni: typeof participant.dni === "string" ? participant.dni.trim() : "",
+  dni: typeof participant.dni === "string" ? participant.dni.trim() : null,
 });
 
-const participantKey = (participant: CertificateParticipant) =>
-  [
-    normalizeDni(participant.dni),
-    normalizeEmail(participant.email),
-    participant.apellido.toLocaleLowerCase("es"),
-    participant.nombre.toLocaleLowerCase("es"),
-  ].join("|");
+export const certificateParticipants = (
+  certificaciones2026Data as RawParticipant[]
+).map(toParticipant);
 
-const allParticipants = [
-  ...(inscriptosData as RawParticipant[]),
-  ...(inscriptosLocalesData as RawParticipant[]),
-].map(toParticipant);
+export function findCertificateParticipants(
+  query: string,
+  method: CertificateSearchMethod,
+) {
+  if (method === "dni") {
+    const normalizedQuery = normalizeDni(query);
 
-export const certificateParticipants = Array.from(
-  new Map(
-    allParticipants.map((participant) => [participantKey(participant), participant]),
-  ).values(),
-);
+    if (!normalizedQuery) return [];
 
-export function findCertificateParticipants(query: string) {
-  const normalizedDni = normalizeDni(query);
-  const normalizedEmail = normalizeEmail(query);
-
-  if (!normalizedDni || !normalizedEmail) {
-    return [];
+    return certificateParticipants.filter(
+      (participant) =>
+        participant.dni !== null &&
+        normalizeDni(participant.dni) === normalizedQuery,
+    );
   }
 
-  return certificateParticipants.filter((participant) => {
-    const participantDni = normalizeDni(participant.dni);
-    const participantEmail = normalizeEmail(participant.email);
+  const normalizedQuery = normalizeFullName(query);
 
-    return (
-      (participantDni !== "" && participantDni === normalizedDni) ||
-      (participantEmail !== "" && participantEmail === normalizedEmail)
-    );
-  });
+  if (!normalizedQuery || !normalizedQuery.includes(" ")) return [];
+
+  return certificateParticipants.filter((participant) =>
+    [
+      `${participant.nombre} ${participant.apellido}`,
+      `${participant.apellido} ${participant.nombre}`,
+    ].some((fullName) => normalizeFullName(fullName) === normalizedQuery),
+  );
 }
-

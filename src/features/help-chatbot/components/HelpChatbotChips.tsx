@@ -1,6 +1,5 @@
 const visibleChipLabels = [
-  "Inscripción",
-  "Precios",
+  "Certificaciones 2026",
   "Alojamiento",
   "Segunda cuota",
   "Programa",

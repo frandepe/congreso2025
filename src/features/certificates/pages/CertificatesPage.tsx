@@ -2,11 +2,16 @@ import { FormEvent, useRef, useState } from "react";
 import { Download, Eye, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Certificate } from "../components/Certificate";
-import type { CertificateParticipant } from "../certificates.types";
+import type {
+  CertificateParticipant,
+  CertificateSearchMethod,
+} from "../certificates.types";
 import { findCertificateParticipants } from "../certificates.utils";
 
 export function CertificatesPage() {
   const [query, setQuery] = useState("");
+  const [searchMethod, setSearchMethod] =
+    useState<CertificateSearchMethod>("dni");
   const [hasSearched, setHasSearched] = useState(false);
   const [results, setResults] = useState<CertificateParticipant[]>([]);
   const [selectedParticipant, setSelectedParticipant] =
@@ -15,17 +20,28 @@ export function CertificatesPage() {
 
   const handleSearch = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const matches = findCertificateParticipants(query);
+    const matches = findCertificateParticipants(query, searchMethod);
 
     setResults(matches);
     setSelectedParticipant(null);
     setHasSearched(true);
   };
 
+  const changeSearchMethod = (method: CertificateSearchMethod) => {
+    setSearchMethod(method);
+    setQuery("");
+    setResults([]);
+    setSelectedParticipant(null);
+    setHasSearched(false);
+  };
+
   const showCertificate = (participant: CertificateParticipant) => {
     setSelectedParticipant(participant);
     window.setTimeout(() => {
-      certificateRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+      certificateRef.current?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
     }, 0);
   };
 
@@ -55,8 +71,7 @@ export function CertificatesPage() {
             Descargá tu certificado
           </h1>
           <p className="mx-auto mt-5 max-w-xl text-base leading-7 text-slate-600 sm:text-lg">
-            Ingresá el DNI o el email utilizado durante la inscripción para
-            consultar, visualizar y guardar tu certificado.
+            Buscá tu certificado por DNI o por nombre y apellido.
           </p>
         </div>
 
@@ -64,8 +79,36 @@ export function CertificatesPage() {
           onSubmit={handleSearch}
           className="mx-auto mt-10 max-w-2xl rounded-2xl border border-primary/10 bg-white p-5 shadow-xl shadow-primary/5 sm:p-7"
         >
-          <label htmlFor="certificate-search" className="font-semibold text-primary">
-            DNI o email
+          <fieldset>
+            <legend className="font-semibold text-primary">Buscar por</legend>
+            <div className="mt-3 grid grid-cols-2 gap-2 rounded-xl bg-slate-100 p-1">
+              {(
+                [
+                  ["dni", "DNI"],
+                  ["fullName", "Nombre y apellido"],
+                ] as const
+              ).map(([method, label]) => (
+                <button
+                  key={method}
+                  type="button"
+                  onClick={() => changeSearchMethod(method)}
+                  aria-pressed={searchMethod === method}
+                  className={`min-h-11 rounded-lg px-3 text-sm font-bold transition ${
+                    searchMethod === method
+                      ? "bg-white text-primary shadow-sm"
+                      : "text-slate-600 hover:text-primary"
+                  }`}
+                >
+                  {label}
+                </button>
+              ))}
+            </div>
+          </fieldset>
+          <label
+            htmlFor="certificate-search"
+            className="mt-5 block font-semibold text-primary"
+          >
+            {searchMethod === "dni" ? "DNI" : "Nombre y apellido"}
           </label>
           <div className="mt-3 flex flex-col gap-3 sm:flex-row">
             <input
@@ -73,12 +116,19 @@ export function CertificatesPage() {
               type="text"
               value={query}
               onChange={(event) => setQuery(event.target.value)}
-              placeholder="Ej.: 12.345.678 o nombre@email.com"
-              autoComplete="email"
+              placeholder={
+                searchMethod === "dni" ? "Ej.: 12.345.678" : "Ej.: Jorge Pérez"
+              }
+              inputMode={searchMethod === "dni" ? "numeric" : "text"}
+              autoComplete="name"
               required
               className="min-h-12 flex-1 rounded-lg border border-slate-300 bg-white px-4 text-base text-slate-900 outline-none transition focus:border-lightGreen focus:ring-4 focus:ring-lightGreen/15"
             />
-            <Button type="submit" size="lg" className="min-h-12 gap-2 font-bold">
+            <Button
+              type="submit"
+              size="lg"
+              className="min-h-12 gap-2 font-bold"
+            >
               <Search className="size-4" aria-hidden="true" />
               Buscar certificado
             </Button>
@@ -86,20 +136,37 @@ export function CertificatesPage() {
         </form>
 
         {hasSearched && results.length === 0 && (
-          <div role="status" className="mx-auto mt-8 max-w-2xl rounded-xl border border-amber-300 bg-amber-50 px-5 py-4 text-center text-amber-950">
-            <p className="font-semibold">No encontramos un certificado.</p>
+          <div
+            role="status"
+            className="mx-auto mt-8 max-w-2xl rounded-xl border border-amber-300 bg-amber-50 px-5 py-4 text-center text-amber-950"
+          >
+            <p className="font-semibold">
+              No encontramos un certificado con los datos ingresados.
+            </p>
             <p className="mt-1 text-sm">
-              Revisá que el DNI o email coincida con el utilizado en la inscripción.
+              Revisá los datos e intentá nuevamente con la otra opción de
+              búsqueda.
             </p>
           </div>
         )}
 
-        {results.length > 0 && (
+        {results.length > 1 && (
+          <div
+            role="status"
+            className="mx-auto mt-8 max-w-2xl rounded-xl border border-amber-300 bg-amber-50 px-5 py-4 text-center text-amber-950"
+          >
+            <p className="font-semibold">Existen varias coincidencias.</p>
+            <p className="mt-1 text-sm">
+              Utilizá el DNI para identificar tu certificado. Si no tenés un DNI
+              registrado, contactate con la organización.
+            </p>
+          </div>
+        )}
+
+        {results.length === 1 && (
           <div className="mx-auto mt-8 max-w-2xl" aria-live="polite">
             <p className="mb-3 text-sm font-semibold text-slate-600">
-              {results.length === 1
-                ? "Encontramos tu certificado."
-                : "Encontramos más de una coincidencia. Elegí tu certificado."}
+              Encontramos tu certificado.
             </p>
             <div className="space-y-3">
               {results.map((participant, index) => {
@@ -109,7 +176,7 @@ export function CertificatesPage() {
 
                 return (
                   <div
-                    key={`${participant.dni}-${participant.email}-${index}`}
+                    key={`${participant.dni ?? "sin-dni"}-${index}`}
                     className="flex flex-col gap-4 rounded-xl border border-emerald-200 bg-white p-5 shadow-sm sm:flex-row sm:items-center sm:justify-between"
                   >
                     <div>
@@ -148,7 +215,10 @@ export function CertificatesPage() {
         )}
 
         {selectedParticipant && (
-          <div ref={certificateRef} className="certificate-print-area scroll-mt-6 mt-12">
+          <div
+            ref={certificateRef}
+            className="certificate-print-area scroll-mt-6 mt-12"
+          >
             <div className="mb-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between print:hidden">
               <div>
                 <p className="text-sm font-bold uppercase tracking-wider text-lightGreen">
@@ -177,4 +247,3 @@ export function CertificatesPage() {
     </section>
   );
 }
-

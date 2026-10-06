@@ -5,8 +5,8 @@ export const HELP_CHATBOT_CONFIDENCE_THRESHOLD = 3;
 export const helpChatbotIntents: HelpChatbotIntent[] = [
   {
     id: "registration_how_to",
-    title: "Cómo registrarse",
-    chips: ["Inscripción", "¿Cómo me registro?"],
+    title: "Certificaciones 2026",
+    chips: ["Certificados", "¿Cómo obtengo mi certificado?"],
     keywords: [
       "registro",
       "me registro",
@@ -29,9 +29,9 @@ export const helpChatbotIntents: HelpChatbotIntent[] = [
       "participante",
     ],
     response:
-      "Para inscribirte, completá el formulario de participantes con tus datos personales, seleccioná la modalidad de pago y subí el comprobante de transferencia.",
-    links: [{ label: "Ir a inscripción", href: "/inscripcion/participantes" }],
-    relatedIntentIds: ["registration_prices", "payment_receipt_upload"],
+      "El Congreso Nacional de RCP 2026 ya finalizó. Podés consultar tu certificado en la página de Certificaciones 2026.",
+    links: [{ label: "Certificaciones 2026", href: "/certificados" }],
+    relatedIntentIds: ["program", "contact_committee"],
   },
   {
     id: "registration_prices",
@@ -52,10 +52,8 @@ export const helpChatbotIntents: HelpChatbotIntent[] = [
       "que sale",
     ],
     response:
-      "Los precios visibles actuales son: 1 día $15.000, 3 días $40.000 y 3 días con alojamiento $70.000. Los valores finales se muestran en el formulario al elegir la modalidad.",
-    links: [
-      { label: "Ver opciones y precios", href: "/inscripcion/participantes" },
-    ],
+      "La edición 2026 ya finalizó y no se reciben nuevas inscripciones. Para consultar certificados, visitá Certificaciones 2026.",
+    links: [{ label: "Certificaciones 2026", href: "/certificados" }],
     relatedIntentIds: ["lodging_options", "registration_how_to"],
   },
   {
@@ -79,12 +77,8 @@ export const helpChatbotIntents: HelpChatbotIntent[] = [
       "ubicación",
     ],
     response:
-      "Podés revisar la página de ubicación y alojamiento para ver hoteles, transporte y datos de la ciudad. La opción 3 días con alojamiento incluye acceso completo y alojamiento.",
+      "Podés revisar la página de ubicación y alojamiento para consultar hoteles, transporte y datos de la ciudad.",
     links: [
-      {
-        label: "Inscripción con alojamiento",
-        href: "/inscripcion/participantes",
-      },
       {
         label: "Ver ubicación y alojamiento",
         href: "/ubicacion-y-alojamiento",
@@ -117,8 +111,8 @@ export const helpChatbotIntents: HelpChatbotIntent[] = [
       "comercial",
     ],
     response:
-      "El pago se realiza por transferencia fuera de la web. En el formulario, al final del proceso, subí una imagen del comprobante para que el comité lo revise.",
-    links: [{ label: "Ir al formulario", href: "/inscripcion/participantes" }],
+      "El Congreso 2026 ya finalizó y no se reciben nuevas inscripciones. Si tenés una consulta sobre un trámite enviado anteriormente, contactá al comité.",
+    links: [{ label: "Contactar al comité", href: "/contacto" }],
     relatedIntentIds: ["after_registration", "registration_how_to"],
   },
   {
@@ -267,11 +261,8 @@ export const helpChatbotIntents: HelpChatbotIntent[] = [
       "3x3",
     ],
     response:
-      "Para contratar un stand, hace click en Comprar stand y completá el formulario.",
-    links: [
-      { label: "Comprar stand", href: "/inscripcion/expositores" },
-      // { label: "Ver accesos comerciales", href: "/patrocinadores" },
-    ],
+      "La edición 2026 ya finalizó. Para consultar sobre futuras ediciones, contactá a la organización.",
+    links: [{ label: "Contactar a la organización", href: "/contacto-patrocinio" }],
     relatedIntentIds: ["commercial_second_installment", "contact_committee"],
   },
   {
@@ -292,11 +283,8 @@ export const helpChatbotIntents: HelpChatbotIntent[] = [
       "contratar publicidad",
     ],
     response:
-      "Para contratar publicidad, elegí una opción publicitaria, completá los datos de la empresa y subí el comprobante para revisión.",
-    links: [
-      { label: "Contratar publicidad", href: "/inscripcion/publicidad" },
-      // { label: "Ver accesos comerciales", href: "/patrocinadores" },
-    ],
+      "La edición 2026 ya finalizó. Para consultar sobre futuras ediciones, contactá a la organización.",
+    links: [{ label: "Contactar a la organización", href: "/contacto-patrocinio" }],
     relatedIntentIds: ["commercial_second_installment", "contact_committee"],
   },
   {
@@ -381,11 +369,8 @@ export const helpChatbotIntents: HelpChatbotIntent[] = [
       "mail descuento",
     ],
     response:
-      "Si solicitaste un cupón y no llega, revisá spam o promociones y verificá que usaste el email correspondiente. Si sigue sin llegar, contactá al comité.",
-    links: [
-      { label: "Solicitar cupón", href: "/inscripcion/participantes" },
-      { label: "Contactar al comité", href: "/contacto" },
-    ],
+      "La edición 2026 ya finalizó. Para consultar por un trámite anterior, contactá al comité.",
+    links: [{ label: "Contactar al comité", href: "/contacto" }],
     relatedIntentIds: ["first_congress_discount"],
   },
   {
@@ -403,8 +388,8 @@ export const helpChatbotIntents: HelpChatbotIntent[] = [
       "codigo recibido",
     ],
     response:
-      "En el formulario de participantes hay una sección de beneficio exclusivo. Solicitá el cupón con el mismo email usado en el primer congreso, luego pegá el código recibido y presioná Aplicar descuento.",
-    links: [{ label: "Aplicar descuento", href: "/inscripcion/participantes" }],
+      "La edición 2026 ya finalizó y no se reciben nuevas inscripciones. Para consultar certificados, visitá Certificaciones 2026.",
+    links: [{ label: "Certificaciones 2026", href: "/certificados" }],
     relatedIntentIds: ["discount_coupon_missing"],
   },
   {

@@ -152,8 +152,8 @@ const NavbarPrincipal = ({
       url: "/programa",
     },
     {
-      title: "Inscripción",
-      url: "/inscripcion",
+      title: "Certificaciones 2026",
+      url: "/certificados",
     },
     {
       title: "Patrocinadores",

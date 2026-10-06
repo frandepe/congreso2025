@@ -42,12 +42,7 @@ export default function ContactForm() {
         <p className="text-gray-500 dark:text-gray-400">
           Si tiene alguna duda o comentario, no dude en ponerse en contacto con
           nosotros. Este formulario está destinado únicamente para consultas
-          generales o sugerencias. Si desea inscribirse al congreso haga
-          <a href="/inscripcion" className="text-secondary">
-            {" "}
-            clic aquí
-          </a>
-          .
+          generales o sugerencias.
         </p>
       </div>
       <form className="space-y-4" onSubmit={sendEmail}>

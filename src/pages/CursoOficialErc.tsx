@@ -15,10 +15,6 @@ import {
   Stethoscope,
   Users,
 } from "lucide-react";
-import { Link } from "react-router-dom";
-
-const whatsappRegistrationUrl =
-  "https://wa.me/5492392460227?text=Hola%2C%20quiero%20inscribirme%20al%20Curso%20Oficial%20ERC%20de%20Soporte%20Vital%20B%C3%A1sico%20y%20DEA.";
 
 const heroBadges = [
   "Pre Congreso",
@@ -161,17 +157,10 @@ export function CursoOficialErc() {
                 size="lg"
                 className="h-12 rounded-md bg-darkGreen px-7 text-base shadow-lg shadow-darkGreen/20 transition-transform duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] active:scale-[0.97]"
               >
-                <a
-                  // href={whatsappRegistrationUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Quiero inscribirme
-                </a>
+                Inscripciones cerradas
               </Button>
               <div className="rounded-md border border-orange/30 bg-orange/10 px-4 py-3 text-sm font-semibold leading-6 text-darkGreen dark:text-white">
-                Para realizar este curso es obligatorio estar previamente
-                inscripto en el Congreso Nacional de RCP.
+                Esta actividad del Pre Congreso ya finalizó.
               </div>
             </div>
           </motion.div>
@@ -308,34 +297,21 @@ export function CursoOficialErc() {
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
           <div>
             <p className="text-sm font-bold uppercase tracking-[0.18em] text-orange">
-              Requisito obligatorio
+              Actividad finalizada
             </p>
             <h2 className="mt-3 text-3xl font-black sm:text-5xl">
-              Para participar del curso ERC, primero tenés que estar inscripto
-              en el Congreso.
+              El Curso Oficial ERC se realizó como actividad del Pre Congreso.
             </h2>
             <p className="mt-5 text-base leading-8 text-white/75">
-              El Curso Oficial ERC forma parte de las actividades del Pre
-              Congreso. La inscripción al Congreso Nacional de RCP es condición
-              necesaria para poder reservar uno de los 16 cupos disponibles.
+              La edición 2026 ya finalizó.
             </p>
-            <Button
-              asChild
-              variant="secondary"
-              className="mt-7 rounded-md px-6 transition-transform duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] active:scale-[0.97]"
-            >
-              <Link to="/inscripcion/participantes">
-                Inscribirme al Congreso
-              </Link>
-            </Button>
           </div>
           <div className="grid gap-4 sm:grid-cols-3">
             <div className="rounded-md border border-white/10 bg-white/10 p-5">
               <ShieldCheck className="size-8 text-orange" />
               <h3 className="mt-5 text-lg font-black">Paso 1</h3>
               <p className="mt-3 text-sm leading-6 text-white/75">
-                Completá tu inscripción como participante del Congreso Nacional
-                de RCP.
+                El Congreso Nacional de RCP 2026 ya se realizó.
               </p>
             </div>
             <div className="rounded-md border border-white/10 bg-white/10 p-5">
@@ -419,13 +395,7 @@ export function CursoOficialErc() {
                 variant="secondary"
                 className="h-12 rounded-md px-7 text-base shadow-lg shadow-orange/20 transition-transform duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] active:scale-[0.97]"
               >
-                <a
-                  href={whatsappRegistrationUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Quiero inscribirme
-                </a>
+                Inscripciones cerradas
               </Button>
             </div>
           </div>

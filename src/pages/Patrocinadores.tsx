@@ -9,7 +9,7 @@ const accessCards = [
   {
     title: "Stands para expositores",
     description:
-      "Si tu empresa quiere presencia física en el congreso, esta es la opción correcta.",
+      "Información sobre espacios comerciales de la edición 2026 del Congreso.",
     icon: Store,
     accentClassName:
       "border-emerald-200 bg-[linear-gradient(180deg,#f5fff8_0%,#ffffff_100%)]",
@@ -17,8 +17,6 @@ const accessCards = [
     eyebrow: "Expositores",
     actions: [
       {
-        href: "/inscripcion/expositores",
-        label: "Primer o único pago",
       },
       {
         href: "/inscripcion/comercial/segunda-cuota",
@@ -29,7 +27,7 @@ const accessCards = [
   {
     title: "Publicidad para marcas",
     description:
-      "Potenciá la visibilidad de tu marca durante el congreso. Difundite en nuestra web, pantallas oficiales, banners y distintos espacios publicitarios.",
+      "Información sobre las alternativas publicitarias ofrecidas durante la edición 2026 del Congreso.",
     icon: Megaphone,
     accentClassName:
       "border-sky-200 bg-[linear-gradient(180deg,#f3fbff_0%,#ffffff_100%)]",
@@ -37,8 +35,6 @@ const accessCards = [
     eyebrow: "Publicidad",
     actions: [
       {
-        href: "/inscripcion/publicidad",
-        label: "Primer o único pago",
       },
       {
         href: "/inscripcion/comercial/segunda-cuota",
@@ -89,11 +85,11 @@ export const Patrocinadores = () => {
             Accesos comerciales
           </p>
           <h2 className="mt-3 text-3xl font-semibold tracking-tight text-stone-950 sm:text-4xl">
-            Elegí el trámite correcto para tu empresa
+            Consultas sobre trámites comerciales
           </h2>
           <p className="mt-4 text-base leading-7 text-stone-600 dark:text-white">
-            Desde esta página podés iniciar una solicitud comercial o cargar la
-            segunda cuota de un stand o publicidad ya registrados.
+            Desde esta página podés cargar la segunda cuota de un stand o
+            publicidad ya registrados.
           </p>
 
           <motion.div

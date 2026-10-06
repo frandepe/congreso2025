@@ -48,12 +48,6 @@ export default function BannerPrincipal() {
           Segundo congreso nacional de instructores de RCP
         </h1>
 
-        {/* <Button
-          onClick={() => navigate("/inscripcion/participantes")}
-          className="mt-6 mr-6"
-        >
-          Inscribirme
-        </Button> */}
         <BtnHover />
         <div className="mx-auto mt-8 grid max-w-4xl grid-cols-2 gap-y-5 border-y border-white/20 bg-white/[0.04] px-3 py-5 text-left backdrop-blur-[2px] md:grid-cols-4 md:gap-y-0 md:px-6">
           {heroBenefits.map((benefit, index) => {

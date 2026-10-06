@@ -51,10 +51,6 @@ const getCommercialKindLabel = (
   kind: PublicCommercialSubmissionStatusDto["commercial"]["kind"],
 ) => (kind === "STAND" ? "stand" : "publicidad");
 
-const getCommercialSubmissionPath = (
-  kind: PublicCommercialSubmissionStatusDto["commercial"]["kind"] | null,
-) => (kind === "ADVERTISING" ? "/inscripcion/publicidad" : "/inscripcion/expositores");
-
 export function PublicCommercialSecondInstallmentPage() {
   useBackendWarmup();
 
@@ -292,12 +288,6 @@ export function PublicCommercialSecondInstallmentPage() {
                 <li>2 - El monto se calcula automáticamente según tu solicitud.</li>
                 <li>3 - Adjuntá solo el comprobante correspondiente a la cuota 2.</li>
               </ul>
-              <Link
-                to={getCommercialSubmissionPath(submissionData?.commercial.kind ?? null)}
-                className="inline-flex text-sm font-medium text-emerald-700 underline-offset-4 hover:underline dark:text-emerald-300"
-              >
-                ¿Necesitás cargar la solicitud comercial inicial?
-              </Link>
             </div>
           </div>
 
@@ -534,10 +524,10 @@ export function PublicCommercialSecondInstallmentPage() {
                 <div className="border-t border-stone-200 pt-8 dark:border-stone-800">
                   <div className="flex items-center justify-between gap-4">
                     <Link
-                      to={getCommercialSubmissionPath(submissionData?.commercial.kind ?? null)}
+                      to="/patrocinadores"
                       className="inline-flex rounded-md border border-stone-300 bg-white px-5 py-2.5 text-sm font-medium text-stone-700 transition-colors hover:border-stone-400 dark:border-stone-700 dark:bg-stone-900 dark:text-stone-200 dark:hover:border-stone-600"
                     >
-                      Volver
+                      Volver a patrocinadores
                     </Link>
                     <Button
                       type="submit"

@@ -316,12 +316,6 @@ export function PublicSecondInstallmentPage() {
                   3 - Adjuntá solo el comprobante correspondiente a la cuota 2.
                 </li>
               </ul>
-              <Link
-                to="/inscripcion"
-                className="inline-flex text-sm font-medium text-emerald-700 underline-offset-4 hover:underline"
-              >
-                Necesitas hacer la inscripción inicial?
-              </Link>
             </div>
           </div>
 
@@ -695,10 +689,10 @@ export function PublicSecondInstallmentPage() {
                 <div className="mx-auto max-w-[720px] border-t border-stone-200 pt-8 sm:pt-10">
                   <div className="flex items-center justify-between gap-4">
                     <Link
-                      to="/inscripcion/participantes"
+                      to="/"
                       className="inline-flex rounded-md border border-stone-300 bg-white px-5 py-2.5 text-sm font-medium text-stone-700 transition-colors hover:border-stone-400"
                     >
-                      Volver
+                      Volver al inicio
                     </Link>
 
                     <Button

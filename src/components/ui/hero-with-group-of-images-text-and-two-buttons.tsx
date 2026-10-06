@@ -33,7 +33,7 @@ function HeroWithGroupImages() {
                 preparadas para actuar cuando más importa.
               </p>
             </div>
-            <div className="flex flex-row gap-4">
+            <div className="flex flex-col gap-4 sm:flex-row">
               <Button
                 size="lg"
                 className="gap-4"
@@ -49,11 +49,11 @@ function HeroWithGroupImages() {
                 size="lg"
                 className="gap-4"
                 onClick={() => {
-                  navigate("/inscripcion/participantes");
+                  navigate("/certificados");
                   window.scrollTo(0, 0);
                 }}
               >
-                Inscribirme <MoveRight className="w-4 h-4" />
+                Certificaciones 2026 <MoveRight className="w-4 h-4" />
               </Button>
             </div>
           </div>
