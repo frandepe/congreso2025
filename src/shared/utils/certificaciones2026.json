@@ -75,5 +75,17 @@
   { "nombre": "Analia", "apellido": "Gimenez", "dni": "23070095" },
   { "nombre": "Rita", "apellido": "Cordoba", "dni": "31907497" },
   { "nombre": "Juan", "apellido": "Tobio", "dni": null },
-  { "nombre": "Nicolas", "apellido": "Ullman", "dni": "31299967" }
+  { "nombre": "Nicolas", "apellido": "Ullman", "dni": "31299967" },
+  { "nombre": "Miguel Ángel Grima Salinas", "apellido": "", "dni": null, "tipo": "disertante" },
+  { "nombre": "Meritxell Ros", "apellido": "", "dni": null, "tipo": "disertante" },
+  { "nombre": "Esteban Verón", "apellido": "", "dni": null, "tipo": "disertante" },
+  { "nombre": "Julieta Passarelli", "apellido": "", "dni": null, "tipo": "disertante" },
+  { "nombre": "Marta Iriarte", "apellido": "", "dni": null, "tipo": "disertante" },
+  { "nombre": "Guillermo Sandrone", "apellido": "", "dni": null, "tipo": "disertante" },
+  { "nombre": "Martín Labarrieta", "apellido": "", "dni": null, "tipo": "disertante" },
+  { "nombre": "Emiliano Velasco", "apellido": "", "dni": null, "tipo": "disertante" },
+  { "nombre": "Javier Gonzalez", "apellido": "", "dni": null, "tipo": "disertante" },
+  { "nombre": "Emiliano Vega", "apellido": "", "dni": null, "tipo": "disertante" },
+  { "nombre": "Emiliano Puñales", "apellido": "", "dni": null, "tipo": "disertante" },
+  { "nombre": "Manuel Baradel", "apellido": "", "dni": null, "tipo": "disertante" }
 ]

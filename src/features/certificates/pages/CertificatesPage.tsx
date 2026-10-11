@@ -1,26 +1,29 @@
 import { FormEvent, useRef, useState } from "react";
 import { Download, Eye, Search } from "lucide-react";
+import { toPng } from "html-to-image";
 import { Button } from "@/components/ui/button";
 import { Certificate } from "../components/Certificate";
 import type {
-  CertificateParticipant,
+  CertificateRecord,
   CertificateSearchMethod,
 } from "../certificates.types";
-import { findCertificateParticipants } from "../certificates.utils";
+import { findCertificateRecords } from "../certificates.utils";
 
 export function CertificatesPage() {
   const [query, setQuery] = useState("");
   const [searchMethod, setSearchMethod] =
     useState<CertificateSearchMethod>("dni");
   const [hasSearched, setHasSearched] = useState(false);
-  const [results, setResults] = useState<CertificateParticipant[]>([]);
+  const [results, setResults] = useState<CertificateRecord[]>([]);
   const [selectedParticipant, setSelectedParticipant] =
-    useState<CertificateParticipant | null>(null);
+    useState<CertificateRecord | null>(null);
+  const [isDownloadingPng, setIsDownloadingPng] = useState(false);
+  const [pngError, setPngError] = useState(false);
   const certificateRef = useRef<HTMLDivElement>(null);
 
   const handleSearch = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const matches = findCertificateParticipants(query, searchMethod);
+    const matches = findCertificateRecords(query, searchMethod);
 
     setResults(matches);
     setSelectedParticipant(null);
@@ -35,7 +38,7 @@ export function CertificatesPage() {
     setHasSearched(false);
   };
 
-  const showCertificate = (participant: CertificateParticipant) => {
+  const showCertificate = (participant: CertificateRecord) => {
     setSelectedParticipant(participant);
     window.setTimeout(() => {
       certificateRef.current?.scrollIntoView({
@@ -45,9 +48,52 @@ export function CertificatesPage() {
     }, 0);
   };
 
-  const printCertificate = (participant: CertificateParticipant) => {
+  const printCertificate = (participant: CertificateRecord) => {
     setSelectedParticipant(participant);
     window.setTimeout(() => window.print(), 0);
+  };
+
+  const downloadCertificatePng = async () => {
+    const certificateElement = certificateRef.current?.querySelector<HTMLElement>(
+      ".certificate-sheet",
+    );
+
+    if (!certificateElement || !selectedParticipant) return;
+
+    setIsDownloadingPng(true);
+    setPngError(false);
+
+    try {
+      const dataUrl = await toPng(certificateElement, {
+        cacheBust: true,
+        pixelRatio: 2,
+        style: {
+          width: "1122px",
+          minWidth: "1122px",
+          maxWidth: "none",
+          boxShadow: "none",
+        },
+      });
+      const link = document.createElement("a");
+      const fullName = [
+        selectedParticipant.nombre,
+        selectedParticipant.apellido,
+      ]
+        .filter(Boolean)
+        .join(" ");
+
+      link.download = `certificado-${fullName
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/[^a-zA-Z0-9]+/g, "-")
+        .replace(/^-|-$/g, "")}.png`;
+      link.href = dataUrl;
+      link.click();
+    } catch {
+      setPngError(true);
+    } finally {
+      setIsDownloadingPng(false);
+    }
   };
 
   return (
@@ -181,7 +227,9 @@ export function CertificatesPage() {
                   >
                     <div>
                       <p className="text-xs font-bold uppercase tracking-wider text-lightGreen">
-                        Participante
+                        {participant.tipo === "disertante"
+                          ? "Disertante"
+                          : "Participante"}
                       </p>
                       <p className="mt-1 text-xl font-bold text-primary">
                         {fullName || "Nombre no disponible"}
@@ -237,7 +285,21 @@ export function CertificatesPage() {
                 <Download className="size-4" aria-hidden="true" />
                 Guardar como PDF
               </Button>
+              <Button
+                type="button"
+                className="gap-2 font-bold"
+                disabled={isDownloadingPng}
+                onClick={downloadCertificatePng}
+              >
+                <Download className="size-4" aria-hidden="true" />
+                {isDownloadingPng ? "Generando PNG…" : "Descargar PNG"}
+              </Button>
             </div>
+            {pngError && (
+              <p role="alert" className="mb-3 text-sm text-red-700">
+                No se pudo generar la imagen. Intentá nuevamente.
+              </p>
+            )}
             <div className="certificate-preview">
               <Certificate participant={selectedParticipant} />
             </div>

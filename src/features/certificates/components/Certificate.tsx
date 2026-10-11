@@ -1,8 +1,8 @@
-import type { CertificateParticipant } from "../certificates.types";
+import type { CertificateRecord } from "../certificates.types";
 import "../certificates.css";
 
 type CertificateProps = {
-  participant: CertificateParticipant;
+  participant: CertificateRecord;
 };
 
 export function Certificate({ participant }: CertificateProps) {
@@ -30,7 +30,6 @@ export function Certificate({ participant }: CertificateProps) {
             <p>Trenque Lauquen, Buenos Aires</p>
           </div>
         </header>
-        {/* TODO: participo como asistente y participo como expositor/disertante */}
         <div className="certificate-content">
           <p className="certificate-kicker">Constancia de participación</p>
           <h2>CERTIFICADO</h2>
@@ -38,7 +37,10 @@ export function Certificate({ participant }: CertificateProps) {
           <p className="certificate-name">{fullName || "Participante"}</p>
           <div className="certificate-name-line" />
           <p className="certificate-copy">
-            participó del <strong>Segundo Congreso Nacional de RCP</strong>,
+            {participant.tipo === "disertante"
+              ? "disertó en "
+              : "participó del "}
+            <strong>Segundo Congreso Nacional de RCP</strong>,
             realizado los días 3 y 4 de octubre de 2026 en Trenque Lauquen,
             Buenos Aires.
           </p>
